@@ -1,0 +1,19 @@
+{
+  "companyName": "Acme Analytics",
+  "senderName": "Jordan Lee",
+  "senderTitle": "Founder",
+  "product": "Acme Analytics is a plug-and-play revenue dashboard for B2B SaaS teams. It connects to your CRM and billing in minutes and surfaces churn risk and expansion opportunities without a data team.",
+  "valueProps": [
+    "Live churn-risk scoring per account",
+    "No data engineer required — connects in under 10 minutes",
+    "Used by 40+ seed-to-Series-B SaaS teams"
+  ],
+  "callToAction": "Book a 15-minute intro call",
+  "schedulingLink": "https://cal.com/jordan-acme/intro",
+  "tone": "Warm, concise, plain-spoken. No hype, no jargon, no exclamation points. Sound like a real founder, not a marketer.",
+  "doNotMakeClaims": [
+    "Any specific ROI percentage or revenue guarantee",
+    "That we integrate with a tool unless the prospect names it"
+  ],
+  "signature": "Best,\nJordan\nFounder, Acme Analytics"
+}
