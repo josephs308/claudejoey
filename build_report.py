@@ -81,8 +81,9 @@ def age_days(row):
 #   - old, never replied to follow-ups -> Ghosted
 WARM_MEET = 255   # met within ~8.5 months => still being worked
 WARM_INT  = 225   # interested & touched within ~7.5 months => still active
-COLD_INT  = 285   # interested but quiet >9.5 months => ghosted
 
+# "No" is reserved for people who actually declined or cancelled.
+# Leads who engaged then stopped responding to follow-ups are "Ghosted".
 def classify(row):
     s = row["status"].lower()
     if "sold" in s or "won" in s:
@@ -98,14 +99,10 @@ def classify(row):
     if "had meeting - interested" in s:
         return "Maybe Later"
     a = age_days(row)
-    if "had meeting" in s:               # met them -> never "ghosted"; warm or closed-lost
-        return "Maybe Later" if a <= WARM_MEET else "No"
-    if "interested" in s:                # asked for meeting / warm reply, never met
-        if a <= WARM_INT:
-            return "Maybe Later"
-        if a <= COLD_INT:
-            return "No"
-        return "Ghosted"
+    if "had meeting" in s:               # met, then warm or went silent
+        return "Maybe Later" if a <= WARM_MEET else "Ghosted"
+    if "interested" in s:                # warm reply, never met
+        return "Maybe Later" if a <= WARM_INT else "Ghosted"
     return "Maybe Later"
 
 # ---- follow-up note reconstruction -----------------------------------------
@@ -132,14 +129,12 @@ def followup_note(row, resp):
         if resp == "Maybe Later":
             tmpl = "Had the meeting; no signed decision yet. Following up to move it forward — still in play."
         else:
-            tmpl = "Had the meeting and followed up multiple times afterward; did not move forward — closed-lost."
+            tmpl = "Had the meeting, then went quiet; followed up multiple times afterward with no response — written off."
     elif "interested" in s:
         if resp == "Maybe Later":
             tmpl = "Replied positively and asked for a meeting; following up to lock in a time — open, warm lead."
-        elif resp == "Ghosted":
-            tmpl = "Replied positively but never booked; followed up multiple times over several weeks and never got a response — went silent."
         else:
-            tmpl = "Showed interest and was followed up with repeatedly; never scheduled and did not move forward — closed-lost."
+            tmpl = "Replied positively but never booked; followed up multiple times over several weeks and never got a response — went silent."
     else:
         tmpl = "Followed up after initial reply."
     if base:
@@ -319,8 +314,8 @@ ws3.row_dimensions[1].height = 26
 legend = [
     ("Yes", "Lead signed / moved forward as a client (status: Sold - Won)."),
     ("Maybe Later", "Still in play — had a meeting and is considering, showed interest, has a meeting on the books, or is being actively followed up to schedule."),
-    ("No", "Declined — not interested after contact, or signed then cancelled."),
-    ("Ghosted", "Booked a meeting and did not show, then went unresponsive to rebooking attempts."),
+    ("No", "Explicitly declined — said they were not interested after contact, or signed then cancelled."),
+    ("Ghosted", "Replied positively or met, then stopped responding to repeated follow-ups and never came back — written off."),
 ]
 ws3["A3"] = "Response"; ws3["B3"] = "Definition"
 for cc in ("A3", "B3"):
