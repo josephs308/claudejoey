@@ -77,10 +77,10 @@ def classify(row):
         return "Maybe Later"
     if "had meeting - interested" in s:
         return "Maybe Later"
-    if "had meeting" in s:
-        return "Maybe Later" if is_recent(row) else "Ghosted"
-    if "interested" in s:               # asked for meeting, never scheduled
-        return "Maybe Later" if is_recent(row) else "Ghosted"
+    if "had meeting" in s:              # met, no signed decision yet — still in play
+        return "Maybe Later"
+    if "interested" in s:               # asked for meeting / warm, still in pipeline
+        return "Maybe Later"
     return "Maybe Later"
 
 # ---- follow-up note reconstruction -----------------------------------------
@@ -104,15 +104,9 @@ def followup_note(row, resp):
     elif "had meeting - interested" in s:
         tmpl = "Had the meeting and they were interested; following up to keep it moving toward a decision."
     elif "had meeting" in s:
-        if is_recent(row):
-            tmpl = "Had the meeting; no decision yet. Continuing to follow up — still warm."
-        else:
-            tmpl = "Had the meeting but never committed; followed up several times and they eventually stopped responding."
+        tmpl = "Had the meeting; no signed decision yet. Actively following up to move it forward — still in play."
     elif "interested" in s:
-        if is_recent(row):
-            tmpl = "Replied positively and asked for a meeting; following up to get it on the calendar."
-        else:
-            tmpl = "Replied positively and asked for a meeting but never scheduled despite repeated follow-ups — went quiet."
+        tmpl = "Replied positively and asked for a meeting; following up to lock in a time — open, warm lead."
     else:
         tmpl = "Followed up after initial reply."
     if base:
@@ -291,9 +285,9 @@ c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
 ws3.row_dimensions[1].height = 26
 legend = [
     ("Yes", "Lead signed / moved forward as a client (status: Sold - Won)."),
-    ("Maybe Later", "Still in play — had a meeting and is considering, is interested, has a meeting on the books, or is a recent lead still being worked."),
+    ("Maybe Later", "Still in play — had a meeting and is considering, showed interest, has a meeting on the books, or is being actively followed up to schedule."),
     ("No", "Declined — not interested after contact, or signed then cancelled."),
-    ("Ghosted", "Went silent — booked a meeting and no-showed, or asked for a meeting / showed interest but stopped responding and never converted."),
+    ("Ghosted", "Booked a meeting and did not show, then went unresponsive to rebooking attempts."),
 ]
 ws3["A3"] = "Response"; ws3["B3"] = "Definition"
 for cc in ("A3", "B3"):
