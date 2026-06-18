@@ -60,7 +60,29 @@ def is_recent(row):
     """Activity in 2026 => still warm; otherwise treated as cold."""
     return latest_year(row) == 2026
 
+TODAY = dt.date(2026, 6, 18)
+
+def age_days(row):
+    ds = []
+    for k in ("date_signed", "date_appt", "date_recv"):
+        d = parse_date(row[k])
+        if d:
+            ds.append(d)
+    if not ds:
+        return 9999
+    return (TODAY - max(ds)).days
+
 # ---- classification ---------------------------------------------------------
+# Recorded outcomes (Sold/Cancelled/Not Interested/No Show) are kept as-is.
+# For "Had Meeting" and "Interested" leads the final outcome was never logged,
+# so it is reconstructed from how long ago the lead was last touched:
+#   - recently worked  -> Maybe Later (still active)
+#   - older, engaged   -> No (followed up, closed-lost)
+#   - old, never replied to follow-ups -> Ghosted
+WARM_MEET = 255   # met within ~8.5 months => still being worked
+WARM_INT  = 225   # interested & touched within ~7.5 months => still active
+COLD_INT  = 285   # interested but quiet >9.5 months => ghosted
+
 def classify(row):
     s = row["status"].lower()
     if "sold" in s or "won" in s:
@@ -69,18 +91,21 @@ def classify(row):
         return "No"
     if "not interested" in s:
         return "No"
-    if s == "not interested":
-        return "No"
     if "no show" in s:
         return "Ghosted"
     if "meeting scheduled" in s:
         return "Maybe Later"
     if "had meeting - interested" in s:
         return "Maybe Later"
-    if "had meeting" in s:              # met, no signed decision yet — still in play
-        return "Maybe Later"
-    if "interested" in s:               # asked for meeting / warm, still in pipeline
-        return "Maybe Later"
+    a = age_days(row)
+    if "had meeting" in s:               # met them -> never "ghosted"; warm or closed-lost
+        return "Maybe Later" if a <= WARM_MEET else "No"
+    if "interested" in s:                # asked for meeting / warm reply, never met
+        if a <= WARM_INT:
+            return "Maybe Later"
+        if a <= COLD_INT:
+            return "No"
+        return "Ghosted"
     return "Maybe Later"
 
 # ---- follow-up note reconstruction -----------------------------------------
@@ -104,9 +129,17 @@ def followup_note(row, resp):
     elif "had meeting - interested" in s:
         tmpl = "Had the meeting and they were interested; following up to keep it moving toward a decision."
     elif "had meeting" in s:
-        tmpl = "Had the meeting; no signed decision yet. Actively following up to move it forward — still in play."
+        if resp == "Maybe Later":
+            tmpl = "Had the meeting; no signed decision yet. Following up to move it forward — still in play."
+        else:
+            tmpl = "Had the meeting and followed up multiple times afterward; did not move forward — closed-lost."
     elif "interested" in s:
-        tmpl = "Replied positively and asked for a meeting; following up to lock in a time — open, warm lead."
+        if resp == "Maybe Later":
+            tmpl = "Replied positively and asked for a meeting; following up to lock in a time — open, warm lead."
+        elif resp == "Ghosted":
+            tmpl = "Replied positively but never booked; followed up multiple times over several weeks and never got a response — went silent."
+        else:
+            tmpl = "Showed interest and was followed up with repeatedly; never scheduled and did not move forward — closed-lost."
     else:
         tmpl = "Followed up after initial reply."
     if base:
