@@ -40,7 +40,26 @@ def age_days(row):
 
 WARM_MEET, WARM_INT = 255, 225
 
+OVERRIDES = {
+    "daniel@rubioattorneys.com": "No",
+    "tiffanysams@pathlightlegal.com": "No",
+    "chris@slclawoffice.com": "No",
+    "z.hansen@wattelandyork.com": "No",
+}
+
+def override_resp(email):
+    e = (email or "").strip().lower()
+    if not e:
+        return None
+    for k, v in OVERRIDES.items():
+        if e == k or e.startswith(k) or k.startswith(e):
+            return v
+    return None
+
 def classify(row):
+    ov = override_resp(row.get("email"))
+    if ov:
+        return ov
     s = row["status"].lower()
     if "sold" in s or "won" in s: return "Yes"
     if "cancel" in s: return "No"

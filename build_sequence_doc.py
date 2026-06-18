@@ -56,8 +56,8 @@ body("Goal: re-open every lead who isn't a signed client or a hard no, and let t
      "in, tag them in GoHighLevel — the campaign becomes your tracking system.", italic=True)
 
 h3("Audience (from MBP_ReEngagement_Audience.csv)")
-bullet("reengage-hot (39) — had a meeting / booked, no decision yet. Closest to signing.")
-bullet("reengage-warm (44) — asked for a meeting, never scheduled. Get them on the calendar.")
+bullet("reengage-hot (36) — had a meeting / booked, no decision yet. Closest to signing.")
+bullet("reengage-warm (43) — asked for a meeting, never scheduled. Get them on the calendar.")
 bullet("reengage-dormant (128) — went quiet after earlier interest. One clean re-open + breakup.")
 body("Personalize {{first_name}} and {{business_name}} with GHL merge fields. "
      "Send from your real inbox/domain, not a no-reply.", italic=True)

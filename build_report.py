@@ -59,7 +59,27 @@ def age_received(row):
 WARM_MEET = 255
 WARM_INT = 225
 
+# Confirmed real outcomes provided by Joseph (override the estimate).
+OVERRIDES = {
+    "daniel@rubioattorneys.com": "No",
+    "tiffanysams@pathlightlegal.com": "No",
+    "chris@slclawoffice.com": "No",
+    "z.hansen@wattelandyork.com": "No",
+}
+
+def override_resp(email):
+    e = (email or "").strip().lower()
+    if not e:
+        return None
+    for k, v in OVERRIDES.items():
+        if e == k or e.startswith(k) or k.startswith(e):
+            return v
+    return None
+
 def classify(row):
+    ov = override_resp(row.get("email"))
+    if ov:
+        return ov
     s = row["status"].lower()
     if "sold" in s or "won" in s:
         return "Yes"
@@ -96,6 +116,9 @@ def followup_note(row, resp, multi):
     base = (base[0].upper() + base[1:]) if base else ""
     s = row["status"].lower()
     intens = "multiple times over several weeks" if multi else "once"
+    if resp == "No" and not ("not interested" in s or "cancel" in s):
+        tmpl = "Followed up after earlier interest; they confirmed they are not moving forward — declined."
+        return f"{tmpl} Note: {base}" if base else tmpl
     if "sold" in s or "won" in s:
         tmpl = "Followed up after the meeting and closed the deal — signed and onboarded with the account manager."
     elif "cancel" in s:
