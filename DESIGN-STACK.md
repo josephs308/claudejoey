@@ -53,24 +53,47 @@ so they silently no-op if the engine isn't present.
 
 ## First-run steps
 
-1. **Approve the MCP server.** Open `claude` in this repo; it will prompt to
+1. **Install a browser for Playwright, once:**
+
+   ```
+   npx playwright install chromium
+   ```
+
+   `.mcp.json` pins `--browser chromium` rather than the default `chrome`
+   channel, so Playwright uses its own isolated build instead of depending on a
+   Google Chrome install. Without this step the server starts but every
+   navigation fails with "Executable doesn't exist".
+
+2. **Approve the MCP server.** Open `claude` in this repo; it will prompt to
    approve the project's Playwright server. Confirm with `/mcp`.
-2. **Run `/impeccable init` once.** It interviews you about the product and
+3. **Run `/impeccable init` once.** It interviews you about the product and
    writes `PRODUCT.md`. It needs real answers, so run it when you know what
    you're building — it does not write `DESIGN.md` (that's `/impeccable shape`).
 
-## Not installed here
+## Figma plugin
 
-The **Figma plugin** (`figma@claude-plugins-official`) lives in a claude.ai-hosted
-marketplace that requires an interactive claude.ai login with plugin sync, which
-isn't available in a remote container. Install it from your own machine:
+Installed separately at **user scope** (it's tied to your account, not this repo):
 
 ```
 claude plugin install figma@claude-plugins-official
 ```
 
-It's account-scoped, not repo-scoped, so it wouldn't have committed here anyway.
-Full features need a Figma Dev or Full seat.
+Plugin capabilities load at startup, so a fresh session is needed after
+installing. Full features need a Figma Dev or Full seat.
+
+## The Impeccable engine binary
+
+The markdown guidance — `SKILL.md` and 19 of the 35 reference docs — is plain
+text and works with nothing installed. The other 16 docs shell out to a compiled
+engine binary for `detect`, `live`, `context`, `document`, `hook`, and `ignores`.
+
+The launcher fetches that binary from GitHub Releases on first use and verifies
+it against a published SHA-256 before caching it in `~/.impeccable/bin/`. It is a
+platform binary, so it can't be read the way the JS shim can — the same trust
+posture as any native npm dependency (esbuild, swc, sharp).
+
+To use the guidance without ever fetching it, delete the two `hooks` entries from
+`.claude/settings.json`. Nothing else changes.
 
 ## Typical loop
 
