@@ -152,14 +152,14 @@ ul{margin:0;padding:0;list-style:none}
 .videoframe{
   position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r-panel);overflow:hidden;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
-  background:linear-gradient(160deg, var(--brand-soft), var(--paper-tint));
-  border:1px solid var(--line);
+  background:oklch(0.155 0.008 246);
+  border:1px solid oklch(0.155 0.008 246);
 }
 video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var(--ink-deep)}
 .videoframe__play{
   width:clamp(58px,6vw,78px);aspect-ratio:1;border-radius:var(--r-pill);
   background:var(--brand-deep);display:grid;place-items:center;
-  box-shadow:0 10px 30px -12px oklch(0.240 0.008 95 / .45);
+  box-shadow:0 8px 26px -10px oklch(0 0 0 / .55);
 }
 .videoframe__play::after{
   content:'';border-style:solid;
@@ -167,7 +167,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   border-color:transparent transparent transparent oklch(1 0 0);
   margin-left:clamp(4px,0.4vw,6px);
 }
-.videoframe__label{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--muted)}
+.videoframe__label{font-family:var(--font-display);font-weight:600;font-size:15px;color:oklch(0.78 0.012 246)}
 
 /* ---------- client strip: seamless marquee ---------- */
 .clients{padding-block:clamp(10px,1.5vw,17px) clamp(40px,6vw,68px)}
