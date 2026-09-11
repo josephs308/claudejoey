@@ -504,16 +504,11 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   .problem__center{display:contents}
   .problem__lead{order:1;width:min(300px,70%)}
   .problem h2{order:2}
-  .mock--leads{order:3}
-  .problem .slot{order:4}
-  .mock--quality{order:5}
-  .problem__foot{order:6}
+  .problem .slot{order:3}
+  .problem__foot{order:4}
   /* stacked, each strip is 2x its own width tall and carries ~22% dead space at
      the top and ~18% at the bottom; pull that back so the pieces read as a list. */
-  /* must reset grid-column: .mock--quality{grid-column:3} would otherwise
-     survive here and force the single-column grid back to three. */
-  .mock{grid-column:1;width:min(320px,84vw);height:auto;margin:0}
-  .mock img{height:auto;object-fit:fill}
+  .mock{display:none}
   .note--left,.note--right{--tilt:0deg}
 }
 @media (max-width:860px){
@@ -749,7 +744,9 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
            object-fit:contain -- never cropped to a "card" height. -->
       <div class="problem__stage">
         <picture class="mock mock--leads reveal">
-          <source media="(max-width:1000px)" srcset="assets/problem-left-stacked.webp" width="595" height="626">
+          <!-- hidden below 1000px; a 1x1 pixel here keeps the phone from downloading
+               the strip it will never show -->
+          <source media="(max-width:1000px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="1">
           <img decoding="async" src="assets/problem-left.webp" width="750" height="1500" alt="An empty leads inbox above a note reading low volume of calls and poor quality of leads">
         </picture>
 
@@ -769,7 +766,9 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         </div>
 
         <picture class="mock mock--quality reveal">
-          <source media="(max-width:1000px)" srcset="assets/problem-right-stacked.webp" width="608" height="783">
+          <!-- hidden below 1000px; a 1x1 pixel here keeps the phone from downloading
+               the strip it will never show -->
+          <source media="(max-width:1000px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="1">
           <img decoding="async" src="assets/problem-right.webp" width="750" height="1500" alt="Leads marked poor quality above a note reading the phone does not ring regardless of budget">
         </picture>
       </div>
