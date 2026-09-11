@@ -231,33 +231,44 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 }
 
 /* ---------- problem section: scattered evidence ---------- */
+/* the supplied graphics are tall portraits (750x1500) and the lead card is
+   449x362 -- so everything here is sized by HEIGHT, not width, or the row
+   blows out to 600px and the collage reads as three lonely columns. */
 .problem{padding-block:clamp(26px,3.2vw,42px) clamp(48px,7vw,84px);background:var(--band-paper)}
-.problem__lead{display:block;width:100%;max-width:360px;height:auto}
 .problem__stage{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr) minmax(0,1fr);
-  gap:clamp(6px,1vw,14px) clamp(8px,1.2vw,18px);align-items:start;justify-items:center;
+  max-width:820px;margin-inline:auto;
+  display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) minmax(0,auto);
+  column-gap:0;row-gap:clamp(4px,0.8vw,10px);
+  align-items:center;justify-items:center;
 }
-.problem__lead{grid-column:2;grid-row:1}
-.problem h2{grid-column:2;grid-row:2}
+.problem__lead{grid-column:2;grid-row:1;display:block;width:min(320px,78%);height:auto}
+.problem h2{grid-column:2;grid-row:2;margin-block:clamp(2px,0.6vw,10px) clamp(6px,1vw,14px)}
 .mock--leads{grid-column:1;grid-row:3}
 .problem .slot{grid-column:2;grid-row:3}
 .mock--quality{grid-column:3;grid-row:3}
-.problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center;max-width:16ch}
+
+.problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center;max-width:15ch}
 .problem h2 em{font-style:normal;color:var(--brand-ink)}
-.problem .slot{width:100%}
+.problem .slot{width:100%;max-width:520px;position:relative;z-index:2}
+
+/* the two supplied interface shots -- capped by height so a 1:2 portrait
+   lands at roughly the photo's height, then tucked in over its edges. */
+.mock{
+  display:block;width:auto;height:auto;max-width:none;
+  max-height:clamp(230px,25vw,330px);
+  transform:rotate(var(--tilt,0deg));position:relative;z-index:1;
+}
+.mock--leads{--tilt:-4deg;margin-right:clamp(-56px,-3.4vw,-26px)}
+.mock--quality{--tilt:3deg;margin-left:clamp(-56px,-3.4vw,-26px)}
+
 .note{
   padding:22px 26px;border-radius:4px;font-size:16.5px;line-height:1.5;color:var(--ink);
   box-shadow:0 12px 26px -20px oklch(0.24 0.01 246 / .5);
 }
-.note--left{background:oklch(0.955 0.002 250);transform:rotate(-3.2deg)}
-.note--right{background:oklch(0.930 0.045 205);transform:rotate(2.6deg)}
+.note--left{--tilt:-3.2deg;background:oklch(0.955 0.002 250);transform:rotate(var(--tilt))}
+.note--right{--tilt:2.6deg;background:oklch(0.930 0.045 205);transform:rotate(var(--tilt))}
 
-/* the two supplied interface shots, just placed and tilted */
-.mock{width:100%;height:auto;display:block}
-.mock--leads{max-width:min(300px,100%);transform:rotate(-4deg)}
-.mock--quality{max-width:min(320px,100%);transform:rotate(3deg)}
-
-.problem__foot{margin-top:clamp(6px,1.2vw,18px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.problem__foot{margin-top:clamp(10px,1.6vw,22px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
 .problem__foot p{color:var(--muted);max-width:44ch}
 
 /* ---------- dark block: the one theme switch ---------- */
@@ -416,12 +427,14 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .foot address{font-style:normal;font-size:14.5px;color:var(--muted)}
 
 /* ---------- motion: reveal on scroll, marketing tier ---------- */
-.js-reveal .reveal{opacity:0;transform:translateY(18px)}
+/* --tilt lets a collage piece keep its rotation through the reveal; without it
+   the .is-in rule resets transform and every tilted card snaps square. */
+.js-reveal .reveal{opacity:0;transform:translateY(18px) rotate(var(--tilt,0deg))}
 .js-reveal .reveal{transition:opacity 460ms var(--ease-out), transform 460ms var(--ease-out)}
-.js-reveal .reveal.is-in{opacity:1;transform:none}
+.js-reveal .reveal.is-in{opacity:1;transform:rotate(var(--tilt,0deg))}
 
 @media (prefers-reduced-motion: reduce){
-  .reveal{transition-duration:200ms;transform:none}
+  .reveal{transition-duration:200ms;transform:rotate(var(--tilt,0deg))}
   *{scroll-behavior:auto !important}
 }
 
@@ -431,8 +444,11 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   .hero__proof,.hero__cta .btn{max-width:none;margin-left:0}
   .block--flip .block__body{order:0}
   .quote--lead{grid-row:auto}
-  .problem__stage{grid-template-columns:minmax(0,1fr)}
-  .note--left,.note--right{transform:none}
+  .problem__stage{grid-template-columns:minmax(0,1fr);row-gap:clamp(14px,3vw,24px)}
+  .problem__lead,.problem h2,.mock--leads,.problem .slot,.mock--quality{grid-column:1;grid-row:auto}
+  .mock{max-height:none;width:min(260px,66%);margin-inline:0}
+  .problem__lead{width:min(320px,80%)}
+  .note--left,.note--right,.mock{--tilt:0deg}
 }
 @media (max-width:860px){
   .nav__links{
