@@ -20,26 +20,26 @@
 
 :root{
   /* palette - OKLCH, neutrals tinted toward the brand hue */
-  --paper:      oklch(1 0 0);
-  --paper-tint: oklch(0.967 0 0);
-  --panel:      oklch(1 0 0 / 1);
-  --ink:        oklch(0.225 0 0);
-  --ink-deep:   oklch(0.180 0 0);
-  --muted:      oklch(0.505 0 0);
-  --line:       oklch(0.898 0 0);
+  --paper:      oklch(0.983 0.009 236);
+  --paper-tint: oklch(0.959 0.016 236);
+  --panel:      oklch(0.996 0.004 236);
+  --ink:        oklch(0.228 0.012 246);
+  --ink-deep:   oklch(0.183 0.013 246);
+  --muted:      oklch(0.508 0.011 246);
+  --line:       oklch(0.893 0.014 236);
 
   /* one accent, locked for the whole page */
   --brand:      oklch(0.700 0.135 235);
   --brand-deep: oklch(0.560 0.132 242);
   --brand-ink:  oklch(0.470 0.120 244);
-  --brand-soft: oklch(0.962 0 0);
+  --brand-soft: oklch(0.950 0.021 236);
 
   /* on the dark block */
-  --ink-surface: oklch(0.967 0 0);
-  --ink-raise:   oklch(1 0 0);
-  --ink-line:    oklch(0.892 0 0);
-  --ink-text:    oklch(0.225 0 0);
-  --ink-muted:   oklch(0.505 0 0);
+  --ink-surface: oklch(0.959 0.016 236);
+  --ink-raise:   oklch(0.996 0.004 236);
+  --ink-line:    oklch(0.891 0.014 236);
+  --ink-text:    oklch(0.228 0.012 246);
+  --ink-muted:   oklch(0.508 0.011 246);
 
   /* shape system: panels 14px, controls 10px, buttons full pill */
   --r-panel: 14px;
@@ -120,7 +120,7 @@ ul{margin:0;padding:0;list-style:none}
 .nav__toggle{display:none}
 
 /* ---------- hero: asymmetric split ---------- */
-.hero{padding-block:clamp(40px,6vw,76px) clamp(20px,2.5vw,34px)}
+.hero{padding-block:clamp(40px,6vw,76px) clamp(34px,4.75vw,60px)}
 .hero__grid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);gap:clamp(28px,4.5vw,56px);align-items:center}
 .hero h1{font-size:clamp(2rem,3.55vw,3.05rem);max-width:17ch}
 .hero__sub{margin-top:20px;font-size:clamp(1.02rem,1.5vw,1.16rem);color:var(--muted);max-width:30ch}
@@ -149,7 +149,7 @@ ul{margin:0;padding:0;list-style:none}
 .slot__note b{font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:15px}
 
 /* ---------- client strip: seamless marquee ---------- */
-.clients{padding-block:0 clamp(40px,6vw,68px)}
+.clients{padding-block:clamp(10px,1.5vw,17px) clamp(40px,6vw,68px)}
 .marquee{
   position:relative;overflow:hidden;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
