@@ -141,20 +141,14 @@ ul{margin:0;padding:0;list-style:none}
 .hero__cta{margin-top:30px}
 .hero__cta .btn{width:100%;max-width:var(--hero-cta);margin-left:var(--hero-inset,0)}
 
-/* ---------- scroll cue ---------- */
-.scrollcue{
-  display:grid;place-items:center;width:46px;height:46px;margin:clamp(20px,3vw,34px) auto 0;
-  border-radius:var(--r-pill);border:1px solid var(--line);background:var(--panel);
-  transition:border-color 140ms ease,transform 160ms var(--ease-out);
+/* ---------- scroll progress ---------- */
+.scrollbar{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:transparent;pointer-events:none;display:none}
+.scrollbar i{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--brand-deep)}
+@supports (animation-timeline: scroll()){
+  .scrollbar{display:block}
+  .scrollbar i{animation:scrollfill linear;animation-timeline:scroll(root block)}
 }
-.scrollcue:hover{border-color:var(--brand-deep);transform:translateY(2px)}
-.scrollcue__chev{
-  width:11px;height:11px;margin-top:-4px;
-  border-right:2px solid var(--brand-deep);border-bottom:2px solid var(--brand-deep);
-  transform:rotate(45deg);animation:cuebob 1.9s var(--ease-in-out) infinite;
-}
-@keyframes cuebob{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(3px,3px)}}
-@media (prefers-reduced-motion: reduce){.scrollcue__chev{animation:none}}
+@keyframes scrollfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* ---------- asset slots (real files drop in, fallback keeps it legible) ---------- */
 .slot{position:relative;border-radius:var(--r-panel);overflow:hidden;background:var(--paper-tint)}
@@ -288,16 +282,23 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .calc__figure{font-family:var(--font-display);font-weight:700;font-size:1.7rem;color:var(--ink-text);font-variant-numeric:tabular-nums;line-height:1.2}
 .calc__err{color:oklch(0.72 0.16 28);font-size:14.5px;margin-top:14px}
 
-/* ---------- testimonials: offset stack, not three equal cards ---------- */
+/* ---------- testimonials ---------- */
 .proof{background:var(--band-blue);padding-block:clamp(56px,7vw,92px)}
-.proof h2{font-size:clamp(1.8rem,3.2vw,2.5rem);max-width:16ch}
-.proof__grid{margin-top:clamp(30px,4vw,46px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
-.quote{padding:clamp(26px,3vw,36px);border-radius:var(--r-panel);background:oklch(0.975 0.012 236)}
-.quote--lead{background:var(--panel);grid-row:span 2}
-.quote--lead q{font-size:clamp(1.2rem,2.1vw,1.6rem);line-height:1.35}
-.quote q{display:block;font-family:var(--font-display);font-weight:500;font-size:1.06rem;line-height:1.45;color:var(--ink-deep);quotes:'\201C' '\201D'}
-.quote cite{display:block;margin-top:18px;font-style:normal;font-size:14.5px;color:var(--muted)}
-.proof__cta{margin-top:clamp(30px,4vw,44px);display:flex;justify-content:center}
+.proof__inner{display:flex;flex-direction:column;align-items:center;gap:clamp(26px,3.4vw,40px)}
+.proof__lead{margin:0;max-width:min(92%,940px);text-align:center;text-wrap:balance}
+.proof__lead q{
+  font-family:var(--font-display);font-weight:700;letter-spacing:-0.015em;
+  font-size:clamp(1.55rem,3.2vw,2.5rem);line-height:1.18;color:var(--ink-deep);
+  quotes:'"' '"';display:block;
+}
+.proof__lead span{color:var(--muted)}
+.proof__pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,30px);width:100%}
+.quote{
+  padding:clamp(26px,3vw,38px);border-radius:var(--r-panel);background:var(--panel);
+  display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;
+}
+.quote q{font-size:1.02rem;line-height:1.55;color:var(--ink);quotes:'"' '"'}
+.quote cite{font-style:normal;font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--ink-deep)}
 
 /* ---------- about ---------- */
 .about{padding-block:clamp(56px,7vw,92px);background:var(--band-paper)}
@@ -308,20 +309,23 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
 /* ---------- faqs ---------- */
 .faqs{background:var(--band-paper);padding-block:clamp(56px,7vw,92px)}
-.faqs__head{max-width:40ch}
-.faqs h2{font-size:clamp(1.7rem,2.9vw,2.25rem)}
-.faqs__list{margin-top:clamp(26px,3.5vw,40px);border-top:1px solid var(--line)}
-.faq{border-bottom:1px solid var(--line)}
+.faqs__inner{display:flex;flex-direction:column;align-items:center;gap:clamp(22px,3vw,34px)}
+.faqs h2{font-size:clamp(1.7rem,3.1vw,2.5rem);text-align:center;max-width:24ch}
+.faqs__list{width:100%;max-width:940px;display:flex;flex-direction:column;gap:12px;margin-top:clamp(6px,1.2vw,14px)}
+.faq{border:1px solid var(--line);border-radius:var(--r-panel);background:var(--panel)}
 .faq summary{
   display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;
-  padding:24px 0;font-family:var(--font-display);font-weight:600;font-size:clamp(1.02rem,1.7vw,1.18rem);color:var(--ink-deep);
+  padding:clamp(18px,2.2vw,24px) clamp(20px,2.6vw,28px);
+  font-family:var(--font-display);font-weight:700;font-size:clamp(1rem,1.6vw,1.14rem);color:var(--ink-deep);
 }
 .faq summary::-webkit-details-marker{display:none}
-.faq__sign{flex:none;width:26px;height:26px;position:relative;border-radius:var(--r-pill);background:var(--brand-soft)}
-.faq__sign::before,.faq__sign::after{content:'';position:absolute;inset:50% 7px auto;height:2px;background:var(--brand-ink);transform:translateY(-50%);border-radius:2px}
-.faq__sign::after{transform:translateY(-50%) rotate(90deg);transition:transform 180ms var(--ease-out)}
-.faq[open] .faq__sign::after{transform:translateY(-50%) rotate(0deg)}
-.faq__answer{padding:0 0 26px;max-width:66ch;color:var(--muted)}
+.faq__sign{
+  flex:none;width:0;height:0;background:none;border-radius:0;
+  border-left:6px solid transparent;border-right:6px solid transparent;border-top:7px solid var(--ink-deep);
+  transition:transform 180ms var(--ease-out);
+}
+.faq[open] .faq__sign{transform:rotate(180deg)}
+.faq__answer{padding:0 clamp(20px,2.6vw,28px) clamp(20px,2.4vw,26px);max-width:72ch;color:var(--muted)}
 
 /* ---------- booking ---------- */
 .booking{background:var(--band-blue);color:var(--ink-text);padding-block:clamp(56px,7vw,92px)}
@@ -392,7 +396,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
-  .hero__grid,.block--split,.booking__grid,.proof__grid,.about__grid{grid-template-columns:minmax(0,1fr)}
+  .hero__grid,.block--split,.booking__grid,.proof__pair,.about__grid{grid-template-columns:minmax(0,1fr)}
   .block--flip .block__body{order:0}
   .quote--lead{grid-row:auto}
   .problem__stage{grid-template-columns:minmax(0,1fr)}
@@ -427,6 +431,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 <body class="no-js">
 <!-- ARTIFACT:BODY-START -->
 
+<div class="scrollbar" aria-hidden="true"><i></i></div>
 <header class="nav">
   <div class="shell">
     <div class="nav__bar">
@@ -469,9 +474,6 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         <span class="videoframe__label">Video coming soon</span>
       </div>
     </div>
-    <a class="scrollcue" href="#problem" aria-label="Scroll to the next section">
-      <span class="scrollcue__chev" aria-hidden="true"></span>
-    </a>
   </section>
 
   <!-- CLIENT LOGOS: add a logo by dropping the file in assets/logos/ and adding
@@ -610,24 +612,25 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
   <!-- TESTIMONIALS -->
   <section class="proof" id="testimonials">
-    <div class="shell">
-      <h2 class="reveal">Testimonials</h2>
-      <div class="proof__grid">
-        <blockquote class="quote quote--lead reveal">
-          <q>MBP's LSA process is like nothing I've seen. We got 85 leads in a single week, which surpassed all expectations. You should really hire them.</q>
-        </blockquote>
+    <div class="shell proof__inner">
+      <span class="chip reveal"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M100 56a52 52 0 0 0 0 104a51.7 51.7 0 0 0 19.8-3.9l-19.2 33.9a8 8 0 0 0 3 10.9a7.9 7.9 0 0 0 10.9-3l43.4-76.6A51.8 51.8 0 0 0 164 108a52 52 0 0 0-52-52Zm112 0a52 52 0 0 0 0 104a51.7 51.7 0 0 0 19.8-3.9l-19.2 33.9a8 8 0 0 0 3 10.9a7.9 7.9 0 0 0 10.9-3l43.4-76.6"/></svg>Testimonials</span>
+
+      <blockquote class="proof__lead reveal">
+        <q>MBP's LSA process is like nothing I've seen. We got 85 leads in a single week, which surpassed all expectations. <span>You should really hire them.</span></q>
+      </blockquote>
+
+      <div class="proof__pair">
         <blockquote class="quote reveal">
           <q>We met with multiple agencies and chose the most expensive option, and it paid off. We're signing cases weekly from LSAs, and we haven't even hit full scale yet.</q>
-          <cite>CEO at Law Firm</cite>
+          <cite>- CEO at Law Firm</cite>
         </blockquote>
         <blockquote class="quote reveal">
           <q>Yes, my skepticism has vanished. You guys really know what you're doing and we greatly appreciate it!</q>
-          <cite>CEO at Law Firm</cite>
+          <cite>- CEO at Law Firm</cite>
         </blockquote>
       </div>
-      <div class="proof__cta">
-        <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
-      </div>
+
+      <a class="btn reveal" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
     </div>
   </section>
 
@@ -679,10 +682,9 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
   <!-- FAQS -->
   <section class="faqs" id="faqs">
-    <div class="shell">
-      <div class="faqs__head">
-        <h2 class="reveal">Get answers to questions our law firm clients ask us the most</h2>
-      </div>
+    <div class="shell faqs__inner">
+      <span class="chip reveal"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 168a12 12 0 1 1 12-12a12 12 0 0 1-12 12Zm8-48.72V144a8 8 0 0 1-16 0v-8a8 8 0 0 1 8-8c13.23 0 24-9 24-20s-10.77-20-24-20s-24 9-24 20v4a8 8 0 0 1-16 0v-4c0-19.85 17.94-36 40-36s40 16.15 40 36c0 17.38-13.76 31.93-32 35.28Z"/></svg>FAQs</span>
+      <h2 class="reveal">Get answers to questions our law firm clients ask us the most</h2>
       <div class="faqs__list">
         <details class="faq">
           <summary>Do you provide monthly reports?<span class="faq__sign" aria-hidden="true"></span></summary>
