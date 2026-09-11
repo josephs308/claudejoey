@@ -230,23 +230,28 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   .marquee__set:last-child{display:none}
 }
 
-/* ---------- problem section: scattered notes ---------- */
+/* ---------- problem section: scattered evidence ---------- */
 .problem{padding-block:clamp(26px,3.2vw,42px) clamp(48px,7vw,84px);background:var(--band-paper)}
-.problem__lead{
-  max-width:430px;margin:0 auto clamp(36px,5vw,58px);padding:26px 30px;
-  background:var(--brand-soft);border-radius:var(--r-panel);text-align:center;
-  font-family:var(--font-display);font-weight:500;font-size:1.12rem;color:var(--ink-deep);line-height:1.35;
+.problem__lead{display:block;width:100%;max-width:430px;height:auto;margin:0 auto clamp(30px,4vw,48px)}
+.problem__stage{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr) minmax(0,1fr);
+  gap:clamp(22px,3.4vw,48px) clamp(10px,1.6vw,24px);align-items:center;justify-items:center;
 }
-.problem__stage{display:grid;grid-template-columns:1fr minmax(0,1.25fr) 1fr;gap:clamp(18px,3vw,40px);align-items:center}
-.problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center}
+.problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center;max-width:16ch}
 .problem h2 em{font-style:normal;color:var(--brand-ink)}
-.problem__mid{display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);align-items:center}
+.problem .slot{width:100%}
 .note{
-  padding:22px 24px;border-radius:var(--r-control);font-size:16.5px;line-height:1.45;
-  background:var(--paper-tint);color:var(--ink);
+  padding:22px 26px;border-radius:4px;font-size:16.5px;line-height:1.5;color:var(--ink);
+  box-shadow:0 12px 26px -20px oklch(0.24 0.01 246 / .5);
 }
-.note--left{transform:rotate(-2.4deg)}
-.note--right{background:var(--brand-soft);transform:rotate(2deg)}
+.note--left{background:oklch(0.955 0.002 250);transform:rotate(-3.2deg)}
+.note--right{background:oklch(0.930 0.045 205);transform:rotate(2.6deg)}
+
+/* the two supplied interface shots, just placed and tilted */
+.mock{width:100%;height:auto;display:block}
+.mock--leads{max-width:330px;transform:rotate(-4deg)}
+.mock--quality{max-width:360px;transform:rotate(3deg)}
+
 .problem__foot{margin-top:clamp(30px,4vw,46px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
 .problem__foot p{color:var(--muted);max-width:44ch}
 
@@ -528,18 +533,20 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   <!-- PROBLEM -->
   <section class="problem" id="problem">
     <div class="shell">
-      <p class="problem__lead reveal">Being charged for hours, retainers, and no results?</p>
+      <img class="problem__lead reveal" src="https://drive.google.com/thumbnail?id=1xvvjs-dq9-yjN0IXyew2MnI47BXzMgiy&amp;sz=w800" alt="Being charged for hours, retainers, and no results?">
 
       <div class="problem__stage">
+        <img class="mock mock--leads reveal" src="https://drive.google.com/thumbnail?id=1JlnEiFUDJOq3TGAkJfqUcUAUR63nd-aJ&amp;sz=w800" alt="An empty leads inbox showing zero leads">
+
+        <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
+
+        <img class="mock mock--quality reveal" src="https://drive.google.com/thumbnail?id=1UAW3GqEgfbSG5xGqH2EUMmdWaWUOvc7r&amp;sz=w800" alt="A list of leads marked poor quality">
+
         <p class="note note--left reveal">Low volume of calls and poor quality of leads</p>
 
-        <div class="problem__mid">
-          <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
-          <!-- ASSET 2 of 5: photo, 4:3 -->
-          <div class="slot slot--4x3 reveal" data-slot style="width:100%">
-            <img src="https://drive.google.com/thumbnail?id=1sIOOp03V9nyUzCwYZKwJ2JmDedgOFEvr&amp;sz=w1200" alt="A business owner at a laptop with their head in their hands">
-            <div class="slot__note"><b>Photo</b>Add assets/frustrated-owner.jpg at 4:3.</div>
-          </div>
+        <div class="slot slot--4x3 reveal" data-slot>
+          <img src="https://drive.google.com/thumbnail?id=1sIOOp03V9nyUzCwYZKwJ2JmDedgOFEvr&amp;sz=w1200" alt="A business owner at a laptop with their head in their hands">
+          <div class="slot__note"><b>Photo</b>Problem section.</div>
         </div>
 
         <p class="note note--right reveal">Phone doesn't ring regardless of budget. When the phone does ring, its not a case.</p>
