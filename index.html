@@ -232,10 +232,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
 /* ---------- problem section: scattered evidence ---------- */
 .problem{padding-block:clamp(26px,3.2vw,42px) clamp(48px,7vw,84px);background:var(--band-paper)}
-.problem__lead{display:block;width:100%;max-width:400px;height:auto}
+.problem__lead{display:block;width:100%;max-width:360px;height:auto}
 .problem__stage{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr) minmax(0,1fr);
-  gap:clamp(18px,2.4vw,30px) clamp(10px,1.6vw,24px);align-items:center;justify-items:center;
+  gap:clamp(6px,1vw,14px) clamp(8px,1.2vw,18px);align-items:start;justify-items:center;
 }
 .problem__lead{grid-column:2;grid-row:1}
 .problem h2{grid-column:2;grid-row:2}
@@ -254,10 +254,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
 /* the two supplied interface shots, just placed and tilted */
 .mock{width:100%;height:auto;display:block}
-.mock--leads{max-width:330px;transform:rotate(-4deg)}
-.mock--quality{max-width:360px;transform:rotate(3deg)}
+.mock--leads{max-width:min(300px,100%);transform:rotate(-4deg)}
+.mock--quality{max-width:min(320px,100%);transform:rotate(3deg)}
 
-.problem__foot{margin-top:clamp(30px,4vw,46px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.problem__foot{margin-top:clamp(6px,1.2vw,18px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
 .problem__foot p{color:var(--muted);max-width:44ch}
 
 /* ---------- dark block: the one theme switch ---------- */
