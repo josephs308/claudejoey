@@ -665,8 +665,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
     </div>
   </section>
 
-  <!-- CLIENT LOGOS: add a logo by dropping the file in assets/logos/ and adding
-       one <li> to BOTH lists below. The second list is the seamless loop copy. -->
+  <!-- CLIENT LOGOS: add a logo by dropping a .webp in assets/ and adding one <li>
+       to BOTH lists below. The second list is the seamless loop copy and is
+       aria-hidden, so only the first list is announced. Give each img the real
+       business name as its alt text and its intrinsic width/height. -->
   <section class="clients" aria-label="Businesses we run Local Services Ads for">
     <div class="marquee" data-marquee>
       <div class="marquee__track">
