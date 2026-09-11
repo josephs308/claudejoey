@@ -99,12 +99,12 @@ ul{margin:0;padding:0;list-style:none}
 .btn--onDark:hover{background:var(--brand-ink)}
 
 /* ---------- navigation: one line, 72px ---------- */
-.nav{position:sticky;top:0;z-index:40;padding-top:14px;background:linear-gradient(var(--paper) 55%, transparent)}
+.nav{position:sticky;top:0;z-index:40;background:var(--panel);border-bottom:1px solid var(--line)}
+.nav > .shell{max-width:none;padding-inline:0}
 .nav__bar{
   display:flex;align-items:center;justify-content:space-between;gap:24px;
-  height:72px;padding:0 14px 0 24px;
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--r-panel);
-  box-shadow:0 10px 30px -22px oklch(0.240 0.008 95 / .5);
+  height:74px;padding-inline:clamp(18px,5vw,48px);
+  background:transparent;border:0;border-radius:0;
 }
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
 .brand__mark{display:flex;align-items:flex-end;gap:3px;height:22px}
@@ -121,8 +121,8 @@ ul{margin:0;padding:0;list-style:none}
 
 /* ---------- hero: asymmetric split ---------- */
 .hero{padding-block:clamp(40px,6vw,76px) clamp(34px,4.75vw,60px)}
-.hero__grid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);gap:clamp(28px,4.5vw,56px);align-items:center}
-.hero h1{font-size:clamp(2rem,3.55vw,3.05rem);max-width:17ch}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1.2fr);gap:clamp(28px,3.5vw,46px);align-items:center}
+.hero h1{font-size:clamp(1.95rem,3.1vw,2.72rem);max-width:19ch}
 .hero__sub{margin-top:20px;font-size:clamp(1.02rem,1.5vw,1.16rem);color:var(--muted);max-width:30ch}
 .hero__proof{
   margin-top:28px;display:inline-flex;flex-direction:column;gap:9px;align-items:center;
@@ -147,6 +147,27 @@ ul{margin:0;padding:0;list-style:none}
 .slot.is-empty .slot__note{display:flex}
 .slot.is-empty img,.slot.is-empty video{display:none}
 .slot__note b{font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:15px}
+
+/* ---------- hero video frame ---------- */
+.videoframe{
+  position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r-panel);overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  background:linear-gradient(160deg, var(--brand-soft), var(--paper-tint));
+  border:1px solid var(--line);
+}
+video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var(--ink-deep)}
+.videoframe__play{
+  width:clamp(58px,6vw,78px);aspect-ratio:1;border-radius:var(--r-pill);
+  background:var(--brand-deep);display:grid;place-items:center;
+  box-shadow:0 10px 30px -12px oklch(0.240 0.008 95 / .45);
+}
+.videoframe__play::after{
+  content:'';border-style:solid;
+  border-width:clamp(11px,1.1vw,14px) 0 clamp(11px,1.1vw,14px) clamp(18px,1.8vw,23px);
+  border-color:transparent transparent transparent oklch(1 0 0);
+  margin-left:clamp(4px,0.4vw,6px);
+}
+.videoframe__label{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--muted)}
 
 /* ---------- client strip: seamless marquee ---------- */
 .clients{padding-block:clamp(10px,1.5vw,17px) clamp(40px,6vw,68px)}
@@ -319,10 +340,10 @@ ul{margin:0;padding:0;list-style:none}
 }
 @media (max-width:860px){
   .nav__links{
-    display:none;position:absolute;left:var(--gutter);right:var(--gutter);top:96px;
+    display:none;position:absolute;left:0;right:0;top:74px;
     flex-direction:column;align-items:flex-start;gap:4px;padding:12px;
-    background:var(--panel);border:1px solid var(--line);border-radius:var(--r-panel);
-    box-shadow:0 20px 40px -26px oklch(0.240 0.008 95 / .55);
+    background:var(--panel);border-bottom:1px solid var(--line);border-radius:0;
+    box-shadow:0 20px 40px -26px oklch(0.240 0.008 95 / .3);
   }
   .nav__links.is-open{display:flex}
   .nav__links a{padding:12px 10px;width:100%}
@@ -337,7 +358,7 @@ ul{margin:0;padding:0;list-style:none}
 @media (max-width:560px){
   body{font-size:16px}
   .btn{width:100%;padding:16px 24px}
-  .nav__bar{padding-right:10px}
+  .nav__bar{padding-inline:18px}
   .hero__proof{width:100%}
 }
 </style>
@@ -381,11 +402,12 @@ ul{margin:0;padding:0;list-style:none}
           <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
         </div>
       </div>
-      <!-- Placeholder stock. Swap src for assets/hero.jpg, or drop in a
-           <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" controls playsinline></video> -->
-      <div class="slot slot--16x9" data-slot>
-        <img src="https://picsum.photos/seed/mbp-lsa-hero-call/1200/675" alt="Tradesperson taking a call on site">
-        <div class="slot__note"><b>Hero image</b>Add assets/hero.jpg or assets/hero.mp4 at 16:9.</div>
+      <!-- To go live: replace the whole .videoframe block with either
+           <video class="videoframe" src="assets/hero.mp4" poster="assets/hero-poster.jpg" controls playsinline></video>
+           or a YouTube/Vimeo <iframe class="videoframe" ...> at 16:9. -->
+      <div class="videoframe" role="img" aria-label="Video coming soon">
+        <span class="videoframe__play" aria-hidden="true"></span>
+        <span class="videoframe__label">Video coming soon</span>
       </div>
     </div>
   </section>
