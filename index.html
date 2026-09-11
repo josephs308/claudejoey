@@ -133,7 +133,7 @@ ul{margin:0;padding:0;list-style:none}
   white-space:nowrap;text-decoration:none;cursor:pointer;border:0;
   padding:17px 30px;border-radius:var(--r-pill);
   background:var(--brand-deep);color:oklch(1 0 0);
-  transition:background 140ms ease, transform 120ms var(--ease-out);
+  transition:background 140ms ease, transform 160ms var(--ease-out), box-shadow 200ms var(--ease-out);
 }
 .btn:hover{background:var(--brand-ink)}
 .btn:active{transform:scale(0.98)}
@@ -143,7 +143,31 @@ ul{margin:0;padding:0;list-style:none}
 }
 .btn--ghost:hover{background:var(--brand-soft)}
 .btn--onDark{background:var(--brand-deep);color:oklch(1 0 0)}
-.btn--onDark:hover{background:var(--brand-ink)}
+.btn--onDark:hover{background:oklch(0.470 0.120 244)}
+
+/* ---------- primary CTA ----------
+   The five "Book A Free Strategy Call" buttons are the page's one conversion
+   action, so they get the only ambient motion on the page: a slow halo that
+   expands and fades, a lift on hover, and a chevron that steps forward. The
+   halo is a box-shadow ring, so it costs no layout and never shifts anything. */
+.btn--cta{
+  font-size:17px;padding:19px 34px;
+  box-shadow:0 10px 22px -12px oklch(0.470 0.120 244 / .7);
+  animation:cta-halo 2.8s var(--ease-out) infinite;
+}
+@keyframes cta-halo{
+  0%   {box-shadow:0 10px 22px -12px oklch(0.470 0.120 244 / .7), 0 0 0 0    oklch(0.700 0.135 235 / .55)}
+  70%  {box-shadow:0 10px 22px -12px oklch(0.470 0.120 244 / .7), 0 0 0 15px oklch(0.700 0.135 235 / 0)}
+  100% {box-shadow:0 10px 22px -12px oklch(0.470 0.120 244 / .7), 0 0 0 0    oklch(0.700 0.135 235 / 0)}
+}
+.btn--cta:hover{
+  transform:translateY(-2px);animation-play-state:paused;
+  box-shadow:0 16px 30px -12px oklch(0.470 0.120 244 / .85);
+}
+.btn--cta:focus-visible{animation-play-state:paused}
+.btn--cta:active{transform:translateY(0) scale(0.98)}
+.btn__chev{display:inline-block;transition:transform 180ms var(--ease-out)}
+.btn--cta:hover .btn__chev{transform:translateX(3px)}
 
 /* ---------- navigation: one line, 72px ---------- */
 .nav{position:sticky;top:0;z-index:40;background:var(--panel);border-bottom:1px solid var(--line)}
@@ -460,6 +484,8 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
 @media (prefers-reduced-motion: reduce){
   .reveal{transition-duration:200ms;transform:rotate(var(--tilt,0deg))}
+  .btn--cta{animation:none}
+  .btn--cta:hover{transform:none}
   *{scroll-behavior:auto !important}
 }
 
@@ -661,7 +687,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           <span class="hero__stars"><b>Google</b><span class="stars" aria-hidden="true">★★★★★</span><span class="sr-only">Rated 5 out of 5</span></span>
         </div>
         <div class="hero__cta">
-          <a class="btn" href="#book-a-call">Book A Free Strategy Call &gt;</a>
+          <a class="btn btn--cta" href="#book-a-call">Book A Free Strategy Call <span class="btn__chev" aria-hidden="true">&gt;</span></a>
         </div>
       </div>
       <!-- To go live: replace the whole .videoframe block with either
@@ -723,7 +749,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           </div>
 
           <div class="problem__foot reveal">
-            <a class="btn" href="#book-a-call">Book A Free Strategy Call &gt;</a>
+            <a class="btn btn--cta" href="#book-a-call">Book A Free Strategy Call <span class="btn__chev" aria-hidden="true">&gt;</span></a>
             <p>Find out how we can get your phone ringing off the hook with good quality leads.</p>
           </div>
         </div>
@@ -833,7 +859,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         </blockquote>
       </div>
 
-      <a class="btn reveal" href="#book-a-call">Book A Free Strategy Call &gt;</a>
+      <a class="btn reveal btn--cta" href="#book-a-call">Book A Free Strategy Call <span class="btn__chev" aria-hidden="true">&gt;</span></a>
     </div>
   </section>
 
@@ -848,7 +874,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         <h2 class="reveal">Meet the team, not your typical agency</h2>
         <p class="reveal">Marketing Best Practices (MBP Results) is exactly what the name says. We are focused on driving results for your business. We align our incentives with yours. If we can deliver leads, you pay, if not, then you don't.</p>
         <p class="reveal">With 20+ years of marketing experience including PPC, SEO, LSA, and Meta ads, we know how to get your phone ringing off the hook! Let's talk about how much new business your business can handle right now.</p>
-        <a class="btn reveal" href="#book-a-call">Book A Free Strategy Call &gt;</a>
+        <a class="btn reveal btn--cta" href="#book-a-call">Book A Free Strategy Call <span class="btn__chev" aria-hidden="true">&gt;</span></a>
       </div>
     </div>
   </section>
@@ -860,7 +886,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         <h2>Interested in Dominating Local Service Ads? <span>Let's chat.</span></h2>
         <p>Pick a time that works for you. We will look at your market, your service categories, and what a full pipeline would look like for your business.</p>
         <div class="booking__cta">
-          <a class="btn btn--onDark" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+          <a class="btn btn--onDark btn--cta" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call <span class="btn__chev" aria-hidden="true">&gt;</span></a>
         </div>
       </div>
       <div class="calendar">
