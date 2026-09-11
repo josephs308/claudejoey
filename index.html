@@ -107,13 +107,14 @@ ul{margin:0;padding:0;list-style:none}
   background:transparent;border:0;border-radius:0;
 }
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
-.brand__mark{display:flex;align-items:flex-end;gap:3px;height:22px}
-.brand__mark i{display:block;width:5px;border-radius:1.5px;background:var(--brand)}
-.brand__mark i:nth-child(1){height:11px}
-.brand__mark i:nth-child(2){height:17px;background:var(--brand-ink)}
-.brand__mark i:nth-child(3){height:22px}
-.brand__word{font-family:var(--font-display);font-weight:700;font-size:19px;letter-spacing:.01em;color:var(--ink-deep)}
-.brand__word span{font-weight:500;color:var(--muted)}
+.brand__mark{display:flex;align-items:flex-end;gap:2.5px;height:23px}
+.brand__mark i{display:block;width:5px;background:var(--brand)}
+.brand__mark i:nth-child(1){height:15px}
+.brand__mark i:nth-child(2){height:23px}
+.brand__mark i:nth-child(3){height:11px}
+.brand__mark i:nth-child(4){height:19px}
+.brand__word{font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:.005em;color:var(--ink-deep)}
+.brand__word span{font-weight:400;letter-spacing:.045em;color:var(--ink-deep)}
 .nav__links{display:flex;align-items:center;gap:30px}
 .nav__links a{font-size:15.5px;font-weight:500;text-decoration:none;color:var(--ink);transition:color 140ms ease}
 .nav__links a:hover{color:var(--brand-ink)}
@@ -408,7 +409,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   <div class="shell">
     <div class="nav__bar">
       <a class="brand" href="#top" aria-label="MBP Results home">
-        <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <span class="brand__word">MBP<span>RESULTS</span></span>
       </a>
       <button class="nav__toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
