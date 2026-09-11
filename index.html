@@ -129,7 +129,7 @@ ul{margin:0;padding:0;list-style:none}
 .hero h1{font-size:var(--h1);max-width:19ch}
 .hero__sub{margin-top:20px;font-size:clamp(1.02rem,1.5vw,1.16rem);color:var(--muted);max-width:30ch}
 .hero__proof{
-  margin-top:28px;display:flex;width:100%;max-width:var(--hero-cta);flex-direction:column;gap:9px;align-items:center;
+  margin-top:28px;margin-left:var(--hero-inset,0);display:flex;width:100%;max-width:var(--hero-cta);flex-direction:column;gap:9px;align-items:center;
   padding:16px 26px;background:var(--brand-soft);border-radius:var(--r-panel);
 }
 .hero__proofNum{font-family:var(--font-display);font-weight:700;font-size:1.24rem;color:var(--ink-deep)}
@@ -137,7 +137,7 @@ ul{margin:0;padding:0;list-style:none}
 .hero__stars b{font-family:var(--font-display);font-weight:600;color:var(--ink);letter-spacing:.01em}
 .stars{color:oklch(0.80 0.155 82);letter-spacing:2px;font-size:15px}
 .hero__cta{margin-top:30px}
-.hero__cta .btn{width:100%;max-width:var(--hero-cta)}
+.hero__cta .btn{width:100%;max-width:var(--hero-cta);margin-left:var(--hero-inset,0)}
 
 /* ---------- asset slots (real files drop in, fallback keeps it legible) ---------- */
 .slot{position:relative;border-radius:var(--r-panel);overflow:hidden;background:var(--paper-tint)}
@@ -791,7 +791,11 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   var heroH1 = document.querySelector('.hero h1');
   if (hero && heroH1) {
     var syncMeasure = function () {
-      if (window.innerWidth <= 1000) { hero.style.removeProperty('--hero-cta'); return; }
+      if (window.innerWidth <= 1000) {
+        hero.style.removeProperty('--hero-cta');
+        hero.style.removeProperty('--hero-inset');
+        return;
+      }
       var range = document.createRange();
       range.selectNodeContents(heroH1);
       var rects = range.getClientRects();
@@ -799,7 +803,11 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       for (var i = 0; i < rects.length; i++) {
         if (rects[i].width > widest) widest = rects[i].width;
       }
-      if (widest > 0) hero.style.setProperty('--hero-cta', Math.ceil(widest) + 'px');
+      if (widest > 0) {
+        var inner = Math.ceil(widest * 0.72);
+        hero.style.setProperty('--hero-cta', inner + 'px');
+        hero.style.setProperty('--hero-inset', Math.round((widest - inner) / 2) + 'px');
+      }
     };
     syncMeasure();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncMeasure);
