@@ -286,7 +286,8 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
 /* ---------- about ---------- */
 .about{padding-block:clamp(56px,7vw,92px);background:var(--band-paper)}
-.about__inner{max-width:60ch;margin-inline:auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
+.about__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,58px);align-items:center}
+.about__body{display:flex;flex-direction:column;align-items:flex-start;gap:20px;max-width:56ch}
 .about h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
 .about p{color:var(--muted)}
 
@@ -376,7 +377,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
-  .hero__grid,.block--split,.booking__grid,.proof__grid{grid-template-columns:minmax(0,1fr)}
+  .hero__grid,.block--split,.booking__grid,.proof__grid,.about__grid{grid-template-columns:minmax(0,1fr)}
   .block--flip .block__body{order:0}
   .quote--lead{grid-row:auto}
   .problem__stage{grid-template-columns:minmax(0,1fr)}
@@ -526,10 +527,9 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
             <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>We handle everything - <a href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">you just answer the phone!</a></li>
           </ul>
         </div>
-        <!-- ASSET 3 of 5: photo, 4:3 -->
         <div class="slot slot--4x3" data-slot>
-          <img src="https://drive.google.com/thumbnail?id=1XnPwM2Jrb1WIzjlT8rgcx7TClOWDAEcw&amp;sz=w1200" alt="An MBP Results team member on a call with a client">
-          <div class="slot__note"><b>Photo</b>Add assets/onboarding.jpg at 4:3.</div>
+          <img src="https://drive.google.com/thumbnail?id=18o7ESL-tqZeU6CYokv6y8QVqzLlbKEnI&amp;sz=w1200" alt="Setting growth goals with a client">
+          <div class="slot__note"><b>Photo</b>Onboarding block.</div>
         </div>
       </div>
 
@@ -571,7 +571,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       </div>
 
       <!-- 4 of 4: full-width stack, breaks the zigzag -->
-      <div class="block block--stack reveal">
+      <div class="block block--split block--flip reveal">
         <div class="block__body">
           <span class="chip"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v94.37L82.14 104a8 8 0 0 1 10.64-.61l34 27.2l38.13-39.44a8 8 0 0 1 11.5 11.12l-43.15 44.63a8 8 0 0 1-10.75.79l-34.39-27.51L40 163.83V200h184a8 8 0 0 1 8 8Z"/></svg>Campaign Management</span>
           <h3>Focus on your business while <span>we optimize your lead flow</span></h3>
@@ -581,6 +581,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
             <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Do what you do best</li>
             <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Let us fill your firm with leads</li>
           </ul>
+        </div>
+        <div class="slot slot--4x3" data-slot>
+          <img src="https://drive.google.com/thumbnail?id=1CjNzEwsCKDE_5aM80UIS4OVXoY6GNPD-&amp;sz=w1200" alt="Reviewing campaign performance">
+          <div class="slot__note"><b>Photo</b>Campaign Management block.</div>
         </div>
       </div>
     </div>
@@ -611,11 +615,17 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 
   <!-- ABOUT -->
   <section class="about" id="about-us">
-    <div class="shell about__inner">
-      <h2 class="reveal">Not your typical agency</h2>
-      <p class="reveal">Marketing Best Practices (MBP Results) is exactly what the name says. We are focused on driving results for your business. We align our incentives with yours. If we can deliver leads, you pay, if not, then you don't.</p>
-      <p class="reveal">With 20+ years of marketing experience including PPC, SEO, LSA, and Meta ads, we know how to get your phone ringing off the hook! Let's talk about how much new business your business can handle right now.</p>
-      <a class="btn reveal" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+    <div class="shell about__grid">
+      <div class="slot slot--4x3 reveal" data-slot>
+        <img src="https://drive.google.com/thumbnail?id=1XnPwM2Jrb1WIzjlT8rgcx7TClOWDAEcw&amp;sz=w1200" alt="The MBP Results team">
+        <div class="slot__note"><b>Photo</b>About section.</div>
+      </div>
+      <div class="about__body">
+        <h2 class="reveal">Meet the team, not your typical agency</h2>
+        <p class="reveal">Marketing Best Practices (MBP Results) is exactly what the name says. We are focused on driving results for your business. We align our incentives with yours. If we can deliver leads, you pay, if not, then you don't.</p>
+        <p class="reveal">With 20+ years of marketing experience including PPC, SEO, LSA, and Meta ads, we know how to get your phone ringing off the hook! Let's talk about how much new business your business can handle right now.</p>
+        <a class="btn reveal" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+      </div>
     </div>
   </section>
 
