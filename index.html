@@ -141,6 +141,21 @@ ul{margin:0;padding:0;list-style:none}
 .hero__cta{margin-top:30px}
 .hero__cta .btn{width:100%;max-width:var(--hero-cta);margin-left:var(--hero-inset,0)}
 
+/* ---------- scroll cue ---------- */
+.scrollcue{
+  display:grid;place-items:center;width:46px;height:46px;margin:clamp(20px,3vw,34px) auto 0;
+  border-radius:var(--r-pill);border:1px solid var(--line);background:var(--panel);
+  transition:border-color 140ms ease,transform 160ms var(--ease-out);
+}
+.scrollcue:hover{border-color:var(--brand-deep);transform:translateY(2px)}
+.scrollcue__chev{
+  width:11px;height:11px;margin-top:-4px;
+  border-right:2px solid var(--brand-deep);border-bottom:2px solid var(--brand-deep);
+  transform:rotate(45deg);animation:cuebob 1.9s var(--ease-in-out) infinite;
+}
+@keyframes cuebob{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(3px,3px)}}
+@media (prefers-reduced-motion: reduce){.scrollcue__chev{animation:none}}
+
 /* ---------- asset slots (real files drop in, fallback keeps it legible) ---------- */
 .slot{position:relative;border-radius:var(--r-panel);overflow:hidden;background:var(--paper-tint)}
 .slot img,.slot video{width:100%;height:100%;object-fit:cover}
@@ -454,6 +469,9 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         <span class="videoframe__label">Video coming soon</span>
       </div>
     </div>
+    <a class="scrollcue" href="#problem" aria-label="Scroll to the next section">
+      <span class="scrollcue__chev" aria-hidden="true"></span>
+    </a>
   </section>
 
   <!-- CLIENT LOGOS: add a logo by dropping the file in assets/logos/ and adding
@@ -484,7 +502,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   </section>
 
   <!-- PROBLEM -->
-  <section class="problem">
+  <section class="problem" id="problem">
     <div class="shell">
       <p class="problem__lead reveal">Being charged for hours, retainers, and no results?</p>
 
