@@ -55,40 +55,9 @@
 
   --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  color-scheme: light;
+  color-scheme: light only;
 }
 
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:      oklch(0.180 0.008 250);
-    --paper-tint: oklch(0.222 0.008 250);
-    --panel:      oklch(0.232 0.008 250);
-    --ink:        oklch(0.964 0.003 95);
-    --ink-deep:   oklch(0.982 0.002 95);
-    --muted:      oklch(0.742 0.006 95);
-    --line:       oklch(0.328 0.008 250);
-    --brand-ink:  oklch(0.780 0.120 236);
-    --brand-soft: oklch(0.292 0.012 250);
-    --ink-surface: oklch(0.146 0.008 250);
-    --ink-raise:   oklch(0.202 0.008 250);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] .client img{mix-blend-mode:screen;filter:invert(1) grayscale(1) brightness(1.6)}
-:root[data-theme="dark"]{
-  --paper:      oklch(0.180 0.008 250);
-  --paper-tint: oklch(0.222 0.008 250);
-  --panel:      oklch(0.232 0.008 250);
-  --ink:        oklch(0.964 0.003 95);
-  --ink-deep:   oklch(0.982 0.002 95);
-  --muted:      oklch(0.742 0.006 95);
-  --line:       oklch(0.328 0.008 250);
-  --brand-ink:  oklch(0.780 0.120 236);
-  --brand-soft: oklch(0.292 0.012 250);
-  --ink-surface: oklch(0.146 0.008 250);
-  --ink-raise:   oklch(0.202 0.008 250);
-  color-scheme: dark;
-}
 
 *{box-sizing:border-box}
 body{
