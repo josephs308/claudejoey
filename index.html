@@ -784,6 +784,32 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
     window.addEventListener('beforeprint', showAll);
   }
 
+  /* The headline is balanced, so its longest rendered line is narrower than
+     its box, by a different amount at every width. Measure that line and hand
+     it to the proof card and CTA so their right edges match exactly. */
+  var hero = document.querySelector('.hero');
+  var heroH1 = document.querySelector('.hero h1');
+  if (hero && heroH1) {
+    var syncMeasure = function () {
+      if (window.innerWidth <= 1000) { hero.style.removeProperty('--hero-cta'); return; }
+      var range = document.createRange();
+      range.selectNodeContents(heroH1);
+      var rects = range.getClientRects();
+      var widest = 0;
+      for (var i = 0; i < rects.length; i++) {
+        if (rects[i].width > widest) widest = rects[i].width;
+      }
+      if (widest > 0) hero.style.setProperty('--hero-cta', Math.ceil(widest) + 'px');
+    };
+    syncMeasure();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncMeasure);
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(syncMeasure, 120);
+    });
+  }
+
   /* Booking calendar preview. Real dates so it always looks current; weekends
      and past days are closed. Swap the whole block for the GHL embed when ready. */
   var cal = document.getElementById('cal');
