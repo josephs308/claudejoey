@@ -437,7 +437,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .foot__links{display:flex;flex-wrap:wrap;gap:26px}
 .foot__links a{font-size:15px;text-decoration:none;color:var(--muted);transition:color 140ms ease}
 .foot__links a:hover{color:var(--ink)}
+.foot__contact{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .foot address{font-style:normal;font-size:14.5px;color:var(--muted)}
+.foot__tel{font-size:14.5px;color:var(--brand-ink);text-decoration:none;text-underline-offset:3px;transition:color 140ms ease}
+.foot__tel:hover{text-decoration:underline}
 
 /* ---------- motion: reveal on scroll, marketing tier ---------- */
 /* --tilt lets a collage piece keep its rotation through the reveal; without it
@@ -499,8 +502,8 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 <!-- ARTIFACT:HEAD-END -->
 
 <!-- Structured data. FAQPage answers are generated from the visible FAQ copy and
-     must stay in sync with it. TODO: add postalAddress + telephone to the business
-     node -- LocalBusiness rich results need them and the page carries neither. -->
+     must stay in sync with it. The business node's address and telephone match the
+     visible NAP in the footer -- Google requires marked-up detail to be on the page. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -514,6 +517,15 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       "name": "MBP Results",
       "alternateName": "Marketing Best Practices",
       "url": "https://neon-madeleine-09c51a.netlify.app/",
+      "telephone": "+1-385-217-1934",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "242 E 8265 S",
+        "addressLocality": "Sandy",
+        "addressRegion": "UT",
+        "postalCode": "84070",
+        "addressCountry": "US"
+      },
       "description": "MBP Results manages Google Local Services Ads for local businesses on a results basis: no set-up fee, no monthly retainer and no long-term contract.",
       "slogan": "If we can deliver leads, you pay. If not, you don't.",
       "areaServed": {
@@ -659,22 +671,22 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
     <div class="marquee" data-marquee>
       <div class="marquee__track">
         <ul class="marquee__set">
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1CxmljDRH_EChNfCWAQoZk7bJIoaZAYMm&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yw6EmkDm0UkamoHjmCNWH9C8-fZEwTnV&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=19f8_RkAAc-1V7GAytiDCjSGeTwLxR0wB&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yPMkLGNnn4iyyZoI8rFUbTYAd1sO8fH9&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1agFRILKngxak3pdcOldNgpziJS6HasQ6&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1_c1jMuvtv4ZBrakGE18H2DtDUQJ13SpD&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1xXj_7w5CKjWzQ0Sr_0Jx4WTUrAgsJlya&amp;sz=w320" alt="Client logo" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1CxmljDRH_EChNfCWAQoZk7bJIoaZAYMm&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yw6EmkDm0UkamoHjmCNWH9C8-fZEwTnV&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=19f8_RkAAc-1V7GAytiDCjSGeTwLxR0wB&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yPMkLGNnn4iyyZoI8rFUbTYAd1sO8fH9&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1agFRILKngxak3pdcOldNgpziJS6HasQ6&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1_c1jMuvtv4ZBrakGE18H2DtDUQJ13SpD&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1xXj_7w5CKjWzQ0Sr_0Jx4WTUrAgsJlya&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
         </ul>
         <ul class="marquee__set" aria-hidden="true">
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1CxmljDRH_EChNfCWAQoZk7bJIoaZAYMm&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yw6EmkDm0UkamoHjmCNWH9C8-fZEwTnV&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=19f8_RkAAc-1V7GAytiDCjSGeTwLxR0wB&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yPMkLGNnn4iyyZoI8rFUbTYAd1sO8fH9&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1agFRILKngxak3pdcOldNgpziJS6HasQ6&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1_c1jMuvtv4ZBrakGE18H2DtDUQJ13SpD&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1xXj_7w5CKjWzQ0Sr_0Jx4WTUrAgsJlya&amp;sz=w320" alt="Client logo" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1CxmljDRH_EChNfCWAQoZk7bJIoaZAYMm&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yw6EmkDm0UkamoHjmCNWH9C8-fZEwTnV&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=19f8_RkAAc-1V7GAytiDCjSGeTwLxR0wB&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yPMkLGNnn4iyyZoI8rFUbTYAd1sO8fH9&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1agFRILKngxak3pdcOldNgpziJS6HasQ6&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1_c1jMuvtv4ZBrakGE18H2DtDUQJ13SpD&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img src="https://drive.google.com/thumbnail?id=1xXj_7w5CKjWzQ0Sr_0Jx4WTUrAgsJlya&amp;sz=w320" alt="MBP Results" loading="lazy"></li>
         </ul>
       </div>
     </div>
@@ -896,7 +908,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       <a href="#testimonials">Testimonials</a>
       <a href="#book-a-call">Free Strategy Session</a>
     </nav>
-    <address>242 E 8265 S, Sandy Utah 84070</address>
+    <div class="foot__contact">
+      <address>242 E 8265 S, Sandy Utah 84070</address>
+      <a class="foot__tel" href="tel:+13852171934">(385) 217-1934</a>
+    </div>
   </div>
 </footer>
 <!-- ARTIFACT:BODY-END -->
