@@ -310,6 +310,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center;max-width:15ch;margin:0}
 .problem h2 em{font-style:normal;color:var(--accent-head)}
 .problem .slot{width:100%}
+.pains{display:none}
 
 .note{
   padding:22px 26px;border-radius:4px;font-size:16.5px;line-height:1.5;color:var(--ink);
@@ -502,10 +503,20 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   /* unwrap the centre column so the strips can interleave in reading order */
   .problem__stage{grid-template-columns:minmax(0,1fr);row-gap:clamp(14px,3vw,24px);justify-items:center}
   .problem__center{display:contents}
-  .problem__lead{order:1;width:min(300px,70%)}
-  .problem h2{order:2}
+  .problem__lead{display:none}
+  .problem h2{order:1}
+  .pains{order:2}
   .problem .slot{order:3}
   .problem__foot{order:4}
+  /* #e2f2ff is sampled straight off the supplied card artwork */
+  .pains{
+    display:grid;gap:12px;grid-column:1;width:min(380px,94%);
+    margin:0;padding:0;list-style:none;
+  }
+  .pains li{
+    background:#e2f2ff;color:var(--ink);border-radius:14px;
+    padding:20px 22px;text-align:center;font-size:16.5px;line-height:1.45;
+  }
   /* stacked, each strip is 2x its own width tall and carries ~22% dead space at
      the top and ~18% at the bottom; pull that back so the pieces read as a list. */
   .mock{display:none}
@@ -754,6 +765,14 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           <img decoding="async" class="problem__lead reveal" src="assets/problem-lead-card.webp" width="383" height="174" alt="Being charged for hours, retainers, and no results?">
 
           <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
+
+          <!-- Mobile only. The desktop strips are a column composition that does not
+               stack, so below 1000px the same three points are restated as text. -->
+          <ul class="pains reveal">
+            <li>Being charged for hours, retainers, and no results?</li>
+            <li>Low volume of calls and poor quality leads</li>
+            <li>The phone doesn&rsquo;t ring regardless of your budget, and if it does, it&rsquo;s never a case</li>
+          </ul>
 
           <div class="slot slot--4x3 reveal" data-slot>
             <img decoding="async" src="assets/problem-photo.webp" width="1000" height="800" alt="A business owner at a laptop with their head in their hands">
