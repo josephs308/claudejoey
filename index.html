@@ -308,9 +308,46 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .booking p{margin-top:18px;color:var(--ink-muted);max-width:44ch}
 .booking__cta{margin-top:28px}
 .calendar{border-radius:var(--r-panel);overflow:hidden;background:var(--ink-raise);border:1px solid var(--ink-line);min-height:460px;display:flex}
+.calendar > .cal{min-height:inherit}
 .calendar iframe{width:100%;min-height:460px;border:0}
 .calendar__note{margin:auto;padding:30px;text-align:center;color:var(--ink-muted);font-size:14.5px;line-height:1.5}
 .calendar__note b{display:block;font-family:var(--font-display);font-weight:600;color:var(--ink-text);font-size:15.5px;margin-bottom:6px}
+
+/* ---------- booking calendar (mock preview) ---------- */
+.cal{width:100%;padding:clamp(18px,2.2vw,26px);display:flex;flex-direction:column;gap:14px}
+.cal__head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cal__month{font-family:var(--font-display);font-weight:600;font-size:1.05rem;color:var(--ink-text)}
+.cal__nav{
+  width:34px;height:34px;border-radius:var(--r-pill);cursor:pointer;font-size:19px;line-height:1;
+  background:transparent;border:1px solid var(--ink-line);color:var(--ink-text);
+  transition:background 140ms ease,border-color 140ms ease;
+}
+.cal__nav:hover{background:var(--brand-soft);border-color:var(--brand-deep)}
+.cal__dow,.cal__grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal__dow span{text-align:center;font-size:12px;font-weight:600;color:var(--ink-muted);padding-bottom:2px}
+.cal__day{
+  aspect-ratio:1;border:0;border-radius:var(--r-control);cursor:pointer;
+  font-family:var(--font-body);font-size:14.5px;font-variant-numeric:tabular-nums;
+  background:var(--ink-surface);color:var(--ink-text);
+  transition:background 140ms ease,color 140ms ease,transform 120ms var(--ease-out);
+}
+.cal__day:hover:not(:disabled){background:var(--brand-soft)}
+.cal__day:active:not(:disabled){transform:scale(0.94)}
+.cal__day[disabled]{background:transparent;color:oklch(0.72 0.008 246);cursor:default}
+.cal__day.is-empty{background:transparent;cursor:default}
+.cal__day[aria-pressed="true"]{background:var(--brand-deep);color:oklch(1 0 0);font-weight:600}
+.cal__slots{display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--ink-line);padding-top:14px}
+.cal__slots[hidden]{display:none}
+.cal__slotsHead{font-size:13.5px;font-weight:600;color:var(--ink-muted)}
+.cal__slotRow{display:flex;flex-wrap:wrap;gap:8px}
+.cal__slot{
+  padding:9px 15px;border-radius:var(--r-pill);cursor:pointer;font-size:14px;font-family:var(--font-body);
+  background:transparent;border:1px solid var(--ink-line);color:var(--ink-text);
+  transition:background 140ms ease,border-color 140ms ease;
+}
+.cal__slot:hover{border-color:var(--brand-deep)}
+.cal__slot[aria-pressed="true"]{background:var(--brand-deep);border-color:var(--brand-deep);color:oklch(1 0 0)}
+.cal__cta{margin-top:auto;width:100%}
 
 /* ---------- footer ---------- */
 .foot{background:var(--paper-tint);color:var(--ink);padding-block:44px;border-top:1px solid var(--line)}
@@ -640,8 +677,21 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         </div>
       </div>
       <div class="calendar">
-        <!-- Paste the GoHighLevel calendar embed iframe here, then delete the note below. -->
-        <p class="calendar__note"><b>Calendar embed</b>Drop your GoHighLevel calendar iframe into this container. Until then the button on the left books the call.</p>
+        <!-- Mock preview. Replace this whole block with the GoHighLevel embed iframe when ready. -->
+        <div class="cal" id="cal">
+          <div class="cal__head">
+            <button class="cal__nav" type="button" id="calPrev" aria-label="Previous month">&#8249;</button>
+            <span class="cal__month" id="calMonth"></span>
+            <button class="cal__nav" type="button" id="calNext" aria-label="Next month">&#8250;</button>
+          </div>
+          <div class="cal__dow" aria-hidden="true"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+          <div class="cal__grid" id="calGrid"></div>
+          <div class="cal__slots" id="calSlots" hidden>
+            <span class="cal__slotsHead" id="calSlotsHead"></span>
+            <div class="cal__slotRow" id="calSlotRow"></div>
+          </div>
+          <a class="btn btn--onDark cal__cta" id="calCta" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Pick a day to continue</a>
+        </div>
       </div>
     </div>
   </section>
@@ -728,6 +778,90 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
     // Fail open: nothing on this page may stay hidden waiting on a scroll.
     setTimeout(showAll, 2600);
     window.addEventListener('beforeprint', showAll);
+  }
+
+  /* Booking calendar preview. Real dates so it always looks current; weekends
+     and past days are closed. Swap the whole block for the GHL embed when ready. */
+  var cal = document.getElementById('cal');
+  if (cal) {
+    var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var SLOTS = ['9:00 am','9:30 am','10:30 am','11:00 am','1:00 pm','2:30 pm','3:00 pm','4:00 pm'];
+    var today = new Date(); today.setHours(0,0,0,0);
+    var view = new Date(today.getFullYear(), today.getMonth(), 1);
+    var chosenDay = null, chosenSlot = null;
+    var grid = document.getElementById('calGrid');
+    var monthLabel = document.getElementById('calMonth');
+    var slotsWrap = document.getElementById('calSlots');
+    var slotsHead = document.getElementById('calSlotsHead');
+    var slotRow = document.getElementById('calSlotRow');
+    var cta = document.getElementById('calCta');
+
+    function closed(d) { var n = d.getDay(); return n === 0 || n === 6 || d < today; }
+
+    function updateCta() {
+      if (chosenDay && chosenSlot) {
+        cta.textContent = 'Book ' + MONTHS[chosenDay.getMonth()].slice(0,3) + ' ' + chosenDay.getDate() + ' at ' + chosenSlot + ' >';
+      } else if (chosenDay) {
+        cta.textContent = 'Pick a time to continue';
+      } else {
+        cta.textContent = 'Pick a day to continue';
+      }
+    }
+
+    function renderSlots() {
+      slotRow.innerHTML = '';
+      slotsHead.textContent = 'Available on ' + MONTHS[chosenDay.getMonth()] + ' ' + chosenDay.getDate();
+      SLOTS.forEach(function (t) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'cal__slot'; b.textContent = t;
+        b.setAttribute('aria-pressed', String(chosenSlot === t));
+        b.addEventListener('click', function () {
+          chosenSlot = t;
+          Array.prototype.forEach.call(slotRow.children, function (el) {
+            el.setAttribute('aria-pressed', String(el === b));
+          });
+          updateCta();
+        });
+        slotRow.appendChild(b);
+      });
+      slotsWrap.hidden = false;
+    }
+
+    function render() {
+      grid.innerHTML = '';
+      monthLabel.textContent = MONTHS[view.getMonth()] + ' ' + view.getFullYear();
+      var first = new Date(view.getFullYear(), view.getMonth(), 1);
+      var days = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+      for (var i = 0; i < first.getDay(); i++) {
+        var pad = document.createElement('span');
+        pad.className = 'cal__day is-empty';
+        grid.appendChild(pad);
+      }
+      for (var d = 1; d <= days; d++) {
+        (function (d) {
+          var date = new Date(view.getFullYear(), view.getMonth(), d);
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'cal__day'; b.textContent = d;
+          if (closed(date)) { b.disabled = true; }
+          else {
+            b.setAttribute('aria-pressed', String(!!chosenDay && chosenDay.getTime() === date.getTime()));
+            b.addEventListener('click', function () {
+              chosenDay = date; chosenSlot = null;
+              render(); renderSlots(); updateCta();
+            });
+          }
+          grid.appendChild(b);
+        })(d);
+      }
+    }
+
+    document.getElementById('calPrev').addEventListener('click', function () {
+      view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render();
+    });
+    document.getElementById('calNext').addEventListener('click', function () {
+      view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render();
+    });
+    render(); updateCta();
   }
 
   /* Budget estimate. Ranges are typical LSA cost per lead by category,
