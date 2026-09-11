@@ -107,6 +107,7 @@ ul{margin:0;padding:0;list-style:none}
   background:transparent;border:0;border-radius:0;
 }
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+.brand__logo{height:clamp(26px,2.4vw,34px);width:auto;object-fit:contain;mix-blend-mode:multiply}
 .brand__mark{display:flex;align-items:flex-end;gap:2.5px;height:23px}
 .brand__mark i{display:block;width:5px;background:var(--brand)}
 .brand__mark i:nth-child(1){height:15px}
@@ -409,8 +410,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   <div class="shell">
     <div class="nav__bar">
       <a class="brand" href="#top" aria-label="MBP Results home">
-        <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span class="brand__word">MBP<span>RESULTS</span></span>
+        <img class="brand__logo" src="https://drive.google.com/thumbnail?id=1OLbaVggPmivCJOGLlV1coHrkI7Cwhdxj&amp;sz=w600" alt="MBP Results">
       </a>
       <button class="nav__toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
       <nav class="nav__links" id="navLinks">
