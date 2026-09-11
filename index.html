@@ -231,35 +231,30 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 }
 
 /* ---------- problem section: scattered evidence ---------- */
-/* the supplied graphics are tall portraits (750x1500) and the lead card is
-   449x362 -- so everything here is sized by HEIGHT, not width, or the row
-   blows out to 600px and the collage reads as three lonely columns. */
+/* The two side files are 750x1500 column strips, not cards -- the widget and the
+   note are already positioned inside them by the artwork's own whitespace. So the
+   strips span the full stage height and are fitted with contain; the centre column
+   drives the height and the strips align themselves against it. */
 .problem{padding-block:clamp(26px,3.2vw,42px) clamp(48px,7vw,84px);background:var(--band-paper)}
 .problem__stage{
-  max-width:820px;margin-inline:auto;
-  display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) minmax(0,auto);
-  column-gap:0;row-gap:clamp(4px,0.8vw,10px);
-  align-items:center;justify-items:center;
+  max-width:min(1500px,94vw);margin-inline:auto;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:clamp(6px,1.6vw,28px);align-items:stretch;
 }
-.problem__lead{grid-column:2;grid-row:1;display:block;width:min(320px,78%);height:auto}
-.problem h2{grid-column:2;grid-row:2;margin-block:clamp(2px,0.6vw,10px) clamp(6px,1vw,14px)}
-.mock--leads{grid-column:1;grid-row:3}
-.problem .slot{grid-column:2;grid-row:3}
-.mock--quality{grid-column:3;grid-row:3}
+/* the strips and the lead card ship on a white ground; multiply drops that
+   white into the band colour instead of leaving visible rectangles on it. */
+.mock{display:block;width:100%;height:100%;object-fit:contain;object-position:center;mix-blend-mode:multiply}
+.mock--leads{grid-column:1}
+.mock--quality{grid-column:3}
 
-.problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center;max-width:15ch}
+.problem__center{
+  grid-column:2;display:flex;flex-direction:column;align-items:center;
+  gap:clamp(14px,2.2vw,30px);
+}
+.problem__lead{display:block;width:min(440px,88%);height:auto;mix-blend-mode:multiply}
+.problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center;max-width:15ch;margin:0}
 .problem h2 em{font-style:normal;color:var(--brand-ink)}
-.problem .slot{width:100%;max-width:520px;position:relative;z-index:2}
-
-/* the two supplied interface shots -- capped by height so a 1:2 portrait
-   lands at roughly the photo's height, then tucked in over its edges. */
-.mock{
-  display:block;width:auto;height:auto;max-width:none;
-  max-height:clamp(230px,25vw,330px);
-  transform:rotate(var(--tilt,0deg));position:relative;z-index:1;
-}
-.mock--leads{--tilt:-4deg;margin-right:clamp(-56px,-3.4vw,-26px)}
-.mock--quality{--tilt:3deg;margin-left:clamp(-56px,-3.4vw,-26px)}
+.problem .slot{width:100%}
 
 .note{
   padding:22px 26px;border-radius:4px;font-size:16.5px;line-height:1.5;color:var(--ink);
@@ -268,7 +263,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .note--left{--tilt:-3.2deg;background:oklch(0.955 0.002 250);transform:rotate(var(--tilt))}
 .note--right{--tilt:2.6deg;background:oklch(0.930 0.045 205);transform:rotate(var(--tilt))}
 
-.problem__foot{margin-top:clamp(10px,1.6vw,22px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.problem__foot{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
 .problem__foot p{color:var(--muted);max-width:44ch}
 
 /* ---------- dark block: the one theme switch ---------- */
@@ -444,11 +439,20 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   .hero__proof,.hero__cta .btn{max-width:none;margin-left:0}
   .block--flip .block__body{order:0}
   .quote--lead{grid-row:auto}
-  .problem__stage{grid-template-columns:minmax(0,1fr);row-gap:clamp(14px,3vw,24px)}
-  .problem__lead,.problem h2,.mock--leads,.problem .slot,.mock--quality{grid-column:1;grid-row:auto}
-  .mock{max-height:none;width:min(260px,66%);margin-inline:0}
-  .problem__lead{width:min(320px,80%)}
-  .note--left,.note--right,.mock{--tilt:0deg}
+  /* unwrap the centre column so the strips can interleave in reading order */
+  .problem__stage{grid-template-columns:minmax(0,1fr);row-gap:clamp(14px,3vw,24px);justify-items:center}
+  .problem__center{display:contents}
+  .problem__lead{order:1;width:min(340px,82%)}
+  .problem h2{order:2}
+  .mock--leads{order:3}
+  .problem .slot{order:4}
+  .mock--quality{order:5}
+  .problem__foot{order:6}
+  /* stacked, each strip is 2x its own width tall and carries ~22% dead space at
+     the top and ~18% at the bottom; pull that back so the pieces read as a list. */
+  .mock{--mw:min(300px,78vw);grid-column:1;width:var(--mw);height:auto;object-fit:fill;
+        margin-top:calc(var(--mw) * -0.40);margin-bottom:calc(var(--mw) * -0.32)}
+  .note--left,.note--right{--tilt:0deg}
 }
 @media (max-width:860px){
   .nav__links{
@@ -554,24 +558,29 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   <!-- PROBLEM -->
   <section class="problem" id="problem">
     <div class="shell">
+      <!-- The left/right files are full-height column strips: the widget sits near
+           the top, the note about two thirds down, and the artwork's own whitespace
+           does the vertical placement. So they span every row and are fitted with
+           object-fit:contain -- never cropped to a "card" height. -->
       <div class="problem__stage">
-        <img class="problem__lead reveal" src="https://drive.google.com/thumbnail?id=1xvvjs-dq9-yjN0IXyew2MnI47BXzMgiy&amp;sz=w800" alt="Being charged for hours, retainers, and no results?">
+        <img class="mock mock--leads reveal" src="https://drive.google.com/thumbnail?id=1JlnEiFUDJOq3TGAkJfqUcUAUR63nd-aJ&amp;sz=w800" alt="An empty leads inbox above a note reading low volume of calls and poor quality of leads">
 
-        <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
+        <div class="problem__center">
+          <img class="problem__lead reveal" src="https://drive.google.com/thumbnail?id=1xvvjs-dq9-yjN0IXyew2MnI47BXzMgiy&amp;sz=w800" alt="Being charged for hours, retainers, and no results?">
 
-        <img class="mock mock--leads reveal" src="https://drive.google.com/thumbnail?id=1JlnEiFUDJOq3TGAkJfqUcUAUR63nd-aJ&amp;sz=w800" alt="An empty leads inbox beside a note reading low volume of calls and poor quality of leads">
+          <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
 
-        <div class="slot slot--4x3 reveal" data-slot>
-          <img src="https://drive.google.com/thumbnail?id=1sIOOp03V9nyUzCwYZKwJ2JmDedgOFEvr&amp;sz=w1200" alt="A business owner at a laptop with their head in their hands">
-          <div class="slot__note"><b>Photo</b>Problem section.</div>
+          <div class="slot slot--4x3 reveal" data-slot>
+            <img src="https://drive.google.com/thumbnail?id=1sIOOp03V9nyUzCwYZKwJ2JmDedgOFEvr&amp;sz=w1200" alt="A business owner at a laptop with their head in their hands">
+          </div>
+
+          <div class="problem__foot reveal">
+            <a class="btn" href="#book-a-call">Book A Free Strategy Call &gt;</a>
+            <p>Find out how we can get your phone ringing off the hook with good quality leads.</p>
+          </div>
         </div>
 
-        <img class="mock mock--quality reveal" src="https://drive.google.com/thumbnail?id=1UAW3GqEgfbSG5xGqH2EUMmdWaWUOvc7r&amp;sz=w800" alt="Leads marked poor quality beside a note reading the phone does not ring regardless of budget">
-      </div>
-
-      <div class="problem__foot">
-        <a class="btn" href="#book-a-call">Book A Free Strategy Call &gt;</a>
-        <p>Find out how we can get your phone ringing off the hook with good quality leads.</p>
+        <img class="mock mock--quality reveal" src="https://drive.google.com/thumbnail?id=1UAW3GqEgfbSG5xGqH2EUMmdWaWUOvc7r&amp;sz=w800" alt="Leads marked poor quality above a note reading the phone does not ring regardless of budget">
       </div>
     </div>
   </section>
