@@ -20,26 +20,26 @@
 
 :root{
   /* palette - OKLCH, neutrals tinted toward the brand hue */
-  --paper:      oklch(0.985 0.005 240);
-  --paper-tint: oklch(0.962 0.016 236);
+  --paper:      oklch(0.986 0.002 95);
+  --paper-tint: oklch(0.957 0.003 95);
   --panel:      oklch(1 0 0 / 1);
-  --ink:        oklch(0.245 0.032 250);
-  --ink-deep:   oklch(0.205 0.030 252);
-  --muted:      oklch(0.520 0.022 246);
-  --line:       oklch(0.900 0.012 244);
+  --ink:        oklch(0.240 0.008 95);
+  --ink-deep:   oklch(0.195 0.008 95);
+  --muted:      oklch(0.515 0.006 95);
+  --line:       oklch(0.902 0.004 95);
 
   /* one accent, locked for the whole page */
   --brand:      oklch(0.700 0.135 235);
   --brand-deep: oklch(0.560 0.132 242);
   --brand-ink:  oklch(0.470 0.120 244);
-  --brand-soft: oklch(0.945 0.032 235);
+  --brand-soft: oklch(0.950 0.004 95);
 
   /* on the dark block */
-  --ink-surface: oklch(0.215 0.030 252);
-  --ink-raise:   oklch(0.265 0.030 251);
-  --ink-line:    oklch(0.340 0.026 250);
-  --ink-text:    oklch(0.962 0.008 240);
-  --ink-muted:   oklch(0.760 0.020 244);
+  --ink-surface: oklch(0.208 0.010 250);
+  --ink-raise:   oklch(0.258 0.010 250);
+  --ink-line:    oklch(0.338 0.009 250);
+  --ink-text:    oklch(0.964 0.003 95);
+  --ink-muted:   oklch(0.762 0.006 95);
 
   /* shape system: panels 14px, controls 10px, buttons full pill */
   --r-panel: 14px;
@@ -60,32 +60,32 @@
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:      oklch(0.185 0.026 252);
-    --paper-tint: oklch(0.225 0.028 250);
-    --panel:      oklch(0.235 0.028 250);
-    --ink:        oklch(0.962 0.008 240);
-    --ink-deep:   oklch(0.980 0.006 240);
-    --muted:      oklch(0.740 0.020 244);
-    --line:       oklch(0.330 0.024 250);
+    --paper:      oklch(0.180 0.008 250);
+    --paper-tint: oklch(0.222 0.008 250);
+    --panel:      oklch(0.232 0.008 250);
+    --ink:        oklch(0.964 0.003 95);
+    --ink-deep:   oklch(0.982 0.002 95);
+    --muted:      oklch(0.742 0.006 95);
+    --line:       oklch(0.328 0.008 250);
     --brand-ink:  oklch(0.780 0.120 236);
-    --brand-soft: oklch(0.300 0.045 240);
-    --ink-surface: oklch(0.150 0.024 253);
-    --ink-raise:   oklch(0.205 0.026 252);
+    --brand-soft: oklch(0.292 0.012 250);
+    --ink-surface: oklch(0.146 0.008 250);
+    --ink-raise:   oklch(0.202 0.008 250);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"]{
-  --paper:      oklch(0.185 0.026 252);
-  --paper-tint: oklch(0.225 0.028 250);
-  --panel:      oklch(0.235 0.028 250);
-  --ink:        oklch(0.962 0.008 240);
-  --ink-deep:   oklch(0.980 0.006 240);
-  --muted:      oklch(0.740 0.020 244);
-  --line:       oklch(0.330 0.024 250);
+  --paper:      oklch(0.180 0.008 250);
+  --paper-tint: oklch(0.222 0.008 250);
+  --panel:      oklch(0.232 0.008 250);
+  --ink:        oklch(0.964 0.003 95);
+  --ink-deep:   oklch(0.982 0.002 95);
+  --muted:      oklch(0.742 0.006 95);
+  --line:       oklch(0.328 0.008 250);
   --brand-ink:  oklch(0.780 0.120 236);
-  --brand-soft: oklch(0.300 0.045 240);
-  --ink-surface: oklch(0.150 0.024 253);
-  --ink-raise:   oklch(0.205 0.026 252);
+  --brand-soft: oklch(0.292 0.012 250);
+  --ink-surface: oklch(0.146 0.008 250);
+  --ink-raise:   oklch(0.202 0.008 250);
   color-scheme: dark;
 }
 
@@ -134,7 +134,7 @@ ul{margin:0;padding:0;list-style:none}
   display:flex;align-items:center;justify-content:space-between;gap:24px;
   height:72px;padding:0 14px 0 24px;
   background:var(--panel);border:1px solid var(--line);border-radius:var(--r-panel);
-  box-shadow:0 10px 30px -22px oklch(0.245 0.032 250 / .55);
+  box-shadow:0 10px 30px -22px oklch(0.240 0.008 95 / .5);
 }
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
 .brand__mark{display:flex;align-items:flex-end;gap:3px;height:22px}
@@ -339,7 +339,7 @@ ul{margin:0;padding:0;list-style:none}
     display:none;position:absolute;left:var(--gutter);right:var(--gutter);top:96px;
     flex-direction:column;align-items:flex-start;gap:4px;padding:12px;
     background:var(--panel);border:1px solid var(--line);border-radius:var(--r-panel);
-    box-shadow:0 20px 40px -26px oklch(0.245 0.032 250 / .6);
+    box-shadow:0 20px 40px -26px oklch(0.240 0.008 95 / .55);
   }
   .nav__links.is-open{display:flex}
   .nav__links a{padding:12px 10px;width:100%}
@@ -398,10 +398,11 @@ ul{margin:0;padding:0;list-style:none}
           <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
         </div>
       </div>
-      <!-- ASSET 1 of 5: hero video, 16:9. Drop in assets/hero.mp4 and assets/hero-poster.jpg -->
+      <!-- Placeholder stock. Swap src for assets/hero.jpg, or drop in a
+           <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" controls playsinline></video> -->
       <div class="slot slot--16x9" data-slot>
-        <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" controls playsinline preload="metadata"></video>
-        <div class="slot__note"><b>Hero video</b>Add assets/hero.mp4 plus assets/hero-poster.jpg at 16:9.</div>
+        <img src="https://picsum.photos/seed/mbp-lsa-hero-call/1200/675" alt="Tradesperson taking a call on site">
+        <div class="slot__note"><b>Hero image</b>Add assets/hero.jpg or assets/hero.mp4 at 16:9.</div>
       </div>
     </div>
   </section>
@@ -430,7 +431,7 @@ ul{margin:0;padding:0;list-style:none}
           <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
           <!-- ASSET 2 of 5: photo, 4:3 -->
           <div class="slot slot--4x3 reveal" data-slot style="width:100%">
-            <img src="assets/frustrated-owner.jpg" alt="A business owner at a laptop with their head in their hands">
+            <img src="https://picsum.photos/seed/mbp-lsa-quiet-phone/900/675" alt="A business owner at a laptop with their head in their hands">
             <div class="slot__note"><b>Photo</b>Add assets/frustrated-owner.jpg at 4:3.</div>
           </div>
         </div>
@@ -464,7 +465,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
         <!-- ASSET 3 of 5: photo, 4:3 -->
         <div class="slot slot--4x3" data-slot>
-          <img src="assets/onboarding.jpg" alt="An MBP Results team member on a call with a client">
+          <img src="https://picsum.photos/seed/mbp-lsa-strategy-call/900/675" alt="An MBP Results team member on a call with a client">
           <div class="slot__note"><b>Photo</b>Add assets/onboarding.jpg at 4:3.</div>
         </div>
       </div>
@@ -483,7 +484,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
         <!-- ASSET 4 of 5: photo, 4:3 -->
         <div class="slot slot--4x3" data-slot>
-          <img src="assets/lsa-ranking.jpg" alt="A Google Screened Local Services Ads result on a phone">
+          <img src="https://picsum.photos/seed/mbp-lsa-local-business/900/675" alt="A Google Screened Local Services Ads result on a phone">
           <div class="slot__note"><b>Photo</b>Add assets/lsa-ranking.jpg at 4:3.</div>
         </div>
       </div>
