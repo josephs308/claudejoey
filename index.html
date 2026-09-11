@@ -100,10 +100,10 @@ ul{margin:0;padding:0;list-style:none}
 
 /* ---------- navigation: one line, 72px ---------- */
 .nav{position:sticky;top:0;z-index:40;background:var(--panel);border-bottom:1px solid var(--line)}
-.nav > .shell{max-width:var(--shell);padding-inline:var(--gutter)}
+.nav > .shell{max-width:none;padding-inline:0}
 .nav__bar{
   display:flex;align-items:center;justify-content:space-between;gap:24px;
-  height:74px;padding-inline:0;
+  height:74px;padding-inline:clamp(18px,5vw,48px);
   background:transparent;border:0;border-radius:0;
 }
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
@@ -397,7 +397,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 @media (max-width:560px){
   body{font-size:16px}
   .btn{width:100%;padding:16px 24px}
-  .nav__bar{padding-inline:0}
+  .nav__bar{padding-inline:18px}
   .hero__proof{width:100%}
 }
 </style>
