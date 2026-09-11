@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MBP Results runs Google Local Services Ads for local businesses on a 100% results basis. No set-up fee, no monthly retainers, no long-term contracts.">
+<!-- ARTIFACT:HEAD-START -->
+<title>MBP Results LSA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Geist:wght@400;500;600&display=swap">
+<style>
+/* ============================================================
+   MBP Results - Local Services Ads landing page
+   Design read: agency landing for local service owners and law
+   firm partners. Trust-first direct response.
+   Dials: VARIANCE 6 / MOTION 5 / DENSITY 4 (redesign, preserve).
+   Accent locked to the MBP blue. One radius system.
+   ============================================================ */
+
+:root{
+  /* palette - OKLCH, neutrals tinted toward the brand hue */
+  --paper:      oklch(0.985 0.005 240);
+  --paper-tint: oklch(0.962 0.016 236);
+  --panel:      oklch(1 0 0 / 1);
+  --ink:        oklch(0.245 0.032 250);
+  --ink-deep:   oklch(0.205 0.030 252);
+  --muted:      oklch(0.520 0.022 246);
+  --line:       oklch(0.900 0.012 244);
+
+  /* one accent, locked for the whole page */
+  --brand:      oklch(0.700 0.135 235);
+  --brand-deep: oklch(0.560 0.132 242);
+  --brand-ink:  oklch(0.470 0.120 244);
+  --brand-soft: oklch(0.945 0.032 235);
+
+  /* on the dark block */
+  --ink-surface: oklch(0.215 0.030 252);
+  --ink-raise:   oklch(0.265 0.030 251);
+  --ink-line:    oklch(0.340 0.026 250);
+  --ink-text:    oklch(0.962 0.008 240);
+  --ink-muted:   oklch(0.760 0.020 244);
+
+  /* shape system: panels 14px, controls 10px, buttons full pill */
+  --r-panel: 14px;
+  --r-control: 10px;
+  --r-pill: 999px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --shell: 1240px;
+  --gutter: clamp(18px, 5vw, 48px);
+
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:      oklch(0.185 0.026 252);
+    --paper-tint: oklch(0.225 0.028 250);
+    --panel:      oklch(0.235 0.028 250);
+    --ink:        oklch(0.962 0.008 240);
+    --ink-deep:   oklch(0.980 0.006 240);
+    --muted:      oklch(0.740 0.020 244);
+    --line:       oklch(0.330 0.024 250);
+    --brand-ink:  oklch(0.780 0.120 236);
+    --brand-soft: oklch(0.300 0.045 240);
+    --ink-surface: oklch(0.150 0.024 253);
+    --ink-raise:   oklch(0.205 0.026 252);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:      oklch(0.185 0.026 252);
+  --paper-tint: oklch(0.225 0.028 250);
+  --panel:      oklch(0.235 0.028 250);
+  --ink:        oklch(0.962 0.008 240);
+  --ink-deep:   oklch(0.980 0.006 240);
+  --muted:      oklch(0.740 0.020 244);
+  --line:       oklch(0.330 0.024 250);
+  --brand-ink:  oklch(0.780 0.120 236);
+  --brand-soft: oklch(0.300 0.045 240);
+  --ink-surface: oklch(0.150 0.024 253);
+  --ink-raise:   oklch(0.205 0.026 252);
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-0.018em;line-height:1.08;text-wrap:balance;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--brand-deep);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.shell{max-width:var(--shell);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ---------- buttons: one pill system ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5ch;
+  font-family:var(--font-display);font-weight:600;font-size:16px;line-height:1;
+  white-space:nowrap;text-decoration:none;cursor:pointer;border:0;
+  padding:17px 30px;border-radius:var(--r-pill);
+  background:var(--brand-deep);color:oklch(1 0 0);
+  transition:background 140ms ease, transform 120ms var(--ease-out);
+}
+.btn:hover{background:var(--brand-ink)}
+.btn:active{transform:scale(0.98)}
+.btn--ghost{
+  background:transparent;color:var(--brand-ink);
+  box-shadow:inset 0 0 0 1.5px var(--brand-deep);padding:13px 24px;font-size:15px;
+}
+.btn--ghost:hover{background:var(--brand-soft)}
+.btn--onDark{background:var(--brand);color:var(--ink-deep)}
+.btn--onDark:hover{background:oklch(0.780 0.120 236)}
+
+/* ---------- navigation: one line, 72px ---------- */
+.nav{position:sticky;top:0;z-index:40;padding-top:14px;background:linear-gradient(var(--paper) 55%, transparent)}
+.nav__bar{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  height:72px;padding:0 14px 0 24px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r-panel);
+  box-shadow:0 10px 30px -22px oklch(0.245 0.032 250 / .55);
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+.brand__mark{display:flex;align-items:flex-end;gap:3px;height:22px}
+.brand__mark i{display:block;width:5px;border-radius:1.5px;background:var(--brand)}
+.brand__mark i:nth-child(1){height:11px}
+.brand__mark i:nth-child(2){height:17px;background:var(--brand-ink)}
+.brand__mark i:nth-child(3){height:22px}
+.brand__word{font-family:var(--font-display);font-weight:700;font-size:19px;letter-spacing:.01em;color:var(--ink-deep)}
+.brand__word span{font-weight:500;color:var(--muted)}
+.nav__links{display:flex;align-items:center;gap:30px}
+.nav__links a{font-size:15.5px;font-weight:500;text-decoration:none;color:var(--ink);transition:color 140ms ease}
+.nav__links a:hover{color:var(--brand-ink)}
+.nav__toggle{display:none}
+
+/* ---------- hero: asymmetric split ---------- */
+.hero{padding-block:clamp(40px,6vw,76px) clamp(48px,7vw,86px)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);gap:clamp(28px,4.5vw,56px);align-items:center}
+.hero h1{font-size:clamp(2rem,3.55vw,3.05rem);max-width:17ch}
+.hero__sub{margin-top:20px;font-size:clamp(1.02rem,1.5vw,1.16rem);color:var(--muted);max-width:30ch}
+.hero__proof{
+  margin-top:28px;display:inline-flex;flex-direction:column;gap:9px;align-items:center;
+  padding:16px 26px;background:var(--brand-soft);border-radius:var(--r-panel);
+}
+.hero__proofNum{font-family:var(--font-display);font-weight:700;font-size:1.24rem;color:var(--ink-deep)}
+.hero__stars{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.hero__stars b{font-family:var(--font-display);font-weight:600;color:var(--ink);letter-spacing:.01em}
+.stars{color:oklch(0.80 0.155 82);letter-spacing:2px;font-size:15px}
+.hero__cta{margin-top:30px}
+
+/* ---------- asset slots (real files drop in, fallback keeps it legible) ---------- */
+.slot{position:relative;border-radius:var(--r-panel);overflow:hidden;background:var(--paper-tint)}
+.slot img,.slot video{width:100%;height:100%;object-fit:cover}
+.slot--16x9{aspect-ratio:16/9}
+.slot--4x3{aspect-ratio:4/3}
+.slot__note{
+  position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;gap:6px;
+  padding:24px;text-align:center;color:var(--muted);font-size:14px;line-height:1.45;
+  border:1px dashed var(--line);border-radius:var(--r-panel);
+}
+.slot.is-empty .slot__note{display:flex}
+.slot.is-empty img,.slot.is-empty video{display:none}
+.slot__note b{font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:15px}
+
+/* ---------- client strip ---------- */
+.clients{padding-block:clamp(26px,4vw,44px) clamp(44px,6vw,72px)}
+.clients__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(22px,4vw,52px)}
+.client{height:44px;display:flex;align-items:center;opacity:.78}
+.client img{max-height:44px;width:auto;object-fit:contain}
+.client.is-empty img{display:none}
+.client.is-empty::after{
+  content:attr(data-name);font-family:var(--font-display);font-weight:600;font-size:15px;
+  letter-spacing:.02em;color:var(--muted);white-space:nowrap;
+}
+
+/* ---------- problem section: scattered notes ---------- */
+.problem{padding-block:clamp(48px,7vw,84px);background:var(--paper)}
+.problem__lead{
+  max-width:430px;margin:0 auto clamp(36px,5vw,58px);padding:26px 30px;
+  background:var(--brand-soft);border-radius:var(--r-panel);text-align:center;
+  font-family:var(--font-display);font-weight:500;font-size:1.12rem;color:var(--ink-deep);line-height:1.35;
+}
+.problem__stage{display:grid;grid-template-columns:1fr minmax(0,1.25fr) 1fr;gap:clamp(18px,3vw,40px);align-items:center}
+.problem h2{font-size:clamp(1.9rem,3.5vw,2.7rem);text-align:center}
+.problem h2 em{font-style:normal;color:var(--brand-ink)}
+.problem__mid{display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);align-items:center}
+.note{
+  padding:22px 24px;border-radius:var(--r-control);font-size:16.5px;line-height:1.45;
+  background:var(--paper-tint);color:var(--ink);
+}
+.note--left{transform:rotate(-2.4deg)}
+.note--right{background:var(--brand-soft);transform:rotate(2deg)}
+.problem__foot{margin-top:clamp(30px,4vw,46px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.problem__foot p{color:var(--muted);max-width:44ch}
+
+/* ---------- dark block: the one theme switch ---------- */
+.system{background:var(--ink-surface);color:var(--ink-text);padding-block:clamp(62px,8vw,104px)}
+.system__thesis{
+  max-width:26ch;margin:0 auto clamp(54px,7vw,90px);text-align:center;
+  font-family:var(--font-display);font-weight:700;font-size:clamp(1.85rem,3.6vw,2.85rem);line-height:1.12;letter-spacing:-0.018em;
+}
+.system__thesis em{font-style:normal;color:var(--brand)}
+.chip{
+  display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:var(--r-pill);
+  background:var(--ink-raise);border:1px solid var(--ink-line);
+  font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--ink-text);
+}
+.chip svg{width:16px;height:16px;color:var(--brand)}
+.block{display:grid;gap:clamp(26px,4vw,58px);align-items:center;padding-block:clamp(34px,4.5vw,52px)}
+.block + .block{border-top:1px solid var(--ink-line)}
+.block--split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.block--flip .block__body{order:2}
+.block--stack{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
+.block--stack .block__body{max-width:62ch}
+.block--stack .list{display:inline-flex;flex-direction:column;text-align:left}
+.block h3{font-size:clamp(1.55rem,2.7vw,2.15rem);margin:20px 0 0}
+.block h3 span{color:var(--ink-muted)}
+.block__body p{margin-top:16px;color:var(--ink-muted);max-width:52ch;font-size:16.5px}
+.block--stack .block__body p{margin-inline:auto}
+.list{margin-top:26px;display:flex;flex-direction:column;gap:13px}
+.list li{display:flex;gap:12px;align-items:flex-start;font-size:16.5px;color:var(--ink-text)}
+.list svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--brand)}
+.list a{color:var(--brand);text-underline-offset:3px}
+.block .slot{background:var(--ink-raise)}
+.block .slot__note{color:var(--ink-muted);border-color:var(--ink-line)}
+.block .slot__note b{color:var(--ink-text)}
+
+/* budget calculator: a real tool, not a screenshot */
+.calc{
+  width:100%;max-width:440px;padding:clamp(24px,3vw,32px);
+  background:var(--ink-raise);border:1px solid var(--ink-line);border-radius:var(--r-panel);
+}
+.calc h4{margin:0 0 4px;font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--ink-text)}
+.calc__hint{font-size:14px;color:var(--ink-muted)}
+.calc__field{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.calc__field label{font-size:14.5px;font-weight:500;color:var(--ink-text)}
+.calc__field input,.calc__field select{
+  font-family:var(--font-body);font-size:16px;padding:13px 15px;border-radius:var(--r-control);
+  background:var(--ink-surface);color:var(--ink-text);border:1px solid var(--ink-line);
+}
+.calc__field input::placeholder{color:oklch(0.660 0.020 244)}
+.calc__field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--brand) 50%),linear-gradient(135deg,var(--brand) 50%,transparent 50%);background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;background-size:6px 6px;background-repeat:no-repeat}
+.calc .btn{width:100%;margin-top:22px}
+.calc__out{margin-top:18px;padding-top:18px;border-top:1px solid var(--ink-line);font-size:15px;color:var(--ink-muted)}
+.calc__out[hidden]{display:none}
+.calc__figure{font-family:var(--font-display);font-weight:700;font-size:1.7rem;color:var(--ink-text);font-variant-numeric:tabular-nums;line-height:1.2}
+.calc__err{color:oklch(0.72 0.16 28);font-size:14.5px;margin-top:14px}
+
+/* ---------- testimonials: offset stack, not three equal cards ---------- */
+.proof{padding-block:clamp(56px,7vw,92px)}
+.proof h2{font-size:clamp(1.8rem,3.2vw,2.5rem);max-width:16ch}
+.proof__grid{margin-top:clamp(30px,4vw,46px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
+.quote{padding:clamp(26px,3vw,36px);border-radius:var(--r-panel);background:var(--paper-tint)}
+.quote--lead{background:var(--brand-soft);grid-row:span 2}
+.quote--lead q{font-size:clamp(1.2rem,2.1vw,1.6rem);line-height:1.35}
+.quote q{display:block;font-family:var(--font-display);font-weight:500;font-size:1.06rem;line-height:1.45;color:var(--ink-deep);quotes:'\201C' '\201D'}
+.quote cite{display:block;margin-top:18px;font-style:normal;font-size:14.5px;color:var(--muted)}
+.proof__cta{margin-top:clamp(30px,4vw,44px);display:flex;justify-content:center}
+
+/* ---------- about ---------- */
+.about{padding-block:clamp(56px,7vw,92px);background:var(--paper-tint)}
+.about__inner{max-width:60ch;margin-inline:auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
+.about h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.about p{color:var(--muted)}
+
+/* ---------- faqs ---------- */
+.faqs{padding-block:clamp(56px,7vw,92px)}
+.faqs__head{max-width:30ch}
+.faqs h2{font-size:clamp(1.7rem,2.9vw,2.25rem)}
+.faqs__list{margin-top:clamp(26px,3.5vw,40px);border-top:1px solid var(--line)}
+.faq{border-bottom:1px solid var(--line)}
+.faq summary{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;
+  padding:24px 0;font-family:var(--font-display);font-weight:600;font-size:clamp(1.02rem,1.7vw,1.18rem);color:var(--ink-deep);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq__sign{flex:none;width:26px;height:26px;position:relative;border-radius:var(--r-pill);background:var(--brand-soft)}
+.faq__sign::before,.faq__sign::after{content:'';position:absolute;inset:50% 7px auto;height:2px;background:var(--brand-ink);transform:translateY(-50%);border-radius:2px}
+.faq__sign::after{transform:translateY(-50%) rotate(90deg);transition:transform 180ms var(--ease-out)}
+.faq[open] .faq__sign::after{transform:translateY(-50%) rotate(0deg)}
+.faq__answer{padding:0 0 26px;max-width:66ch;color:var(--muted)}
+
+/* ---------- booking ---------- */
+.booking{background:var(--ink-surface);color:var(--ink-text);padding-block:clamp(56px,7vw,92px)}
+.booking__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,56px);align-items:center}
+.booking h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.booking h2 span{color:var(--ink-muted);display:block}
+.booking p{margin-top:18px;color:var(--ink-muted);max-width:44ch}
+.booking__cta{margin-top:28px}
+.calendar{border-radius:var(--r-panel);overflow:hidden;background:var(--ink-raise);border:1px solid var(--ink-line);min-height:460px;display:flex}
+.calendar iframe{width:100%;min-height:460px;border:0}
+.calendar__note{margin:auto;padding:30px;text-align:center;color:var(--ink-muted);font-size:14.5px;line-height:1.5}
+.calendar__note b{display:block;font-family:var(--font-display);font-weight:600;color:var(--ink-text);font-size:15.5px;margin-bottom:6px}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink-deep);color:var(--ink-text);padding-block:44px}
+.foot__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px}
+.foot__links{display:flex;flex-wrap:wrap;gap:26px}
+.foot__links a{font-size:15px;text-decoration:none;color:var(--ink-muted);transition:color 140ms ease}
+.foot__links a:hover{color:var(--ink-text)}
+.foot address{font-style:normal;font-size:14.5px;color:var(--ink-muted)}
+
+/* ---------- motion: reveal on scroll, marketing tier ---------- */
+.js-reveal .reveal{opacity:0;transform:translateY(18px)}
+.js-reveal .reveal{transition:opacity 460ms var(--ease-out), transform 460ms var(--ease-out)}
+.js-reveal .reveal.is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{transition-duration:200ms;transform:none}
+  *{scroll-behavior:auto !important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero__grid,.block--split,.booking__grid,.proof__grid{grid-template-columns:minmax(0,1fr)}
+  .block--flip .block__body{order:0}
+  .quote--lead{grid-row:auto}
+  .problem__stage{grid-template-columns:minmax(0,1fr)}
+  .note--left,.note--right{transform:none}
+}
+@media (max-width:860px){
+  .nav__links{
+    display:none;position:absolute;left:var(--gutter);right:var(--gutter);top:96px;
+    flex-direction:column;align-items:flex-start;gap:4px;padding:12px;
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r-panel);
+    box-shadow:0 20px 40px -26px oklch(0.245 0.032 250 / .6);
+  }
+  .nav__links.is-open{display:flex}
+  .nav__links a{padding:12px 10px;width:100%}
+  .nav__links .btn{width:100%;margin-top:6px}
+  .nav__toggle{
+    display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid var(--line);
+    border-radius:var(--r-pill);padding:11px 18px;font-family:var(--font-display);font-weight:600;font-size:15px;
+    color:var(--ink);cursor:pointer;
+  }
+  .clients__row{justify-content:center;gap:30px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .btn{width:100%;padding:16px 24px}
+  .nav__bar{padding-right:10px}
+  .hero__proof{width:100%}
+}
+</style>
+<!-- ARTIFACT:HEAD-END -->
+</head>
+<body class="no-js">
+<!-- ARTIFACT:BODY-START -->
+
+<header class="nav">
+  <div class="shell">
+    <div class="nav__bar">
+      <a class="brand" href="#top" aria-label="MBP Results home">
+        <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand__word">MBP<span>RESULTS</span></span>
+      </a>
+      <button class="nav__toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav class="nav__links" id="navLinks">
+        <a href="#our-system">Our System</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#about-us">About</a>
+        <a href="#faqs">FAQs</a>
+        <a class="btn btn--ghost" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Free Strategy Call</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="shell hero__grid">
+      <div>
+        <h1>Let us run LSA ads for your business on a 100% results basis</h1>
+        <p class="hero__sub">No Set-Up Fee | No Monthly Retainers | No Long-Term Contracts</p>
+        <div class="hero__proof">
+          <span class="hero__proofNum">$1,000,000+ Generated</span>
+          <span class="hero__stars"><b>Google</b><span class="stars" aria-hidden="true">★★★★★</span><span class="sr-only">Rated 5 out of 5</span></span>
+        </div>
+        <div class="hero__cta">
+          <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+        </div>
+      </div>
+      <!-- ASSET 1 of 5: hero video, 16:9. Drop in assets/hero.mp4 and assets/hero-poster.jpg -->
+      <div class="slot slot--16x9" data-slot>
+        <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" controls playsinline preload="metadata"></video>
+        <div class="slot__note"><b>Hero video</b>Add assets/hero.mp4 plus assets/hero-poster.jpg at 16:9.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGOS: sits under the hero, logos only -->
+  <section class="clients" aria-label="Businesses we run Local Services Ads for">
+    <div class="shell clients__row">
+      <div class="client" data-logo data-name="Strike Roofing"><img src="assets/logos/strike-roofing.svg" alt="Strike Roofing"></div>
+      <div class="client" data-logo data-name="Simply Dental"><img src="assets/logos/simply-dental.svg" alt="Simply Dental"></div>
+      <div class="client" data-logo data-name="Mr Amp"><img src="assets/logos/mr-amp.svg" alt="Mr Amp"></div>
+      <div class="client" data-logo data-name="Zero Attorney Fees"><img src="assets/logos/zaf.svg" alt="Zero Attorney Fees"></div>
+      <div class="client" data-logo data-name="Renovate Ease"><img src="assets/logos/renovate-ease.svg" alt="Renovate Ease"></div>
+      <div class="client" data-logo data-name="Express Home Services"><img src="assets/logos/express-home-services.svg" alt="Express Home Services"></div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="shell">
+      <p class="problem__lead reveal">Being charged for hours, retainers, and no results?</p>
+
+      <div class="problem__stage">
+        <p class="note note--left reveal">Low volume of calls and poor quality of leads</p>
+
+        <div class="problem__mid">
+          <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
+          <!-- ASSET 2 of 5: photo, 4:3 -->
+          <div class="slot slot--4x3 reveal" data-slot style="width:100%">
+            <img src="assets/frustrated-owner.jpg" alt="A business owner at a laptop with their head in their hands">
+            <div class="slot__note"><b>Photo</b>Add assets/frustrated-owner.jpg at 4:3.</div>
+          </div>
+        </div>
+
+        <p class="note note--right reveal">Phone doesn't ring regardless of budget. When the phone does ring, its not a case.</p>
+      </div>
+
+      <div class="problem__foot">
+        <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+        <p>Find out how we can get your phone ringing off the hook with good quality leads.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SYSTEM: the one deliberate theme switch -->
+  <section class="system" id="our-system">
+    <div class="shell">
+      <p class="system__thesis reveal">As local business owners ourselves, we've tested countless strategies to make Google Local Services Ads perform - <em>and cracked the code.</em></p>
+
+      <!-- 1 of 4: split -->
+      <div class="block block--split reveal">
+        <div class="block__body">
+          <span class="chip"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M144 157.68a68 68 0 1 0-71.9 0c-20.65 6.76-39.23 19.39-54.17 37.17a8 8 0 0 0 12.26 10.3C50.11 181.62 77.83 168 108 168s57.89 13.62 77.81 37.15a8 8 0 0 0 12.26-10.3c-14.94-17.78-33.52-30.41-54.07-37.17ZM56 100a52 52 0 1 1 52 52a52.06 52.06 0 0 1-52-52Zm197.66 33.66l-32 32a8 8 0 0 1-11.32 0l-16-16a8 8 0 0 1 11.32-11.32L216 148.69l26.34-26.35a8 8 0 0 1 11.32 11.32Z"/></svg>Onboarding</span>
+          <h3>Meet our team and set your <span>business' growth goals</span></h3>
+          <p>We design and manage Local Services Ads campaigns for businesses ready to dominate their local market. Coming from a business who runs local service ads themselves, we know the numbers that are needed for these campaigns to make sense.</p>
+          <ul class="list">
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Consultation and growth goals</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Business-area targeting &amp; service categories</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>We handle everything - <a href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">you just answer the phone!</a></li>
+          </ul>
+        </div>
+        <!-- ASSET 3 of 5: photo, 4:3 -->
+        <div class="slot slot--4x3" data-slot>
+          <img src="assets/onboarding.jpg" alt="An MBP Results team member on a call with a client">
+          <div class="slot__note"><b>Photo</b>Add assets/onboarding.jpg at 4:3.</div>
+        </div>
+      </div>
+
+      <!-- 2 of 4: split, flipped -->
+      <div class="block block--split block--flip reveal">
+        <div class="block__body">
+          <span class="chip"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 26a102 102 0 1 0 102 102A102.12 102.12 0 0 0 128 26Zm0 16a86 86 0 0 1 60.8 25.2L128 128L67.2 67.2A85.75 85.75 0 0 1 128 42Zm-86 86a85.75 85.75 0 0 1 13.9-46.8L116.7 142a16 16 0 0 0 22.6 0l60.8-60.8A86 86 0 1 1 42 128Z"/></svg>LSA Infrastructure</span>
+          <h3>Rank at the top of Google, <span>without wasting ad spend</span></h3>
+          <p>Your business appears above traditional PPC ads and more importantly - above your competition, with Google Screened trust signals. We manage every ranking lever Google uses, so you show up higher and more often.</p>
+          <ul class="list">
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>LSA profile optimization</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Better quality leads</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Higher volume of quality leads</li>
+          </ul>
+        </div>
+        <!-- ASSET 4 of 5: photo, 4:3 -->
+        <div class="slot slot--4x3" data-slot>
+          <img src="assets/lsa-ranking.jpg" alt="A Google Screened Local Services Ads result on a phone">
+          <div class="slot__note"><b>Photo</b>Add assets/lsa-ranking.jpg at 4:3.</div>
+        </div>
+      </div>
+
+      <!-- 3 of 4: breaks the split pattern, working tool on the right -->
+      <div class="block block--split reveal">
+        <div class="block__body">
+          <span class="chip"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="m222.37 158.46l-47.11-21.11l-.13-.06a16 16 0 0 0-15.17 1.4a8.12 8.12 0 0 0-.75.56L134.87 160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16 16 0 0 0 1.32-15.06v-.12L97.54 33.64a16 16 0 0 0-16.62-9.52A56.26 56.26 0 0 0 32 80c0 79.4 64.6 144 144 144a56.26 56.26 0 0 0 55.88-48.92a16 16 0 0 0-9.51-16.62Z"/></svg>Qualified Local Leads</span>
+          <h3>Pay only when a potential <span>client calls you</span></h3>
+          <p>Paying for calls instead of clicks gives you the <a href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">best chance of converting leads.</a> If your phone doesn't ring, you don't pay.</p>
+          <ul class="list">
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Aligned incentives</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>No wasted ad spend</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>High Intent Callers</li>
+          </ul>
+        </div>
+        <form class="calc" id="calcForm" novalidate>
+          <h4>Calculate your budget</h4>
+          <p class="calc__hint">A starting range based on typical Local Services Ads cost per lead. We confirm the real number on the call.</p>
+          <div class="calc__field">
+            <label for="calcZip">Postal code</label>
+            <input id="calcZip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="84070">
+          </div>
+          <div class="calc__field">
+            <label for="calcLeads">Leads per month</label>
+            <input id="calcLeads" name="leads" type="number" min="1" max="2000" inputmode="numeric" placeholder="40">
+          </div>
+          <div class="calc__field">
+            <label for="calcIndustry">Industry</label>
+            <select id="calcIndustry" name="industry">
+              <option value="">Select your industry</option>
+              <option value="legal">Legal</option>
+              <option value="roofing">Roofing</option>
+              <option value="dental">Dental</option>
+              <option value="hvac">HVAC</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="home">Home services</option>
+            </select>
+          </div>
+          <button class="btn btn--onDark" type="submit">Estimate budget</button>
+          <p class="calc__err" id="calcErr" hidden></p>
+          <div class="calc__out" id="calcOut" hidden aria-live="polite">
+            <span class="calc__figure" id="calcFigure"></span>
+            <span id="calcCaption"></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- 4 of 4: full-width stack, breaks the zigzag -->
+      <div class="block block--stack reveal">
+        <div class="block__body">
+          <span class="chip"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v94.37L82.14 104a8 8 0 0 1 10.64-.61l34 27.2l38.13-39.44a8 8 0 0 1 11.5 11.12l-43.15 44.63a8 8 0 0 1-10.75.79l-34.39-27.51L40 163.83V200h184a8 8 0 0 1 8 8Z"/></svg>Campaign Management</span>
+          <h3>Focus on your business while <span>we optimize your lead flow</span></h3>
+          <p>We continuously improve your campaign, cost per lead, ranking position, and can even help with intake improvements. Most businesses see 2x - 3x results in 90 days, and many see 4x - 8x inside of a year.</p>
+          <ul class="list">
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Beat the competition</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Do what you do best</li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Let us fill your firm with leads</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="proof" id="testimonials">
+    <div class="shell">
+      <h2 class="reveal">Testimonials</h2>
+      <div class="proof__grid">
+        <blockquote class="quote quote--lead reveal">
+          <q>MBP's LSA process is like nothing I've seen. We got 85 leads in a single week, which surpassed all expectations. You should really hire them.</q>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <q>We met with multiple agencies and chose the most expensive option, and it paid off. We're signing cases weekly from LSAs, and we haven't even hit full scale yet.</q>
+          <cite>CEO at Law Firm</cite>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <q>Yes, my skepticism has vanished. You guys really know what you're doing and we greatly appreciate it!</q>
+          <cite>CEO at Law Firm</cite>
+        </blockquote>
+      </div>
+      <div class="proof__cta">
+        <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about-us">
+    <div class="shell about__inner">
+      <h2 class="reveal">Not your typical agency</h2>
+      <p class="reveal">Marketing Best Practices (MBP Results) is exactly what the name says. We are focused on driving results for your business. We align our incentives with yours. If we can deliver leads, you pay, if not, then you don't.</p>
+      <p class="reveal">With 20+ years of marketing experience including PPC, SEO, LSA, and Meta ads, we know how to get your phone ringing off the hook! Let's talk about how much new business your business can handle right now.</p>
+      <a class="btn reveal" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section class="faqs" id="faqs">
+    <div class="shell">
+      <div class="faqs__head">
+        <h2 class="reveal">Get answers to questions our law firm clients ask us the most</h2>
+      </div>
+      <div class="faqs__list">
+        <details class="faq">
+          <summary>Do you provide monthly reports?<span class="faq__sign" aria-hidden="true"></span></summary>
+          <div class="faq__answer">Yes. Every month you get the numbers that matter: calls received, lead quality, cost per lead, ranking position, and any leads we disputed and got credited back. If something moved, we tell you why.</div>
+        </details>
+        <details class="faq">
+          <summary>What do you charge for your service?<span class="faq__sign" aria-hidden="true"></span></summary>
+          <div class="faq__answer">No set-up fee, no monthly retainer, and no long-term contract. We are paid on the results we deliver, so we only do well when your phone is ringing. We will walk you through the exact numbers for your market on the call.</div>
+        </details>
+        <details class="faq">
+          <summary>Do you offer other services?<span class="faq__sign" aria-hidden="true"></span></summary>
+          <div class="faq__answer">Local Services Ads are our focus, and that is where we drive the most value. We also have 20+ years across PPC, SEO, and Meta ads, so if your growth goals call for more than LSA, we can cover it.</div>
+        </details>
+        <details class="faq">
+          <summary>What is my risk?<span class="faq__sign" aria-hidden="true"></span></summary>
+          <div class="faq__answer">Close to none. There is nothing to sign long-term and nothing to pay up front. Google charges you when a potential client calls, we run the campaign, and if we cannot deliver leads, you do not pay us.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="book-a-call">
+    <div class="shell booking__grid">
+      <div>
+        <h2>Interested in Dominating Local Service Ads? <span>Let's chat.</span></h2>
+        <p>Pick a time that works for you. We will look at your market, your service categories, and what a full pipeline would look like for your business.</p>
+        <div class="booking__cta">
+          <a class="btn btn--onDark" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+        </div>
+      </div>
+      <div class="calendar">
+        <!-- Paste the GoHighLevel calendar embed iframe here, then delete the note below. -->
+        <p class="calendar__note"><b>Calendar embed</b>Drop your GoHighLevel calendar iframe into this container. Until then the button on the left books the call.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell foot__inner">
+    <nav class="foot__links" aria-label="Footer">
+      <a href="#our-system">Our System</a>
+      <a href="#about-us">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Free Strategy Session</a>
+    </nav>
+    <address>242 E 8265 S, Sandy Utah 84070</address>
+  </div>
+</footer>
+<!-- ARTIFACT:BODY-END -->
+
+<script>
+(function () {
+  var doc = document.documentElement;
+  document.body.classList.remove('no-js');
+
+  /* Menu: feedback on a tap, no motion needed beyond the CSS state. */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* Asset slots: when a real file is present it shows, otherwise the note
+     explains what to drop in. Keeps the page honest instead of broken. */
+  function markEmpty(el) { el.classList.add('is-empty'); }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-slot]'), function (slot) {
+    var media = slot.querySelector('img, video');
+    if (!media) return;
+    if (media.tagName === 'IMG') {
+      if (media.complete && media.naturalWidth === 0) markEmpty(slot);
+      media.addEventListener('error', function () { markEmpty(slot); });
+    } else {
+      media.addEventListener('error', function () { markEmpty(slot); });
+      media.addEventListener('loadeddata', function () { slot.classList.remove('is-empty'); });
+      setTimeout(function () { if (media.readyState === 0) markEmpty(slot); }, 1200);
+    }
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-logo]'), function (logo) {
+    var img = logo.querySelector('img');
+    if (!img) return;
+    if (img.complete && img.naturalWidth === 0) logo.classList.add('is-empty');
+    img.addEventListener('error', function () { logo.classList.add('is-empty'); });
+  });
+
+  /* Reveal on scroll. Purpose: hierarchy, one step at a time down a long page.
+     IntersectionObserver, never a scroll listener. */
+  var reveals = document.querySelectorAll('.reveal');
+  var showAll = function () {
+    Array.prototype.forEach.call(reveals, function (el) { el.classList.add('is-in'); });
+  };
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (!('IntersectionObserver' in window) || reduced.matches) {
+    showAll();
+  } else {
+    doc.classList.add('js-reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px 0px 0px', threshold: 0.05 });
+    Array.prototype.forEach.call(reveals, function (el) { io.observe(el); });
+    // Fail open: nothing on this page may stay hidden waiting on a scroll.
+    setTimeout(showAll, 2600);
+    window.addEventListener('beforeprint', showAll);
+  }
+
+  /* Budget estimate. Ranges are typical LSA cost per lead by category,
+     shown as a range and labelled an estimate. Confirmed on the call. */
+  var CPL = {
+    legal:    [75, 300, 'Legal'],
+    roofing:  [35, 90,  'Roofing'],
+    dental:   [30, 80,  'Dental'],
+    hvac:     [25, 70,  'HVAC'],
+    plumbing: [25, 65,  'Plumbing'],
+    home:     [25, 70,  'Home services']
+  };
+  var form = document.getElementById('calcForm');
+  if (form) {
+    var out = document.getElementById('calcOut');
+    var err = document.getElementById('calcErr');
+    var figure = document.getElementById('calcFigure');
+    var caption = document.getElementById('calcCaption');
+    var money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var leads = parseInt(document.getElementById('calcLeads').value, 10);
+      var industry = document.getElementById('calcIndustry').value;
+
+      if (!leads || leads < 1) {
+        err.textContent = 'Enter how many leads you want each month.';
+        err.hidden = false; out.hidden = true;
+        document.getElementById('calcLeads').focus();
+        return;
+      }
+      if (!industry) {
+        err.textContent = 'Pick your industry so we can use the right cost per lead.';
+        err.hidden = false; out.hidden = true;
+        document.getElementById('calcIndustry').focus();
+        return;
+      }
+      err.hidden = true;
+      var band = CPL[industry];
+      figure.textContent = money.format(leads * band[0]) + ' to ' + money.format(leads * band[1]);
+      caption.textContent = 'Estimated monthly ad spend for ' + leads + ' ' + band[2].toLowerCase() +
+        ' leads, at ' + money.format(band[0]) + ' to ' + money.format(band[1]) + ' per lead. You pay Google for calls, not clicks.';
+      out.hidden = false;
+    });
+  }
+})();
+</script>
+</body>
+</html>
