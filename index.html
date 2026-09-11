@@ -799,7 +799,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       for (var i = 0; i < rects.length; i++) {
         if (rects[i].width > widest) widest = rects[i].width;
       }
-      if (widest > 0) hero.style.setProperty('--hero-cta', Math.ceil(widest * 0.72) + 'px');
+      if (widest > 0) hero.style.setProperty('--hero-cta', Math.ceil(widest) + 'px');
     };
     syncMeasure();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncMeasure);
