@@ -349,7 +349,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .faq__answer{padding:0 clamp(20px,2.6vw,28px) clamp(20px,2.4vw,26px);max-width:72ch;color:var(--muted)}
 
 /* ---------- booking ---------- */
-.booking{background:oklch(1 0 0);color:var(--ink-text);padding-block:clamp(56px,7vw,92px)}
+.booking{background:oklch(1 0 0);scroll-margin-top:84px;color:var(--ink-text);padding-block:clamp(56px,7vw,92px)}
 .booking__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,56px);align-items:center}
 .booking h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
 .booking h2 span{color:var(--ink-muted);display:block}
@@ -418,6 +418,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .hero__grid,.block--split,.booking__grid,.proof__pair,.about__grid{grid-template-columns:minmax(0,1fr)}
+  .hero__proof,.hero__cta .btn{max-width:none;margin-left:0}
   .block--flip .block__body{order:0}
   .quote--lead{grid-row:auto}
   .problem__stage{grid-template-columns:minmax(0,1fr)}
@@ -465,7 +466,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         <a href="#testimonials">Testimonials</a>
         <a href="#about-us">About</a>
         <a href="#faqs">FAQs</a>
-        <a class="btn btn--ghost" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Free Strategy Call</a>
+        <a class="btn btn--ghost" href="#book-a-call">Free Strategy Call</a>
       </nav>
     </div>
   </div>
@@ -484,7 +485,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           <span class="hero__stars"><b>Google</b><span class="stars" aria-hidden="true">★★★★★</span><span class="sr-only">Rated 5 out of 5</span></span>
         </div>
         <div class="hero__cta">
-          <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+          <a class="btn" href="#book-a-call">Book A Free Strategy Call &gt;</a>
         </div>
       </div>
       <!-- To go live: replace the whole .videoframe block with either
@@ -545,7 +546,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       </div>
 
       <div class="problem__foot">
-        <a class="btn" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+        <a class="btn" href="#book-a-call">Book A Free Strategy Call &gt;</a>
         <p>Find out how we can get your phone ringing off the hook with good quality leads.</p>
       </div>
     </div>
@@ -565,7 +566,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           <ul class="list">
             <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Consultation and growth goals</li>
             <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Business-area targeting &amp; service categories</li>
-            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>We handle everything - <a href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">you just answer the phone!</a></li>
+            <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>We handle everything - <a href="#book-a-call">you just answer the phone!</a></li>
           </ul>
         </div>
         <div class="slot slot--4x3" data-slot>
@@ -598,7 +599,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         <div class="block__body">
           <span class="chip"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="m222.37 158.46l-47.11-21.11l-.13-.06a16 16 0 0 0-15.17 1.4a8.12 8.12 0 0 0-.75.56L134.87 160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16 16 0 0 0 1.32-15.06v-.12L97.54 33.64a16 16 0 0 0-16.62-9.52A56.26 56.26 0 0 0 32 80c0 79.4 64.6 144 144 144a56.26 56.26 0 0 0 55.88-48.92a16 16 0 0 0-9.51-16.62Z"/></svg>Qualified Local Leads</span>
           <h3>Pay only when a potential <span>client calls you</span></h3>
-          <p>Paying for calls instead of clicks gives you the <a href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">best chance of converting leads.</a> If your phone doesn't ring, you don't pay.</p>
+          <p>Paying for calls instead of clicks gives you the <a href="#book-a-call">best chance of converting leads.</a> If your phone doesn't ring, you don't pay.</p>
           <ul class="list">
             <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>Aligned incentives</li>
             <li><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/></svg>No wasted ad spend</li>
@@ -651,7 +652,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         </blockquote>
       </div>
 
-      <a class="btn reveal" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+      <a class="btn reveal" href="#book-a-call">Book A Free Strategy Call &gt;</a>
     </div>
   </section>
 
@@ -666,7 +667,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         <h2 class="reveal">Meet the team, not your typical agency</h2>
         <p class="reveal">Marketing Best Practices (MBP Results) is exactly what the name says. We are focused on driving results for your business. We align our incentives with yours. If we can deliver leads, you pay, if not, then you don't.</p>
         <p class="reveal">With 20+ years of marketing experience including PPC, SEO, LSA, and Meta ads, we know how to get your phone ringing off the hook! Let's talk about how much new business your business can handle right now.</p>
-        <a class="btn reveal" href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Book A Free Strategy Call &gt;</a>
+        <a class="btn reveal" href="#book-a-call">Book A Free Strategy Call &gt;</a>
       </div>
     </div>
   </section>
@@ -735,7 +736,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       <a href="#our-system">Our System</a>
       <a href="#about-us">About</a>
       <a href="#testimonials">Testimonials</a>
-      <a href="https://sites.leadconnectorhq.com/preview/MJssyxWhOEMPwGOvRUMg">Free Strategy Session</a>
+      <a href="#book-a-call">Free Strategy Session</a>
     </nav>
     <address>242 E 8265 S, Sandy Utah 84070</address>
   </div>
