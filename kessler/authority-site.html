@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta name="description" content="Kessler &amp; Associates — New York City&rsquo;s premier personal injury firm. $300M+ recovered. Dominant trial record. No fee unless we win. (212) 555-0380.">
 <title>Kessler &amp; Associates | New York Personal Injury — The Standard</title>
 <script type="application/ld+json">
@@ -29,11 +31,11 @@
   --paper:#f5f7fb;
   --red:#c0392b;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:var(--ink);font-size:16px;line-height:1.6;word-spacing:0.03em}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,12,20,0.98);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;border-bottom:1px solid rgba(201,168,76,0.2)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,12,20,0.98);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;border-bottom:1px solid rgba(201,168,76,0.2)}
 .nav-brand{display:flex;align-items:baseline;gap:10px}
 .nav-brand-name{font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase}
 .nav-brand-sep{color:var(--gold);font-size:14px}
@@ -78,9 +80,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 @media(max-width:1000px){.hero{grid-template-columns:1fr;min-height:auto}.hero-right{min-height:320px;display:block}.hero-left{padding:80px 24px 56px}}
 
 /* GOLD BAND */
-
-
-
 
 /* SECTIONS */
 .section{padding:100px 80px}
@@ -188,7 +187,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .faq-icon{font-size:22px;color:var(--gold);transition:transform 0.3s;flex-shrink:0}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-ans{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.faq-item.open .faq-ans{max-height:300px}
+.faq-item.open .faq-ans{max-height:640px}
 .faq-ans-inner{padding-bottom:22px;font-size:15px;color:rgba(255,255,255,0.55);line-height:1.85}
 
 /* FOOTER */
@@ -216,47 +215,16 @@ footer{background:var(--black);padding:64px 80px 32px;border-top:1px solid rgba(
 
 /* CHAT */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width:480px){
-  
-  #chatPanel{bottom:auto!important;top:54px!important;right:0!important;left:auto!important;transition:none!important}
-}
-
-.ticker{background:var(--gold);padding:13px 0;overflow:hidden;position:relative}
-.ticker-inner{display:flex;gap:0;white-space:nowrap;animation:ticker 28s linear infinite}
+.ticker{background:var(--gold);padding:13px 0;overflow:hidden;position:relative;contain:paint}
+.ticker-inner{display:flex;gap:0;white-space:nowrap;animation:ticker 28s linear infinite;will-change:transform}
 .ticker-item{font-family:'Arial Narrow',Impact,sans-serif;font-size:12px;font-weight:800;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);padding:0 36px;display:flex;align-items:center;gap:36px}
 .ticker-item::after{content:'\2756';color:rgba(0,0,0,0.3)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker-inner,#cb2-online{animation:none}
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+}
 
 /* Visible texture on white/light backgrounds */
 body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M0 8L8 0M-2 2L2-2M6 10L10 6' stroke='%23c9a84c' stroke-width='0.6' opacity='0.18'/%3E%3C/svg%3E")}
@@ -275,21 +243,6 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 #results .rc-desc{color:#555}
 #results .rc.feat .rc-desc{color:rgba(255,255,255,0.6)}
 #results .rc.feat .rc-type{color:rgba(255,255,255,0.5)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </style>
 </head>
@@ -357,7 +310,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
   <div class="hero-right" aria-hidden="true">
     <div class="hero-right-overlay"></div>
     <div class="hero-right-overlay2"></div>
-    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80&fit=crop&crop=top" alt="" loading="eager" decoding="async">
+    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80&fit=crop&crop=top&auto=format" alt="" loading="eager" fetchpriority="high" decoding="async">
     
   </div>
 </section>
@@ -421,7 +374,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="att-card">
       <div class="att-photo">
         <div class="att-photo-bar"></div>
-        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&q=80&fit=crop&crop=top" alt="Daniel Kessler" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&q=80&fit=crop&crop=top&auto=format" alt="Daniel Kessler" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="att-photo-fallback" style="display:none"><div class="att-initials">DK</div></div>
       </div>
       <div class="att-body">
@@ -434,7 +387,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="att-card">
       <div class="att-photo">
         <div class="att-photo-bar"></div>
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&fit=crop&crop=top" alt="Sarah Chen" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&fit=crop&crop=top&auto=format" alt="Sarah Chen" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="att-photo-fallback" style="display:none"><div class="att-initials">SC</div></div>
       </div>
       <div class="att-body">
@@ -447,7 +400,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="att-card">
       <div class="att-photo">
         <div class="att-photo-bar"></div>
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&fit=crop&crop=top" alt="Marcus Webb" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&fit=crop&crop=top&auto=format" alt="Marcus Webb" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="att-photo-fallback" style="display:none"><div class="att-initials">MW</div></div>
       </div>
       <div class="att-body">
@@ -472,7 +425,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
     </div>
     <div>
       <div class="video-player" role="img" aria-label="Video: Why I switched sides — Daniel Kessler">
-        <img class="video-thumb" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=60&fit=crop" alt="" aria-hidden="true" loading="lazy">
+        <img class="video-thumb" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=60&fit=crop&auto=format" alt="" aria-hidden="true" loading="lazy">
         <div class="video-play"><div class="play-btn" aria-hidden="true">&#9654;</div></div>
       </div>
       <p style="font-size:12px;color:var(--gray);margin-top:10px;text-align:center">2:45 &middot; Why a Former Insurance Attorney Now Fights for Victims</p>
@@ -512,7 +465,6 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 
 <!-- TESTIMONIALS -->
 
-
 <!-- CITY SEO -->
 <section class="city-section" id="areas-served" aria-labelledby="cities-h">
   <div class="city-intro">
@@ -543,7 +495,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 
     <a href="authority-blog-1.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
       <div style="aspect-ratio:16/9;overflow:hidden;background:var(--navy)">
-        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=60&fit=crop" alt="NYC street after accident" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=60&fit=crop&auto=format" alt="NYC street after accident" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85">
       </div>
       <div style="padding:22px;flex:1;display:flex;flex-direction:column">
         <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Car Accidents &middot; 6 min read</div>
@@ -555,7 +507,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 
     <a href="authority-blog-2.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
       <div style="aspect-ratio:16/9;overflow:hidden;background:var(--navy)">
-        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=60&fit=crop" alt="Insurance documents" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=60&fit=crop&auto=format" alt="Insurance documents" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85">
       </div>
       <div style="padding:22px;flex:1;display:flex;flex-direction:column">
         <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Insurance Law &middot; 7 min read</div>
@@ -567,7 +519,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 
     <a href="authority-blog-3.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
       <div style="aspect-ratio:16/9;overflow:hidden;background:var(--navy)">
-        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=60&fit=crop" alt="Attorney reviewing case" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=60&fit=crop&auto=format" alt="Attorney reviewing case" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85">
       </div>
       <div style="padding:22px;flex:1;display:flex;flex-direction:column">
         <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Case Value &middot; 8 min read</div>
@@ -666,7 +618,6 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 </footer>
 
 <!-- Chat Bot A (Guided Intake) — shown by default -->
-
 
 <!-- Chat Bot B (AI Legal Assistant) — also included for Authority tier -->
 <!-- START EMBED: Copy everything below to END EMBED and paste before </body> on any site -->
@@ -825,7 +776,6 @@ function cb2Start(){
   cb2Bot('What happened to you, and what state are you in? Or just ask me anything.',1100);
 }
 
-
 function cb2System(){
   return 'You are a highly knowledgeable personal injury legal intake specialist for '+CB2.firmName+' in '+CB2.firmState+'. You help injured people understand their rights in all 50 US states. You know statutes of limitations, negligence systems (pure comparative, modified comparative 50%/51% bar, contributory negligence), no-fault PIP states, insurance minimums, medical malpractice caps, FMCSA trucking rules, workers comp, and all insurance tactics. Be warm, specific, and genuinely helpful. Lead with the most useful information. After 2 exchanges, mention a free consultation at '+CB2.firmPhone+'. Respond in Spanish if the user writes in Spanish. Keep responses 3-6 sentences unless complexity demands more.';
 }
@@ -903,9 +853,8 @@ function submitHeroForm(){
   var isDown=false,startX,scrollLeft;
   el.addEventListener('mousedown',function(e){isDown=true;startX=e.pageX-el.offsetLeft;scrollLeft=el.scrollLeft;});
   document.addEventListener('mouseup',function(){isDown=false;});
-  el.addEventListener('mousemove',function(e){if(!isDown)return;e.preventDefault();var x=e.pageX-el.offsetLeft;el.scrollLeft=scrollLeft-(x-startX)*1.5;});
+  var raf=0;el.addEventListener('mousemove',function(e){if(!isDown)return;e.preventDefault();var x=e.pageX-el.offsetLeft;if(raf)return;raf=requestAnimationFrame(function(){raf=0;el.scrollLeft=scrollLeft-(x-startX)*1.5;});});
 })();
-
 
 function scrollReviews(dir){var el=document.getElementById('reviewsScroll');if(el)el.scrollBy({left:dir*340,behavior:'smooth'});}
 function toggleFaq(b){var i=b.closest('.faq-item'),o=i.classList.toggle('open');b.setAttribute('aria-expanded',o);}
@@ -916,8 +865,6 @@ function submitForm(){
   setTimeout(function(){btn.textContent='✓ Request Received';btn.style.background='rgba(201,168,76,0.3)';document.getElementById('f-success').style.display='block';},800);
 }
 </script>
-
-
 
 </body>
 </html>

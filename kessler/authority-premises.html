@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta name="description" content="Kessler &amp; Associates — Premises Liability attorneys in New York City. $300M+ recovered. No fee unless we win.">
 <meta name="geo.region" content="US-NY">
 <meta name="geo.placename" content="New York City">
@@ -28,11 +30,11 @@
   --paper:#f5f7fb;
   --red:#c0392b;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:var(--ink);font-size:16px;line-height:1.6;word-spacing:0.03em}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,12,20,0.98);backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;border-bottom:1px solid rgba(201,168,76,0.2)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,12,20,0.98);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;border-bottom:1px solid rgba(201,168,76,0.2)}
 .nav-brand{display:flex;align-items:baseline;gap:10px}
 .nav-brand-name{font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase}
 .nav-brand-sep{color:var(--gold);font-size:14px}
@@ -77,9 +79,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 @media(max-width:1000px){.hero{grid-template-columns:1fr;min-height:auto}.hero-right{min-height:320px;display:block}.hero-left{padding:80px 24px 56px}}
 
 /* GOLD BAND */
-
-
-
 
 /* SECTIONS */
 .section{padding:100px 80px}
@@ -187,7 +186,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .faq-icon{font-size:22px;color:var(--gold);transition:transform 0.3s;flex-shrink:0}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-ans{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.faq-item.open .faq-ans{max-height:300px}
+.faq-item.open .faq-ans{max-height:640px}
 .faq-ans-inner{padding-bottom:22px;font-size:15px;color:rgba(255,255,255,0.55);line-height:1.85}
 
 /* FOOTER */
@@ -215,47 +214,16 @@ footer{background:var(--black);padding:64px 80px 32px;border-top:1px solid rgba(
 
 /* CHAT */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width:480px){
-  
-  #chatPanel{bottom:auto!important;top:54px!important;right:0!important;left:auto!important;transition:none!important}
-}
-
-.ticker{background:var(--gold);padding:13px 0;overflow:hidden;position:relative}
-.ticker-inner{display:flex;gap:0;white-space:nowrap;animation:ticker 28s linear infinite}
+.ticker{background:var(--gold);padding:13px 0;overflow:hidden;position:relative;contain:paint}
+.ticker-inner{display:flex;gap:0;white-space:nowrap;animation:ticker 28s linear infinite;will-change:transform}
 .ticker-item{font-family:'Arial Narrow',Impact,sans-serif;font-size:12px;font-weight:800;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);padding:0 36px;display:flex;align-items:center;gap:36px}
 .ticker-item::after{content:'\2756';color:rgba(0,0,0,0.3)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker-inner,#cb2-online{animation:none}
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+}
 
 /* Visible texture on white/light backgrounds */
 body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M0 8L8 0M-2 2L2-2M6 10L10 6' stroke='%23c9a84c' stroke-width='0.6' opacity='0.18'/%3E%3C/svg%3E")}
@@ -274,21 +242,6 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 #results .rc-desc{color:#555}
 #results .rc.feat .rc-desc{color:rgba(255,255,255,0.6)}
 #results .rc.feat .rc-type{color:rgba(255,255,255,0.5)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </style>
 <style>
@@ -337,7 +290,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 .pa-faq-icon{font-size:20px;color:var(--gold);transition:transform 0.3s;flex-shrink:0}
 .pa-faq-item.open .pa-faq-icon{transform:rotate(45deg)}
 .pa-faq-ans{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.pa-faq-item.open .pa-faq-ans{max-height:300px}
+.pa-faq-item.open .pa-faq-ans{max-height:640px}
 .pa-faq-ans-inner{padding-bottom:20px;font-size:15px;color:var(--light);line-height:1.85}
 .pa-cta-band{background:linear-gradient(135deg,#0d2a5a 0%,#0a1628 100%);border-top:3px solid var(--gold);padding:72px 80px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
 .pa-cta-h{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:clamp(36px,4vw,60px);line-height:0.95;color:var(--white);text-transform:uppercase}
