@@ -1027,11 +1027,11 @@ h3{letter-spacing:-.01em!important}
 .scroll-cue{display:flex;flex-direction:column;align-items:center;gap:8px;width:max-content;margin:22px auto 0;color:var(--muted);
   font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;transition:color .2s}
 .scroll-cue:hover{color:var(--purple)}
+.scroll-cue{transition:color .2s,opacity .25s linear,transform .25s linear;will-change:opacity}
 .scroll-cue-line{position:relative;width:1.5px;height:38px;background:#E6DDE4;overflow:hidden;border-radius:2px}
 .scroll-cue-line span{position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--purple);border-radius:2px;animation:cueDrop 1.8s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes cueDrop{0%{top:-40%}70%,100%{top:100%}}
 @media(prefers-reduced-motion:reduce){.scroll-cue-line span{animation:none;top:30%}}
-#services{padding-top:36px!important;border-top:0!important}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
@@ -1455,6 +1455,12 @@ h3{letter-spacing:-.01em!important}
 (function(){var b=document.getElementById('scrollProg');if(!b)return;var t=false;
 function u(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;b.style.transform='scaleX('+(m>0?Math.min(1,h.scrollTop/m):0)+')';t=false}
 addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});addEventListener('resize',u);u()})();
+</script>
+<script>
+(function(){var c=document.querySelector('.scroll-cue');if(!c)return;var t=false;
+function u(){var y=window.scrollY||document.documentElement.scrollTop,o=Math.max(0,1-y/160);
+c.style.opacity=o;c.style.transform='translateY('+(-(1-o)*10)+'px)';c.style.pointerEvents=o<.05?'none':'';c.style.visibility=o<.01?'hidden':'';t=false}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});u()})();
 </script>
 </body>
 </html>
