@@ -967,6 +967,11 @@ em{font-style:normal;color:var(--purple)}
 
 @media(prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 
+/* phone: stack the stack section and give the channel tabs room */
+@media(max-width:640px){
+  .band-head,.chan-grid{grid-template-columns:1fr;gap:28px}
+  .chan-tab{flex:1 1 calc(50% - 10px);padding:11px 12px}
+}
 /* Vincere purple, lightened for text on dark backgrounds */
 .sec-dark .kicker,.sec-dark .metric .k,.band-dark em,.band-dark .srow .sn,.quickbar .qb-tag,.foot .foot-tel{color:var(--purple-lt)!important}
 </style>
@@ -996,7 +1001,7 @@ em{font-style:normal;color:var(--purple)}
   <div class="hero-in">
     <div class="hero-lead rv">
       <div class="hero-index">
-        <span>Branding</span><span>Websites</span><span>LSA</span><span>SEO</span><span>AEO</span><span>PPC</span><span>Meta Ads</span>
+        <span>Branding</span><span>Websites</span><span>LSA</span><span>SEO</span><span>AEO</span><span>PPC</span><span>Meta Ads</span><span>Consulting</span>
       </div>
       <h1>Full&#8209;service marketing<br>for law firms.<br><em>One partner for all your legal marketing.</em></h1>
     </div>
@@ -1032,7 +1037,7 @@ em{font-style:normal;color:var(--purple)}
     <div class="band-head rv">
       <div>
         <div class="band-num">01 &middot; The stack</div>
-        <h2>Seven channels.<br><em>One standard.</em></h2>
+        <h2>Eight channels.<br><em>One standard.</em></h2>
       </div>
       <div>
         <p class="band-lede">Every channel is priced, measured and reported separately, so you always know what each one costs you per new customer, and you can switch any of them off without touching the rest.</p>
@@ -1040,7 +1045,7 @@ em{font-style:normal;color:var(--purple)}
       </div>
     </div>
     <div class="chan rv">
-      <div class="chan-tabs" role="tablist" aria-label="Marketing channels"><button class="chan-tab" role="tab" id="tab-BRAND" aria-controls="pan-BRAND" aria-selected="true" data-chan="BRAND">Branding</button><button class="chan-tab" role="tab" id="tab-WEB" aria-controls="pan-WEB" aria-selected="false" data-chan="WEB">Websites</button><button class="chan-tab" role="tab" id="tab-LSA" aria-controls="pan-LSA" aria-selected="false" data-chan="LSA">LSA</button><button class="chan-tab" role="tab" id="tab-SEO" aria-controls="pan-SEO" aria-selected="false" data-chan="SEO">SEO</button><button class="chan-tab" role="tab" id="tab-AEO" aria-controls="pan-AEO" aria-selected="false" data-chan="AEO">AEO</button><button class="chan-tab" role="tab" id="tab-PPC" aria-controls="pan-PPC" aria-selected="false" data-chan="PPC">PPC</button><button class="chan-tab" role="tab" id="tab-META" aria-controls="pan-META" aria-selected="false" data-chan="META">Meta Ads</button></div>
+      <div class="chan-tabs" role="tablist" aria-label="Marketing channels"><button class="chan-tab" role="tab" id="tab-BRAND" aria-controls="pan-BRAND" aria-selected="true" data-chan="BRAND">Branding</button><button class="chan-tab" role="tab" id="tab-WEB" aria-controls="pan-WEB" aria-selected="false" data-chan="WEB">Websites</button><button class="chan-tab" role="tab" id="tab-LSA" aria-controls="pan-LSA" aria-selected="false" data-chan="LSA">LSA</button><button class="chan-tab" role="tab" id="tab-SEO" aria-controls="pan-SEO" aria-selected="false" data-chan="SEO">SEO</button><button class="chan-tab" role="tab" id="tab-AEO" aria-controls="pan-AEO" aria-selected="false" data-chan="AEO">AEO</button><button class="chan-tab" role="tab" id="tab-PPC" aria-controls="pan-PPC" aria-selected="false" data-chan="PPC">PPC</button><button class="chan-tab" role="tab" id="tab-META" aria-controls="pan-META" aria-selected="false" data-chan="META">Meta Ads</button><button class="chan-tab" role="tab" id="tab-CONSULT" aria-controls="pan-CONSULT" aria-selected="false" data-chan="CONSULT">Consulting</button></div>
       
       <div class="chan-panel on" id="pan-BRAND" role="tabpanel" aria-labelledby="tab-BRAND">
         <div class="chan-grid">
@@ -1154,6 +1159,22 @@ em{font-style:normal;color:var(--purple)}
         </div>
         <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Instagram and Facebook among social apps on a smartphone" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>meta.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>Where your buyers already are</b>Facebook and Instagram, reaching them before they search.</div></div>
       </div>
+      <div class="chan-panel" id="pan-CONSULT" role="tabpanel" aria-labelledby="tab-CONSULT">
+        <div class="chan-grid">
+          <div>
+            <h3>Consulting</h3>
+            <p class="cp">Most firms don&rsquo;t lose cases in the ad account. They lose them after the phone rings: the follow-up nobody sent, the intake form nobody checked, the signed client who never hears back. We build the back end that turns leads into clients and keeps them.</p>
+            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">Leads that become clients</div></div><div class="chan-fact"><div class="k">Setup time</div><div class="v">2 to 6 weeks</div></div><div class="chan-fact"><div class="k">Format</div><div class="v">Build, then ongoing support</div></div><div class="chan-fact"><div class="k">You own</div><div class="v">Every workflow and login</div></div></div>
+            <a class="chan-more" href="#contact">Talk to us about Consulting <span>&rarr;</span></a>
+          </div>
+          <div>
+            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
+            <ul class="chan-list"><li>Intake and CRM setup, every lead in one place</li><li>Automated follow-up by text, email and call tasks</li><li>Lead-to-client workflows: consults booked, retainers signed</li><li>Client management: onboarding, updates and reviews on autopilot</li></ul>
+
+          </div>
+        </div>
+        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Team working together in an open-plan office" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>consulting.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>Systems that close the loop</b>From first call to signed client, nothing falls through.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1237,7 +1258,7 @@ em{font-style:normal;color:var(--purple)}
     </div>
 
     <div class="srail rv">
-      <div class="srow"><div class="sn">01</div><div><h4>One team across all seven channels</h4><p>No stitching together an SEO shop, a paid agency and a web guy who each blame the other two. One team, one set of numbers, nowhere for a bad channel to hide.</p></div></div>
+      <div class="srow"><div class="sn">01</div><div><h4>One team across all eight channels</h4><p>No stitching together an SEO shop, a paid agency and a web guy who each blame the other two. One team, one set of numbers, nowhere for a bad channel to hide.</p></div></div>
       <div class="srow"><div class="sn">02</div><div><h4>Performance-based where it fits</h4><p>On channels where the math supports it, our fee moves with results. We&rsquo;ll tell you plainly which ones those are and which are flat-fee work.</p></div></div>
       <div class="srow"><div class="sn">03</div><div><h4>You own every account</h4><p>Ad accounts, website code, domains, tracking and creative all stay in your name, so leaving is never a hostage negotiation.</p></div></div>
       <div class="srow"><div class="sn">04</div><div><h4>Reporting in cost per new customer</h4><p>Not impressions, not engagement, not a dashboard screenshot. The number that decides whether the spend was worth it.</p></div></div>
@@ -1281,7 +1302,7 @@ em{font-style:normal;color:var(--purple)}
         <div class="f"><label for="c-site">Website</label><input id="c-site" name="website" placeholder="https://" autocomplete="url"></div>
         <div class="f"><label for="c-int">What are you looking at?</label>
           <select id="c-int" name="interest">
-            <option>Not sure yet, want a recommendation</option><option>Local Services Ads</option><option>SEO</option><option>AEO</option><option>Websites</option><option>PPC</option><option>Meta Ads</option><option>Branding</option><option>Full-service program</option>
+            <option>Not sure yet, want a recommendation</option><option>Local Services Ads</option><option>SEO</option><option>AEO</option><option>Websites</option><option>PPC</option><option>Meta Ads</option><option>Branding</option><option>Consulting</option><option>Full-service program</option>
           </select></div>
         <div class="f"><label for="c-msg">Anything we should know?</label>
           <textarea id="c-msg" name="message" placeholder="Markets you serve, product and service lines, current spend..."></textarea></div>
