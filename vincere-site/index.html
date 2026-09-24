@@ -813,7 +813,7 @@ em{font-style:normal;color:var(--purple)}
 /* ============ hero v2: full-width headline, inline pricing bar, photo band ============ */
 .hero-v2{padding:64px 0 0;background:var(--paper);position:relative;overflow:visible}
 .hero-v2::before{display:none}
-.hero-v2 .hero-in{max-width:1220px;margin:0 auto;padding:0 28px}
+.hero-v2 .hero-in{max-width:1360px;margin:0 auto;padding:0 40px}
 
 .hero-index{
   display:flex;flex-wrap:wrap;gap:0 10px;margin-bottom:26px;
@@ -839,7 +839,7 @@ em{font-style:normal;color:var(--purple)}
 /* inline pricing bar */
 .quickbar{background:var(--ink);color:#fff;border-top:3px solid var(--purple)}
 .quickbar-in{
-  max-width:1220px;margin:0 auto;padding:22px 28px;
+  max-width:1360px;margin:0 auto;padding:22px 40px;
   display:grid;grid-template-columns:minmax(0,1.1fr) repeat(3,minmax(0,.78fr)) auto;
   gap:24px;align-items:end;
 }
@@ -1021,6 +1021,7 @@ h3{letter-spacing:-.01em!important}
 .hero-v2 h1 em + br,.hero-v2 h1 br:last-of-type{display:none}
 .hero-v2 .hero-row{margin-top:30px!important}
 @media(max-width:620px){.hero-v2 h1{margin-top:22px!important}.hero-v2 h1 em{margin-top:.45em!important}.hero-v2 .hero-row{margin-top:26px!important}}
+@media(max-width:900px){.hero-v2 .hero-in{padding:0 22px}.quickbar-in{padding:22px}}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
