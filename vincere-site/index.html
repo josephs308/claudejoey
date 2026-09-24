@@ -1024,14 +1024,16 @@ h3{letter-spacing:-.01em!important}
 @media(max-width:900px){.hero-v2 .hero-in{padding:0 22px}.quickbar-in{padding:22px}}
 .hero-v2 .hero-row{grid-template-columns:1fr!important;margin-top:56px!important;padding-bottom:88px!important}.hero-v2 .hero-row .btn-row{justify-content:flex-start!important;margin-top:0!important}
 /* scroll indicator under the quote bar */
-.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:8px;width:max-content;margin:22px auto 0;color:var(--muted);
+#services{position:relative}
+.scroll-cue{position:absolute;top:10px;left:50%;translate:-50% 0;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;width:max-content;margin:0;color:var(--muted);
   font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;transition:color .2s}
 .scroll-cue:hover{color:var(--purple)}
 .scroll-cue{transition:color .2s,opacity .25s linear,transform .25s linear;will-change:opacity}
-.scroll-cue-line{position:relative;width:1.5px;height:38px;background:#E6DDE4;overflow:hidden;border-radius:2px}
+.scroll-cue-line{position:relative;width:1.5px;height:28px;background:#E6DDE4;overflow:hidden;border-radius:2px}
 .scroll-cue-line span{position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--purple);border-radius:2px;animation:cueDrop 1.8s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes cueDrop{0%{top:-40%}70%,100%{top:100%}}
 @media(prefers-reduced-motion:reduce){.scroll-cue-line span{animation:none;top:30%}}
+@media(max-width:640px){.scroll-cue{display:none}}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
@@ -1095,9 +1097,9 @@ h3{letter-spacing:-.01em!important}
   </div>
 
 </header>
-<a class="scroll-cue" href="#services" aria-label="Scroll to services"><span class="scroll-cue-txt">Scroll</span><span class="scroll-cue-line" aria-hidden="true"><span></span></span></a>
 
 <section class="band" id="services" style="padding-top:62px">
+  <a class="scroll-cue" href="#services" aria-label="Scroll to services"><span class="scroll-cue-txt">Scroll</span><span class="scroll-cue-line" aria-hidden="true"><span></span></span></a>
   <div class="wrap">
     <div class="band-head rv" style="grid-template-columns:1fr">
       <div>
