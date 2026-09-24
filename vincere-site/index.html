@@ -967,6 +967,21 @@ em{font-style:normal;color:var(--purple)}
 
 @media(prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 
+/* compact channel panel */
+.cx{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center;padding:6px 0 4px}
+.cx h3{font-size:clamp(22px,2.2vw,28px);margin:0 0 8px;line-height:1.1}
+.cx .cp{font-size:16px;line-height:1.55;color:var(--muted);margin:0 0 14px;max-width:62ch}
+.cx-facts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.cx-facts span{font-size:12.5px;font-weight:600;background:var(--purple-tint);color:var(--ink);border-radius:999px;padding:5px 12px}
+.cx-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 28px;max-width:760px}
+.cx-list li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.45}
+.cx-list li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--purple);font-weight:700}
+.cx-go{display:inline-flex;align-items:center;gap:10px;background:var(--purple);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;
+  font-size:16px;padding:18px 28px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 26px rgba(100,49,90,.25);transition:background .2s,transform .2s}
+.cx-go:hover{background:var(--purple-2);transform:translateY(-2px)}
+.cx-go span{transition:transform .2s}.cx-go:hover span{transform:translateX(4px)}
+@media(max-width:900px){.cx{grid-template-columns:1fr;gap:22px}.cx-go{justify-self:start}}
+@media(max-width:560px){.cx-list{grid-template-columns:1fr}.cx-go{justify-self:stretch;justify-content:center;white-space:normal;text-align:center}}
 /* phone: stack the stack section and give the channel tabs room */
 @media(max-width:640px){
   .band-head,.chan-grid{grid-template-columns:1fr;gap:28px}
@@ -1046,139 +1061,99 @@ em{font-style:normal;color:var(--purple)}
       </div>
       <div>
         <p class="band-lede">Every channel is priced, measured and reported separately, so you always know what each one costs you per new customer, and you can switch any of them off without touching the rest.</p>
-        <p class="band-lede" style="font-weight:700;color:var(--ink)">Pick one below to see how it works.</p>
+        <p class="band-lede" style="font-weight:700;color:var(--ink)">Pick one below, then click through for the full breakdown.</p>
       </div>
     </div>
     <div class="chan rv">
       <div class="chan-tabs" role="tablist" aria-label="Marketing channels"><button class="chan-tab" role="tab" id="tab-CONSULT" aria-controls="pan-CONSULT" aria-selected="true" data-chan="CONSULT">Consulting</button><button class="chan-tab" role="tab" id="tab-BRAND" aria-controls="pan-BRAND" aria-selected="false" data-chan="BRAND">Branding</button><button class="chan-tab" role="tab" id="tab-LSA" aria-controls="pan-LSA" aria-selected="false" data-chan="LSA">LSA</button><button class="chan-tab" role="tab" id="tab-SEO" aria-controls="pan-SEO" aria-selected="false" data-chan="SEO">SEO</button><button class="chan-tab" role="tab" id="tab-AEO" aria-controls="pan-AEO" aria-selected="false" data-chan="AEO">AEO</button><button class="chan-tab" role="tab" id="tab-PPC" aria-controls="pan-PPC" aria-selected="false" data-chan="PPC">PPC</button><button class="chan-tab" role="tab" id="tab-META" aria-controls="pan-META" aria-selected="false" data-chan="META">Meta Ads</button><button class="chan-tab" role="tab" id="tab-WEB" aria-controls="pan-WEB" aria-selected="false" data-chan="WEB">Websites</button></div>
       
       <div class="chan-panel on" id="pan-CONSULT" role="tabpanel" aria-labelledby="tab-CONSULT">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Consulting</h3>
-            <p class="cp">Most firms don&rsquo;t lose cases in the ad account. They lose them after the phone rings: the follow-up nobody sent, the intake form nobody checked, the signed client who never hears back. We build the back end that turns leads into clients and keeps them.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">Leads that become clients</div></div><div class="chan-fact"><div class="k">Setup time</div><div class="v">2 to 6 weeks</div></div><div class="chan-fact"><div class="k">Format</div><div class="v">Build, then ongoing support</div></div><div class="chan-fact"><div class="k">You own</div><div class="v">Every workflow and login</div></div></div>
-            <a class="chan-more" href="#contact">Talk to us about Consulting <span>&rarr;</span></a>
+            <p class="cp">Intake, automations and workflows that turn leads into signed clients, then keep them.</p>
+            <div class="cx-facts"><span>Setup: 2 to 6 weeks</span><span>You own every workflow</span></div>
+            <ul class="cx-list"><li>Intake and CRM setup, every lead in one place</li><li>Automated follow-up by text, email and call tasks</li><li>Lead-to-client workflows: consults booked, retainers signed</li><li>Client management: onboarding, updates and reviews on autopilot</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Intake and CRM setup, every lead in one place</li><li>Automated follow-up by text, email and call tasks</li><li>Lead-to-client workflows: consults booked, retainers signed</li><li>Client management: onboarding, updates and reviews on autopilot</li></ul>
-
-          </div>
+          <a class="cx-go" href="#contact">Talk to us about Consulting <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Team working together in an open-plan office" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>consulting.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>Systems that close the loop</b>From first call to signed client, nothing falls through.</div></div>
       </div>
       <div class="chan-panel" id="pan-BRAND" role="tabpanel" aria-labelledby="tab-BRAND">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Branding Packages</h3>
-            <p class="cp">Brand isn&rsquo;t the logo. It&rsquo;s whether the ad, the site and the phone call sound like the same organization, and whether anyone remembers the name a week later. When they don&rsquo;t line up, every channel gets more expensive.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">A name people remember</div></div><div class="chan-fact"><div class="k">Timeline</div><div class="v">2 to 4 weeks</div></div><div class="chan-fact"><div class="k">Format</div><div class="v">One-time project</div></div><div class="chan-fact"><div class="k">You own</div><div class="v">All source files</div></div></div>
-            <a class="chan-more" href="branding.html">Full Branding breakdown <span>&rarr;</span></a>
+            <p class="cp">Positioning, messaging and a visual system so the ad, the site and the call sound like one firm.</p>
+            <div class="cx-facts"><span>Timeline: 2 to 4 weeks</span><span>One-time project</span></div>
+            <ul class="cx-list"><li>Positioning: who you&rsquo;re for, what you&rsquo;re known for</li><li>Messaging framework and proof points</li><li>Logo, colour and type system with usage rules</li><li>Templates for ads, social, signage and stationery</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Positioning: who you&rsquo;re for, what you&rsquo;re known for</li><li>Messaging framework and proof points</li><li>Logo, colour and type system with usage rules</li><li>Templates for ads, social, signage and stationery</li></ul>
-
-          </div>
+          <a class="cx-go" href="branding.html">Learn more about Branding <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1655945702696-e4ede55f938b?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1655945702696-e4ede55f938b?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1655945702696-e4ede55f938b?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1655945702696-e4ede55f938b?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1655945702696-e4ede55f938b?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1655945702696-e4ede55f938b?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Brand identity applied across laptop and phone" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>brand.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>One brand, every surface</b>The ad, the site and the signage saying the same thing.</div></div>
       </div>
       <div class="chan-panel" id="pan-LSA" role="tabpanel" aria-labelledby="tab-LSA">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Local Services Ads</h3>
-            <p class="cp">Google&rsquo;s pay-per-lead product sits above every paid and organic result and bills you per call, not per click. It is the fastest route from budget to a ringing phone, and the easiest place to quietly waste money when nobody reviews the account daily.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">Calls, not clicks</div></div><div class="chan-fact"><div class="k">First leads</div><div class="v">1 month</div></div><div class="chan-fact"><div class="k">Ranking driver</div><div class="v">Reviews and response time</div></div><div class="chan-fact"><div class="k">Our fee</div><div class="v">Performance-based</div></div></div>
-            <a class="chan-more" href="lsa.html">Full LSA breakdown <span>&rarr;</span></a>
+            <p class="cp">Google&rsquo;s pay-per-call ads at the very top of the page. The fastest route from budget to a ringing phone.</p>
+            <div class="cx-facts"><span>First leads: 1 month</span><span>Pay per call, not per click</span></div>
+            <ul class="cx-list"><li>Google Screened verification and category build-out</li><li>Daily budget pacing against your intake capacity</li><li>Lead listening, tagging and dispute filing</li><li>Review generation cadence built into your process</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Google Screened verification and category build-out</li><li>Daily budget pacing against your intake capacity</li><li>Lead listening, tagging and dispute filing</li><li>Review generation cadence built into your process</li></ul>
-
-          </div>
+          <a class="cx-go" href="lsa.html">Learn more about LSA <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Taking an inbound call from a Local Services Ads lead" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>lsa.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>You pay when the phone rings</b>Per lead, not per click, above every paid result.</div></div>
       </div>
       <div class="chan-panel" id="pan-SEO" role="tabpanel" aria-labelledby="tab-SEO">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Search Engine Optimization</h3>
-            <p class="cp">Ads stop the day the card declines. Rankings don&rsquo;t. Over a two-year window this is usually the cheapest customer you will ever buy, provided the technical foundation gets fixed before anyone starts writing content.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">Rankings you keep</div></div><div class="chan-fact"><div class="k">First movement</div><div class="v">6 to 12 weeks</div></div><div class="chan-fact"><div class="k">Meaningful lift</div><div class="v">3 to 6 months</div></div><div class="chan-fact"><div class="k">Measured in</div><div class="v">Customers per page</div></div></div>
-            <a class="chan-more" href="seo.html">Full SEO breakdown <span>&rarr;</span></a>
+            <p class="cp">Rankings you keep after the ads stop. Technical foundation first, then content.</p>
+            <div class="cx-facts"><span>First movement: 6 to 12 weeks</span><span>Rankings you keep</span></div>
+            <ul class="cx-list"><li>Technical audit: crawl, index coverage, Core Web Vitals</li><li>Google Business Profile and map-pack optimization</li><li>Architecture built around your service lines and cities</li><li>Content calendar written for intent, not search volume</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Technical audit: crawl, index coverage, Core Web Vitals</li><li>Google Business Profile and map-pack optimization</li><li>Architecture built around your service lines and cities</li><li>Content calendar written for intent, not search volume</li></ul>
-
-          </div>
+          <a class="cx-go" href="seo.html">Learn more about SEO <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1686061592689-312bbfb5c055?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1686061592689-312bbfb5c055?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1686061592689-312bbfb5c055?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1686061592689-312bbfb5c055?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1686061592689-312bbfb5c055?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1686061592689-312bbfb5c055?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Search analytics dashboard with ranking data" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>seo.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>The line that gets cheaper</b>Rankings you keep working long after the spend stops.</div></div>
       </div>
       <div class="chan-panel" id="pan-AEO" role="tabpanel" aria-labelledby="tab-AEO">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Answer Engine Optimization</h3>
-            <p class="cp">A growing share of buyers never see ten blue links. They ask an assistant and get one answer with two or three businesses named in it. Acquisition costs here are low precisely because most businesses haven&rsquo;t noticed yet.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">Citations in AI answers</div></div><div class="chan-fact"><div class="k">First citations</div><div class="v">4 to 8 weeks</div></div><div class="chan-fact"><div class="k">Core lever</div><div class="v">Structure and corroboration</div></div><div class="chan-fact"><div class="k">Reporting</div><div class="v">Prompt-level tracking</div></div></div>
-            <a class="chan-more" href="aeo.html">Full AEO breakdown <span>&rarr;</span></a>
+            <p class="cp">Get named when clients ask ChatGPT and Google&rsquo;s AI who to hire.</p>
+            <div class="cx-facts"><span>First citations: 4 to 8 weeks</span><span>Prompt-level tracking</span></div>
+            <ul class="cx-list"><li>Prompt inventory and baseline citation audit</li><li>Answer-first rewrites of high-intent pages</li><li>Full schema markup: Organization, Service, FAQ</li><li>Entity consistency across profiles and directories</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Prompt inventory and baseline citation audit</li><li>Answer-first rewrites of high-intent pages</li><li>Full schema markup: Organization, Service, FAQ</li><li>Entity consistency across profiles and directories</li></ul>
-
-          </div>
+          <a class="cx-go" href="aeo.html">Learn more about AEO <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1745674684498-1547fd240f5d?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1745674684498-1547fd240f5d?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1745674684498-1547fd240f5d?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1745674684498-1547fd240f5d?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1745674684498-1547fd240f5d?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1745674684498-1547fd240f5d?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Laptop screen showing an AI assistant response" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>aeo.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>Be the answer, not the tenth link</b>Named inside the response your buyer actually reads.</div></div>
       </div>
       <div class="chan-panel" id="pan-PPC" role="tabpanel" aria-labelledby="tab-PPC">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Google Search Ads</h3>
-            <p class="cp">Paid search buys you the top of the page tomorrow, and punishes every lazy default. Broad match with no negative discipline and conversions counting form loads will spend your budget happily while the dashboard looks healthy.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">Qualified clicks</div></div><div class="chan-fact"><div class="k">First leads</div><div class="v">Days</div></div><div class="chan-fact"><div class="k">Core discipline</div><div class="v">Negatives and match types</div></div><div class="chan-fact"><div class="k">Reported in</div><div class="v">Cost per new customer</div></div></div>
-            <a class="chan-more" href="ppc.html">Full PPC breakdown <span>&rarr;</span></a>
+            <p class="cp">The top of Google tomorrow, without the lazy defaults that burn budget.</p>
+            <div class="cx-facts"><span>First leads: days</span><span>Reported in cost per new customer</span></div>
+            <ul class="cx-list"><li>Account restructured by offer and deal value</li><li>Weekly search-term mining and negative expansion</li><li>Dedicated landing pages per offer</li><li>Offline conversion import so bidding chases revenue</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Account restructured by offer and deal value</li><li>Weekly search-term mining and negative expansion</li><li>Dedicated landing pages per offer</li><li>Offline conversion import so bidding chases revenue</li></ul>
-
-          </div>
+          <a class="cx-go" href="ppc.html">Learn more about PPC <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1557200134-90327ee9fafa?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1557200134-90327ee9fafa?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1557200134-90327ee9fafa?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1557200134-90327ee9fafa?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1557200134-90327ee9fafa?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Laptop showing a Google search results page" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>ppc.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>Top of the page tomorrow</b>Fast, controllable, and unforgiving of lazy defaults.</div></div>
       </div>
       <div class="chan-panel" id="pan-META" role="tabpanel" aria-labelledby="tab-META">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Meta Ads</h3>
-            <p class="cp">Search captures demand that already exists. Meta creates it, and it retargets the traffic that left without calling. It is a creative channel first and a targeting channel second, which is why most accounts stall at three ads.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">Demand you create</div></div><div class="chan-fact"><div class="k">Ramp time</div><div class="v">1 to 2 weeks</div></div><div class="chan-fact"><div class="k">Core lever</div><div class="v">Creative volume</div></div><div class="chan-fact"><div class="k">Best for</div><div class="v">Retargeting and scale</div></div></div>
-            <a class="chan-more" href="meta-ads.html">Full Meta Ads breakdown <span>&rarr;</span></a>
+            <p class="cp">Create demand on Facebook and Instagram and win back visitors who left without calling.</p>
+            <div class="cx-facts"><span>Ramp time: 1 to 2 weeks</span><span>Creative on a cadence</span></div>
+            <ul class="cx-list"><li>Pixel and Conversions API with event validation</li><li>Cold, warm and retargeting audience structure</li><li>Static and video creative produced on a cadence</li><li>Weekly testing, losers cut fast</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Pixel and Conversions API with event validation</li><li>Cold, warm and retargeting audience structure</li><li>Static and video creative produced on a cadence</li><li>Weekly testing, losers cut fast</li></ul>
-
-          </div>
+          <a class="cx-go" href="meta-ads.html">Learn more about Meta Ads <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1745848413078-f85af10e5bf2?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Instagram and Facebook among social apps on a smartphone" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>meta.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>Where your buyers already are</b>Facebook and Instagram, reaching them before they search.</div></div>
       </div>
       <div class="chan-panel" id="pan-WEB" role="tabpanel" aria-labelledby="tab-WEB">
-        <div class="chan-grid">
-          <div>
+        <div class="cx">
+          <div class="cx-txt">
             <h3>Websites</h3>
-            <p class="cp">Every other channel dead-ends here. You can win the auction, take the map pack and still lose the sale because the page takes six seconds to load and buries the phone number. This is where most businesses quietly lose half of what they bought.</p>
-            <div class="chan-facts"><div class="chan-fact"><div class="k">You pay for</div><div class="v">A site that converts</div></div><div class="chan-fact"><div class="k">Build time</div><div class="v">1 to 2 weeks</div></div><div class="chan-fact"><div class="k">Target load</div><div class="v">Under 2s on mobile</div></div><div class="chan-fact"><div class="k">You own</div><div class="v">Code and domain</div></div></div>
-            <a class="chan-more" href="websites.html">Full Websites breakdown <span>&rarr;</span></a>
+            <p class="cp">Fast, custom-coded sites that turn every other channel&rsquo;s traffic into calls.</p>
+            <div class="cx-facts"><span>Build time: 1 to 2 weeks</span><span>Under 2s on mobile</span></div>
+            <ul class="cx-list"><li>Custom build, no page-builder bloat</li><li>Copy written before design, not after</li><li>Schema, analytics, call tracking wired in at build</li><li>Migration, redirects and launch QA</li></ul>
           </div>
-          <div>
-            <div class="band-num" style="margin-bottom:14px">What&rsquo;s included</div>
-            <ul class="chan-list"><li>Custom build, no page-builder bloat</li><li>Copy written before design, not after</li><li>Schema, analytics, call tracking wired in at build</li><li>Migration, redirects and launch QA</li></ul>
-
-          </div>
+          <a class="cx-go" href="websites.html">Learn more about Websites <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="ph ph-wide ph-dark chan-ph"><img src="https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Hand-written front-end code in an editor" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>web.jpg<br>drop a 4K photo here</span>'}))"><div class="ph-cap"><b>Custom code, not a template</b>Hand-built, so it loads fast and converts.</div></div>
       </div>
     </div>
   </div>
