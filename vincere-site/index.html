@@ -1383,6 +1383,12 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 .scroll-cue:hover{color:#E2C4DB!important}
 #services.dk .scroll-cue-line{background:rgba(255,255,255,.38)!important}
 #services.dk .scroll-cue-line span{background:#E2C4DB!important}
+/* sticky rail: white */
+.railbar{background:#fff!important;color:var(--ink)!important;border-top:1px solid #EADFE8!important;box-shadow:0 -10px 30px rgba(10,10,10,.12)}
+.railbar .rb-txt{color:#4A4A4A!important}
+.railbar .rb-txt b{color:var(--ink)!important}
+.railbar .rb-tel{color:var(--ink)!important;border-color:rgba(10,10,10,.22)!important}
+.railbar .rb-tel:hover{border-color:var(--purple)!important;color:var(--purple)!important;background:#F7F1F6!important}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
@@ -1848,7 +1854,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
     if(hero){
       new IntersectionObserver(function(e){
         heroGone=!e[0].isIntersecting; sync();
-      },{threshold:0}).observe(hero);
+      },{threshold:0,rootMargin:'350px 0px 0px 0px'}).observe(hero);
     }
     if(contact){
       new IntersectionObserver(function(e){
