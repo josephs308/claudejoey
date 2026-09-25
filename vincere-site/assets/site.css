@@ -1014,6 +1014,9 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
 /* deep brand purple: give purple buttons a light rim so they read on black */
 .nav-cta,.btn-orange,.railbar .rb-act .btn{box-shadow:inset 0 0 0 1.5px rgba(226,196,219,.45)!important}
 .nav-cta:hover,.btn-orange:hover{box-shadow:inset 0 0 0 1.5px rgba(226,196,219,.8)!important}
+/* quote-bar button: match the other brand buttons (no halo ring) */
+.quickbar .btn{background:linear-gradient(135deg,#6A3660 0%,#492141 55%,#34162F 100%)!important;box-shadow:inset 0 0 0 1.5px rgba(226,196,219,.45),0 10px 26px rgba(0,0,0,.45)!important}
+.quickbar .btn:hover{box-shadow:inset 0 0 0 1.5px rgba(226,196,219,.8),0 14px 32px rgba(0,0,0,.5)!important}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
