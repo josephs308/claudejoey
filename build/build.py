@@ -14,9 +14,9 @@ CONTENT = os.path.join(BUILD, 'content')
 
 DOMAIN = 'https://vincerelegalmarketing.com'
 BRAND = 'Vincere Legal Marketing'
-PHONE_DISPLAY = '(385) 217-1934'
-PHONE_TEL = '+13852171934'
-PHONE_E164 = '+1-385-217-1934'
+PHONE_DISPLAY = '(555) 010-0199'  # placeholder until Vincere's real number is set
+PHONE_TEL = '+15550100199'
+PHONE_E164 = '+1-555-010-0199'
 EMAIL = 'joe@vincerelegalmarketing.com'
 PORTAL = '/portal/'
 LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
@@ -633,6 +633,10 @@ def build_thanks():
     out = h + nav() + '\n<main id="main">\n' + body + '\n</main>\n' + footer() + '\n' + SCRIPTS + '\n</body>\n</html>\n'
     open(os.path.join(SITE, 'thanks.html'), 'w').write(out.replace('href="#contact"', 'href="/#contact"'))
 
+def build_portal():
+    os.makedirs(os.path.join(SITE, 'portal'), exist_ok=True)
+    shutil.copy(os.path.join(BUILD, 'portal.html'), os.path.join(SITE, 'portal', 'index.html'))
+
 def remove_old():
     for _, _, _, _, old in SERVICES:
         if old and os.path.exists(os.path.join(SITE, old)): os.remove(os.path.join(SITE, old))
@@ -650,6 +654,7 @@ def main():
     if os.path.exists(os.path.join(CONTENT, 'practice-hub.json')): build_hub('practice')
     if os.path.exists(os.path.join(CONTENT, 'about.json')): build_about()
     patch_home()
+    build_portal()
     build_thanks()
     remove_old()
     build_misc()
