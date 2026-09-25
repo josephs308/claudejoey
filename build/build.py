@@ -246,7 +246,7 @@ def head(url, title, desc, schema, robots='index,follow,max-image-preview:large,
 <meta name="twitter:description" content="{e(desc)}">
 <meta name="twitter:image" content="{DOMAIN}/assets/og-image.png">
 <meta name="theme-color" content="#64315A">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{favicon_uri()}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/schibsted-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -561,6 +561,10 @@ def build_css():
 
 FAVICON = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='#64315A'/><path d='M53.11 12Q53.31 12 53.31 12.38Q53.31 12.76 53.11 12.76Q50.89 12.76 48.97 14.48Q47.06 16.2 45.85 19.45L33.43 51.75Q33.37 52 32.76 52Q32.16 52 32.03 51.75L15.92 17.29Q14.83 14.99 13.69 13.88Q12.54 12.76 10.89 12.76Q10.69 12.76 10.69 12.38Q10.69 12 10.89 12Q11.71 12 12.25 12.06Q12.8 12.13 13.59 12.16Q14.39 12.19 15.73 12.19Q18.78 12.19 20.73 12.16Q22.67 12.13 23.97 12.06Q25.28 12 26.3 12Q26.49 12 26.49 12.38Q26.49 12.76 26.3 12.76Q23.62 12.76 22.7 14.1Q21.78 15.44 22.99 17.92L35.28 44.55L32.67 48.94L44.13 19.2Q45.22 16.33 44.26 14.55Q43.31 12.76 40.06 12.76Q39.87 12.76 39.87 12.38Q39.87 12 40.06 12Q41.78 12 43.37 12.1Q44.96 12.19 47.51 12.19Q49.29 12.19 50.41 12.1Q51.52 12 53.11 12Z' fill='#fff'/></svg>"
 
+import urllib.parse as _up
+def favicon_uri():
+    return 'data:image/svg+xml,' + _up.quote(FAVICON, safe=" =:/',.-")
+
 def build_misc():
     open(os.path.join(SITE, 'favicon.svg'), 'w').write(FAVICON)
     urls = [('/', '1.0')] + SITEMAP
@@ -599,7 +603,7 @@ def patch_home():
     s = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{e(HOME_DESC)}">', s, count=1)
     s = re.sub(r'\n<meta (?:property="(?:og|twitter):[^"]*"|name="(?:twitter:[^"]*|robots)")[^>]*>', '', s)
     s = re.sub(r'\n<link rel="(?:canonical|apple-touch-icon)"[^>]*>', '', s)
-    s = re.sub(r'<link rel="icon"[^>]*>', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">', s, count=1)
+    s = re.sub(r'<link rel="icon"[^>]*>', f'<link rel="icon" href="{favicon_uri()}" type="image/svg+xml">', s, count=1)
     social = f"""
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="{DOMAIN}/">
@@ -664,7 +668,9 @@ def build_thanks():
 
 def build_portal():
     os.makedirs(os.path.join(SITE, 'portal'), exist_ok=True)
-    shutil.copy(os.path.join(BUILD, 'portal.html'), os.path.join(SITE, 'portal', 'index.html'))
+    ps = open(os.path.join(BUILD, 'portal.html')).read()
+    ps = re.sub(r'<link rel="icon"[^>]*>', f'<link rel="icon" type="image/svg+xml" href="{favicon_uri()}">', ps, count=1)
+    open(os.path.join(SITE, 'portal', 'index.html'), 'w').write(ps)
 
 def remove_old():
     for _, _, _, _, old in SERVICES:
@@ -691,3 +697,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# FAVICON_URI
