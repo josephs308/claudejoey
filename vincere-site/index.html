@@ -1124,6 +1124,11 @@ h3{letter-spacing:-.01em!important}
 .ps-tags .ps-lab{grid-column:1/-1;padding:0;margin-bottom:2px;color:var(--purple);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 @media(max-width:420px){.ps-tags{grid-template-columns:1fr}}
 .plan-sec .plan-lede,.plan-sec .plan-steps p{color:var(--ink)!important}
+.plan-promise{list-style:none;margin:34px 0 0;padding:22px 24px;background:#fff;border:1px solid #EADFE8;border-radius:18px;display:grid;gap:14px;max-width:560px;box-shadow:0 14px 34px rgba(100,49,90,.06)}
+.plan-promise li{position:relative;padding-left:30px;font-size:14.5px;line-height:1.5;color:var(--ink)}
+.plan-promise li b{font-weight:700}
+.plan-promise li::before{content:"";position:absolute;left:0;top:2px;width:18px;height:18px;border-radius:50%;background:var(--purple)}
+.plan-promise li::after{content:"";position:absolute;left:6px;top:6.5px;width:6px;height:3.5px;border-left:1.8px solid #fff;border-bottom:1.8px solid #fff;transform:rotate(-45deg)}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
@@ -1311,6 +1316,11 @@ h3{letter-spacing:-.01em!important}
         <a class="btn btn-orange btn-arr" href="#contact">Get my free plan</a>
         <a class="btn btn-out" href="tel:+13852171934">Call (385) 217-1934</a>
       </div>
+      <ul class="plan-promise">
+        <li><b>Free, no obligation.</b> The plan costs nothing, and you&rsquo;re not committing to anything by asking for it.</li>
+        <li><b>No retainer to start.</b> You see the numbers and the fee before any contract exists.</li>
+        <li><b>Built only for law firms.</b> Every benchmark and channel call comes from legal marketing, not a generic playbook.</li>
+      </ul>
     </div>
     <ol class="plan-steps rv">
         <li><span class="ps-n">01</span><div><h4>Learn your firm</h4><p>Practice areas, case value, close rate and capacity. Your numbers, not an industry benchmark.</p><div class="ps-tags"><span class="ps-lab">What we look at</span><span>Practice areas</span><span>Average case value</span><span>Intake and close rate</span><span>Caseload capacity</span></div></div></li>
