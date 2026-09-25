@@ -1143,6 +1143,9 @@ html.js-anim .in .kid,html.js-anim .kid.in{opacity:1;transform:none}
 .hero-v2 .hero-lead{will-change:transform,opacity}
 @media(prefers-reduced-motion:reduce){html.js-anim .rv,html.js-anim .kid{opacity:1!important;transform:none!important;transition:none!important}
   .plan-steps li.is-active{transform:none}}
+.plan-promise li{padding-left:0!important}
+.plan-promise li::before,.plan-promise li::after{display:none!important;content:none!important}
+.plan-promise li + li{padding-top:14px;border-top:1px solid #F0E8EE}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
