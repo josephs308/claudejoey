@@ -312,7 +312,7 @@ def crumb_html(crumbs):
     return '<nav aria-label="Breadcrumb"><p class="crumb">' + '<span class="sep">/</span>'.join(parts) + '</p></nav>'
 
 def hero(crumbs, eyebrow, h1, lede, cta2=('Call ' + PHONE_DISPLAY, f'tel:{PHONE_TEL}'), top=True):
-    tops = (crumb_html(crumbs) + f'\n    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>{e(eyebrow)}</div></div>') if top else ''
+    tops = (crumb_html(crumbs) + f'\n    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>{e(eyebrow)}</div></div>') if top else crumb_html(crumbs)
     return f'''<header class="phero">
   <div class="wrap phero-in">
     {tops}
@@ -470,6 +470,7 @@ def build_practice(slug):
     body = f'''<header class="phero pa-hero">
   <div class="wrap pa-hero-in">
     <div class="pa-hero-l">
+      {crumb_html(crumbs)}
       <h1>{e(d["h1"])}</h1>
       <p class="lede">{e(d["lede"])}</p>
       <div class="btn-row">
