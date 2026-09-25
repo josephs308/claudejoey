@@ -998,6 +998,7 @@ section#math{padding-top:72px!important}
 .prap .pa-hero .crumb [aria-current]{color:#E2C4DB}
 .phero .crumb{font-size:13px!important;margin:0 0 14px!important;letter-spacing:.01em;color:var(--muted)}.phero .crumb .sep{margin:0 8px}
 .phero{padding:124px 0 52px!important}@media(max-width:560px){.phero{padding:104px 0 36px!important}}
+.svcp .ph-band{background:linear-gradient(180deg,#fff 0,#fff 50%,#F7F1F6 50%,#F7F1F6 100%)!important;padding:0!important}.svcp .ph-band + .sec-lav{padding-top:64px!important}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
