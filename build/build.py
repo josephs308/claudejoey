@@ -122,7 +122,7 @@ def nav():
       <a class="nav-portal-m" href="{PORTAL}">{icon("LOCK")} Client Portal</a>
     </div>
     <a class="nav-portal" href="{PORTAL}">{icon("LOCK")}Client Portal</a>
-    <a class="nav-cta" href="#contact"><span class="dot"></span>Connect With Us</a>
+    <a class="nav-cta" href="#contact">Free Strategy Call</a>
     <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMid"><span></span><span></span><span></span></button>
   </div>
 </nav>'''
