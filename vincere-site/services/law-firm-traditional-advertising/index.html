@@ -167,7 +167,7 @@
           <p class="bk-done-mail">We just sent a calendar invite to <b class="bk-done-email"></b>.</p>
           <p class="form-fine">Need to change it? Call <a href="tel:+15550100199">(555) 010-0199</a> or reply to the invite.</p>
         </div>
-        <p class="bk-err" role="alert" hidden>Something went wrong sending your booking. Please call <a href="tel:+15550100199">(555) 010-0199</a> and we will book it for you.</p>
+        <div class="bk-err" role="alert" hidden><p>Something went wrong sending your booking. Please try again, or call <a href="tel:+15550100199">(555) 010-0199</a> and we will book it for you.</p><button type="button" class="btn btn-orange bk-retry">Try again</button><button type="button" class="bk-back bk-err-back">&lsaquo; Back</button></div>
         <noscript><p class="form-sub">Booking needs JavaScript. Call <a href="tel:+15550100199">(555) 010-0199</a> or email <a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a> to book.</p></noscript>
       </form>
     </div>
@@ -184,8 +184,7 @@
         <p style="margin-top:10px"><a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a></p>
       </div>
       <div><h5>Services</h5><ul><li><a href="/services/law-firm-consulting/">Consulting</a></li><li><a href="/services/law-firm-branding/">Branding</a></li><li><a href="/services/local-services-ads-for-lawyers/">Local Services Ads</a></li><li><a href="/services/law-firm-seo/">SEO</a></li><li><a href="/services/law-firm-aeo/">AEO</a></li><li><a href="/services/law-firm-ppc/">PPC</a></li><li><a href="/services/meta-ads-for-lawyers/">Meta Ads</a></li><li><a href="/services/law-firm-traditional-advertising/">Traditional</a></li><li><a href="/services/law-firm-website-design/">Websites</a></li></ul></div>
-      <div><h5>Practice areas</h5><ul><li><a href="/practice-areas/personal-injury-lawyer-marketing/">Personal Injury</a></li><li><a href="/practice-areas/criminal-defense-lawyer-marketing/">Criminal Defense</a></li><li><a href="/practice-areas/family-law-marketing/">Family Law</a></li><li><a href="/practice-areas/estate-planning-attorney-marketing/">Estate Planning</a></li><li><a href="/practice-areas/real-estate-attorney-marketing/">Real Estate</a></li><li><a href="/practice-areas/business-lawyer-marketing/">Business Law</a></li><li><a href="/practice-areas/litigation-attorney-marketing/">Litigation</a></li><li><a href="/practice-areas/employment-lawyer-marketing/">Employment Law</a></li></ul></div>
-      <div><h5>&nbsp;</h5><ul><li><a href="/practice-areas/immigration-lawyer-marketing/">Immigration</a></li><li><a href="/practice-areas/bankruptcy-attorney-marketing/">Bankruptcy</a></li><li><a href="/practice-areas/workers-compensation-lawyer-marketing/">Workers&rsquo; Compensation</a></li><li><a href="/practice-areas/medical-malpractice-lawyer-marketing/">Medical Malpractice</a></li><li><a href="/practice-areas/dui-lawyer-marketing/">DUI / DWI</a></li><li><a href="/practice-areas/intellectual-property-attorney-marketing/">Intellectual Property</a></li><li><a href="/practice-areas/tax-attorney-marketing/">Tax Law</a></li><li><a href="/practice-areas/">All practice areas</a></li></ul></div>
+      <div class="foot-pa"><h5>Practice areas</h5><div class="foot-pa-cols"><ul><li><a href="/practice-areas/personal-injury-lawyer-marketing/">Personal Injury</a></li><li><a href="/practice-areas/criminal-defense-lawyer-marketing/">Criminal Defense</a></li><li><a href="/practice-areas/family-law-marketing/">Family Law</a></li><li><a href="/practice-areas/estate-planning-attorney-marketing/">Estate Planning</a></li><li><a href="/practice-areas/real-estate-attorney-marketing/">Real Estate</a></li><li><a href="/practice-areas/business-lawyer-marketing/">Business Law</a></li><li><a href="/practice-areas/litigation-attorney-marketing/">Litigation</a></li><li><a href="/practice-areas/employment-lawyer-marketing/">Employment Law</a></li></ul><ul><li><a href="/practice-areas/immigration-lawyer-marketing/">Immigration</a></li><li><a href="/practice-areas/bankruptcy-attorney-marketing/">Bankruptcy</a></li><li><a href="/practice-areas/workers-compensation-lawyer-marketing/">Workers&rsquo; Compensation</a></li><li><a href="/practice-areas/medical-malpractice-lawyer-marketing/">Medical Malpractice</a></li><li><a href="/practice-areas/dui-lawyer-marketing/">DUI / DWI</a></li><li><a href="/practice-areas/intellectual-property-attorney-marketing/">Intellectual Property</a></li><li><a href="/practice-areas/tax-attorney-marketing/">Tax Law</a></li><li><a href="/practice-areas/">All practice areas</a></li></ul></div></div>
       <div><h5>Company</h5><ul>
         <li><a href="/about/">About Vincere</a></li>
         <li><a href="/#math">Approach</a></li>
@@ -228,7 +227,8 @@
     var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
     var cur=0,label='';
     function show(i,quiet){
-      cur=i;screens.forEach(function(s,j){s.hidden=j!==i});f.classList.toggle('bk-at0',i===0);
+      cur=i;if(err)err.hidden=true;screens.forEach(function(s,j){s.hidden=j!==i;s.setAttribute('aria-hidden',String(j!==i));if('inert' in s)s.inert=j!==i});f.classList.toggle('bk-at0',i===0);
+      var a=screens[i];a.classList.remove('bk-anim');void a.offsetWidth;a.classList.add('bk-anim');
       if(bar)bar.style.width=Math.round(100*i/(screens.length-1))+'%';
       var s=screens[i],r=f.getBoundingClientRect();
       if(!quiet&&(r.top<0||r.top>innerHeight*.6))f.scrollIntoView({behavior:'smooth',block:'start'});
@@ -284,8 +284,10 @@
           f.querySelector('.bk-done-when').textContent=label+'.';
           f.querySelector('.bk-done-email').textContent=f.querySelector('[name="email"]').value;
           show(screens.length-1);})
-        .catch(function(){err.hidden=false;});
+        .catch(function(){screens.forEach(function(s){s.hidden=true;if('inert' in s)s.inert=true});err.hidden=false;});
     }
+    f.querySelector('.bk-retry').addEventListener('click',function(){err.hidden=true;screens[cur].hidden=false;if('inert' in screens[cur])screens[cur].inert=false;submit();});
+    f.querySelector('.bk-err-back').addEventListener('click',function(){show(cur)});
     f.querySelector('.bk-change').addEventListener('click',function(){show(0)});
     f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(screens[1]))show(2)});
     f.querySelectorAll('.bk-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(0,cur-1))})});

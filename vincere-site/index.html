@@ -1415,6 +1415,7 @@ section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!importa
 .cs2 .cs-alt a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
 .cs2 .cs-alt a:hover{border-color:#fff}
 @media(min-width:901px){section#contact .contact-in{align-items:center!important}}
+.foot-pa{grid-column:span 2}.foot-pa h5{text-align:center}.foot-pa-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:inherit;gap:0 48px}@media(max-width:560px){.foot-pa-cols{gap:0 20px}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
@@ -1492,6 +1493,19 @@ section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!importa
 .bk-empty svg{width:22px;height:22px;color:var(--purple);opacity:.7}
 .bk-tz{margin-top:auto!important;padding-top:12px;font-size:11.5px!important;line-height:1.45}
 @media(max-width:1100px) and (min-width:901px),(max-width:560px){.bk-step{grid-template-columns:1fr}.bk-cal{padding-right:0}.bk-times .bk-slots{flex:none;max-height:none}.bk-times{contain:none;border-left:0;padding-left:0;border-top:1px solid #EFE6ED;padding-top:14px;margin-top:10px}.bk-empty{min-height:0}}
+/* fixed-size card: all steps share one grid cell sized to the tallest */
+.book{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr)}
+.book .bk-prog{position:absolute;top:18px;left:34px;right:34px;margin:0!important}
+.book.bk-at0 .bk-prog{height:4px;margin:0!important}
+.book .bk-screen,.book .bk-err{grid-row:1;grid-column:1;animation:none}
+.book .bk-screen[hidden]{display:block!important;visibility:hidden;pointer-events:none}
+.book .bk-screen.bk-anim{animation:bkIn .3s ease both}
+.book .bk-screen.bk-done{align-self:center}
+.book .bk-err{align-self:center;margin:0!important;padding:22px!important;text-align:center}
+.book .bk-err p{margin:0 0 14px;font-size:14.5px;line-height:1.55}
+.book .bk-err .btn{width:auto;display:inline-flex}
+@media(max-width:560px){.book .bk-prog{left:18px;right:18px;top:12px}}
+@media(max-width:1100px) and (min-width:901px),(max-width:560px){.book .bk-times .bk-slots{max-height:156px!important;overflow:auto}.book .bk-empty{min-height:156px!important;box-sizing:border-box}}
 
 </style>
 </head>
@@ -1781,7 +1795,7 @@ section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!importa
           <p class="bk-done-mail">We just sent a calendar invite to <b class="bk-done-email"></b>.</p>
           <p class="form-fine">Need to change it? Call <a href="tel:+15550100199">(555) 010-0199</a> or reply to the invite.</p>
         </div>
-        <p class="bk-err" role="alert" hidden>Something went wrong sending your booking. Please call <a href="tel:+15550100199">(555) 010-0199</a> and we will book it for you.</p>
+        <div class="bk-err" role="alert" hidden><p>Something went wrong sending your booking. Please try again, or call <a href="tel:+15550100199">(555) 010-0199</a> and we will book it for you.</p><button type="button" class="btn btn-orange bk-retry">Try again</button><button type="button" class="bk-back bk-err-back">&lsaquo; Back</button></div>
         <noscript><p class="form-sub">Booking needs JavaScript. Call <a href="tel:+15550100199">(555) 010-0199</a> or email <a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a> to book.</p></noscript>
       </form>
     </div>
@@ -1814,8 +1828,7 @@ section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!importa
         <p style="margin-top:10px"><a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a></p>
       </div>
       <div><h5>Services</h5><ul><li><a href="/services/law-firm-consulting/">Consulting</a></li><li><a href="/services/law-firm-branding/">Branding</a></li><li><a href="/services/local-services-ads-for-lawyers/">Local Services Ads</a></li><li><a href="/services/law-firm-seo/">SEO</a></li><li><a href="/services/law-firm-aeo/">AEO</a></li><li><a href="/services/law-firm-ppc/">PPC</a></li><li><a href="/services/meta-ads-for-lawyers/">Meta Ads</a></li><li><a href="/services/law-firm-traditional-advertising/">Traditional</a></li><li><a href="/services/law-firm-website-design/">Websites</a></li></ul></div>
-      <div><h5>Practice areas</h5><ul><li><a href="/practice-areas/personal-injury-lawyer-marketing/">Personal Injury</a></li><li><a href="/practice-areas/criminal-defense-lawyer-marketing/">Criminal Defense</a></li><li><a href="/practice-areas/family-law-marketing/">Family Law</a></li><li><a href="/practice-areas/estate-planning-attorney-marketing/">Estate Planning</a></li><li><a href="/practice-areas/real-estate-attorney-marketing/">Real Estate</a></li><li><a href="/practice-areas/business-lawyer-marketing/">Business Law</a></li><li><a href="/practice-areas/litigation-attorney-marketing/">Litigation</a></li><li><a href="/practice-areas/employment-lawyer-marketing/">Employment Law</a></li></ul></div>
-      <div><h5>&nbsp;</h5><ul><li><a href="/practice-areas/immigration-lawyer-marketing/">Immigration</a></li><li><a href="/practice-areas/bankruptcy-attorney-marketing/">Bankruptcy</a></li><li><a href="/practice-areas/workers-compensation-lawyer-marketing/">Workers&rsquo; Compensation</a></li><li><a href="/practice-areas/medical-malpractice-lawyer-marketing/">Medical Malpractice</a></li><li><a href="/practice-areas/dui-lawyer-marketing/">DUI / DWI</a></li><li><a href="/practice-areas/intellectual-property-attorney-marketing/">Intellectual Property</a></li><li><a href="/practice-areas/tax-attorney-marketing/">Tax Law</a></li><li><a href="/practice-areas/">All practice areas</a></li></ul></div>
+      <div class="foot-pa"><h5>Practice areas</h5><div class="foot-pa-cols"><ul><li><a href="/practice-areas/personal-injury-lawyer-marketing/">Personal Injury</a></li><li><a href="/practice-areas/criminal-defense-lawyer-marketing/">Criminal Defense</a></li><li><a href="/practice-areas/family-law-marketing/">Family Law</a></li><li><a href="/practice-areas/estate-planning-attorney-marketing/">Estate Planning</a></li><li><a href="/practice-areas/real-estate-attorney-marketing/">Real Estate</a></li><li><a href="/practice-areas/business-lawyer-marketing/">Business Law</a></li><li><a href="/practice-areas/litigation-attorney-marketing/">Litigation</a></li><li><a href="/practice-areas/employment-lawyer-marketing/">Employment Law</a></li></ul><ul><li><a href="/practice-areas/immigration-lawyer-marketing/">Immigration</a></li><li><a href="/practice-areas/bankruptcy-attorney-marketing/">Bankruptcy</a></li><li><a href="/practice-areas/workers-compensation-lawyer-marketing/">Workers&rsquo; Compensation</a></li><li><a href="/practice-areas/medical-malpractice-lawyer-marketing/">Medical Malpractice</a></li><li><a href="/practice-areas/dui-lawyer-marketing/">DUI / DWI</a></li><li><a href="/practice-areas/intellectual-property-attorney-marketing/">Intellectual Property</a></li><li><a href="/practice-areas/tax-attorney-marketing/">Tax Law</a></li><li><a href="/practice-areas/">All practice areas</a></li></ul></div></div>
       <div><h5>Company</h5><ul>
         <li><a href="/about/">About Vincere</a></li>
         <li><a href="/#math">Approach</a></li>
@@ -1948,7 +1961,8 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
     var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
     var cur=0,label='';
     function show(i,quiet){
-      cur=i;screens.forEach(function(s,j){s.hidden=j!==i});f.classList.toggle('bk-at0',i===0);
+      cur=i;if(err)err.hidden=true;screens.forEach(function(s,j){s.hidden=j!==i;s.setAttribute('aria-hidden',String(j!==i));if('inert' in s)s.inert=j!==i});f.classList.toggle('bk-at0',i===0);
+      var a=screens[i];a.classList.remove('bk-anim');void a.offsetWidth;a.classList.add('bk-anim');
       if(bar)bar.style.width=Math.round(100*i/(screens.length-1))+'%';
       var s=screens[i],r=f.getBoundingClientRect();
       if(!quiet&&(r.top<0||r.top>innerHeight*.6))f.scrollIntoView({behavior:'smooth',block:'start'});
@@ -2004,8 +2018,10 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
           f.querySelector('.bk-done-when').textContent=label+'.';
           f.querySelector('.bk-done-email').textContent=f.querySelector('[name="email"]').value;
           show(screens.length-1);})
-        .catch(function(){err.hidden=false;});
+        .catch(function(){screens.forEach(function(s){s.hidden=true;if('inert' in s)s.inert=true});err.hidden=false;});
     }
+    f.querySelector('.bk-retry').addEventListener('click',function(){err.hidden=true;screens[cur].hidden=false;if('inert' in screens[cur])screens[cur].inert=false;submit();});
+    f.querySelector('.bk-err-back').addEventListener('click',function(){show(cur)});
     f.querySelector('.bk-change').addEventListener('click',function(){show(0)});
     f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(screens[1]))show(2)});
     f.querySelectorAll('.bk-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(0,cur-1))})});

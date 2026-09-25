@@ -56,6 +56,6 @@ def render(e, practices, phone_tel, phone_display, email, booking_url=''):
           <p class="bk-done-mail">We just sent a calendar invite to <b class="bk-done-email"></b>.</p>
           <p class="form-fine">Need to change it? Call <a href="tel:{phone_tel}">{phone_display}</a> or reply to the invite.</p>
         </div>
-        <p class="bk-err" role="alert" hidden>Something went wrong sending your booking. Please call <a href="tel:{phone_tel}">{phone_display}</a> and we will book it for you.</p>
+        <div class="bk-err" role="alert" hidden><p>Something went wrong sending your booking. Please try again, or call <a href="tel:{phone_tel}">{phone_display}</a> and we will book it for you.</p><button type="button" class="btn btn-orange bk-retry">Try again</button><button type="button" class="bk-back bk-err-back">&lsaquo; Back</button></div>
         <noscript><p class="form-sub">Booking needs JavaScript. Call <a href="tel:{phone_tel}">{phone_display}</a> or email <a href="mailto:{email}">{email}</a> to book.</p></noscript>
       </form>'''

@@ -141,8 +141,7 @@ def footer():
         <p style="margin-top:10px"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
       <div><h5>Services</h5><ul>{svc}</ul></div>
-      <div><h5>Practice areas</h5><ul>{p1}</ul></div>
-      <div><h5>&nbsp;</h5><ul>{p2}<li><a href="/practice-areas/">All practice areas</a></li></ul></div>
+      <div class="foot-pa"><h5>Practice areas</h5><div class="foot-pa-cols"><ul>{p1}</ul><ul>{p2}<li><a href="/practice-areas/">All practice areas</a></li></ul></div></div>
       <div><h5>Company</h5><ul>
         <li><a href="/about/">About Vincere</a></li>
         <li><a href="/#math">Approach</a></li>
