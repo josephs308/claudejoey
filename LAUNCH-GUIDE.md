@@ -38,7 +38,6 @@ vincere-site/
 ├── thanks.html                 Form thank-you page (hidden from Google)
 ├── 404.html                    "Page not found" page (hidden from Google)
 ├── assets/                     Stylesheet, logo, social share image, iPhone icon
-├── fonts/                      Unbounded, Schibsted Grotesk, Instrument Serif
 ├── favicon.svg                 The purple V browser-tab icon
 ├── sitemap.xml                 All 28 public pages, for Google and Bing
 ├── robots.txt                  Lets all crawlers in and points them to the sitemap
@@ -68,7 +67,7 @@ Every public page has:
 - No unclosed tags.
 - No JavaScript errors.
 - No sideways scrolling on phones.
-- All fonts load.
+- Fonts: the site uses built-in system fonts (Georgia for the hero, Arial and the device's system font elsewhere), so nothing extra downloads and it looks the same wherever it opens.
 
 ## Launch on Netlify
 

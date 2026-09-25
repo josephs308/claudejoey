@@ -247,8 +247,6 @@ def head(url, title, desc, schema, robots='index,follow,max-image-preview:large,
 <meta name="theme-color" content="#64315A">
 <link rel="icon" href="{favicon_uri()}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="preload" href="/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/schibsted-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 {jsonld(schema)}
 </head>
@@ -621,10 +619,6 @@ HEADERS = """/*
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-/fonts/*
-  Cache-Control: public, max-age=31536000, immutable
-  Access-Control-Allow-Origin: *
-
 /assets/*
   Cache-Control: public, max-age=604800
 
@@ -783,6 +777,26 @@ def remove_old():
         if old and os.path.exists(os.path.join(SITE, old)): os.remove(os.path.join(SITE, old))
     if os.path.exists(os.path.join(SITE, 'about.html')): os.remove(os.path.join(SITE, 'about.html'))
 
+# ---------------------------------------------------------------- fonts
+# The site uses system fonts only. Removing the web-font names leaves each
+# original fallback in place: Georgia for the hero serif, Arial for headings,
+# the device's system font for body text.
+def system_fonts(t):
+    t = re.sub(r'@font-face\{[^}]*\}\n?', '', t)
+    t = re.sub(r'<link rel="preload"[^>]*as="font"[^>]*>\n?', '', t)
+    for name in ('Schibsted Grotesk', 'Unbounded', 'Instrument Serif'):
+        for q in ("'", '"'):
+            t = t.replace(f'{q}{name}{q},', '').replace(f'{q}{name}{q}', 'sans-serif' if name != 'Instrument Serif' else 'Georgia,serif')
+    return t
+
+def apply_system_fonts():
+    for d, _, fs in os.walk(SITE):
+        for f in fs:
+            if f.endswith(('.html', '.css')):
+                fp = os.path.join(d, f); t = open(fp).read(); n = system_fonts(t)
+                if n != t: open(fp, 'w').write(n)
+    shutil.rmtree(os.path.join(SITE, 'fonts'), ignore_errors=True)
+
 def main():
     build_css()
     for s, *_ in SERVICES:
@@ -800,6 +814,7 @@ def main():
     build_404()
     remove_old()
     build_misc()
+    apply_system_fonts()
     print('built', len(SITEMAP), 'pages')
 
 if __name__ == '__main__':
