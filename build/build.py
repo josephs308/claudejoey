@@ -119,7 +119,6 @@ def nav():
       <a href="/#math">Approach</a>
       <a href="/about/">About</a>
       <a href="#contact">Contact</a>
-      <a class="nav-tel" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
       <a class="nav-portal-m" href="{PORTAL}">{icon("LOCK")} Client Portal</a>
     </div>
     <a class="nav-portal" href="{PORTAL}">{icon("LOCK")}Client Portal</a>
