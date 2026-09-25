@@ -463,47 +463,58 @@ def build_practice(slug):
                'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': d['service_name'] + ' services',
                                    'itemListElement': [{'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': SVC[c['service']][1] + ' for ' + d['practice'] + ' firms', 'url': f'{DOMAIN}{svc_url(c["service"])}'}} for c in d['channels'] if c['service'] in SVC]}},
               faq_node(url, d['faqs'])]
-    market = ''.join(f'<div class="card"><h3>{e(m["title"])}</h3><p>{e(m["text"])}</p></div>' for m in d['market'])
-    chans = ''.join(svc_card(c['service'], c['why']) for c in d['channels'] if c['service'] in SVC)
-    qs = ''.join(f'<li>{icon("Q")}{e(q)}</li>' for q in d['searches'])
+    points = ''.join(f'<li><span class="pa-pn">{i+1:02d}</span><div><h3>{e(m["title"])}</h3><p>{e(m["text"])}</p></div></li>' for i, m in enumerate(d['market']))
+    rows = ''.join(f'<a class="pa-row" href="{svc_url(c["service"])}"><span class="pa-row-ic">{icon(SVC[c["service"]][3])}</span><h3>{e(SVC[c["service"]][1])}</h3><p>{e(c["why"])}</p><span class="pa-row-go" aria-hidden="true">&rarr;</span></a>' for c in d['channels'] if c['service'] in SVC)
+    qs = ''.join(f'<li>{icon("Q")}<span>{e(q)}</span></li>' for q in d['searches'][:6])
     related = ''.join(f'<a class="rel-c" href="{pra_url(r)}"><div class="rel-tag">Practice area</div><h3>{e(PRA[r])}</h3><p>Marketing built around how {e(PRA[r].lower())} clients search and hire.</p><span class="rel-arr">See the playbook &rarr;</span></a>' for r in d['related'] if r in PRA and r != slug)
-    body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"])}
-{answer(d["answer"])}
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><div class="kicker">The market</div><h2>What makes {e(d["practice"])} marketing different.</h2></div>
-    <div class="cards">{market}</div>
+    body = f'''<header class="phero pa-hero">
+  <div class="wrap pa-hero-in">
+    <div class="pa-hero-l">
+      <h1>{e(d["h1"])}</h1>
+      <p class="lede">{e(d["lede"])}</p>
+      <div class="btn-row">
+        <a class="btn btn-orange btn-arr" href="#contact">Get my free plan</a>
+        <a class="btn btn-out" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
+      </div>
+    </div>
+    <aside class="pa-search" aria-label="What {e(d["practice"])} clients search">
+      <p class="pa-search-h">What {e(d["practice"])} clients search</p>
+      <ul>{qs}</ul>
+      <p class="pa-search-f">We build your visibility around searches and AI questions like these.</p>
+    </aside>
   </div>
-</section>
-<section class="sec sec-alt sec-lav">
-  <div class="wrap"><div class="lf">
-    <div class="prose">{prose_sections(d["sections"])}</div>
-    <aside class="panel"><h2 class="h4" style="font-size:15px">What your clients search</h2><p style="font-size:14px;color:#4A4A4A;margin:6px 0 14px">The kinds of searches and AI questions we build your visibility around.</p>
-      <ul class="qs">{qs}</ul>
-      <a class="btn btn-orange btn-arr" href="#contact" style="margin-top:22px;width:100%;justify-content:center">Get my free plan</a></aside>
+</header>
+{answer(d["answer"])}
+<section class="sec pa-market">
+  <div class="wrap"><div class="pa-split">
+    <div class="pa-split-h"><h2>What makes {e(d["practice"])} marketing different.</h2><a class="pa-link" href="#contact">Get a plan for your market &rarr;</a></div>
+    <ol class="pa-points">{points}</ol>
   </div></div>
 </section>
-<section class="sec">
+<section class="sec sec-lav pa-prose">
+  <div class="wrap"><div class="prose">{prose_sections(d["sections"])}</div></div>
+</section>
+<section class="sec pa-ch">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker">The channels</div><h2>The channels that sign {e(d["practice"])} cases.</h2><p class="sub">Every firm&rsquo;s mix is different. These are where we usually start, and your free plan tells you which ones fit your market.</p></div>
-    <div class="cards">{chans}</div>
+    <div class="sec-head"><h2>The channels that sign {e(d["practice"])} cases.</h2><p class="sub">Every firm&rsquo;s mix is different. These are where we usually start, and your free plan tells you which ones fit your market.</p></div>
+    <div class="pa-rows">{rows}</div>
   </div>
 </section>
 <section class="sec sec-dark">
   <div class="wrap"><div class="intake">
-    <div><div class="kicker">Intake</div><h2>{e(d["intake"]["h2"])}</h2></div>
+    <div><h2>{e(d["intake"]["h2"])}</h2></div>
     <p>{e(d["intake"]["text"])}</p>
   </div></div>
 </section>
 {faq_html(d["faqs"], d["nav_label"] + " marketing questions, answered.")}
 <section class="sec sec-tight">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:36px"><div class="kicker">Related practice areas</div><h2>Other practices we market.</h2></div>
+    <div class="sec-head"><h2>Other practices we market.</h2></div>
     <div class="rel">{related}</div>
   </div>
 </section>
 {callout("Get a " + d["practice"] + " marketing plan for your market.", "We will price your market, pick the right channels and show you the expected cost per signed case before you spend a dollar.")}'''
-    write(url, page(url, d['title'], d['meta_description'], schema, body))
+    write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="prap">', 1))
     SITEMAP.append((url, '0.9'))
     return d
 
