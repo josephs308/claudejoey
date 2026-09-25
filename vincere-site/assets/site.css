@@ -999,6 +999,18 @@ section#math{padding-top:72px!important}
 .phero .crumb{font-size:13px!important;margin:0 0 14px!important;letter-spacing:.01em;color:var(--muted)}.phero .crumb .sep{margin:0 8px}
 .phero{padding:124px 0 52px!important}@media(max-width:560px){.phero{padding:104px 0 36px!important}}
 .svcp .ph-band{background:linear-gradient(180deg,#fff 0,#fff 50%,#F7F1F6 50%,#F7F1F6 100%)!important;padding:0!important}.svcp .ph-band + .sec-lav{padding-top:64px!important}
+/* tight FAQ everywhere (matches the homepage FAQ) */
+.faq-sec{padding:56px 0 64px!important}
+.faq-sec .sec-head{margin-bottom:20px!important}
+.faq-sec .sec-head h2,.svcp .faq-sec h2,.prap .faq-sec h2{font-size:30px!important;line-height:1.15!important;letter-spacing:-.02em;margin:0!important}
+.faq-sec .faq-q{padding:14px 0!important;font-size:15.5px!important}
+.faq-sec .faq-q .pl{width:26px!important;height:26px!important;font-size:14px!important}
+.faq-sec .faq-a>div{font-size:14.5px!important;line-height:1.6!important;padding:0 0 16px!important}
+@media(max-width:560px){.faq-sec{padding:40px 0 48px!important}.faq-sec .sec-head h2,.svcp .faq-sec h2,.prap .faq-sec h2{font-size:24px!important}}
+main #faq.faq-sec{padding:56px 0 64px!important}
+main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!important;margin:0!important}
+@media(max-width:560px){main #faq.faq-sec{padding:40px 0 48px!important}main #faq.faq-sec .sec-head h2{font-size:24px!important}}
+@media(min-width:901px){.cards.cards-3,.cards:has(> :nth-child(9):last-child){grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}

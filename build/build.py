@@ -86,7 +86,7 @@ ICONS = {
 
 def icon(key, cls=''):
     c = f' class="{cls}"' if cls else ''
-    return (f'<svg{c} viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
+    return (f'<svg{c} width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
             f'stroke-linecap="round" stroke-linejoin="round">{ICONS[key]}</svg>')
 
 def e(t):
@@ -330,9 +330,9 @@ def answer(a):
   <div class="wrap"><div class="answer"><span class="answer-tag">Quick answer</span><div><h2 id="answer-q">{e(a["question"])}</h2><p>{e(a["text"])}</p></div></div></div>
 </section>'''
 
-def faq_html(faqs, head_txt='Straight answers.'):
+def faq_html(faqs, head_txt='Frequently Asked Questions - FAQs'):
     items = ''.join(f'<div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>{e(f["q"])}</span><span class="pl">+</span></button><div class="faq-a"><div>{e(f["a"])}</div></div></div>' for f in faqs)
-    return f'''<section class="sec sec-alt sec-lav" id="faq">
+    return f'''<section class="sec sec-alt sec-lav faq-sec" id="faq">
   <div class="wrap-narrow">
     <div class="sec-head"><h2>{e(head_txt)}</h2></div>
     <div class="faq">{items}</div>
@@ -399,13 +399,6 @@ def build_service(slug):
     incl = ''.join(f'<li><span class="dot"></span><span>{e(x)}</span></li>' for x in d['included'])
     steps = ''.join(f'<div class="step"><div class="step-n">{i+1:02d}</div><div><h3 class="h4">{e(s["title"])}</h3><p>{e(s["text"])}</p></div><div class="step-caret">&rarr;</div></div>' for i, s in enumerate(d['process']))
     metrics = ''.join(f'<div class="metric"><h3 class="k">{e(m["title"])}</h3><p>{e(m["text"])}</p></div>' for m in d['metrics'])
-    notes = ''
-    for n in d['practice_notes']:
-        ps = practice_for_note(n['practice'])
-        if ps:
-            notes += f'<a class="card" href="{pra_url(ps)}"><span class="card-ic">{icon("LAW")}</span><h3>{e(n["practice"])}</h3><p>{e(n["text"])}</p><span class="card-go">{e(PRA[ps])} marketing &rarr;</span></a>'
-        else:
-            notes += f'<div class="card"><span class="card-ic">{icon("LAW")}</span><h3>{e(n["practice"])}</h3><p>{e(n["text"])}</p></div>'
     related = ''.join(f'<a class="rel-c" href="{svc_url(r)}"><div class="rel-tag">{e(SVC[r][1])}</div><h3>{e(SVC[r][1])}</h3><p>{e(SVC[r][2])}.</p><span class="rel-arr">See the service &rarr;</span></a>' for r in d['related'] if r in SVC and r != slug)
     ph = SVC_PHOTOS.get(slug)
     body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"], top=False)}
@@ -423,12 +416,6 @@ def build_service(slug):
   <div class="wrap">
     <div class="sec-head"><h2>How we run {e(d["nav_label"])} for your firm.</h2></div>
     <div class="steps">{steps}</div>
-  </div>
-</section>
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><h2>{e(d["nav_label"])} is not the same for every practice.</h2></div>
-    <div class="cards">{notes}</div>
   </div>
 </section>
 <section class="sec sec-dark">
@@ -543,7 +530,7 @@ def build_hub(kind):
 </section>
 {faq_html(d["faqs"])}
 {callout("Not sure where to start?", "Your free plan tells you which channels fit your practice and your market, and what each signed case should cost.")}'''
-    write(url, page(url, d['title'], d['meta_description'], schema, body))
+    write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="svcp">', 1))
     SITEMAP.append((url, '0.9'))
 
 def build_about():
@@ -568,10 +555,10 @@ def build_about():
   <div class="wrap"><div class="sec-head"><h2>What we hold ourselves to.</h2></div><div class="cards">{pr}</div></div>
 </section>
 <section class="sec">
-  <div class="wrap"><div class="sec-head"><h2>Nine channels. One partner.</h2></div><div class="cards">{svc}</div></div>
+  <div class="wrap"><div class="sec-head"><h2>Nine channels. One partner.</h2></div><div class="cards cards-3">{svc}</div></div>
 </section>
 {faq_html(d["faqs"])}'''
-    write(url, page(url, d['title'], d['meta_description'], schema, body))
+    write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="svcp">', 1))
     SITEMAP.append((url, '0.7'))
 
 # ---------------------------------------------------------------- assets
@@ -631,7 +618,7 @@ HEADERS = """/*
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 /assets/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=0, must-revalidate
 
 /portal/*
   X-Robots-Tag: noindex
@@ -807,6 +794,27 @@ def apply_system_fonts():
                 if n != t: open(fp, 'w').write(n)
     shutil.rmtree(os.path.join(SITE, 'fonts'), ignore_errors=True)
 
+def size_svgs():
+    # Default size on every inline SVG so icons stay small even if CSS fails to load.
+    for d, _, fs in os.walk(SITE):
+        for f in fs:
+            fp = os.path.join(d, f)
+            if not f.endswith('.html') or fp in (os.path.join(SITE, 'index.html'), os.path.join(SITE, 'portal', 'index.html')): continue
+            t = open(fp).read()
+            n = re.sub(r'<svg(?![^>]*\swidth=)', '<svg width="20" height="20"', t)
+            if n != t: open(fp, 'w').write(n)
+
+def version_css():
+    # Add a content hash to the stylesheet URL so browsers always fetch the current CSS.
+    import hashlib
+    v = hashlib.md5(open(os.path.join(SITE, 'assets', 'site.css'), 'rb').read()).hexdigest()[:10]
+    for d, _, fs in os.walk(SITE):
+        for f in fs:
+            if f.endswith('.html'):
+                fp = os.path.join(d, f); t = open(fp).read()
+                n = re.sub(r'href="/assets/site\.css(\?v=[0-9a-f]+)?"', f'href="/assets/site.css?v={v}"', t)
+                if n != t: open(fp, 'w').write(n)
+
 def main():
     build_css()
     for s, *_ in SERVICES:
@@ -825,6 +833,8 @@ def main():
     remove_old()
     build_misc()
     apply_system_fonts()
+    size_svgs()
+    version_css()
     print('built', len(SITEMAP), 'pages')
 
 if __name__ == '__main__':
