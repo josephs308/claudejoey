@@ -1084,6 +1084,30 @@ h3{letter-spacing:-.01em!important}
 .chan .cx-go{position:relative;z-index:1}
 @media(max-width:900px){.chan .cx{padding:28px 24px}}
 @media(max-width:560px){.chan .cx{padding:22px 18px;border-radius:18px}.cx-ic{width:40px;height:40px;border-radius:12px}}
+/* services section: black with a purple glow */
+#services.dk{--dk-bg:radial-gradient(900px 420px at 85% 0%,rgba(100,49,90,.55) 0%,rgba(100,49,90,0) 65%),#0B0A0B;--dk-accent:#C9A0C0;--dk-check:#1A0F18}
+#services.dk{background:var(--dk-bg);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
+#services.dk h2{color:#fff}
+#services.dk h2 em{color:var(--dk-accent)}
+#services.dk .scroll-cue{color:rgba(255,255,255,.6)}
+#services.dk .scroll-cue-line{background:rgba(255,255,255,.18)}
+#services.dk .scroll-cue-line span{background:#fff}
+#services.dk .chan .chan-tabs{border-bottom-color:rgba(255,255,255,.14)}
+#services.dk .chan .chan-tab{color:rgba(255,255,255,.55)}
+#services.dk .chan .chan-tab:hover{color:#fff}
+#services.dk .chan .chan-tab[aria-selected="true"]{color:#fff}
+#services.dk .chan .chan-tab[aria-selected="true"] .ct-ic{color:var(--dk-accent)}
+#services.dk .chan-ink{background:var(--dk-accent)}
+#services.dk .chan .cx{background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border-color:rgba(255,255,255,.14);backdrop-filter:blur(6px)}
+#services.dk .chan .cx::after{background:radial-gradient(circle,rgba(201,160,192,.28),rgba(201,160,192,0) 70%)}
+#services.dk .cx h3{color:#fff}
+#services.dk .cx .cp{color:rgba(255,255,255,.72)}
+#services.dk .cx-ic{background:#fff;color:var(--purple);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#services.dk .chan .cx-facts span{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#fff}
+#services.dk .chan .cx-list li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.9)}
+#services.dk .chan .cx-list li::before{background:var(--dk-accent);color:var(--dk-check)}
+#services.dk .cx-go{background:#fff;color:var(--purple);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+#services.dk .cx-go:hover{background:var(--purple-tint)}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
@@ -1148,7 +1172,7 @@ h3{letter-spacing:-.01em!important}
 
 </header>
 
-<section class="band" id="services" style="padding-top:62px">
+<section class="band dk" id="services" style="padding-top:62px">
   <a class="scroll-cue" href="#services" aria-label="Scroll to services"><span class="scroll-cue-txt">Scroll</span><span class="scroll-cue-line" aria-hidden="true"><span></span></span></a>
   <div class="wrap">
     <div class="band-head rv" style="grid-template-columns:1fr">
