@@ -1034,6 +1034,38 @@ h3{letter-spacing:-.01em!important}
 @keyframes cueDrop{0%{top:-40%}70%,100%{top:100%}}
 @media(prefers-reduced-motion:reduce){.scroll-cue-line span{animation:none;top:30%}}
 @media(max-width:640px){.scroll-cue{display:none}}
+/* plan section */
+.plan-sec .plan-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:start}
+.plan-sec h2 em{font-style:normal;color:var(--purple)}
+.plan-lede{font-size:17px;line-height:1.6;color:var(--muted);margin:22px 0 34px;max-width:54ch}
+.plan-steps{list-style:none;margin:0 0 36px;padding:0;position:relative}
+.plan-steps::before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:1.5px;background:#E3D5E0}
+.plan-steps li{position:relative;display:grid;grid-template-columns:40px 1fr;gap:18px;padding:0 0 26px}
+.plan-steps li:last-child{padding-bottom:0}
+.ps-n{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--purple);color:var(--purple);
+  display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-size:12px;font-weight:600}
+.plan-steps h4{font-family:'Schibsted Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.01em;margin:8px 0 4px}
+.plan-steps p{margin:0;font-size:15px;line-height:1.55;color:var(--muted);max-width:52ch}
+.plan-card{position:sticky;top:110px;background:#fff;border:1px solid #EADFE8;border-radius:22px;padding:28px;box-shadow:0 30px 70px rgba(100,49,90,.12)}
+.pc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.pc-tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);background:var(--purple-tint);padding:6px 11px;border-radius:999px}
+.pc-meta{font-size:13px;color:var(--muted)}
+.plan-card .pc-title{font-size:20px!important;margin:0 0 18px}
+.pc-rows{list-style:none;margin:0;padding:0}
+.pc-rows li{padding:14px 0;border-top:1px solid #F0E8EE}
+.pc-row-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px}
+.pc-when{font-size:12px;font-weight:600;color:var(--muted);background:#F4F1F3;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.pc-when.go{color:#1F6B45;background:#E5F4EC}
+.pc-when.no{color:#8A7F87;background:#F4F1F3}
+.pc-bar{height:6px;border-radius:6px;background:#F3EAF1;margin:10px 0 7px;overflow:hidden}
+.pc-bar span{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--purple),#9B5C8E)}
+.pc-row-sub{font-size:13px;color:var(--muted)}
+.pc-rows li.off b{color:#9C939A}
+.pc-rows li.off .pc-row-sub{margin-top:6px}
+.pc-foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:16px;border-top:1px solid #F0E8EE;font-size:14px;font-weight:600}
+.pc-check{width:26px;height:26px;border-radius:50%;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+@media(max-width:980px){.plan-sec .plan-grid{grid-template-columns:1fr;gap:48px}.plan-card{position:static}}
+@media(max-width:560px){.plan-card{padding:22px 18px}.pc-meta{display:none}}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
@@ -1212,38 +1244,34 @@ h3{letter-spacing:-.01em!important}
   </div>
 </section>
 
-<section class="band band-alt" id="math">
-  <div class="wrap">
-    <div class="band-head rv">
-      <div>
-        <h2>We show you the math<br><em>before</em> you commit.</h2>
-      </div>
-      <div>
-        <p class="band-lede">Most agencies open with a pitch. We open with your numbers: what a customer is worth to you, what your close rate actually is, and what a lead can cost before the channel stops making sense.</p>
-        <p class="band-lede" style="font-weight:700;color:var(--ink)">If the math doesn&rsquo;t work in your market, we&rsquo;ll say so on that call.</p>
-      </div>
-    </div>
-
-    <div class="proof rv">
-      <div class="proof-i"><div class="pk">01</div><div class="pv"><b>What a customer is worth.</b> Average value and close rate, in your business, not an industry benchmark. Everything downstream depends on getting this honest.</div></div>
-      <div class="proof-i"><div class="pk">02</div><div class="pv"><b>What the market charges.</b> Real cost per click and cost per lead in your geography, pulled before you spend anything.</div></div>
-      <div class="proof-i"><div class="pk">03</div><div class="pv"><b>Which channel fits.</b> Some markets are cheap on LSA and brutal on paid search. We&rsquo;ll tell you which one to start with and why.</div></div>
-      <div class="proof-i"><div class="pk">04</div><div class="pv"><b>What our fee looks like.</b> Against those numbers, in writing, before there&rsquo;s a contract to sign.</div></div>
-    </div>
-
-    <div class="split rv" style="margin-top:56px">
-      <div>
-        <p class="band-lede"><b style="color:var(--ink)">Close rate moves more than budget.</b> Lifting lead-to-customer conversion from 15% to 25% does more for cost per customer than adding 40% to spend. That&rsquo;s why we fix intake and measurement before we launch anything.</p>
-      </div>
-      <div>
-        <p class="band-lede"><b style="color:var(--ink)">Cost per lead is a ceiling, not a goal.</b> A $40 lead that never closes is more expensive than a $200 lead that does. Every channel gets judged on the number at the end of the chain, not the one at the front.</p>
+<section class="band band-alt plan-sec" id="math">
+  <div class="wrap plan-grid">
+    <div class="plan-copy rv">
+      <h2>We build your plan<br><em>before you pay.</em></h2>
+      <p class="plan-lede">No retainer and no guesswork. We study your market, pick the channels that will actually sign cases, and hand you the plan first. If the numbers don&rsquo;t work, we&rsquo;ll tell you.</p>
+      <ol class="plan-steps">
+        <li><span class="ps-n">01</span><div><h4>Learn your firm</h4><p>Practice areas, case value, close rate and capacity. Your numbers, not an industry benchmark.</p></div></li>
+        <li><span class="ps-n">02</span><div><h4>Price your market</h4><p>Real cost per click, per lead and per case in your city, pulled before you spend a dollar.</p></div></li>
+        <li><span class="ps-n">03</span><div><h4>Pick the right channels</h4><p>Only the ones that fit your market and budget. Some firms need LSA and SEO, some need a billboard. We tell you which, and why.</p></div></li>
+        <li><span class="ps-n">04</span><div><h4>Put it in writing</h4><p>Channel mix, budget, timeline, expected cost per case and our fee, in one plan you keep whether you hire us or not.</p></div></li>
+      </ol>
+      <div class="btn-row">
+        <a class="btn btn-orange btn-arr" href="#contact">Get my free plan</a>
+        <a class="btn btn-out" href="tel:+13852171934">Call (385) 217-1934</a>
       </div>
     </div>
-
-    <div class="btn-row rv" style="margin-top:44px">
-      <a class="btn btn-orange btn-arr" href="#contact">Get the numbers for my market</a>
-      <a class="btn btn-out" href="tel:+13852171934">Call (385) 217-1934</a>
-    </div>
+    <aside class="plan-card rv" aria-label="Example of a Vincere channel plan">
+      <div class="pc-head"><span class="pc-tag">Example plan</span><span class="pc-meta">Personal injury firm &middot; one metro</span></div>
+      <h3 class="pc-title">Recommended channel mix</h3>
+      <ul class="pc-rows">
+        <li><div class="pc-row-top"><b>Consulting</b><span class="pc-when go">Week 1</span></div><div class="pc-bar"><span style="width:10%"></span></div><div class="pc-row-sub">10% &middot; intake and follow-up fixed first</div></li>
+        <li><div class="pc-row-top"><b>Local Services Ads</b><span class="pc-when go">Start now</span></div><div class="pc-bar"><span style="width:40%"></span></div><div class="pc-row-sub">40% of budget &middot; fastest signed cases</div></li>
+        <li><div class="pc-row-top"><b>SEO</b><span class="pc-when go">Month 1</span></div><div class="pc-bar"><span style="width:30%"></span></div><div class="pc-row-sub">30% &middot; lowers cost per case over time</div></li>
+        <li><div class="pc-row-top"><b>Google Search Ads</b><span class="pc-when">Month 3</span></div><div class="pc-bar"><span style="width:20%"></span></div><div class="pc-row-sub">20% &middot; once intake is tracked</div></li>
+        <li class="off"><div class="pc-row-top"><b>Meta Ads</b><span class="pc-when no">Not yet</span></div><div class="pc-row-sub">Market too expensive to start here</div></li>
+      </ul>
+      <div class="pc-foot"><span>Delivered before you sign anything</span><span class="pc-check" aria-hidden="true">&#10003;</span></div>
+    </aside>
   </div>
 </section>
 
