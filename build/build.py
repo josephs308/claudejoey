@@ -737,7 +737,7 @@ def patch_home():
     s = s.replace('<div class="railbar" id="railbar">', home_faq() + '<div class="railbar" id="railbar">', 1)
     s = re.sub(r'<script id="bk-js">.*?</script>\n?', '', s, flags=re.S)
     s = s.replace('</body>', open(os.path.join(BUILD, 'booking.js')).read() + '</body>', 1)
-    s = re.sub(r'#contact\.sec-grey\{--fd:48px;background:.*?\}', '#contact.sec-grey{background:#F7F1F6!important;padding-top:84px!important;padding-bottom:84px!important}', s, count=1, flags=re.S)
+    s = re.sub(r'#contact\.sec-grey\{--fd:48px;background:.*?\}', '#contact.sec-grey{background:#F4F4F4!important;padding-top:84px!important;padding-bottom:84px!important}', s, count=1, flags=re.S)
     if '/* nav dropdowns */' in s:
         s = re.sub(r'/\* nav dropdowns \*/.*?(?=</style>)', lambda m: '/* nav dropdowns */\n' + extra + '\n', s, count=1, flags=re.S)
     else:

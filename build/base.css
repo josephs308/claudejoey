@@ -10,8 +10,8 @@
   --line-2:rgba(255,255,255,.14);
   --purple:#492141;        /* Vincere purple */
   --purple-2:#371832;
-  --purple-tint:#F3EAF1;
-  --purple-lt:#C9A0C0;     /* purple for text on dark */
+  --purple-tint:#EEEEEE;
+  --purple-lt:#A6A6A6;     /* purple for text on dark */
   --shadow:0 24px 60px rgba(10,10,10,.08);
 }
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:98px}
