@@ -90,7 +90,7 @@
       <div class="contact-side rv">
         <div class="sec-head" style="margin-bottom:0">
                     <h2 id="contact-h">Tell us your market.<br>We&rsquo;ll tell you what it costs.</h2>
-          <p class="sub">Send this over and we&rsquo;ll come back with projected lead volume, expected cost per new customer, and exactly what our fee looks like against those numbers, before you commit to anything.</p>
+          <p class="sub">Book a free 30-minute call. We&rsquo;ll come back with projected lead volume, expected cost per signed case, and exactly what our fee looks like against those numbers, before you commit to anything.</p>
         </div>
         <div style="margin-top:52px">
           <div class="kicker kicker-quiet">Or just call</div>
@@ -98,28 +98,35 @@
           <p class="email-line"><a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a></p>
         </div>
       </div>
-      <form class="form rv" name="vincere-inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax">
-        <input type="hidden" name="form-name" value="vincere-inquiry">
+      <form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax">
+        <input type="hidden" name="form-name" value="vincere-booking">
+        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone">
         <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
-        <h3>Request a market breakdown</h3>
-        <p class="form-sub">No obligation. If the math doesn&rsquo;t work in your market, we&rsquo;ll say so.</p>
-        <div class="f2">
-          <div class="f"><label for="c-name">Full name</label><input id="c-name" name="name" required autocomplete="name"></div>
-          <div class="f"><label for="c-business">Business name</label><input id="c-business" name="business" required autocomplete="organization"></div>
+        <h3>Book a strategy call</h3>
+        <p class="form-sub">Pick a time for a free 30-minute call. We will walk through your market and your numbers. No obligation.</p>
+        <div class="bk-step">
+          <div class="bk-cal">
+            <div class="bk-head"><button type="button" class="bk-nav bk-prev" aria-label="Previous month">&lsaquo;</button><b class="bk-month" aria-live="polite"></b><button type="button" class="bk-nav bk-next" aria-label="Next month">&rsaquo;</button></div>
+            <div class="bk-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+            <div class="bk-days"></div>
+          </div>
+          <div class="bk-times"><p class="bk-times-h">Select a day</p><div class="bk-slots"><p class="bk-empty">Choose a weekday on the calendar to see open times.</p></div><p class="bk-tz"></p></div>
         </div>
-        <div class="f2">
-          <div class="f"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="bk-details" hidden>
+          <div class="bk-pick"><div><small>Your call</small><b class="bk-when"></b></div><button type="button" class="bk-change">Change</button></div>
+          <div class="f2">
+            <div class="f"><label for="b-name">Full name</label><input id="b-name" name="name" required autocomplete="name"></div>
+            <div class="f"><label for="b-firm">Firm name</label><input id="b-firm" name="firm" autocomplete="organization"></div>
+          </div>
+          <div class="f2">
+            <div class="f"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="f"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" required autocomplete="tel"></div>
+          </div>
+          <div class="f"><label for="b-pa">Primary practice area</label><select id="b-pa" name="practice_area"><option>Select one</option><option>Personal Injury</option><option>Criminal Defense</option><option>Family Law</option><option>Estate Planning</option><option>Real Estate</option><option>Business Law</option><option>Litigation</option><option>Employment Law</option><option>Immigration</option><option>Bankruptcy</option><option>Workers&rsquo; Compensation</option><option>Medical Malpractice</option><option>DUI / DWI</option><option>Intellectual Property</option><option>Tax Law</option><option>Other</option></select></div>
+          <button class="btn btn-orange btn-arr" type="submit">Book my call</button>
+          <p class="form-fine">We will confirm by email. By booking you agree to be contacted about your inquiry.</p>
         </div>
-        <div class="f"><label for="c-site">Website</label><input id="c-site" name="website" placeholder="https://" autocomplete="url"></div>
-        <div class="f"><label for="c-int">What are you looking at?</label>
-          <select id="c-int" name="interest">
-            <option>Not sure yet, want a recommendation</option><option>Local Services Ads</option><option>SEO</option><option>AEO</option><option>Websites</option><option>PPC</option><option>Meta Ads</option><option>Branding</option><option>Consulting</option><option>Traditional (billboards, TV, radio)</option><option>Full-service program</option>
-          </select></div>
-        <div class="f"><label for="c-msg">Anything we should know?</label>
-          <textarea id="c-msg" name="message" placeholder="Markets you serve, product and service lines, current spend..."></textarea></div>
-        <button class="btn btn-orange" type="submit">Send It Over</button>
-        <p class="form-note">By submitting you agree to be contacted about your inquiry.</p>
+        <noscript><p class="form-sub">Calendar needs JavaScript. Call <a href="tel:+15550100199">(555) 010-0199</a> or email <a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a> to book.</p></noscript>
       </form>
     </div>
   </div>
@@ -168,6 +175,60 @@
   var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();
   var sp=document.getElementById('scrollProg');if(sp){var t=false;function u(){var h=document.documentElement,mx=h.scrollHeight-h.clientHeight;sp.style.transform='scaleX('+(mx>0?Math.min(1,h.scrollTop/mx):0)+')';t=false}
     addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});u();}
+})();
+</script>
+<script id="bk-js">
+(function(){
+  document.querySelectorAll('form.book').forEach(function(f){
+    var days=f.querySelector('.bk-days'),mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
+    var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
+    var step=f.querySelector('.bk-step'),det=f.querySelector('.bk-details'),pick=f.querySelector('.bk-when');
+    if(!days)return;
+    var zone='';try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+    tz.textContent='30-minute call. Times shown in your time zone'+(zone?' ('+zone.replace(/_/g,' ')+')':'')+'.';
+    var today=new Date();today.setHours(0,0,0,0);
+    var first=new Date(today);first.setDate(first.getDate()+1);
+    var last=new Date(today);last.setDate(last.getDate()+45);
+    function ok(d){var w=d.getDay();return d>=first&&d<=last&&w!==0&&w!==6;}
+    var view=new Date(first.getFullYear(),first.getMonth(),1),sel=null;
+    function fmt(d,o){return d.toLocaleDateString(undefined,o)}
+    function draw(){
+      mon.textContent=fmt(view,{month:'long',year:'numeric'});
+      prev.disabled=view<=new Date(first.getFullYear(),first.getMonth(),1);
+      next.disabled=new Date(view.getFullYear(),view.getMonth()+1,1)>last;
+      days.innerHTML='';var lead=(new Date(view.getFullYear(),view.getMonth(),1).getDay()+6)%7;
+      for(var i=0;i<lead;i++)days.appendChild(document.createElement('span'));
+      var n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+      for(var dd=1;dd<=n;dd++){(function(d){
+        var b=document.createElement('button');b.type='button';b.className='bk-day';b.textContent=d.getDate();
+        if(+d===+today)b.classList.add('today');
+        if(ok(d)){b.classList.add('on');b.setAttribute('aria-label',fmt(d,{weekday:'long',month:'long',day:'numeric'}));
+          if(sel&&+d===+sel)b.classList.add('sel');
+          b.addEventListener('click',function(){sel=d;draw();times();});}
+        else{b.disabled=true;}
+        days.appendChild(b);})(new Date(view.getFullYear(),view.getMonth(),dd));}
+    }
+    function times(){
+      th.textContent=fmt(sel,{weekday:'long',month:'long',day:'numeric'});slots.innerHTML='';
+      for(var m=9*60;m<=16*60+30;m+=30){(function(m){
+        var t=new Date(sel);t.setHours(Math.floor(m/60),m%60,0,0);
+        var b=document.createElement('button');b.type='button';b.className='bk-slot';
+        b.textContent=t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+        b.addEventListener('click',function(){choose(t)});slots.appendChild(b);})(m);}
+    }
+    function choose(t){
+      var label=fmt(t,{weekday:'long',month:'long',day:'numeric'})+' at '+t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+      f.querySelector('[name="call_time"]').value=label+(zone?' ('+zone+')':'');
+      f.querySelector('[name="call_iso"]').value=t.toISOString();
+      f.querySelector('[name="timezone"]').value=zone;
+      pick.textContent=label;step.hidden=true;det.hidden=false;
+      var first=det.querySelector('input:not([type=hidden])');if(first)first.focus({preventScroll:true});
+    }
+    f.querySelector('.bk-change').addEventListener('click',function(){det.hidden=true;step.hidden=false;});
+    prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
+    next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
+    draw();
+  });
 })();
 </script>
 </body>

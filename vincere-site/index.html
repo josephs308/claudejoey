@@ -1162,9 +1162,7 @@ html.js-anim .in .kid,html.js-anim .kid.in{opacity:1;transform:none}
 #math{--fd:48px;background:
   linear-gradient(180deg,#0B0A0B calc(var(--fd)*0),#130C12 calc(var(--fd)*0.14),#1F111C calc(var(--fd)*0.28),#33192E calc(var(--fd)*0.42),#503049 calc(var(--fd)*0.56),#7C5E75 calc(var(--fd)*0.7),#AE98A9 calc(var(--fd)*0.82),#DCCED8 calc(var(--fd)*0.92),#F7F1F6 calc(var(--fd)*1),#F7F1F6 calc(100% - var(--fd)*1),#DCCED8 calc(100% - var(--fd)*0.92),#AE98A9 calc(100% - var(--fd)*0.82),#7C5E75 calc(100% - var(--fd)*0.7),#503049 calc(100% - var(--fd)*0.56),#33192E calc(100% - var(--fd)*0.42),#1F111C calc(100% - var(--fd)*0.28),#130C12 calc(100% - var(--fd)*0.14),#0B0A0B calc(100% - var(--fd)*0))!important;
   padding-top:calc(var(--fd) + 40px)!important;padding-bottom:calc(var(--fd) + 40px)!important}
-#contact.sec-grey{--fd:48px;background:
-  linear-gradient(180deg,#0B0A0B calc(var(--fd)*0),#130C12 calc(var(--fd)*0.14),#1F111C calc(var(--fd)*0.28),#33192E calc(var(--fd)*0.42),#503049 calc(var(--fd)*0.56),#7C5E75 calc(var(--fd)*0.7),#AE98A9 calc(var(--fd)*0.82),#DCCED8 calc(var(--fd)*0.92),#F7F1F6 calc(var(--fd)*1),#F7F1F6 100%)!important;
-  padding-top:calc(var(--fd) + 40px)!important;padding-bottom:84px!important}
+#contact.sec-grey{background:#F7F1F6!important;padding-top:84px!important;padding-bottom:84px!important}
 #services.dk,#about{border-bottom:0!important}
 #about,#math,#contact{border-top:0!important;border-bottom:0!important}
 @media(max-width:640px){#math,#contact.sec-grey{--fd:36px}#contact.sec-grey{padding-bottom:58px!important}}
@@ -1344,6 +1342,39 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 .foot-logo{display:inline-flex!important;align-items:center;gap:12px}
 .foot-logo .vmark{width:42px;height:42px}
 @media(max-width:560px){.vmark{width:30px;height:30px}}
+
+/* booking calendar */
+.book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
+.book h3{font-family:'Schibsted Grotesk',sans-serif!important;font-weight:700!important;font-size:24px!important;letter-spacing:-.015em!important;margin:0 0 6px}
+.bk-step{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:22px}
+.bk-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.bk-head b{font-size:15px;font-weight:700}
+.bk-nav{width:34px;height:34px;border-radius:50%;border:1px solid #EADFE8;background:#fff;color:var(--ink);font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.bk-nav:hover:not(:disabled){border-color:var(--purple);color:var(--purple)}
+.bk-nav:disabled{opacity:.35;cursor:default}
+.bk-dow,.bk-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.bk-dow span{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8A7F87;padding:4px 0}
+.bk-day{aspect-ratio:1;border:0;border-radius:10px;background:transparent;font:inherit;font-size:14px;color:#B7AEB4;cursor:default}
+.bk-day.on{background:#F3EAF1;color:var(--purple);font-weight:700;cursor:pointer}
+.bk-day.on:hover{background:#E8D8E4}
+.bk-day.sel{background:var(--purple)!important;color:#fff!important}
+.bk-day.today{box-shadow:inset 0 0 0 1px #CFB3C8}
+.bk-times-h{font-size:14px;font-weight:700;margin:4px 0 10px}
+.bk-slots{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-height:292px;overflow:auto;padding-right:2px}
+.bk-slot{border:1px solid #D9C6D4;background:#fff;color:var(--purple);border-radius:10px;padding:9px 6px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s,color .15s}
+.bk-slot:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
+.bk-empty{font-size:13.5px;color:#6B6B6B;line-height:1.5;grid-column:1/-1}
+.bk-tz{font-size:12px;color:#8A7F87;margin:10px 0 0}
+.bk-pick{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#F7F1F6;border:1px solid #EADFE8;border-radius:12px;padding:14px 16px;margin-bottom:18px}
+.bk-pick b{display:block;font-size:15px}
+.bk-pick small{font-size:12.5px;color:#6B6B6B}
+.bk-change{background:none;border:0;color:var(--purple);font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+.book .btn{width:100%;justify-content:center;margin-top:6px}
+.bk-embed{width:100%;height:640px;border:0;border-radius:12px;background:#fff}
+@media(max-width:1100px) and (min-width:901px){.bk-step{grid-template-columns:1fr}.bk-slots{grid-template-columns:repeat(3,1fr);max-height:none}}
+@media(max-width:560px){.book{padding:26px 18px!important}.bk-step{grid-template-columns:1fr}.bk-slots{grid-template-columns:repeat(3,1fr);max-height:none}}
+.form-fine{font-size:12px;color:#8A7F87;text-align:center;margin:10px 0 0}
+.book [hidden]{display:none!important}
 
 </style>
 </head>
@@ -1588,7 +1619,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
       <div class="contact-side rv">
         <div class="sec-head" style="margin-bottom:0">
           <h2>Tell us your market.<br>We&rsquo;ll tell you what it costs.</h2>
-          <p class="sub">Send this over and we&rsquo;ll come back with projected lead volume, expected cost per new customer, and exactly what our fee looks like against those numbers, before you commit to anything.</p>
+          <p class="sub">Book a free 30-minute call. We&rsquo;ll come back with projected lead volume, expected cost per signed case, and exactly what our fee looks like against those numbers, before you commit to anything.</p>
         </div>
         <div class="contact-call">
           <div class="kicker kicker-quiet">Or just call</div>
@@ -1602,28 +1633,35 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
           <p class="contact-mark-note">Local Services Ads &middot; SEO &middot; AEO &middot; Websites &middot; PPC &middot; Meta Ads &middot; Branding</p>
         </div>
       </div>
-      <form class="form rv" name="vincere-inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax">
-        <input type="hidden" name="form-name" value="vincere-inquiry">
+      <form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax">
+        <input type="hidden" name="form-name" value="vincere-booking">
+        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone">
         <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
-        <h3>Request a market breakdown</h3>
-        <p class="form-sub">No obligation. If the math doesn&rsquo;t work in your market, we&rsquo;ll say so.</p>
-        <div class="f2">
-          <div class="f"><label for="c-name">Full name</label><input id="c-name" name="name" required autocomplete="name"></div>
-          <div class="f"><label for="c-business">Business name</label><input id="c-business" name="business" required autocomplete="organization"></div>
+        <h3>Book a strategy call</h3>
+        <p class="form-sub">Pick a time for a free 30-minute call. We will walk through your market and your numbers. No obligation.</p>
+        <div class="bk-step">
+          <div class="bk-cal">
+            <div class="bk-head"><button type="button" class="bk-nav bk-prev" aria-label="Previous month">&lsaquo;</button><b class="bk-month" aria-live="polite"></b><button type="button" class="bk-nav bk-next" aria-label="Next month">&rsaquo;</button></div>
+            <div class="bk-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+            <div class="bk-days"></div>
+          </div>
+          <div class="bk-times"><p class="bk-times-h">Select a day</p><div class="bk-slots"><p class="bk-empty">Choose a weekday on the calendar to see open times.</p></div><p class="bk-tz"></p></div>
         </div>
-        <div class="f2">
-          <div class="f"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="bk-details" hidden>
+          <div class="bk-pick"><div><small>Your call</small><b class="bk-when"></b></div><button type="button" class="bk-change">Change</button></div>
+          <div class="f2">
+            <div class="f"><label for="b-name">Full name</label><input id="b-name" name="name" required autocomplete="name"></div>
+            <div class="f"><label for="b-firm">Firm name</label><input id="b-firm" name="firm" autocomplete="organization"></div>
+          </div>
+          <div class="f2">
+            <div class="f"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="f"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" required autocomplete="tel"></div>
+          </div>
+          <div class="f"><label for="b-pa">Primary practice area</label><select id="b-pa" name="practice_area"><option>Select one</option><option>Personal Injury</option><option>Criminal Defense</option><option>Family Law</option><option>Estate Planning</option><option>Real Estate</option><option>Business Law</option><option>Litigation</option><option>Employment Law</option><option>Immigration</option><option>Bankruptcy</option><option>Workers&rsquo; Compensation</option><option>Medical Malpractice</option><option>DUI / DWI</option><option>Intellectual Property</option><option>Tax Law</option><option>Other</option></select></div>
+          <button class="btn btn-orange btn-arr" type="submit">Book my call</button>
+          <p class="form-fine">We will confirm by email. By booking you agree to be contacted about your inquiry.</p>
         </div>
-        <div class="f"><label for="c-site">Website</label><input id="c-site" name="website" placeholder="https://" autocomplete="url"></div>
-        <div class="f"><label for="c-int">What are you looking at?</label>
-          <select id="c-int" name="interest">
-            <option>Not sure yet, want a recommendation</option><option>Local Services Ads</option><option>SEO</option><option>AEO</option><option>Websites</option><option>PPC</option><option>Meta Ads</option><option>Branding</option><option>Consulting</option><option>Traditional (billboards, TV, radio)</option><option>Full-service program</option>
-          </select></div>
-        <div class="f"><label for="c-msg">Anything we should know?</label>
-          <textarea id="c-msg" name="message" placeholder="Markets you serve, product and service lines, current spend..."></textarea></div>
-        <button class="btn btn-orange" type="submit">Send It Over</button>
-        <p class="form-note">By submitting you agree to be contacted about your inquiry.</p>
+        <noscript><p class="form-sub">Calendar needs JavaScript. Call <a href="tel:+15550100199">(555) 010-0199</a> or email <a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a> to book.</p></noscript>
       </form>
     </div>
   </div>
@@ -1773,6 +1811,60 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
     if(lead){var y=Math.min(scrollY,600);lead.style.transform='translateY('+(y*.18).toFixed(1)+'px)';lead.style.opacity=(1-y/900).toFixed(3);}
     t=false}
   addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(f)}},{passive:true});f();
+})();
+</script>
+<script id="bk-js">
+(function(){
+  document.querySelectorAll('form.book').forEach(function(f){
+    var days=f.querySelector('.bk-days'),mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
+    var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
+    var step=f.querySelector('.bk-step'),det=f.querySelector('.bk-details'),pick=f.querySelector('.bk-when');
+    if(!days)return;
+    var zone='';try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+    tz.textContent='30-minute call. Times shown in your time zone'+(zone?' ('+zone.replace(/_/g,' ')+')':'')+'.';
+    var today=new Date();today.setHours(0,0,0,0);
+    var first=new Date(today);first.setDate(first.getDate()+1);
+    var last=new Date(today);last.setDate(last.getDate()+45);
+    function ok(d){var w=d.getDay();return d>=first&&d<=last&&w!==0&&w!==6;}
+    var view=new Date(first.getFullYear(),first.getMonth(),1),sel=null;
+    function fmt(d,o){return d.toLocaleDateString(undefined,o)}
+    function draw(){
+      mon.textContent=fmt(view,{month:'long',year:'numeric'});
+      prev.disabled=view<=new Date(first.getFullYear(),first.getMonth(),1);
+      next.disabled=new Date(view.getFullYear(),view.getMonth()+1,1)>last;
+      days.innerHTML='';var lead=(new Date(view.getFullYear(),view.getMonth(),1).getDay()+6)%7;
+      for(var i=0;i<lead;i++)days.appendChild(document.createElement('span'));
+      var n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+      for(var dd=1;dd<=n;dd++){(function(d){
+        var b=document.createElement('button');b.type='button';b.className='bk-day';b.textContent=d.getDate();
+        if(+d===+today)b.classList.add('today');
+        if(ok(d)){b.classList.add('on');b.setAttribute('aria-label',fmt(d,{weekday:'long',month:'long',day:'numeric'}));
+          if(sel&&+d===+sel)b.classList.add('sel');
+          b.addEventListener('click',function(){sel=d;draw();times();});}
+        else{b.disabled=true;}
+        days.appendChild(b);})(new Date(view.getFullYear(),view.getMonth(),dd));}
+    }
+    function times(){
+      th.textContent=fmt(sel,{weekday:'long',month:'long',day:'numeric'});slots.innerHTML='';
+      for(var m=9*60;m<=16*60+30;m+=30){(function(m){
+        var t=new Date(sel);t.setHours(Math.floor(m/60),m%60,0,0);
+        var b=document.createElement('button');b.type='button';b.className='bk-slot';
+        b.textContent=t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+        b.addEventListener('click',function(){choose(t)});slots.appendChild(b);})(m);}
+    }
+    function choose(t){
+      var label=fmt(t,{weekday:'long',month:'long',day:'numeric'})+' at '+t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+      f.querySelector('[name="call_time"]').value=label+(zone?' ('+zone+')':'');
+      f.querySelector('[name="call_iso"]').value=t.toISOString();
+      f.querySelector('[name="timezone"]').value=zone;
+      pick.textContent=label;step.hidden=true;det.hidden=false;
+      var first=det.querySelector('input:not([type=hidden])');if(first)first.focus({preventScroll:true});
+    }
+    f.querySelector('.bk-change').addEventListener('click',function(){det.hidden=true;step.hidden=false;});
+    prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
+    next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
+    draw();
+  });
 })();
 </script>
 <script id="dd-js">

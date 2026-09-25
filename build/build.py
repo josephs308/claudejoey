@@ -21,6 +21,9 @@ EMAIL = 'joe@vincerelegalmarketing.com'
 PORTAL = '/portal/'
 LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
 TODAY = datetime.date.today().isoformat()
+# Paste a Google Calendar appointment-schedule or Calendly embed URL here to
+# replace the built-in booking calendar with the live embed.
+BOOKING_URL = ''
 
 SERVICES = [  # slug, nav label, short dropdown blurb, icon key, old url
     ('law-firm-consulting', 'Consulting', 'Intake, CRM and lead-to-client systems', 'CONSULT', None),
@@ -254,6 +257,48 @@ def head(url, title, desc, schema, robots='index,follow,max-image-preview:large,
 <body>
 '''
 
+def booking_form():
+    if BOOKING_URL:
+        return f'<div class="form book rv"><h3>Book a strategy call</h3><p class="form-sub">Pick a time for a free 30-minute call.</p><iframe class="bk-embed" src="{e(BOOKING_URL)}" title="Book a strategy call with Vincere" loading="lazy"></iframe></div>'
+    opts = ''.join(f'<option>{e(lab)}</option>' for _, lab in PRACTICES)
+    return f'''<form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax">
+        <input type="hidden" name="form-name" value="vincere-booking">
+        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone">
+        <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
+        <h3>Book a strategy call</h3>
+        <p class="form-sub">Pick a time for a free 30-minute call. We will walk through your market and your numbers. No obligation.</p>
+        <div class="bk-step">
+          <div class="bk-cal">
+            <div class="bk-head"><button type="button" class="bk-nav bk-prev" aria-label="Previous month">&lsaquo;</button><b class="bk-month" aria-live="polite"></b><button type="button" class="bk-nav bk-next" aria-label="Next month">&rsaquo;</button></div>
+            <div class="bk-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+            <div class="bk-days"></div>
+          </div>
+          <div class="bk-times"><p class="bk-times-h">Select a day</p><div class="bk-slots"><p class="bk-empty">Choose a weekday on the calendar to see open times.</p></div><p class="bk-tz"></p></div>
+        </div>
+        <div class="bk-details" hidden>
+          <div class="bk-pick"><div><small>Your call</small><b class="bk-when"></b></div><button type="button" class="bk-change">Change</button></div>
+          <div class="f2">
+            <div class="f"><label for="b-name">Full name</label><input id="b-name" name="name" required autocomplete="name"></div>
+            <div class="f"><label for="b-firm">Firm name</label><input id="b-firm" name="firm" autocomplete="organization"></div>
+          </div>
+          <div class="f2">
+            <div class="f"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="f"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" required autocomplete="tel"></div>
+          </div>
+          <div class="f"><label for="b-pa">Primary practice area</label><select id="b-pa" name="practice_area"><option>Select one</option>{opts}<option>Other</option></select></div>
+          <button class="btn btn-orange btn-arr" type="submit">Book my call</button>
+          <p class="form-fine">We will confirm by email. By booking you agree to be contacted about your inquiry.</p>
+        </div>
+        <noscript><p class="form-sub">Calendar needs JavaScript. Call <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a> to book.</p></noscript>
+      </form>'''
+
+SUB_OLD = 'Send this over and we&rsquo;ll come back with projected lead volume, expected cost per new customer, and exactly what our fee looks like against those numbers, before you commit to anything.'
+SUB_NEW = 'Book a free 30-minute call. We&rsquo;ll come back with projected lead volume, expected cost per signed case, and exactly what our fee looks like against those numbers, before you commit to anything.'
+
+def swap_form(html_s):
+    html_s = re.sub(r'<(form|div) class="form (?:book )?rv".*?</\1>', lambda m: booking_form(), html_s, count=1, flags=re.S)
+    return html_s.replace(SUB_OLD, SUB_NEW)
+
 CONTACT = None
 def contact():
     global CONTACT
@@ -262,12 +307,12 @@ def contact():
         c = c.replace('info@mbpresults.com', EMAIL).replace('action="thanks.html"', 'action="/thanks.html"')
         c = c.replace('<div class="kicker">Get pricing</div>\n', '')
         c = c.replace('<h2>Tell us your market', '<h2 id="contact-h">Tell us your market')
-        CONTACT = c
+        CONTACT = swap_form(c)
     return CONTACT
 
 def page(url, title, desc, schema, body, robots=None):
     h = head(url, title, desc, schema, robots) if robots else head(url, title, desc, schema)
-    return h + nav() + '\n<main id="main">\n' + body + '\n' + contact() + '\n</main>\n' + footer() + '\n' + SCRIPTS + '\n</body>\n</html>\n'
+    return h + nav() + '\n<main id="main">\n' + body + '\n' + contact() + '\n</main>\n' + footer() + '\n' + SCRIPTS + '\n' + open(os.path.join(BUILD, 'booking.js')).read() + '</body>\n</html>\n'
 
 def crumb_html(crumbs):
     parts = []
@@ -531,7 +576,7 @@ def build_about():
 
 # ---------------------------------------------------------------- assets
 def build_css():
-    css = open(os.path.join(BUILD, 'base.css')).read() + '\n' + open(os.path.join(BUILD, 'extra.css')).read()
+    css = open(os.path.join(BUILD, 'base.css')).read() + '\n' + open(os.path.join(BUILD, 'extra.css')).read() + '\n' + open(os.path.join(BUILD, 'booking.css')).read()
     css += '\n.h4{font-family:"Schibsted Grotesk",sans-serif!important;font-size:18px;font-weight:700!important;letter-spacing:-.01em!important;line-height:1.25!important;margin:0 0 8px}\n.metric h3.k{margin:0 0 10px}\n'
     os.makedirs(os.path.join(SITE, 'assets'), exist_ok=True)
     open(os.path.join(SITE, 'assets', 'site.css'), 'w').write(css)
@@ -608,7 +653,11 @@ def patch_home():
     s = s.replace('href="about.html"', 'href="/about/"').replace('href="index.html"', 'href="/"').replace('info@mbpresults.com', EMAIL)
     s = s.replace('action="thanks.html"', 'action="/thanks.html"').replace('url("fonts/', 'url("/fonts/')
     s = s.replace('Vincere Marketing, LLC', BRAND)
-    extra = open(os.path.join(BUILD, 'extra.css')).read()
+    extra = open(os.path.join(BUILD, 'extra.css')).read() + '\n' + open(os.path.join(BUILD, 'booking.css')).read()
+    s = swap_form(s)
+    s = re.sub(r'<script id="bk-js">.*?</script>\n?', '', s, flags=re.S)
+    s = s.replace('</body>', open(os.path.join(BUILD, 'booking.js')).read() + '</body>', 1)
+    s = re.sub(r'#contact\.sec-grey\{--fd:48px;background:.*?\}', '#contact.sec-grey{background:#F7F1F6!important;padding-top:84px!important;padding-bottom:84px!important}', s, count=1, flags=re.S)
     if '/* nav dropdowns */' in s:
         s = re.sub(r'/\* nav dropdowns \*/.*?(?=</style>)', lambda m: '/* nav dropdowns */\n' + extra + '\n', s, count=1, flags=re.S)
     else:
