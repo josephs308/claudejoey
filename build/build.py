@@ -599,7 +599,7 @@ def home_faq():
     items = ''.join(f'<div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>{e(f["q"])}</span><span class="pl">+</span></button><div class="faq-a"><div>{e(f["a"])}</div></div></div>' for f in HOME_FAQS)
     return f'''<section class="sec home-faq" id="faq">
   <div class="wrap-narrow">
-    <div class="sec-head"><div class="kicker">Questions</div><h2>Law firm marketing, answered.</h2></div>
+    <h2 class="hf-h">Frequently Asked Questions - FAQs</h2>
     <div class="faq">{items}</div>
   </div>
 </section>
@@ -659,7 +659,7 @@ def patch_home():
     extra = open(os.path.join(BUILD, 'extra.css')).read() + '\n' + open(os.path.join(BUILD, 'booking.css')).read()
     s = swap_form(s)
     s = re.sub(r'<section class="sec home-faq" id="faq">.*?</section>\n', '', s, flags=re.S)
-    s = s.replace('<section class="sec sec-grey" id="contact">', home_faq() + '<section class="sec sec-grey" id="contact">', 1)
+    s = s.replace('<div class="railbar" id="railbar">', home_faq() + '<div class="railbar" id="railbar">', 1)
     s = re.sub(r'<script id="bk-js">.*?</script>\n?', '', s, flags=re.S)
     s = s.replace('</body>', open(os.path.join(BUILD, 'booking.js')).read() + '</body>', 1)
     s = re.sub(r'#contact\.sec-grey\{--fd:48px;background:.*?\}', '#contact.sec-grey{background:#F7F1F6!important;padding-top:84px!important;padding-bottom:84px!important}', s, count=1, flags=re.S)
