@@ -870,6 +870,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 .railbar .rb-tel{color:var(--ink)!important;border-color:rgba(10,10,10,.22)!important}
 .railbar .rb-tel:hover{border-color:var(--purple)!important;color:var(--purple)!important;background:#F7F1F6!important}
 @media(max-width:1100px){.nav-mid .nav-portal-m{display:flex!important;padding:16px 6px;font-size:17px;color:#fff;opacity:1;border-bottom:0}.nav-mid .nav-portal-m svg{width:16px;height:16px}}
+.home-faq{background:#fff;padding:96px 0!important}.home-faq .sec-head{margin-bottom:36px}@media(max-width:560px){.home-faq{padding:64px 0!important}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}

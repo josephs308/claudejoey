@@ -585,6 +585,26 @@ def build_misc():
 HOME_TITLE = 'Law Firm Marketing Agency | Vincere Legal Marketing'
 HOME_DESC = 'Full-service law firm marketing: SEO, AEO, Local Services Ads, PPC, Meta ads, branding, websites, intake and traditional media. Measured in signed cases.'
 
+HOME_FAQS = [
+    {'q': 'What does a law firm marketing agency do?', 'a': 'A law firm marketing agency brings new clients to a firm through channels like SEO, answer engine optimization, Google Local Services Ads, PPC, Meta ads, branding, websites and traditional media. A good one also fixes intake, so the leads you already get turn into signed cases, and reports results in signed cases rather than clicks.'},
+    {'q': 'How much does law firm marketing cost?', 'a': 'Law firm marketing costs depend on your practice area, your city and the channels you use. Click costs and cost per lead vary widely, so personal injury in a large metro costs far more than estate planning in a smaller market. Vincere prices your market before you commit, including click costs, cost per lead and expected cost per signed case.'},
+    {'q': 'Which marketing channel works best for law firms?', 'a': 'No single channel works best for every firm. Local Services Ads and PPC produce calls quickly, SEO and answer engine optimization build lower-cost leads over time, and Meta ads and traditional media build awareness. The right mix depends on your case value, competition and budget, which is what Vincere\'s free plan works out.'},
+    {'q': 'What is answer engine optimization (AEO) for lawyers?', 'a': 'Answer engine optimization is the work of getting your firm cited in AI answers from tools like Google AI Overviews, ChatGPT and Perplexity. It relies on clear question-and-answer content, structured data, consistent business details and trusted mentions across the web, so AI tools can confidently name your firm when someone asks for a lawyer.'},
+    {'q': 'How long does law firm marketing take to work?', 'a': 'Paid channels such as Local Services Ads, PPC and Meta ads can produce calls within weeks of launch. SEO and answer engine optimization usually take several months to build momentum, then keep producing leads at a lower cost. Most firms pair a fast paid channel with a longer-term organic one.'},
+    {'q': 'Do you work with firms in every practice area?', 'a': 'Vincere works with US law firms across personal injury, criminal defense, family law, estate planning, immigration, employment, business law and other practice areas. Each plan is built around the practice area\'s case values, how clients search and how competitive the local market is.'},
+    {'q': 'What happens on the free strategy call?', 'a': 'On the free 30-minute strategy call, Vincere learns your practice areas, case values, intake and budget, then walks through what your market costs. You leave with a recommended channel mix, launch order and expected cost per signed case. There is no obligation and no retainer to start.'},
+]
+
+def home_faq():
+    items = ''.join(f'<div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>{e(f["q"])}</span><span class="pl">+</span></button><div class="faq-a"><div>{e(f["a"])}</div></div></div>' for f in HOME_FAQS)
+    return f'''<section class="sec home-faq" id="faq">
+  <div class="wrap-narrow">
+    <div class="sec-head"><div class="kicker">Questions</div><h2>Law firm marketing, answered.</h2></div>
+    <div class="faq">{items}</div>
+  </div>
+</section>
+'''
+
 DD_JS = """<script id="dd-js">
 (function(){var dds=[].slice.call(document.querySelectorAll('.dd'));
 function shut(){dds.forEach(function(x){x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false')});}
@@ -626,7 +646,8 @@ def patch_home():
     wp = webpage_node('/', 'WebPage', HOME_TITLE, HOME_DESC); wp.pop('breadcrumb'); wp['@id'] = f'{DOMAIN}/#webpage'
     schema = [org_node(), website_node(), wp,
               {'@type': 'ItemList', '@id': f'{DOMAIN}/#services', 'name': 'Law firm marketing services',
-               'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': lab, 'url': f'{DOMAIN}{svc_url(sl)}'} for i, (sl, lab, *_) in enumerate(SERVICES)]}]
+               'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': lab, 'url': f'{DOMAIN}{svc_url(sl)}'} for i, (sl, lab, *_) in enumerate(SERVICES)]},
+              faq_node('/', HOME_FAQS)]
     s = re.sub(r'<script type="application/ld\+json">.*?</script>', lambda m: jsonld(schema), s, count=1, flags=re.S)
     for sl, lab, _, _, old in SERVICES:
         if old: s = s.replace(f'href="{old}"', f'href="{svc_url(sl)}"')
@@ -637,6 +658,8 @@ def patch_home():
     s = s.replace('Vincere Marketing, LLC', BRAND)
     extra = open(os.path.join(BUILD, 'extra.css')).read() + '\n' + open(os.path.join(BUILD, 'booking.css')).read()
     s = swap_form(s)
+    s = re.sub(r'<section class="sec home-faq" id="faq">.*?</section>\n', '', s, flags=re.S)
+    s = s.replace('<section class="sec sec-grey" id="contact">', home_faq() + '<section class="sec sec-grey" id="contact">', 1)
     s = re.sub(r'<script id="bk-js">.*?</script>\n?', '', s, flags=re.S)
     s = s.replace('</body>', open(os.path.join(BUILD, 'booking.js')).read() + '</body>', 1)
     s = re.sub(r'#contact\.sec-grey\{--fd:48px;background:.*?\}', '#contact.sec-grey{background:#F7F1F6!important;padding-top:84px!important;padding-bottom:84px!important}', s, count=1, flags=re.S)
