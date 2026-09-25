@@ -171,8 +171,10 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 .scroll-cue:hover{color:#E2C4DB!important}
 #services.dk .scroll-cue-line{background:rgba(255,255,255,.38)!important}
 #services.dk .scroll-cue-line span{background:#E2C4DB!important}
-/* sticky rail: white */
-.railbar{background:#fff!important;color:var(--ink)!important;border-top:3px solid var(--purple)!important;box-shadow:0 -10px 30px rgba(10,10,10,.12)}
+/* sticky rail: white, drops down under the nav */
+.railbar{top:81px!important;bottom:auto!important;background:#fff!important;color:var(--ink)!important;border-top:0!important;border-bottom:3px solid var(--purple)!important;
+  box-shadow:0 12px 30px rgba(10,10,10,.14);transform:translateY(calc(-100% - 90px))!important}
+.railbar.show{transform:none!important}
 .railbar .rb-txt{color:#4A4A4A!important}
 .railbar .rb-txt b{color:var(--ink)!important}
 .railbar .rb-tel{color:var(--ink)!important;border-color:rgba(10,10,10,.22)!important}
