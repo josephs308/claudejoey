@@ -257,48 +257,9 @@ def head(url, title, desc, schema, robots='index,follow,max-image-preview:large,
 <body>
 '''
 
+import booking_form as _bf
 def booking_form():
-    if BOOKING_URL:
-        return f'<div class="form book rv"><h3>Book a strategy call</h3><p class="form-sub">Pick a time for a free 30-minute call.</p><iframe class="bk-embed" src="{e(BOOKING_URL)}" title="Book a strategy call with Vincere" loading="lazy"></iframe></div>'
-    opts = ''.join(f'<option>{e(lab)}</option>' for _, lab in PRACTICES)
-    return f'''<form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax">
-        <input type="hidden" name="form-name" value="vincere-booking">
-        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone">
-        <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
-        <h3>Book a strategy call</h3>
-        <p class="form-sub">Pick a time for a free 30-minute call. We will walk through your market and your numbers. No obligation.</p>
-        <div class="bk-step">
-          <div class="bk-cal">
-            <div class="bk-head"><button type="button" class="bk-nav bk-prev" aria-label="Previous month">&lsaquo;</button><b class="bk-month" aria-live="polite"></b><button type="button" class="bk-nav bk-next" aria-label="Next month">&rsaquo;</button></div>
-            <div class="bk-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
-            <div class="bk-days"></div>
-          </div>
-          <div class="bk-times"><p class="bk-times-h">Select a day</p><div class="bk-slots"><p class="bk-empty">Choose a weekday on the calendar to see open times.</p></div><p class="bk-tz"></p></div>
-        </div>
-        <div class="bk-details" hidden>
-          <div class="bk-pick"><div><small>Your call</small><b class="bk-when"></b></div><button type="button" class="bk-change">Change</button></div>
-          <div class="f2">
-            <div class="f"><label for="b-name">Full name</label><input id="b-name" name="name" required autocomplete="name"></div>
-            <div class="f"><label for="b-firm">Firm name</label><input id="b-firm" name="firm" autocomplete="organization"></div>
-          </div>
-          <div class="f2">
-            <div class="f"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email"></div>
-            <div class="f"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" required autocomplete="tel"></div>
-          </div>
-          <div class="f2">
-            <div class="f"><label for="b-budget">Monthly marketing budget</label><select id="b-budget" name="monthly_budget" required><option value="" disabled selected>Select one</option><option>Under $2k</option><option>$2k to $5k</option><option>$5k to $10k</option><option>$10k to $25k</option><option>$25k to $50k</option><option>$50k+</option></select></div>
-            <div class="f"><label for="b-spend">Current monthly marketing spend</label><select id="b-spend" name="current_spend" required><option value="" disabled selected>Select one</option><option>Nothing yet</option><option>Under $2k</option><option>$2k to $5k</option><option>$5k to $10k</option><option>$10k to $25k</option><option>$25k to $50k</option><option>$50k+</option></select></div>
-          </div>
-          <div class="f2">
-            <div class="f"><label for="b-atty">Number of attorneys</label><select id="b-atty" name="attorneys" required><option value="" disabled selected>Select one</option><option>Solo</option><option>2 to 5</option><option>6 to 15</option><option>16 to 50</option><option>50+</option></select></div>
-            <div class="f"><label for="b-case">Average case value or fee</label><select id="b-case" name="avg_case_value" required><option value="" disabled selected>Select one</option><option>Under $2.5k</option><option>$2.5k to $10k</option><option>$10k to $50k</option><option>$50k+</option><option>Contingency</option></select></div>
-          </div>
-          <div class="f"><label for="b-pa">Primary practice area</label><select id="b-pa" name="practice_area"><option>Select one</option>{opts}<option>Other</option></select></div>
-          <button class="btn btn-orange btn-arr" type="submit">Book my call</button>
-          <p class="form-fine">We will confirm by email. By booking you agree to be contacted about your inquiry.</p>
-        </div>
-        <noscript><p class="form-sub">Calendar needs JavaScript. Call <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a> to book.</p></noscript>
-      </form>'''
+    return _bf.render(e, PRACTICES, PHONE_TEL, PHONE_DISPLAY, EMAIL, BOOKING_URL)
 
 SUB_OLD = 'Send this over and we&rsquo;ll come back with projected lead volume, expected cost per new customer, and exactly what our fee looks like against those numbers, before you commit to anything.'
 SUB_NEW = 'Book a free 30-minute call. We&rsquo;ll come back with projected lead volume, expected cost per signed case, and exactly what our fee looks like against those numbers, before you commit to anything.'

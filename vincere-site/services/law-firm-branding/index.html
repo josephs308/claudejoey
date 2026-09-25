@@ -130,43 +130,51 @@
           <p class="email-line"><a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a></p>
         </div>
       </div>
-      <form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax">
+      <form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax" novalidate>
         <input type="hidden" name="form-name" value="vincere-booking">
         <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone">
         <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
-        <h3>Book a strategy call</h3>
-        <p class="form-sub">Pick a time for a free 30-minute call. We will walk through your market and your numbers. No obligation.</p>
-        <div class="bk-step">
-          <div class="bk-cal">
-            <div class="bk-head"><button type="button" class="bk-nav bk-prev" aria-label="Previous month">&lsaquo;</button><b class="bk-month" aria-live="polite"></b><button type="button" class="bk-nav bk-next" aria-label="Next month">&rsaquo;</button></div>
-            <div class="bk-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
-            <div class="bk-days"></div>
+        <div class="bk-prog" aria-hidden="true"><span></span></div>
+        <div class="bk-screen" data-s="cal">
+          <h3>Book a strategy call</h3>
+          <p class="form-sub">Pick a time for a free 30-minute call. We will walk through your market and your numbers. No obligation.</p>
+          <div class="bk-step">
+            <div class="bk-cal">
+              <div class="bk-head"><button type="button" class="bk-nav bk-prev" aria-label="Previous month">&lsaquo;</button><b class="bk-month" aria-live="polite"></b><button type="button" class="bk-nav bk-next" aria-label="Next month">&rsaquo;</button></div>
+              <div class="bk-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+              <div class="bk-days"></div>
+            </div>
+            <div class="bk-times"><p class="bk-times-h">Select a day</p><div class="bk-slots"><p class="bk-empty">Choose a weekday on the calendar to see open times.</p></div><p class="bk-tz"></p></div>
           </div>
-          <div class="bk-times"><p class="bk-times-h">Select a day</p><div class="bk-slots"><p class="bk-empty">Choose a weekday on the calendar to see open times.</p></div><p class="bk-tz"></p></div>
         </div>
-        <div class="bk-details" hidden>
+        <div class="bk-screen" data-s="info" hidden>
           <div class="bk-pick"><div><small>Your call</small><b class="bk-when"></b></div><button type="button" class="bk-change">Change</button></div>
+          <h4 class="bk-q">Tell us who you are.</h4>
           <div class="f2">
             <div class="f"><label for="b-name">Full name</label><input id="b-name" name="name" required autocomplete="name"></div>
-            <div class="f"><label for="b-firm">Firm name</label><input id="b-firm" name="firm" autocomplete="organization"></div>
+            <div class="f"><label for="b-firm">Firm name</label><input id="b-firm" name="firm" required autocomplete="organization"></div>
           </div>
           <div class="f2">
             <div class="f"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email"></div>
             <div class="f"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" required autocomplete="tel"></div>
           </div>
-          <div class="f2">
-            <div class="f"><label for="b-budget">Monthly marketing budget</label><select id="b-budget" name="monthly_budget" required><option value="" disabled selected>Select one</option><option>Under $2k</option><option>$2k to $5k</option><option>$5k to $10k</option><option>$10k to $25k</option><option>$25k to $50k</option><option>$50k+</option></select></div>
-            <div class="f"><label for="b-spend">Current monthly marketing spend</label><select id="b-spend" name="current_spend" required><option value="" disabled selected>Select one</option><option>Nothing yet</option><option>Under $2k</option><option>$2k to $5k</option><option>$5k to $10k</option><option>$10k to $25k</option><option>$25k to $50k</option><option>$50k+</option></select></div>
-          </div>
-          <div class="f2">
-            <div class="f"><label for="b-atty">Number of attorneys</label><select id="b-atty" name="attorneys" required><option value="" disabled selected>Select one</option><option>Solo</option><option>2 to 5</option><option>6 to 15</option><option>16 to 50</option><option>50+</option></select></div>
-            <div class="f"><label for="b-case">Average case value or fee</label><select id="b-case" name="avg_case_value" required><option value="" disabled selected>Select one</option><option>Under $2.5k</option><option>$2.5k to $10k</option><option>$10k to $50k</option><option>$50k+</option><option>Contingency</option></select></div>
-          </div>
-          <div class="f"><label for="b-pa">Primary practice area</label><select id="b-pa" name="practice_area"><option>Select one</option><option>Personal Injury</option><option>Criminal Defense</option><option>Family Law</option><option>Estate Planning</option><option>Real Estate</option><option>Business Law</option><option>Litigation</option><option>Employment Law</option><option>Immigration</option><option>Bankruptcy</option><option>Workers&rsquo; Compensation</option><option>Medical Malpractice</option><option>DUI / DWI</option><option>Intellectual Property</option><option>Tax Law</option><option>Other</option></select></div>
-          <button class="btn btn-orange btn-arr" type="submit">Book my call</button>
-          <p class="form-fine">We will confirm by email. By booking you agree to be contacted about your inquiry.</p>
+          <button type="button" class="btn btn-orange btn-arr bk-next-step">Continue</button>
+          <button type="button" class="bk-back">&lsaquo; Back</button>
         </div>
-        <noscript><p class="form-sub">Calendar needs JavaScript. Call <a href="tel:+15550100199">(555) 010-0199</a> or email <a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a> to book.</p></noscript>
+<div class="bk-screen" data-s="q" hidden><p class="bk-qn">Question 1 of 5</p><h4 class="bk-q">What is your monthly marketing budget?</h4><div class="bk-opts"><label class="bk-opt"><input type="radio" name="monthly_budget" value="Under $2k" required><span>Under $2k</span></label><label class="bk-opt"><input type="radio" name="monthly_budget" value="$2k to $5k" required><span>$2k to $5k</span></label><label class="bk-opt"><input type="radio" name="monthly_budget" value="$5k to $10k" required><span>$5k to $10k</span></label><label class="bk-opt"><input type="radio" name="monthly_budget" value="$10k to $25k" required><span>$10k to $25k</span></label><label class="bk-opt"><input type="radio" name="monthly_budget" value="$25k to $50k" required><span>$25k to $50k</span></label><label class="bk-opt"><input type="radio" name="monthly_budget" value="$50k+" required><span>$50k+</span></label></div><button type="button" class="bk-back">&lsaquo; Back</button></div>
+<div class="bk-screen" data-s="q" hidden><p class="bk-qn">Question 2 of 5</p><h4 class="bk-q">What do you spend on marketing each month right now?</h4><div class="bk-opts"><label class="bk-opt"><input type="radio" name="current_spend" value="Nothing yet" required><span>Nothing yet</span></label><label class="bk-opt"><input type="radio" name="current_spend" value="Under $2k" required><span>Under $2k</span></label><label class="bk-opt"><input type="radio" name="current_spend" value="$2k to $5k" required><span>$2k to $5k</span></label><label class="bk-opt"><input type="radio" name="current_spend" value="$5k to $10k" required><span>$5k to $10k</span></label><label class="bk-opt"><input type="radio" name="current_spend" value="$10k to $25k" required><span>$10k to $25k</span></label><label class="bk-opt"><input type="radio" name="current_spend" value="$25k to $50k" required><span>$25k to $50k</span></label><label class="bk-opt"><input type="radio" name="current_spend" value="$50k+" required><span>$50k+</span></label></div><button type="button" class="bk-back">&lsaquo; Back</button></div>
+<div class="bk-screen" data-s="q" hidden><p class="bk-qn">Question 3 of 5</p><h4 class="bk-q">How many attorneys are at your firm?</h4><div class="bk-opts"><label class="bk-opt"><input type="radio" name="attorneys" value="Solo" required><span>Solo</span></label><label class="bk-opt"><input type="radio" name="attorneys" value="2 to 5" required><span>2 to 5</span></label><label class="bk-opt"><input type="radio" name="attorneys" value="6 to 15" required><span>6 to 15</span></label><label class="bk-opt"><input type="radio" name="attorneys" value="16 to 50" required><span>16 to 50</span></label><label class="bk-opt"><input type="radio" name="attorneys" value="50+" required><span>50+</span></label></div><button type="button" class="bk-back">&lsaquo; Back</button></div>
+<div class="bk-screen" data-s="q" hidden><p class="bk-qn">Question 4 of 5</p><h4 class="bk-q">What is your average case value or fee?</h4><div class="bk-opts"><label class="bk-opt"><input type="radio" name="avg_case_value" value="Under $2.5k" required><span>Under $2.5k</span></label><label class="bk-opt"><input type="radio" name="avg_case_value" value="$2.5k to $10k" required><span>$2.5k to $10k</span></label><label class="bk-opt"><input type="radio" name="avg_case_value" value="$10k to $50k" required><span>$10k to $50k</span></label><label class="bk-opt"><input type="radio" name="avg_case_value" value="$50k+" required><span>$50k+</span></label><label class="bk-opt"><input type="radio" name="avg_case_value" value="Contingency" required><span>Contingency</span></label></div><button type="button" class="bk-back">&lsaquo; Back</button></div>
+<div class="bk-screen" data-s="q" hidden><p class="bk-qn">Question 5 of 5</p><h4 class="bk-q">What is your primary practice area?</h4><div class="bk-opts bk-opts-wide"><label class="bk-opt"><input type="radio" name="practice_area" value="Personal Injury" required><span>Personal Injury</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Criminal Defense" required><span>Criminal Defense</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Family Law" required><span>Family Law</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Estate Planning" required><span>Estate Planning</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Real Estate" required><span>Real Estate</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Business Law" required><span>Business Law</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Litigation" required><span>Litigation</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Employment Law" required><span>Employment Law</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Immigration" required><span>Immigration</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Bankruptcy" required><span>Bankruptcy</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Workers&rsquo; Compensation" required><span>Workers&rsquo; Compensation</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Medical Malpractice" required><span>Medical Malpractice</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="DUI / DWI" required><span>DUI / DWI</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Intellectual Property" required><span>Intellectual Property</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Tax Law" required><span>Tax Law</span></label><label class="bk-opt"><input type="radio" name="practice_area" value="Other" required><span>Other</span></label></div><button type="button" class="bk-back">&lsaquo; Back</button></div>
+        <div class="bk-screen bk-done" data-s="done" hidden>
+          <div class="bk-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Your meeting is booked.</h3>
+          <p class="bk-done-when"></p>
+          <p class="bk-done-mail">We just sent a calendar invite to <b class="bk-done-email"></b>.</p>
+          <p class="form-fine">Need to change it? Call <a href="tel:+15550100199">(555) 010-0199</a> or reply to the invite.</p>
+        </div>
+        <p class="bk-err" role="alert" hidden>Something went wrong sending your booking. Please call <a href="tel:+15550100199">(555) 010-0199</a> and we will book it for you.</p>
+        <noscript><p class="form-sub">Booking needs JavaScript. Call <a href="tel:+15550100199">(555) 010-0199</a> or email <a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a> to book.</p></noscript>
       </form>
     </div>
   </div>
@@ -220,10 +228,18 @@
 <script id="bk-js">
 (function(){
   document.querySelectorAll('form.book').forEach(function(f){
-    var days=f.querySelector('.bk-days'),mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
+    var days=f.querySelector('.bk-days');if(!days)return;
+    var mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
     var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
-    var step=f.querySelector('.bk-step'),det=f.querySelector('.bk-details'),pick=f.querySelector('.bk-when');
-    if(!days)return;
+    var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
+    var cur=0,label='';
+    function show(i){
+      cur=i;screens.forEach(function(s,j){s.hidden=j!==i});
+      if(bar)bar.style.width=Math.round(100*i/(screens.length-1))+'%';
+      var s=screens[i],r=f.getBoundingClientRect();
+      if(r.top<0||r.top>innerHeight*.6)f.scrollIntoView({behavior:'smooth',block:'start'});
+      var inp=s.querySelector('input:not([type=hidden]):not([type=radio])');if(inp)inp.focus({preventScroll:true});
+    }
     var zone='';try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
     tz.textContent='30-minute call. Times shown in your time zone'+(zone?' ('+zone.replace(/_/g,' ')+')':'')+'.';
     var today=new Date();today.setHours(0,0,0,0);
@@ -257,17 +273,33 @@
         b.addEventListener('click',function(){choose(t)});slots.appendChild(b);})(m);}
     }
     function choose(t){
-      var label=fmt(t,{weekday:'long',month:'long',day:'numeric'})+' at '+t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+      label=fmt(t,{weekday:'long',month:'long',day:'numeric'})+' at '+t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
       f.querySelector('[name="call_time"]').value=label+(zone?' ('+zone+')':'');
       f.querySelector('[name="call_iso"]').value=t.toISOString();
       f.querySelector('[name="timezone"]').value=zone;
-      pick.textContent=label;step.hidden=true;det.hidden=false;
-      var first=det.querySelector('input:not([type=hidden])');if(first)first.focus({preventScroll:true});
+      f.querySelector('.bk-when').textContent=label;show(1);
     }
-    f.querySelector('.bk-change').addEventListener('click',function(){det.hidden=true;step.hidden=false;});
+    function valid(s){var bad=[].slice.call(s.querySelectorAll('input[required]:not([type=radio])')).filter(function(i){return !i.checkValidity()});
+      if(bad.length){bad[0].reportValidity();return false}return true;}
+    function submit(){
+      err.hidden=true;
+      var body=new URLSearchParams(new FormData(f)).toString();
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+        .then(function(r){if(!r.ok)throw new Error(r.status);
+          f.querySelector('.bk-done-when').textContent=label+'.';
+          f.querySelector('.bk-done-email').textContent=f.querySelector('[name="email"]').value;
+          show(screens.length-1);})
+        .catch(function(){err.hidden=false;});
+    }
+    f.querySelector('.bk-change').addEventListener('click',function(){show(0)});
+    f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(screens[1]))show(2)});
+    f.querySelectorAll('.bk-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(0,cur-1))})});
+    f.querySelectorAll('.bk-opt input').forEach(function(r){r.addEventListener('change',function(){
+      var last=cur===screens.length-2;setTimeout(function(){last?submit():show(cur+1)},220);});});
+    f.addEventListener('submit',function(ev){ev.preventDefault();if(cur===1&&valid(screens[1]))show(2);});
     prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
     next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
-    draw();
+    draw();show(0);
   });
 })();
 </script>

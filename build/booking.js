@@ -1,10 +1,18 @@
 <script id="bk-js">
 (function(){
   document.querySelectorAll('form.book').forEach(function(f){
-    var days=f.querySelector('.bk-days'),mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
+    var days=f.querySelector('.bk-days');if(!days)return;
+    var mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
     var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
-    var step=f.querySelector('.bk-step'),det=f.querySelector('.bk-details'),pick=f.querySelector('.bk-when');
-    if(!days)return;
+    var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
+    var cur=0,label='';
+    function show(i){
+      cur=i;screens.forEach(function(s,j){s.hidden=j!==i});
+      if(bar)bar.style.width=Math.round(100*i/(screens.length-1))+'%';
+      var s=screens[i],r=f.getBoundingClientRect();
+      if(r.top<0||r.top>innerHeight*.6)f.scrollIntoView({behavior:'smooth',block:'start'});
+      var inp=s.querySelector('input:not([type=hidden]):not([type=radio])');if(inp)inp.focus({preventScroll:true});
+    }
     var zone='';try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
     tz.textContent='30-minute call. Times shown in your time zone'+(zone?' ('+zone.replace(/_/g,' ')+')':'')+'.';
     var today=new Date();today.setHours(0,0,0,0);
@@ -38,17 +46,33 @@
         b.addEventListener('click',function(){choose(t)});slots.appendChild(b);})(m);}
     }
     function choose(t){
-      var label=fmt(t,{weekday:'long',month:'long',day:'numeric'})+' at '+t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+      label=fmt(t,{weekday:'long',month:'long',day:'numeric'})+' at '+t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
       f.querySelector('[name="call_time"]').value=label+(zone?' ('+zone+')':'');
       f.querySelector('[name="call_iso"]').value=t.toISOString();
       f.querySelector('[name="timezone"]').value=zone;
-      pick.textContent=label;step.hidden=true;det.hidden=false;
-      var first=det.querySelector('input:not([type=hidden])');if(first)first.focus({preventScroll:true});
+      f.querySelector('.bk-when').textContent=label;show(1);
     }
-    f.querySelector('.bk-change').addEventListener('click',function(){det.hidden=true;step.hidden=false;});
+    function valid(s){var bad=[].slice.call(s.querySelectorAll('input[required]:not([type=radio])')).filter(function(i){return !i.checkValidity()});
+      if(bad.length){bad[0].reportValidity();return false}return true;}
+    function submit(){
+      err.hidden=true;
+      var body=new URLSearchParams(new FormData(f)).toString();
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+        .then(function(r){if(!r.ok)throw new Error(r.status);
+          f.querySelector('.bk-done-when').textContent=label+'.';
+          f.querySelector('.bk-done-email').textContent=f.querySelector('[name="email"]').value;
+          show(screens.length-1);})
+        .catch(function(){err.hidden=false;});
+    }
+    f.querySelector('.bk-change').addEventListener('click',function(){show(0)});
+    f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(screens[1]))show(2)});
+    f.querySelectorAll('.bk-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(0,cur-1))})});
+    f.querySelectorAll('.bk-opt input').forEach(function(r){r.addEventListener('change',function(){
+      var last=cur===screens.length-2;setTimeout(function(){last?submit():show(cur+1)},220);});});
+    f.addEventListener('submit',function(ev){ev.preventDefault();if(cur===1&&valid(screens[1]))show(2);});
     prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
     next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
-    draw();
+    draw();show(0);
   });
 })();
 </script>
