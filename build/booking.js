@@ -6,12 +6,12 @@
     var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
     var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
     var cur=0,label='';
-    function show(i){
+    function show(i,quiet){
       cur=i;screens.forEach(function(s,j){s.hidden=j!==i});
       if(bar)bar.style.width=Math.round(100*i/(screens.length-1))+'%';
       var s=screens[i],r=f.getBoundingClientRect();
-      if(r.top<0||r.top>innerHeight*.6)f.scrollIntoView({behavior:'smooth',block:'start'});
-      var inp=s.querySelector('input:not([type=hidden]):not([type=radio])');if(inp)inp.focus({preventScroll:true});
+      if(!quiet&&(r.top<0||r.top>innerHeight*.6))f.scrollIntoView({behavior:'smooth',block:'start'});
+      var inp=s.querySelector('input:not([type=hidden]):not([type=radio])');if(inp&&!quiet)inp.focus({preventScroll:true});
     }
     var zone='';try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
     tz.textContent='30-minute call. Times shown in your time zone'+(zone?' ('+zone.replace(/_/g,' ')+')':'')+'.';
@@ -72,7 +72,7 @@
     f.addEventListener('submit',function(ev){ev.preventDefault();if(cur===1&&valid(screens[1]))show(2);});
     prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
     next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
-    draw();show(0);
+    draw();show(0,true);
   });
 })();
 </script>

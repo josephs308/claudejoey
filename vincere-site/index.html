@@ -1351,6 +1351,23 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
   linear-gradient(180deg,#0B0A0B 0%,rgba(11,10,11,.85) 10%,rgba(11,10,11,.35) 26%,rgba(11,10,11,0) 40%,rgba(11,10,11,0) 70%,rgba(11,10,11,.6) 88%,#0A0A0A 100%),
   linear-gradient(90deg,rgba(11,10,11,.86) 0%,rgba(11,10,11,.62) 45%,rgba(11,10,11,.25) 100%),
   radial-gradient(60% 70% at 15% 60%,rgba(100,49,90,.35),rgba(100,49,90,0) 70%)!important}
+.contact-photo{position:relative;margin:34px 0 0;border-radius:18px;overflow:hidden;aspect-ratio:16/8;background:linear-gradient(135deg,#64315A,#2B1628);box-shadow:0 24px 60px rgba(100,49,90,.14)}
+.contact-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.contact-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 22px 18px;color:#fff;font-size:14px;line-height:1.45;background:linear-gradient(180deg,rgba(11,10,11,0),rgba(11,10,11,.78))}
+.contact-photo figcaption b{display:block;font-size:16px;margin-bottom:2px}
+#contact .contact-side{justify-content:flex-start}
+/* hero Book a Call: make it pop */
+.hero-v2 .hero-row .btn-orange{position:relative;overflow:hidden;isolation:isolate;
+  background:linear-gradient(135deg,#8A4A7E 0%,#64315A 55%,#4A2243 100%)!important;color:#fff!important;border:0!important;
+  padding:22px 38px!important;font-size:17px!important;min-height:66px;
+  box-shadow:0 14px 34px rgba(100,49,90,.45),0 0 0 6px rgba(100,49,90,.12)!important;
+  transition:transform .2s,box-shadow .2s}
+.hero-v2 .hero-row .btn-orange:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(100,49,90,.55),0 0 0 8px rgba(100,49,90,.16)!important}
+.hero-v2 .hero-row .btn-orange::before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.28),rgba(255,255,255,0));transform:skewX(-20deg);
+  animation:ctaShine 3.6s ease-in-out 1.2s infinite}
+@keyframes ctaShine{0%{left:-60%}35%,100%{left:130%}}
+@media(prefers-reduced-motion:reduce){.hero-v2 .hero-row .btn-orange::before{animation:none;display:none}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
@@ -1662,12 +1679,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
           <a class="display-tel" href="tel:+15550100199">(555) 010-0199</a>
           <p class="email-line"><a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a></p>
         </div>
-        <div class="contact-mark">
-          <div class="mark-chip nologo">
-            <span class="chip-word">Vincere<small>Marketing</small></span>
-          </div>
-          <p class="contact-mark-note">Local Services Ads &middot; SEO &middot; AEO &middot; Websites &middot; PPC &middot; Meta Ads &middot; Branding</p>
-        </div>
+        <figure class="contact-photo"><img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=720" srcset="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=640&h=480 640w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=720 960w, https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1280&h=960 1280w" sizes="(max-width: 900px) 100vw, 560px" width="960" height="720" alt="A marketing team working together at a shared desk" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('nophoto');this.remove()"><figcaption><b>Real people, real numbers.</b>Your call is with the team that builds your plan.</figcaption></figure>
       </div>
       <form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax" novalidate>
         <input type="hidden" name="form-name" value="vincere-booking">
@@ -1873,12 +1885,12 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
     var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
     var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
     var cur=0,label='';
-    function show(i){
+    function show(i,quiet){
       cur=i;screens.forEach(function(s,j){s.hidden=j!==i});
       if(bar)bar.style.width=Math.round(100*i/(screens.length-1))+'%';
       var s=screens[i],r=f.getBoundingClientRect();
-      if(r.top<0||r.top>innerHeight*.6)f.scrollIntoView({behavior:'smooth',block:'start'});
-      var inp=s.querySelector('input:not([type=hidden]):not([type=radio])');if(inp)inp.focus({preventScroll:true});
+      if(!quiet&&(r.top<0||r.top>innerHeight*.6))f.scrollIntoView({behavior:'smooth',block:'start'});
+      var inp=s.querySelector('input:not([type=hidden]):not([type=radio])');if(inp&&!quiet)inp.focus({preventScroll:true});
     }
     var zone='';try{zone=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
     tz.textContent='30-minute call. Times shown in your time zone'+(zone?' ('+zone.replace(/_/g,' ')+')':'')+'.';
@@ -1939,7 +1951,7 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
     f.addEventListener('submit',function(ev){ev.preventDefault();if(cur===1&&valid(screens[1]))show(2);});
     prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
     next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
-    draw();show(0);
+    draw();show(0,true);
   });
 })();
 </script>

@@ -264,7 +264,18 @@ def booking_form():
 SUB_OLD = 'Send this over and we&rsquo;ll come back with projected lead volume, expected cost per new customer, and exactly what our fee looks like against those numbers, before you commit to anything.'
 SUB_NEW = 'Book a free 30-minute call. We&rsquo;ll come back with projected lead volume, expected cost per signed case, and exactly what our fee looks like against those numbers, before you commit to anything.'
 
+CONTACT_PHOTO_ID = 'photo-1758873268745-dd2cf0d677b5'
+def contact_photo():
+    def u(w, h): return f'https://images.unsplash.com/{CONTACT_PHOTO_ID}?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
+    ss = ', '.join(f'{u(w, h)} {w}w' for w, h in [(640, 320), (960, 480), (1280, 640)])
+    return (f'<figure class="contact-photo"><img src="{u(960,480)}" srcset="{ss}" sizes="(max-width: 900px) 100vw, 560px" width="960" height="480" '
+            f'alt="A marketing team working together at a shared desk" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'nophoto\');this.remove()">'
+            f'<figcaption><b>Real people, real numbers.</b>Your call is with the team that builds your plan.</figcaption></figure>')
+
 def swap_form(html_s):
+    html_s = re.sub(r'<div class="contact-mark">.*?</p>\s*</div>', lambda m: contact_photo(), html_s, count=1, flags=re.S)
+    if 'class="contact-photo"' not in html_s and 'class="email-line"' in html_s:
+        html_s = re.sub(r'(<p class="email-line">.*?</p>\s*</div>)', lambda m: m.group(1) + '\n        ' + contact_photo(), html_s, count=1, flags=re.S)
     html_s = re.sub(r'<(form|div) class="form (?:book )?rv".*?</\1>', lambda m: booking_form(), html_s, count=1, flags=re.S)
     return html_s.replace(SUB_OLD, SUB_NEW)
 
