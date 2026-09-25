@@ -1358,16 +1358,17 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 #contact .contact-side{justify-content:flex-start}
 /* hero Book a Call: make it pop */
 .hero-v2 .hero-row .btn-orange{position:relative;overflow:hidden;isolation:isolate;
-  background:linear-gradient(135deg,#8A4A7E 0%,#64315A 55%,#4A2243 100%)!important;color:#fff!important;border:0!important;
-  padding:22px 38px!important;font-size:17px!important;min-height:66px;
+  background:linear-gradient(135deg,#8A4A7E 0%,#64315A 55%,#4A2243 100%)!important;color:#fff!important;border-color:transparent!important;
+  
   box-shadow:0 14px 34px rgba(100,49,90,.45),0 0 0 6px rgba(100,49,90,.12)!important;
   transition:transform .2s,box-shadow .2s}
-.hero-v2 .hero-row .btn-orange:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(100,49,90,.55),0 0 0 8px rgba(100,49,90,.16)!important}
+.hero-v2 .hero-row .btn-orange:hover{transform:translateY(-3px) scale(var(--cta-s,1));box-shadow:0 20px 44px rgba(100,49,90,.55),0 0 0 8px rgba(100,49,90,.16)!important}
 .hero-v2 .hero-row .btn-orange::before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;
   background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.28),rgba(255,255,255,0));transform:skewX(-20deg);
   animation:ctaShine 3.6s ease-in-out 1.2s infinite}
 @keyframes ctaShine{0%{left:-60%}35%,100%{left:130%}}
 @media(prefers-reduced-motion:reduce){.hero-v2 .hero-row .btn-orange::before{animation:none;display:none}}
+@media(min-width:561px){.hero-v2 .hero-row .btn-orange{--cta-s:1.1;transform:scale(1.1);transform-origin:left center;margin-right:22px}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
