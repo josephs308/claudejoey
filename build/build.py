@@ -293,7 +293,7 @@ def contact():
     if CONTACT is None:
         c = open(os.path.join(BUILD, 'contact.html')).read()
         c = c.replace('info@mbpresults.com', EMAIL).replace('action="thanks.html"', 'action="/thanks.html"')
-        c = c.replace('<div class="kicker">Get pricing</div>\n', '')
+        c = c.replace('\n', '')
         c = c.replace('<h2>Tell us your market', '<h2 id="contact-h">Tell us your market')
         CONTACT = swap_form(c)
     return CONTACT
@@ -312,7 +312,7 @@ def crumb_html(crumbs):
     return '<nav aria-label="Breadcrumb"><p class="crumb">' + '<span class="sep">/</span>'.join(parts) + '</p></nav>'
 
 def hero(crumbs, eyebrow, h1, lede, cta2=('Call ' + PHONE_DISPLAY, f'tel:{PHONE_TEL}'), top=True):
-    tops = (crumb_html(crumbs) + f'\n    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>{e(eyebrow)}</div></div>') if top else crumb_html(crumbs)
+    tops = crumb_html(crumbs)
     return f'''<header class="phero">
   <div class="wrap phero-in">
     {tops}
@@ -334,7 +334,7 @@ def faq_html(faqs, head_txt='Straight answers.'):
     items = ''.join(f'<div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>{e(f["q"])}</span><span class="pl">+</span></button><div class="faq-a"><div>{e(f["a"])}</div></div></div>' for f in faqs)
     return f'''<section class="sec sec-alt sec-lav" id="faq">
   <div class="wrap-narrow">
-    <div class="sec-head"><div class="kicker">Questions</div><h2>{e(head_txt)}</h2></div>
+    <div class="sec-head"><h2>{e(head_txt)}</h2></div>
     <div class="faq">{items}</div>
   </div>
 </section>'''
@@ -421,26 +421,26 @@ def build_service(slug):
 {photo(*ph) if ph else ""}
 <section class="sec sec-alt sec-lav">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker">How it works</div><h2>How we run {e(d["nav_label"])} for your firm.</h2></div>
+    <div class="sec-head"><h2>How we run {e(d["nav_label"])} for your firm.</h2></div>
     <div class="steps">{steps}</div>
   </div>
 </section>
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker">By practice area</div><h2>{e(d["nav_label"])} is not the same for every practice.</h2></div>
+    <div class="sec-head"><h2>{e(d["nav_label"])} is not the same for every practice.</h2></div>
     <div class="cards">{notes}</div>
   </div>
 </section>
 <section class="sec sec-dark">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker">What we report</div><h2>The numbers we hold ourselves to.</h2><p class="sub">All of it lives in your client dashboard, live, next to every other channel.</p></div>
+    <div class="sec-head"><h2>The numbers we hold ourselves to.</h2><p class="sub">All of it lives in your client dashboard, live, next to every other channel.</p></div>
     <div class="grid4">{metrics}</div>
   </div>
 </section>
 {faq_html(d["faqs"], d["nav_label"] + " questions, answered.")}
 <section class="sec sec-tight">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:36px"><div class="kicker">Pairs well with</div><h2>What usually runs alongside this.</h2></div>
+    <div class="sec-head" style="margin-bottom:36px"><h2>What usually runs alongside this.</h2></div>
     <div class="rel">{related}</div>
   </div>
 </section>
@@ -565,10 +565,10 @@ def build_about():
   </div></div>
 </section>
 <section class="sec sec-dark">
-  <div class="wrap"><div class="sec-head"><div class="kicker">Principles</div><h2>What we hold ourselves to.</h2></div><div class="cards">{pr}</div></div>
+  <div class="wrap"><div class="sec-head"><h2>What we hold ourselves to.</h2></div><div class="cards">{pr}</div></div>
 </section>
 <section class="sec">
-  <div class="wrap"><div class="sec-head"><div class="kicker">Services</div><h2>Nine channels. One partner.</h2></div><div class="cards">{svc}</div></div>
+  <div class="wrap"><div class="sec-head"><h2>Nine channels. One partner.</h2></div><div class="cards">{svc}</div></div>
 </section>
 {faq_html(d["faqs"])}'''
     write(url, page(url, d['title'], d['meta_description'], schema, body))
@@ -591,7 +591,6 @@ def build_404():
     url = '/404.html'
     body = f'''<header class="phero" style="min-height:70vh">
   <div class="wrap phero-in">
-    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>Page not found</div></div>
     <h1>That page moved or never existed.</h1>
     <p class="lede">The link may be old or mistyped. Everything we do is one click away below, or book a free strategy call and we will walk through your market.</p>
     <div class="btn-row"><a class="btn btn-orange btn-arr" href="/#contact">Book a free strategy call</a><a class="btn btn-out" href="/">Back to home</a></div>
@@ -768,7 +767,6 @@ def build_thanks():
     url = '/thanks.html'
     body = f'''<header class="phero" style="min-height:70vh">
   <div class="wrap phero-in">
-    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>Got it</div></div>
     <h1>Thanks. That reached us.</h1>
     <p class="lede">Someone from Vincere will be in touch shortly with market data for your practice and your area. If you would rather not wait, call us and we will pull it up on the phone right now.</p>
     <div class="btn-row"><a class="btn btn-orange btn-arr" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a><a class="btn btn-out" href="/">Back to home</a></div>
