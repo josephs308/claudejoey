@@ -272,7 +272,7 @@ def contact_photo():
             f'<figcaption><b>Real people, real numbers.</b>Your call is with the team that builds your plan.</figcaption></figure>')
 
 def contact_side():
-    items = ['Projected lead volume', 'Custom marketing strategy', 'Launch plan and expected costs']
+    items = ['Custom marketing strategy', 'Projected lead volume', 'Launch plan and expected costs']
     chk = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
     li = ''.join(f'<li><span class="cs-ic">{chk}</span>{e(t)}</li>' for t in items)
     return f'''<div class="contact-side cs2 rv">
