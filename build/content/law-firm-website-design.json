@@ -1,0 +1,78 @@
+{
+  "type": "service",
+  "slug": "law-firm-website-design",
+  "nav_label": "Websites",
+  "service_name": "Law Firm Website Design",
+  "title": "Law Firm Website Design: Fast, Custom Sites | Vincere",
+  "meta_description": "Law firm website design that is custom-coded, fast and built to turn visitors into consultations. SEO-ready from day one. Start with a free plan first.",
+  "eyebrow": "Custom-Coded Websites",
+  "h1": "Law Firm Website Design Built to Book Consultations",
+  "lede": "Your website is where every channel ends up: search, ads, billboards and referrals all send people there to decide whether to call. Vincere builds custom-coded law firm websites that load fast, rank well and make it easy for a worried prospect to reach your intake team.",
+  "answer": {
+    "question": "What is law firm website design?",
+    "text": "Law firm website design is building a firm's site to earn trust, rank in search and convert visitors into consultations. A strong lawyer website loads fast on phones, has a dedicated page for each practice area and location, shows clear calls to action, and is technically structured for SEO and AI answer engines."
+  },
+  "sections": [
+    {
+      "h2": "What a law firm website design has to do",
+      "paragraphs": [
+        "A prospective client usually lands on your site stressed and on a phone. In a few seconds they decide whether you handle their kind of case, whether you seem credible and how to reach you. Good law firm website design answers those three questions immediately: a clear practice area headline, real attorney photos and bios, and a tap-to-call button that stays visible as they scroll.",
+        "It also has to serve search engines and AI assistants. That means one focused page per practice area and case type, location pages that say something real about each office's community, clean heading structure, schema markup for your firm and attorneys, and content written to answer the questions people actually ask. A site that looks good but lacks that structure leaves SEO and AEO results on the table."
+      ]
+    },
+    {
+      "h2": "Why custom-coded beats page builders for lawyers",
+      "paragraphs": [
+        "Many law firm sites run on heavy themes and page builders that load scripts the page never uses. They look fine on a desktop in the office and crawl on a phone over a cellular connection. Vincere builds custom-coded sites with only what each page needs, which keeps them fast, stable and easier for search engines to crawl and understand.",
+        "Custom code also means the site is built around your firm instead of a template. Practice area pages, attorney profiles, results disclaimers and intake forms are designed for how your firm takes cases. Copy is written with state bar advertising rules in mind, including ABA Model Rule 7.1, so claims about experience and outcomes stay truthful and appropriately qualified. Your team reviews every page before launch."
+      ]
+    },
+    {
+      "h2": "Turning website visitors into signed cases",
+      "paragraphs": [
+        "Traffic only matters if it reaches intake. Every call button, form and chat option is tracked, and calls use tracking numbers that show which channel sent the visitor. Forms are short, ask only what intake needs to qualify the matter and route straight into your CRM so follow-up starts in minutes, day or night. After-hours visitors can book a consultation time directly instead of waiting for the office to open.",
+        "Because the site feeds your client dashboard, you can see which pages and channels produce consultations and cost per signed case, not just page views. That data shapes what we build next, whether that is a new case type page, a Spanish-language section for your community or a faster path to booking. The website becomes a working part of your marketing instead of a brochure."
+      ]
+    }
+  ],
+  "included": [
+    "Site strategy and page map by practice area, case type and location",
+    "Custom-coded design, mobile first, with fast load times",
+    "Practice area, attorney and location pages written for search and conversion",
+    "Schema markup for your firm, attorneys, services and FAQs",
+    "Click-to-call, short intake forms and CRM routing",
+    "Call tracking and form tracking tied to marketing sources",
+    "Copy written with state bar advertising rules in mind",
+    "Analytics connected to your client dashboard"
+  ],
+  "best_for": "Firms whose current site is slow, templated or hard to update, firms investing in SEO or paid ads that need pages that convert, and firms opening new offices or practice areas.",
+  "process": [
+    {"title": "Learn the firm", "text": "We map your practice areas, case types, offices and intake workflow so the site structure matches how you actually take cases."},
+    {"title": "Plan the pages", "text": "We build a page map and content plan based on the searches and questions your prospective clients use."},
+    {"title": "Design and write", "text": "We design mobile first and write copy with real attorney detail, sent through your review before build."},
+    {"title": "Build and connect", "text": "The site is custom-coded, tested for speed and connected to call tracking, your CRM and your dashboard."},
+    {"title": "Launch and improve", "text": "We handle redirects from your old site, monitor rankings and conversions, and keep adding and refining pages."}
+  ],
+  "metrics": [
+    {"title": "Consultation conversion rate", "text": "The share of visitors who call, submit a form or book, broken down by page and channel."},
+    {"title": "Page speed on mobile", "text": "Load performance on real phones, including Google's Core Web Vitals measurements."},
+    {"title": "Organic visibility", "text": "Rankings and search traffic for your practice area and location pages over time."},
+    {"title": "Cost per signed case by landing page", "text": "Which pages turn the traffic you pay for into clients, so we know where to improve next."}
+  ],
+  "practice_notes": [
+    {"practice": "Personal Injury", "text": "PI sites need separate pages for MVA, truck, premises liability and other case types, plus a clear explanation of contingency fees so visitors understand they will not pay upfront."},
+    {"practice": "Criminal Defense", "text": "Criminal defense sites are built for urgent visits: a 24/7 phone number above the fold and plain pages on charges, arrest, bail and what happens next."},
+    {"practice": "Immigration", "text": "Immigration sites often need full Spanish-language or other multilingual versions, not a translation widget, so both search engines and families can use them properly."},
+    {"practice": "Business Law", "text": "Business clients research longer and compare firms, so detailed attorney bios, industry experience and clear service descriptions matter more than urgent calls to action."}
+  ],
+  "faqs": [
+    {"q": "What makes a good law firm website?", "a": "A good law firm website loads fast on a phone, makes clear which cases you take, shows real attorneys and makes contacting you effortless. It has a dedicated page for each practice area and location, structured for search engines. Every call and form is tracked so you know which pages produce consultations."},
+    {"q": "How much does law firm website design cost?", "a": "Law firm website design cost depends on the number of practice areas, locations, languages and pages the firm needs, and how much content has to be written. A single-practice site and a multi-office, multilingual site are very different projects. Vincere scopes the site in the free plan so you see the recommendation before committing."},
+    {"q": "Why do lawyer websites need to be fast?", "a": "Lawyer websites need to be fast because most prospective clients arrive on phones, often stressed, and leave slow pages quickly. Speed also affects how Google evaluates page experience. Custom-coded sites avoid the bloated scripts common in page builders, which helps them load quickly on cellular connections."},
+    {"q": "Will a new website hurt my SEO?", "a": "A new website should not hurt your SEO if the migration is handled carefully. That means mapping every old URL to its new equivalent with redirects, preserving content that already ranks and keeping technical structure clean. Vincere manages redirects and monitors rankings after launch to catch issues early."},
+    {"q": "Do law firm websites need practice area pages?", "a": "Yes. Law firm websites need a dedicated page for each practice area and major case type, because each one targets different searches and answers different questions. A single 'Practice Areas' page listing everything rarely ranks for anything. Focused pages also let paid ads land on content that matches the search."},
+    {"q": "Can my website help with AI search like ChatGPT?", "a": "Your website can help AI assistants like ChatGPT, Google AI Overviews and Perplexity understand and cite your firm. That requires clear, direct answers to common questions, consistent firm information and schema markup. Vincere builds these elements into the site and pairs it with AEO work where it fits your plan."},
+    {"q": "Do you write the content for our law firm website?", "a": "Yes. We write practice area, attorney and location copy based on interviews with your team, so it reflects how your firm actually handles cases. Copy is written with state bar advertising rules in mind, including ABA Model Rule 7.1. Your firm reviews and approves everything before launch."}
+  ],
+  "related": ["law-firm-seo", "law-firm-aeo", "law-firm-branding"]
+}

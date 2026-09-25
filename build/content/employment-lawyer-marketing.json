@@ -1,0 +1,79 @@
+{
+  "type": "practice",
+  "slug": "employment-lawyer-marketing",
+  "nav_label": "Employment Law",
+  "practice": "employment law",
+  "service_name": "Employment Lawyer Marketing",
+  "title": "Employment Lawyer Marketing | Vincere",
+  "meta_description": "Employment lawyer marketing for wrongful termination, wage and discrimination cases: SEO, LSA, PPC and screening intake measured by signed cases. Free plan.",
+  "eyebrow": "Employment Law",
+  "h1": "Employment Lawyer Marketing That Finds Cases Worth Taking",
+  "lede": "Employment lawyer marketing brings in plenty of calls, but many describe unfair treatment that is not legally actionable. Vincere focuses your spend on the claims your firm takes, such as discrimination, retaliation and unpaid wages, and builds intake that screens quickly. Success is measured in signed cases and cost per signed case.",
+  "answer": {
+    "question": "How do employment lawyers get more clients?",
+    "text": "Employment lawyers get more clients by ranking and advertising for specific claims like wrongful termination, discrimination, retaliation and unpaid overtime, then screening inquiries quickly for merit, damages and deadlines. Clear content on workers' rights, Local Services Ads, targeted paid search and fast intake turn a high volume of workplace complaints into signed cases."
+  },
+  "market": [
+    {"title": "Many calls, fewer viable claims", "text": "People often call after being fired or mistreated, but not every bad workplace experience is a legal claim. Screening efficiency matters as much as lead volume."},
+    {"title": "Deadlines drive urgency", "text": "Agency charge deadlines, such as those for filing with the EEOC or a state agency, can be short. Prospects need to know that waiting can cost them their claim."},
+    {"title": "Case value depends on facts", "text": "Wage and hour class claims, executive severance negotiations and single-plaintiff discrimination cases have very different economics. Campaigns should reflect the mix your firm wants."},
+    {"title": "Employee side or employer side", "text": "Plaintiff firms and management-side firms reach very different audiences. Marketing for employers looks more like business law marketing, with a longer sales cycle."}
+  ],
+  "sections": [
+    {
+      "h2": "Employment lawyer marketing by claim type",
+      "paragraphs": [
+        "A search for \"wrongful termination lawyer\" and a search for \"unpaid overtime attorney\" come from different people with different case values. Vincere builds separate campaigns and pages for each claim type your firm handles: discrimination, sexual harassment, retaliation, whistleblower claims, FMLA and disability accommodation, wage and hour, and severance negotiation. That lets budget flow to the cases that fit your fee model, whether contingency, hourly or hybrid.",
+        "Your free plan prices each claim type in your market, looks at LSA and map pack competition, and reviews which of your current cases came from which sources. We then recommend a channel mix and launch order with an expected cost per signed case. If a claim type is saturated with large advertisers in your metro, we will say so and point budget where your firm can compete."
+      ]
+    },
+    {
+      "h2": "Content that educates and screens at the same time",
+      "paragraphs": [
+        "Workers often search questions before they search for a lawyer: whether they can be fired for complaining, whether a salaried employee gets overtime, how long they have to file a discrimination charge. Clear, careful answers to those questions build organic traffic and get cited by AI assistants. They also help prospects self-screen, so the people who call are more likely to have a claim your firm can pursue.",
+        "Content must be general information, not legal advice, and it should be accurate for your state. We write with state bar advertising rules in mind and route pages to your attorneys for review. The result is a library of pages that rank for employment questions, support paid campaigns with strong landing pages, and reduce the number of unproductive consultations your team sits through."
+      ]
+    },
+    {
+      "h2": "One partner, one set of numbers",
+      "paragraphs": [
+        "Employment firms often have lead sources scattered across LSA, directory listings, a website, co-counsel referrals and occasional paid search. Vincere consolidates that into one plan. As your single marketing partner, we connect the right specialist teams for each channel and keep them working from one budget and one set of numbers. You have one point of contact, and we manage the coordination.",
+        "Your client dashboard shows spend by channel, calls, screened intakes, consultations and cost per signed case, live. For employment firms, a useful view is signed cases by claim type and source, which quickly shows whether wage claims, discrimination cases or severance matters are producing the best return. That makes budget decisions straightforward and grounded in cases, not clicks, and it shows where intake screening needs tightening."
+      ]
+    }
+  ],
+  "channels": [
+    {"service": "law-firm-seo", "why": "Workers research their rights before calling a lawyer, so claim-specific pages and state-focused answers build steady, lower-cost inquiries. They also help prospects self-screen."},
+    {"service": "local-services-ads-for-lawyers", "why": "Employment law is an LSA category, and those ads reach people ready to talk to an attorney now. Disputing clearly invalid leads keeps costs in line."},
+    {"service": "law-firm-consulting", "why": "Fast merit screening, deadline capture and consult booking decide how much attorney time goes to viable claims. We build intake and CRM flows for high call volume."},
+    {"service": "law-firm-ppc", "why": "Search ads can target specific claims like retaliation or unpaid overtime with separate budgets. Negative keywords filter out job seekers and HR questions."},
+    {"service": "law-firm-aeo", "why": "Workers ask AI assistants whether they were fired illegally or owed overtime. Clear, citable content helps your firm appear in those answers."},
+    {"service": "meta-ads-for-lawyers", "why": "Meta Ads can support wage and hour campaigns aimed at specific industries or roles, within platform and bar rules. They work best with strong screening forms."}
+  ],
+  "searches": [
+    "wrongful termination lawyer near me",
+    "can I be fired for complaining to HR",
+    "unpaid overtime attorney",
+    "workplace discrimination lawyer free consultation",
+    "how long do I have to file an EEOC charge",
+    "retaliation lawyer for employees",
+    "sexual harassment attorney",
+    "severance agreement review lawyer",
+    "am I owed overtime if I am salaried",
+    "employment lawyer contingency fee"
+  ],
+  "intake": {
+    "h2": "Employment intake: screen fast, respect deadlines",
+    "text": "Employment firms receive many calls from people who were treated unfairly but may not have a legal claim. Intake needs to sort them quickly and kindly. We build scripts and online questionnaires covering employer size, dates of employment and termination, protected activity or characteristics, pay issues and any agency charges already filed. Promising inquiries get a consultation within a day or two, with deadline risks flagged to an attorney immediately. Declined prospects receive a polite, clear response and, where appropriate, a referral resource, which protects your reviews and reputation."
+  },
+  "faqs": [
+    {"q": "What is the best marketing for employment lawyers?", "a": "The best marketing for employment lawyers usually combines claim-specific SEO, Local Services Ads and targeted paid search, backed by efficient screening intake. Because many inquiries are not viable claims, qualification matters as much as volume. A free market plan shows the right mix for your claim types and market."},
+    {"q": "How do employment lawyers reduce unqualified leads?", "a": "Target specific claims rather than broad workplace terms, and use negative keywords for job and HR queries. Pages that explain what is and is not a legal claim help prospects self-screen. A short online questionnaire before booking filters further."},
+    {"q": "Are Local Services Ads good for employment lawyers?", "a": "Local Services Ads can work well for employment lawyers because they reach people ready to speak with an attorney. Lead quality varies, so disputing invalid leads and screening quickly are important. Tracking cost per signed case shows whether LSA is profitable in your market."},
+    {"q": "Should employment lawyers write content about workers' rights?", "a": "Yes, clear content on workers' rights is one of the most effective ways for employment lawyers to earn search and AI visibility. It should be general information, accurate for your state, and reviewed by an attorney. Good content also improves the quality of inquiries."},
+    {"q": "How do management-side employment firms market themselves?", "a": "Management-side firms market more like business law firms, focusing on expertise content, HR compliance topics, a credible brand and referrals from CPAs, brokers and HR consultants. Search terms and buyers differ from plaintiff marketing. The sales cycle is longer and relationship-driven."},
+    {"q": "How long does employment lawyer marketing take to work?", "a": "LSA and paid search can generate inquiries within weeks of launch. SEO and AI visibility usually take several months to build. Many employment firms run paid channels for immediate volume while organic content matures."},
+    {"q": "How do you measure employment lawyer marketing?", "a": "Employment lawyer marketing should be measured by signed cases and cost per signed case, broken out by claim type and channel. Screened intakes and consultations help diagnose the funnel. Vincere's client dashboard shows all of it live."}
+  ],
+  "related": ["workers-compensation-lawyer-marketing", "litigation-attorney-marketing", "business-lawyer-marketing"]
+}

@@ -1,0 +1,78 @@
+{
+  "type": "service",
+  "slug": "law-firm-ppc",
+  "nav_label": "PPC",
+  "service_name": "PPC for Law Firms",
+  "title": "Law Firm PPC & Google Ads for Lawyers | Vincere",
+  "meta_description": "Law firm PPC built around cost per signed case, not clicks. Google Ads for lawyers with tight keywords and tracked calls. Get a free market plan first.",
+  "eyebrow": "Google Search Ads",
+  "h1": "Law Firm PPC That Is Measured in Signed Cases",
+  "lede": "Law firm PPC is the fastest way to put your firm in front of people searching for a lawyer right now. It is also the fastest way to burn a budget on clicks that never become clients. Vincere builds Google Ads for lawyers around one number: what each signed case costs you.",
+  "answer": {
+    "question": "What is PPC for law firms?",
+    "text": "PPC for law firms is paid search advertising, mainly Google Search Ads, where your firm bids to appear at the top of results for queries like 'car accident lawyer near me'. You pay per click. Done well, it targets high-intent searches, filters out bad-fit traffic, tracks every call and form, and is judged by cost per signed case."
+  },
+  "sections": [
+    {
+      "h2": "Why law firm PPC fails for most firms",
+      "paragraphs": [
+        "Legal keywords are among the most expensive in paid search, and the auction rewards whoever is most disciplined, not whoever spends most. Most wasted law firm PPC spend comes from broad match keywords that pull in job seekers, people wanting free legal advice, and searches for the wrong practice area. Add a generic landing page and an intake line that rings out after hours, and the account looks busy while signed cases stay flat.",
+        "The fix is not a bigger budget. It is tighter structure: campaigns split by practice area and case type, match types that keep spend on real intent, and a negative keyword list that grows every week from actual search terms. Ad schedules and geographic targeting follow where and when your intake team can actually answer, so you are not paying for calls that go to voicemail."
+      ]
+    },
+    {
+      "h2": "How we build Google Ads for lawyers",
+      "paragraphs": [
+        "Before any money is spent, the free plan prices your market: typical cost per click for your practice terms, how many firms are bidding, and what a lead is likely to cost. If PPC cannot produce signed cases at a cost your case values support, we tell you and point the budget somewhere better, such as Local Services Ads or SEO.",
+        "When the numbers work, we build the account around case intent. Ad copy speaks to the specific problem, like a denied claim or a recent arrest, and is written with state bar advertising rules such as ABA Model Rule 7.1 in mind. Each ad group points to a landing page that matches the search, with click-to-call, a short form and tracked phone numbers."
+      ]
+    },
+    {
+      "h2": "Tying PPC spend to signed cases",
+      "paragraphs": [
+        "Google Ads will happily report conversions that are really misdials, spam forms and existing clients calling about their file. We connect call tracking and your intake records so the account learns from qualified consultations and signed cases instead. That lets smart bidding optimize toward the leads your firm actually wants, rather than the cheapest form fill. It also shows which case types are worth bidding up.",
+        "Every dollar of PPC spend shows up in your client dashboard next to calls, consultations and cost per signed case, alongside your other channels. You can see which campaigns and keywords produce clients, which ones only produce clicks, and where the next dollar should go. Monthly reviews cover search term cleanup, bid strategy, landing page tests and how intake handled the leads."
+      ]
+    }
+  ],
+  "included": [
+    "Market pricing: cost per click and competitor bidding for your practice terms",
+    "Account structure by practice area, case type and geography",
+    "Keyword research with match type strategy and ongoing negative keyword lists",
+    "Ad copy written with state bar advertising rules in mind",
+    "Dedicated landing pages matched to search intent",
+    "Call tracking, form tracking and offline conversion imports from intake",
+    "Ad scheduling aligned to your intake team's live coverage",
+    "Spend, calls and cost per signed case in your client dashboard"
+  ],
+  "best_for": "Firms that need qualified cases quickly, have intake coverage to answer calls fast, and practice in areas where case value supports competitive click costs.",
+  "process": [
+    {"title": "Price the market", "text": "We pull click costs, competitor activity and search volume for your practice areas and city so you know what a case should cost before launch."},
+    {"title": "Fix the intake path", "text": "We check call answering, after-hours coverage and consult booking, because paid clicks are wasted if intake misses them."},
+    {"title": "Build the account", "text": "Campaigns, ad groups, keywords, negatives, ad copy and landing pages are built around specific case types."},
+    {"title": "Launch and tune", "text": "We review search terms, bids and call recordings closely in the first weeks and cut wasted spend quickly."},
+    {"title": "Scale what signs", "text": "Budget moves toward the campaigns and keywords producing signed cases, and away from those that only produce clicks."}
+  ],
+  "metrics": [
+    {"title": "Cost per signed case", "text": "Total PPC spend divided by the cases that actually signed from paid search."},
+    {"title": "Qualified call and form volume", "text": "Leads that match your practice areas and criteria, separated from spam and wrong-fit inquiries."},
+    {"title": "Consultation rate", "text": "How many PPC leads booked a consultation, which shows both lead quality and intake follow-through."},
+    {"title": "Search term quality", "text": "Which real searches triggered your ads and what we excluded, so you can see where spend went."}
+  ],
+  "practice_notes": [
+    {"practice": "Personal Injury", "text": "PI search terms are some of the most contested in paid search, so we focus spend on high-intent case types like MVA and truck accidents and exclude low-value queries aggressively."},
+    {"practice": "Criminal Defense", "text": "Arrest-driven searches happen at night and on weekends, so ad schedules only run as wide as your 24/7 intake coverage and calls route to someone who can talk about bail and next steps."},
+    {"practice": "Family Law", "text": "We separate divorce, custody and support campaigns and filter out searches for free forms or DIY divorce, which drain budget without producing retained clients."},
+    {"practice": "Bankruptcy", "text": "Bankruptcy searchers often compare fees and are anxious about cost, so ad copy addresses consultations and payment options clearly while keyword lists screen out credit repair and loan searches."}
+  ],
+  "faqs": [
+    {"q": "Is PPC worth it for law firms?", "a": "PPC is worth it for a law firm when the value of a signed case comfortably covers the cost of acquiring it, and when intake answers fast. In many practice areas and metros that math works well. In others, click costs are too high relative to case value, and Local Services Ads or SEO are better first moves. The free plan prices this before you spend."},
+    {"q": "How much should a law firm spend on Google Ads?", "a": "A law firm's Google Ads budget should be set from local click costs, expected conversion rates and how many cases you want each month, not a round number. Too small a budget in a competitive market can produce too few clicks to learn anything. Vincere builds that estimate in the free plan so you see the expected cost per case first."},
+    {"q": "What is the difference between PPC and Local Services Ads for lawyers?", "a": "PPC for lawyers means Google Search Ads, where you bid on keywords and pay per click. Local Services Ads appear above them, require Google Screened verification, and charge per lead rather than per click. Many firms run both, with LSA capturing local intent and PPC covering specific case types and searches LSA does not show for."},
+    {"q": "How long does it take for law firm PPC to work?", "a": "Law firm PPC starts producing leads as soon as ads go live, which is why firms use it when they need cases soon. The first weeks are about cutting wasted search terms and learning which campaigns produce consultations. Cost per signed case usually becomes reliable once enough leads have moved through your intake and case evaluation process."},
+    {"q": "Why am I getting junk leads from Google Ads?", "a": "Junk leads from Google Ads usually come from broad keyword matching, weak negative keyword lists and conversion tracking that counts every call as a win. Fixing them means reviewing actual search terms, tightening match types and feeding real intake outcomes back into the account. Landing pages that state what cases you take also filter bad fits."},
+    {"q": "Do you write ads that follow attorney advertising rules?", "a": "Yes. Ad copy and landing pages are written with state bar advertising rules in mind, such as ABA Model Rule 7.1 on truthful, non-misleading communications. We avoid unsupported claims and outcome promises. Your firm remains responsible for final compliance in your state, so we build in your review before anything goes live."},
+    {"q": "Will I see where my PPC budget goes?", "a": "Yes. Your client dashboard shows PPC spend next to calls, consultations and cost per signed case, updated live, alongside every other channel we run. You can compare paid search to LSA, SEO and Meta on the same numbers instead of reading separate reports."}
+  ],
+  "related": ["local-services-ads-for-lawyers", "law-firm-website-design", "law-firm-consulting"]
+}

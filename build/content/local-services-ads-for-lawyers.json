@@ -1,0 +1,78 @@
+{
+ "type": "service",
+ "slug": "local-services-ads-for-lawyers",
+ "nav_label": "Local Services Ads",
+ "service_name": "Google Local Services Ads for Lawyers",
+ "title": "Local Services Ads for Lawyers: Google LSA | Vincere",
+ "meta_description": "Local Services Ads for lawyers managed end to end: Google Screened setup, lead disputes and fast intake that turns LSA calls into cases. Free plan first.",
+ "eyebrow": "Google Local Services Ads",
+ "h1": "Local Services Ads for Lawyers, Managed for Signed Cases",
+ "lede": "Google Local Services Ads put your firm at the very top of many legal searches, with a Google Screened badge and a pay-per-lead model. We handle verification, profile setup, budget, lead disputes and the intake speed LSA rewards.",
+ "answer": {
+  "question": "What are Local Services Ads for lawyers?",
+  "text": "Local Services Ads for lawyers are Google ads that appear at the top of many local legal searches, showing the firm's name, reviews and a Google Screened badge. Firms pay per lead rather than per click, and must pass Google's license and background verification. Ranking depends heavily on reviews, responsiveness and proximity to the searcher."
+ },
+ "sections": [
+  {
+   "h2": "How Local Services Ads for lawyers work",
+   "paragraphs": [
+    "Local Services Ads sit above traditional search ads and the map pack for many legal searches, which makes them some of the most visible placements on the page. Instead of bidding on keywords, you choose practice areas and service areas, set a budget, and pay when a qualified prospect calls or messages you through the ad. Prospects see your firm name, star rating, years in practice and the Google Screened check mark.",
+    "Getting that badge takes work. Google requires attorneys to verify active bar licenses, and firms go through background checks and insurance or business verification depending on the setup. Profiles stall for weeks when documents are mismatched or a single attorney's information is incomplete. We manage the paperwork, keep each attorney's profile accurate and handle reverification so your ads do not go dark unexpectedly."
+   ]
+  },
+  {
+   "h2": "What decides who ranks in Google LSA",
+   "paragraphs": [
+    "Google does not publish an exact formula, but the signals it names are consistent: proximity to the searcher, review score and volume, how quickly you respond to leads, business hours and whether the profile appears reliable. In many metros, several firms bid on the same categories, so small differences in responsiveness and reviews decide who shows up. A missed call or a slow message response can quietly push your ads down.",
+    "That is why LSA management overlaps heavily with intake. We help your team answer LSA calls live, reply to message leads quickly and keep hours accurate so you are not shown when nobody can pick up. We also build a steady review request process for satisfied clients, within the rules your state bar sets for testimonials, because fresh reviews help both your LSA ranking and your Google Business Profile."
+   ]
+  },
+  {
+   "h2": "Lead quality, disputes and cost per signed case",
+   "paragraphs": [
+    "Paying per lead sounds simple until you receive calls from people who need a practice you do not handle, spam callers or existing clients. Google lets advertisers dispute leads that are not valid for their business, and credits can add up. We review your leads regularly, dispute the ones that qualify, tighten practice area and job type settings, and mark leads as booked or not so the system learns what a good lead looks like.",
+    "The real measure is not cost per lead. It is cost per signed case. Every LSA call and message flows into your Vincere client dashboard beside your other channels, so you can see which practice areas and service areas actually produce clients. When LSA is saturated in your market, we say so, and shift budget to the channels that fit your numbers instead of chasing expensive leads."
+   ]
+  }
+ ],
+ "included": [
+  "Google Screened verification and document management for every attorney",
+  "Local Services Ads profile setup with practice areas, service areas and hours",
+  "Budget and bidding mode selection based on your case values",
+  "Weekly lead review, lead rating and dispute submission",
+  "Review request workflow for satisfied clients",
+  "Intake coaching for fast answer and message response times",
+  "Call and message tracking inside your client dashboard",
+  "Reverification monitoring so ads stay live"
+ ],
+ "best_for": "Consumer-facing firms in practice areas Google supports for LSA that can answer calls quickly and want high-intent leads at the top of the page.",
+ "process": [
+  {"title": "Check eligibility and market", "text": "We confirm your practice areas are supported and look at how many firms compete for LSA in your area."},
+  {"title": "Verify and build", "text": "We gather licenses and documents, pass Google Screened checks and build a complete profile."},
+  {"title": "Launch with intake ready", "text": "We set budgets and hours only after your team is ready to answer every LSA lead fast."},
+  {"title": "Review and dispute", "text": "We rate leads, dispute invalid ones and tune settings to reduce wasted spend."},
+  {"title": "Report on signed cases", "text": "We connect LSA leads to consultations and signed clients so you know the true return."}
+ ],
+ "metrics": [
+  {"title": "Cost per lead", "text": "What each LSA call or message costs after disputed lead credits."},
+  {"title": "Answer and response rate", "text": "The share of LSA calls answered live and messages replied to promptly, both of which affect ranking."},
+  {"title": "Lead to consult rate", "text": "How many LSA leads book a consultation with an attorney."},
+  {"title": "Cost per signed case", "text": "Total LSA spend divided by the clients it produced, compared against your other channels."}
+ ],
+ "practice_notes": [
+  {"practice": "Personal Injury", "text": "PI categories are among the most competitive LSA markets, so reviews and response speed matter enormously. Screening for accident type and injury severity on the first call protects your budget."},
+  {"practice": "Criminal Defense", "text": "Arrest calls come at all hours, and LSA favors firms available when searchers are. Accurate hours and a 24/7 answering plan are essential."},
+  {"practice": "Family Law", "text": "Divorce and custody leads often include people looking for free advice. Clear intake questions about the stage of the case and ability to retain help sort serious prospects quickly."},
+  {"practice": "Immigration", "text": "Many prospects prefer to speak Spanish or another language. Listing the languages your team actually speaks and answering in them improves both conversion and lead quality."}
+ ],
+ "faqs": [
+  {"q": "Are Local Services Ads worth it for lawyers?", "a": "For many consumer-facing firms, yes, because LSA shows at the top of the page and you pay per lead instead of per click. Results depend on your market's competition, your reviews and how fast your team answers. We price your market first and tell you if LSA does not fit."},
+  {"q": "What is the Google Screened badge for attorneys?", "a": "Google Screened is the verification badge law firms earn to run Local Services Ads. Google checks active bar licenses for your attorneys and runs background and business checks. The badge appears on your ad and signals to prospects that Google has verified the firm."},
+  {"q": "How long does Google Screened verification take?", "a": "It varies, often from a couple of weeks to longer when documents need correcting. Delays usually come from mismatched names, missing attorney details or incomplete business information. We prepare everything carefully up front to avoid back-and-forth."},
+  {"q": "How do Local Services Ads rank law firms?", "a": "Google weighs signals such as proximity to the searcher, review rating and count, responsiveness to leads, business hours and profile completeness. Budget matters too. Answering calls live and earning steady reviews are the biggest factors a firm can control."},
+  {"q": "Can we get refunds for bad LSA leads?", "a": "Google allows advertisers to dispute leads that are not valid, such as spam, wrong practice area or calls outside your service area. Approved disputes are credited back. We review and dispute leads regularly so you do not pay for calls that were never real opportunities."},
+  {"q": "What is the difference between LSA and Google Search Ads for lawyers?", "a": "Local Services Ads charge per lead and show a Google Screened badge above other results, with little keyword control. Google Search Ads charge per click and let you target specific keywords and landing pages. Many firms run both, and we split budget based on cost per signed case."},
+  {"q": "Do you manage LSA for lawyers on its own?", "a": "Yes, LSA can be managed on its own or as part of a wider plan. Either way, it starts with a free plan so we can check eligibility, competition and your intake readiness. There is no obligation and no retainer to start."}
+ ],
+ "related": ["law-firm-ppc", "law-firm-consulting", "law-firm-seo"]
+}

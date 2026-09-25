@@ -1,0 +1,78 @@
+{
+  "type": "service",
+  "slug": "law-firm-traditional-advertising",
+  "nav_label": "Traditional",
+  "service_name": "Traditional Advertising for Law Firms",
+  "title": "Law Firm Advertising: TV, Billboards & Radio | Vincere",
+  "meta_description": "Law firm advertising on billboards, TV, radio, direct mail and print, tracked to calls and signed cases. See if it fits your market with a free plan.",
+  "eyebrow": "Billboards, TV, Radio, Mail",
+  "h1": "Traditional Law Firm Advertising You Can Actually Measure",
+  "lede": "Billboards, TV, radio, direct mail and print still build the kind of name recognition that makes every other channel cheaper. The problem is that most law firm advertising on these channels is bought on gut feel and never tracked. Vincere plans traditional media around your market and ties it to calls, consultations and signed cases.",
+  "answer": {
+    "question": "What is traditional advertising for law firms?",
+    "text": "Traditional advertising for law firms means offline media: billboards, TV, radio, direct mail and print. It builds local name recognition so people remember your firm when they need a lawyer, and it lifts branded search and referrals. It works best with unique tracking numbers, consistent branding and a plan that ties spend to signed cases."
+  },
+  "sections": [
+    {
+      "h2": "When law firm advertising offline makes sense",
+      "paragraphs": [
+        "Offline media is a brand investment. When someone is hurt in a crash or served with divorce papers, many of them search the name they already remember, or ask a friend who remembers it for them. Billboards along commuter routes, local TV and radio spots build that recall at a scale digital ads rarely reach, and that recall makes your search and Local Services Ads work harder.",
+        "It is not the right first move for every firm. Traditional media needs enough sustained frequency to be remembered, and a firm that can only afford a short burst usually gets better returns from search first. The free plan looks at your market, your competitors' visible spend and your case values, and tells you plainly whether offline advertising belongs in your mix yet."
+      ]
+    },
+    {
+      "h2": "Planning billboards, TV, radio and direct mail",
+      "paragraphs": [
+        "Each medium does a different job. Billboards build simple recognition: a name, a practice area, a number, readable at speed. TV and radio carry more story and let a named attorney build trust. Direct mail reaches defined lists, which suits estate planning seminars, real estate closings and some bankruptcy outreach where state rules permit it. We match medium to message and audience before buying anything.",
+        "Creative is written with state bar advertising rules in mind, such as ABA Model Rule 7.1 on truthful, non-misleading communications. Some states have specific requirements for dramatizations, spokespersons, disclaimers or targeted mail, so your review is built into every approval. We keep the look, voice and phone number consistent with your website and digital ads so the recognition you pay for carries across channels."
+      ]
+    },
+    {
+      "h2": "Measuring offline media in signed cases",
+      "paragraphs": [
+        "Traditional advertising does not have to be a black box. Every billboard, station and mail drop gets its own tracking number, and where it makes sense, a short vanity URL. Those calls land in your CRM tagged by source, so your intake team sees which campaign produced each lead and your dashboard shows which placements produced consultations and cases. Placements that never ring get cut at renewal.",
+        "Offline media also shows up indirectly: more branded searches, more direct website visits and higher conversion rates on your paid campaigns. We watch those signals around each flight so you can judge the full effect, not just the calls that dialed the tracking number. Spend, calls and cost per signed case sit next to your digital channels in one live view."
+      ]
+    }
+  ],
+  "included": [
+    "Market assessment of competitor offline presence and media options",
+    "Media mix and budget recommendation across billboards, TV, radio, mail and print",
+    "Creative direction and scripts written with state bar advertising rules in mind",
+    "Coordination with specialist media buying and production teams",
+    "Unique tracking numbers and vanity URLs by placement",
+    "Source tagging in your CRM so intake knows where calls came from",
+    "Branded search and direct traffic monitoring around each flight",
+    "Offline spend and cost per signed case in your client dashboard"
+  ],
+  "best_for": "Established firms in competitive metros that want name recognition, have budget to sustain frequency over time, and already have search and intake working well.",
+  "process": [
+    {"title": "Assess the market", "text": "We review which firms dominate local billboards and airtime, what inventory exists and what a sustained presence would realistically require."},
+    {"title": "Choose the mix", "text": "We recommend which media to use, in what order, and how offline spend fits beside your digital channels."},
+    {"title": "Develop creative", "text": "Specialist production teams build the billboard designs, spots and mail pieces, and your firm reviews them for compliance."},
+    {"title": "Launch with tracking", "text": "Each placement goes live with its own tracking number and source tagging in your CRM."},
+    {"title": "Review and adjust", "text": "We compare placements on calls, consultations and signed cases, plus search lift, before renewing or reallocating."}
+  ],
+  "metrics": [
+    {"title": "Calls by placement", "text": "Inbound calls to each billboard, station or mailer's unique tracking number."},
+    {"title": "Cost per signed case by medium", "text": "Offline spend divided by the cases each medium produced, on the same basis as digital."},
+    {"title": "Branded search lift", "text": "Changes in searches for your firm's name during and after each campaign flight."},
+    {"title": "Intake conversion of offline leads", "text": "How many offline callers booked a consultation, compared to leads from other channels."}
+  ],
+  "practice_notes": [
+    {"practice": "Personal Injury", "text": "PI is where billboards and TV are most common, so standing out requires a clear, consistent brand and enough frequency to compete with established advertisers in your metro."},
+    {"practice": "Estate Planning", "text": "Direct mail and local radio suit estate planning because they reach older homeowners and can invite them to seminars, where the longer decision process can play out."},
+    {"practice": "Criminal Defense", "text": "Radio and targeted outdoor placements near courthouses and busy corridors keep your name top of mind, and every placement needs a number that is answered 24/7."},
+    {"practice": "Workers' Compensation", "text": "Spanish-language radio and TV often reach injured workers that English-only digital ads miss, provided your intake team can handle calls in Spanish."}
+  ],
+  "faqs": [
+    {"q": "Is billboard advertising worth it for lawyers?", "a": "Billboard advertising is worth it for lawyers when they can sustain it long enough to be remembered and when search and intake are already working. Billboards build recognition rather than immediate calls, so short runs rarely pay back. Tracking numbers and branded search monitoring show whether a board is doing its job."},
+    {"q": "How do you track law firm TV and radio ads?", "a": "Law firm TV and radio ads are tracked with a unique phone number and often a vanity URL for each station or spot. Calls are tagged by source in your CRM, and we watch branded search and direct website traffic around each flight. Together those show both direct response and the broader lift."},
+    {"q": "Can law firms use direct mail?", "a": "Law firms can use direct mail, and it works well for estate planning seminars, real estate services and general awareness. Targeted mail to people with a known specific legal need is regulated differently by state, often with labeling or timing requirements. We build your compliance review into every mail piece."},
+    {"q": "Should a small law firm advertise on TV?", "a": "A small law firm should usually get search, Local Services Ads and intake working before advertising on TV. TV needs sustained frequency to build recall, which takes budget over months. The free plan shows whether your market and case values support it now, later or not at all."},
+    {"q": "Does traditional advertising help SEO and PPC?", "a": "Traditional advertising often helps SEO and PPC indirectly by increasing searches for your firm's name. Branded searches convert well and cost less than generic legal keywords. We track branded search volume around offline campaigns so that effect is visible in your reporting."},
+    {"q": "Do you produce the TV spots and billboards?", "a": "Vincere connects specialist production and media buying teams for each medium and keeps them working from your plan and brand. You deal with one point of contact while we coordinate creative, buying and tracking. Every piece goes through your review for state bar advertising rules before it runs."},
+    {"q": "What do attorney advertising rules require for TV and billboards?", "a": "Attorney advertising rules vary by state, but they generally require truthful, non-misleading communications, as in ABA Model Rule 7.1, and some states add rules on dramatizations, spokespersons and disclaimers. We write creative with those rules in mind. Your firm confirms final compliance for your jurisdiction."}
+  ],
+  "related": ["law-firm-branding", "meta-ads-for-lawyers", "law-firm-seo"]
+}

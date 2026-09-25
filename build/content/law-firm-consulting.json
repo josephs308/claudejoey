@@ -1,0 +1,78 @@
+{
+ "type": "service",
+ "slug": "law-firm-consulting",
+ "nav_label": "Consulting",
+ "service_name": "Law Firm Marketing and Intake Consulting",
+ "title": "Law Firm Consulting: Intake, CRM and Growth | Vincere",
+ "meta_description": "Law firm consulting that fixes intake, CRM and follow-up so more of your existing leads become signed cases. Start with a free plan, no retainer required.",
+ "eyebrow": "Law Firm Consulting",
+ "h1": "Law Firm Consulting That Turns More Leads Into Signed Cases",
+ "lede": "Most firms do not have a lead problem first. They have an intake problem. Our law firm consulting fixes speed to lead, follow-up, consult booking and client management before we ask you to spend another dollar on ads.",
+ "answer": {
+  "question": "What is law firm consulting?",
+  "text": "Law firm consulting is a hands-on review and rebuild of how a firm turns inquiries into signed clients. It covers intake scripts, response time, CRM setup, follow-up automations, consult booking and reporting, so every lead is tracked from first call to signed engagement and marketing spend is judged by cost per signed case."
+ },
+ "sections": [
+  {
+   "h2": "Why law firm consulting starts with intake, not ads",
+   "paragraphs": [
+    "Buying more leads for a firm that answers slowly is like pouring water into a cracked bucket. A potential client who calls after a crash, an arrest or a termination usually contacts more than one firm, and the first attorney who calls back with a clear next step often wins the case. Before we recommend any channel, we look at how fast your team responds, what happens after hours, and how many callers never get a second touch.",
+    "That review usually surfaces problems a managing partner cannot see from the P&L. Voicemails that sit until Monday. Web forms routed to a shared inbox nobody owns. Consults booked but never confirmed, so no-shows pile up. Fixing these gaps costs far less than new advertising, and it makes every channel you add later perform better, because the leads you already pay for stop leaking out of the funnel."
+   ]
+  },
+  {
+   "h2": "CRM, automations and lead-to-client workflows",
+   "paragraphs": [
+    "We map the path a lead takes from first contact to signed retainer, then build it into your CRM so nothing depends on memory. That means lead sources tagged correctly, intake stages that match how your firm actually works, and automated text and email follow-up that fires when a caller does not book. We work with the intake and practice management tools legal teams commonly use, and we help you choose one if your current setup is a spreadsheet.",
+    "Automation should support your people, not replace the human conversation a scared client needs. We write follow-up sequences in plain language, keep them compliant with the attorney advertising rules in your state, and set clear handoffs to a live intake specialist or attorney. Your team gets task reminders, missed-call alerts and a daily view of which leads are waiting, so the right person calls back while the prospect still wants to talk."
+   ]
+  },
+  {
+   "h2": "Client management and reporting you can run the firm on",
+   "paragraphs": [
+    "Signing the case is not the end of the job. Clients who hear nothing for weeks leave bad reviews, fire the firm or never refer a friend. We help you set up status updates, review requests at the right moments and referral follow-up, so satisfied clients become a steady source of new matters instead of a missed opportunity. These workflows are simple to run and easy for a small staff to keep up.",
+    "Every part of the process feeds your Vincere client dashboard. You see calls, consultations, signed cases and cost per signed case by channel, live, in one place. When intake data and marketing data finally sit side by side, budget decisions get easier. You can tell which sources produce clients rather than tire kickers, and you can hold every vendor, including us, to the same set of numbers."
+   ]
+  }
+ ],
+ "included": [
+  "Intake audit with call recordings, response time and missed-lead review",
+  "Speed-to-lead plan covering business hours, nights and weekends",
+  "Intake scripts and qualification questions by practice area",
+  "CRM selection, setup and lead source tracking",
+  "Automated text and email follow-up sequences for unbooked leads",
+  "Consult booking, confirmation and no-show recovery workflow",
+  "Client update, review request and referral workflows",
+  "Client dashboard connecting marketing spend to signed cases"
+ ],
+ "best_for": "Firms that already get calls and form fills but suspect too many are going unanswered, unbooked or untracked.",
+ "process": [
+  {"title": "Listen to the intake", "text": "We review call recordings, form responses and CRM data to see where leads stall or disappear."},
+  {"title": "Map the lead-to-client path", "text": "We document every step from first contact to signed retainer and mark the gaps."},
+  {"title": "Build the system", "text": "We configure your CRM, automations, scripts and booking flow, then test them with real scenarios."},
+  {"title": "Train the team", "text": "Your intake staff and attorneys learn the new process, with clear owners for every stage."},
+  {"title": "Measure and tune", "text": "We track results in your dashboard and adjust scripts, timing and routing as the data comes in."}
+ ],
+ "metrics": [
+  {"title": "Speed to lead", "text": "How long it takes your firm to make first contact with a new inquiry, by source and time of day."},
+  {"title": "Contact and booking rate", "text": "The share of leads your team reaches and the share that book a consultation."},
+  {"title": "Consult to signed rate", "text": "How many consultations turn into signed clients, broken out by attorney and practice area."},
+  {"title": "Cost per signed case", "text": "Total marketing spend divided by signed cases, so you know what a new client really costs."}
+ ],
+ "practice_notes": [
+  {"practice": "Personal Injury", "text": "Contingency case acquisition rewards the firm that responds first and gathers accident facts fast. We build intake that screens liability, injuries and insurance in the first call."},
+  {"practice": "Criminal Defense", "text": "Arrests happen at night and family members call in a panic. We set up 24/7 answering, clear bail and court date questions, and instant attorney alerts."},
+  {"practice": "Family Law", "text": "Divorce and custody callers are emotional and often researching quietly. Intake focuses on discretion, safe contact preferences and a fast path to a paid consult."},
+  {"practice": "Estate Planning", "text": "Prospects take weeks or months to decide. We build longer nurture sequences, seminar follow-up and referral partner tracking instead of pushing for a same-day booking."}
+ ],
+ "faqs": [
+  {"q": "What does a law firm consultant actually do?", "a": "A law firm consultant reviews how your firm turns inquiries into clients and fixes the weak points. At Vincere that means intake scripts, response time, CRM setup, follow-up automations and reporting. The goal is more signed cases from the leads you already have."},
+  {"q": "Why should we fix intake before spending more on marketing?", "a": "Because more leads do not help if your team cannot answer and book them. Slow callbacks and missed follow-up waste ad spend on every channel. Fixing intake first makes SEO, PPC and every other channel produce more signed cases for the same budget."},
+  {"q": "Do we need a new CRM?", "a": "Not always. Many firms already own a capable intake or practice management tool that is simply set up poorly. We review what you have, configure it properly if it fits, and help you choose a replacement only when it clearly holds the firm back."},
+  {"q": "Can you help with after-hours and weekend intake?", "a": "Yes. We design coverage plans that fit your practice, whether that is an answering service, an on-call rotation or automated text response with a fast human callback. Criminal defense and personal injury firms usually need the most coverage."},
+  {"q": "Will automated follow-up feel impersonal to clients?", "a": "It should not, if it is written well. We keep messages short, human and specific to the caller's situation, and every sequence hands off to a real person quickly. Automation handles reminders so your staff can spend time on actual conversations."},
+  {"q": "How does law firm consulting connect to your other services?", "a": "Consulting is the foundation the rest of the plan sits on. Once intake and tracking work, we can measure cost per signed case for every channel, from Local Services Ads to SEO. Vincere coordinates the specialist teams so they all work from the same numbers."},
+  {"q": "How do we get started?", "a": "Start with the free plan. We learn your practice areas, case values, intake and close rates, then show you where leads are leaking and which channels make sense. There is no obligation and no retainer to start."}
+ ],
+ "related": ["law-firm-website-design", "local-services-ads-for-lawyers", "law-firm-ppc"]
+}

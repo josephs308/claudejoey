@@ -1,0 +1,35 @@
+{
+ "type": "hub",
+ "title": "Law Firm Marketing by Practice Area | Vincere",
+ "meta_description": "Law firm marketing built for your practice area, from personal injury to tax law. See how channels, intake and budgets differ, then get a free Vincere plan.",
+ "h1": "Law Firm Marketing Built for Your Practice Area",
+ "lede": "A DUI arrest, an estate plan and a patent filing are bought in completely different ways. We plan channels, messaging and intake around how your clients actually search, decide and hire. Pick your practice area to see how that works.",
+ "answer": {
+  "question": "How is marketing different for each practice area?",
+  "text": "Marketing differs by practice area because urgency, case value, fee structure and client behavior differ. Criminal defense and DUI need 24/7 intake and fast local search, personal injury depends on case value and competition, estate planning relies on trust and referrals, and IP or business law often competes nationally. The channel mix should follow those realities."
+ },
+ "cards": {
+  "personal-injury-lawyer-marketing": "Case acquisition for PI firms, from MVA and premises liability to catastrophic injury, measured in signed cases and cost per case.",
+  "criminal-defense-lawyer-marketing": "Reach people in the hours after an arrest with local search, ads and 24/7 intake that books consultations fast.",
+  "family-law-marketing": "Compassionate, discreet marketing for divorce, custody and support matters that attracts the clients your firm wants to serve.",
+  "estate-planning-attorney-marketing": "Build trust over a long consideration window with SEO, seminars, referral partners and clear flat fee messaging.",
+  "real-estate-attorney-marketing": "Win closings, title disputes and landlord-tenant matters through local search and relationships with agents and lenders.",
+  "business-lawyer-marketing": "Attract founders and business owners with expert content, a credible brand and referral relationships that produce repeat work.",
+  "litigation-attorney-marketing": "Position your litigation practice for higher-value disputes with authority content, referrals and targeted search.",
+  "employment-lawyer-marketing": "Reach workers facing wrongful termination, discrimination and wage issues, and screen for the claims your firm takes.",
+  "immigration-lawyer-marketing": "Multilingual marketing and intake that earns trust with immigrant families and reaches Spanish-language searchers.",
+  "bankruptcy-attorney-marketing": "Meet people facing garnishment, foreclosure and creditor lawsuits while keeping cost per filing low in a fixed-fee practice.",
+  "workers-compensation-lawyer-marketing": "Reach injured workers after a denial or stopped benefits with bilingual search, LSA and intake that spots third-party claims.",
+  "medical-malpractice-lawyer-marketing": "Attract viable, serious-injury claims and screen out the rest so attorney time goes to the right cases.",
+  "dui-lawyer-marketing": "Show up the night of the arrest and answer every call, with license deadline content and 24/7 intake.",
+  "intellectual-property-attorney-marketing": "Prove technical depth to founders and in-house counsel with national SEO, AI-search visibility and a sharp brand.",
+  "tax-attorney-marketing": "Stand apart from tax relief companies with notice-specific content, credible branding and confidential intake."
+ },
+ "faqs": [
+  {"q": "Why does law firm marketing need to be specific to a practice area?", "a": "Each practice area has different urgency, case value, competition and client behavior. A criminal defense firm needs round-the-clock intake and local search, while an estate planning firm needs trust-building content and referral partners. A generic plan wastes budget on channels that do not fit how your clients hire."},
+  {"q": "Which marketing channels work best for law firms?", "a": "It depends on the practice area and market. High-urgency practices like DUI, criminal defense and personal injury often lean on Local Services Ads, map pack SEO and search ads, while IP, business and estate planning firms lean more on SEO, AEO and referrals. Our free plan recommends a channel mix based on your numbers."},
+  {"q": "Do you work with firms that have more than one practice area?", "a": "Yes. Many firms handle several practice areas, and each one usually needs its own pages, campaigns and intake paths. We build the plan so budget moves toward the practice areas that produce the best cost per signed case and fit your capacity."},
+  {"q": "How do you measure marketing results for a law firm?", "a": "We measure signed cases and cost per signed case, not clicks or impressions. Your client dashboard shows spend by channel, calls, consultations and signed cases in one place. That makes it clear which channels and practice areas are actually growing your firm."},
+  {"q": "What does the free marketing plan include?", "a": "The free plan covers your practice areas, case value, intake and close rate, and capacity, then prices your local market, including cost per click, cost per lead and competitor activity. It recommends a channel mix, budget split, launch order and expected cost per case. There is no obligation, and if the numbers do not work, we tell you."}
+ ]
+}

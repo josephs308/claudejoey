@@ -1,0 +1,43 @@
+{
+  "type": "about",
+  "title": "About Vincere Legal Marketing | Vincere",
+  "meta_description": "Vincere Legal Marketing is one partner for law firm growth: a free plan before you pay, intake fixed first, and every channel measured in signed cases.",
+  "h1": "About Vincere Legal Marketing",
+  "lede": "Vincere Legal Marketing is a full-service marketing partner for US law firms. We connect the right specialist teams for each channel and keep them working from one plan and one set of numbers. Your firm deals with one point of contact, and every dollar is judged by the cases it signs.",
+  "sections": [
+    {
+      "h2": "One partner instead of a stack of vendors",
+      "paragraphs": [
+        "Many firms end up with an SEO vendor, a separate ads agency, a web developer and a billboard rep, each reporting different numbers and none responsible for signed cases. Managing partners spend hours reconciling reports and still cannot say which channel is working.",
+        "Vincere replaces that with one relationship. We bring in the specialist teams each channel needs, from search and paid media to production and web development, and coordinate them against a single plan. You get one point of contact, one dashboard and one answer to the question of where the next dollar should go."
+      ]
+    },
+    {
+      "h2": "A plan before you pay",
+      "paragraphs": [
+        "Every engagement starts with a free plan. We learn your practice areas, case values, intake and close rate, and capacity. Then we price your market: click costs, cost per lead, competitor spend and how crowded the map pack and Local Services Ads are.",
+        "From that we recommend a channel mix, budget split, launch order and expected cost per case. There is no obligation and no retainer to start. If the numbers do not work in your market, we say so, because a plan that looks good on paper and loses money helps nobody."
+      ]
+    },
+    {
+      "h2": "Intake first, then measured in signed cases",
+      "paragraphs": [
+        "Before we add new leads, we look at what happens to the ones you already get: how fast calls are answered, how follow-up works and how consultations get booked. Fixing speed to lead and follow-up often turns more existing leads into signed cases without spending more.",
+        "Then everything is tracked through to outcome. Your client dashboard shows spend by channel, calls, consultations and cost per signed case, live and in one place. We report on signed cases rather than clicks or impressions, because that is the number that pays your firm's bills."
+      ]
+    }
+  ],
+  "principles": [
+    {"title": "Plan before you pay", "text": "A free, no-obligation plan prices your market and recommends channels before any retainer, and says so if the numbers do not work."},
+    {"title": "Intake comes first", "text": "Speed to lead, follow-up and consult booking are fixed before new spend, so more leads become clients."},
+    {"title": "One partner, one set of numbers", "text": "Specialist teams for each channel work from one plan, coordinated through a single point of contact."},
+    {"title": "Measured in signed cases", "text": "Success is cost per signed case in a live dashboard, not clicks, impressions or rankings on their own."}
+  ],
+  "faqs": [
+    {"q": "What does Vincere Legal Marketing do?", "a": "Vincere Legal Marketing is a full-service marketing partner for US law firms. It covers consulting on intake and CRM, branding, Local Services Ads, SEO, AEO, PPC, Meta ads, traditional media and custom websites. Every channel runs from one plan and is measured in signed cases."},
+    {"q": "Does Vincere do all the work with one in-house team?", "a": "No. Vincere is your one partner and point of contact, and it connects the right specialist teams for each channel. Those teams work from the same plan and report into the same numbers. You get coordination without managing multiple vendors yourself."},
+    {"q": "Is there a cost to get a marketing plan from Vincere?", "a": "No. The plan is free, with no obligation and no retainer to start. It covers your firm's numbers, your market's costs and competition, and a recommended channel mix with expected cost per case. If the numbers do not work in your market, Vincere tells you."},
+    {"q": "Why does Vincere start with intake?", "a": "Vincere starts with intake because slow answering, weak follow-up and missed consult booking waste leads a firm has already paid for. Fixing speed to lead and follow-up often increases signed cases from existing demand. New marketing spend then works harder."},
+    {"q": "How will I know if my marketing is working?", "a": "You will see it in your client dashboard, which shows spend by channel, calls, consultations and cost per signed case, live. Every channel is measured on the same basis. That makes it clear which channels are producing clients and where budget should move."}
+  ]
+}

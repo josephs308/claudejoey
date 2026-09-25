@@ -1,0 +1,79 @@
+{
+  "type": "practice",
+  "slug": "personal-injury-lawyer-marketing",
+  "nav_label": "Personal Injury",
+  "practice": "personal injury",
+  "service_name": "Personal Injury Lawyer Marketing",
+  "title": "Personal Injury Lawyer Marketing | Vincere",
+  "meta_description": "Personal injury lawyer marketing built around signed cases: LSA, SEO, PPC and intake fixes for MVA and premises cases. Get a free market plan before you pay.",
+  "eyebrow": "Personal Injury",
+  "h1": "Personal Injury Lawyer Marketing That Signs Cases, Not Just Leads",
+  "lede": "Personal injury lawyer marketing is a case acquisition business, and the firms that win treat it that way. Vincere plans your channels around case value, intake capacity and the cost to sign a contingency case in your market. You see every dollar and every signed case in one dashboard.",
+  "answer": {
+    "question": "How do personal injury lawyers get more clients?",
+    "text": "Personal injury lawyers get more clients by showing up where injured people search first, usually Google Local Services Ads, the map pack and paid search, then answering every call within minutes. Firms that also build organic authority, fix intake follow-up and track cost per signed case, not cost per lead, tend to grow most predictably."
+  },
+  "market": [
+    {"title": "The most expensive clicks in legal", "text": "Car accident and truck accident keywords are among the priciest in Google Ads, and large firms bid on them all day. A small or mid-size PI firm has to pick its fights by case type, geography and time of day."},
+    {"title": "The first firm to answer usually wins", "text": "An injured person often calls several firms from the same search results page. The one that picks up, qualifies quickly and books a sign-up meeting tends to get the retainer."},
+    {"title": "Case value varies wildly", "text": "A soft tissue MVA, a commercial truck crash and a premises liability fall carry very different fee potential. Marketing that treats every lead the same overpays for low-value cases and underinvests in the ones that fund the firm."},
+    {"title": "Advertising rules are strict here", "text": "PI advertising draws scrutiny under state bar rules and ABA Model Rule 7.1, especially around results, testimonials and solicitation timing. Copy and ads need to be written with those limits in mind from the first draft."}
+  ],
+  "sections": [
+    {
+      "h2": "Personal injury lawyer marketing starts with the math",
+      "paragraphs": [
+        "Before any spend goes live, Vincere builds a free plan from your own numbers. We look at your average fee by case type, your current sign rate, how many new files your team can actually work, and your settlement timeline. Then we price your market: cost per click on MVA and truck terms, what LSA leads run in your metro, how crowded the map pack is, and who is spending on TV and billboards. If the numbers do not support a profitable launch in your area, we tell you before you commit a retainer.",
+        "The plan ends with a channel mix, a budget split and a launch order. Most PI firms do not need every channel on day one. A newer firm might start with Local Services Ads and tight Google Search campaigns on its best case types, while an established firm with a strong review base might lean harder into SEO and answer engine visibility. Each recommendation comes with an expected cost per signed case, so you can judge it like any other business investment."
+      ]
+    },
+    {
+      "h2": "Single event cases, not mass tort chasing",
+      "paragraphs": [
+        "Most of our PI work focuses on single event cases: motor vehicle accidents, truck crashes, motorcycle and pedestrian injuries, dog bites, slip and falls and other premises liability claims. These cases come from local, urgent searches, so proximity, reviews and responsiveness matter more than national reach. We build campaigns and landing pages around each case type, with separate budgets, so a flood of low-value fender benders does not eat the money meant for serious injury calls.",
+        "Mass tort acquisition is a different model with different economics, often involving co-counsel arrangements, national media buys and large lead volumes. If your firm participates in mass torts, we will tell you honestly whether that belongs in the same plan or should be handled separately. For most local PI practices, the best return comes from owning your metro for the cases you already sign well, then expanding into adjacent counties or case types once intake and cost per case are stable."
+      ]
+    },
+    {
+      "h2": "Every channel, one set of numbers",
+      "paragraphs": [
+        "PI firms often run LSA with one vendor, SEO with another and TV with a media buyer, then struggle to know which one actually produced the signed case. Vincere acts as your single partner. We bring in the right specialist teams for each channel and keep them working from one plan, one budget and one set of numbers. Your firm has one point of contact, and we handle the coordination so you are not refereeing agencies.",
+        "Your client dashboard shows spend by channel, calls, consultations and cost per signed case, updated live. When a billboard flight runs, you can see whether branded searches and direct calls moved. When an LSA dispute gets resolved, it shows up in lead quality. That visibility lets you move budget toward what signs cases and away from what only produces clicks, which is the difference between a marketing cost and a case acquisition engine."
+      ]
+    }
+  ],
+  "channels": [
+    {"service": "local-services-ads-for-lawyers", "why": "LSA sits above everything else on many injury searches and charges per lead, not per click. Passing Google Screened verification and building reviews is often the fastest path to consistent PI calls."},
+    {"service": "law-firm-ppc", "why": "Google Search Ads let you target specific case types like truck accidents or motorcycle crashes and control spend by hour. Tight negative keywords keep budget away from people looking for accident reports or towing."},
+    {"service": "law-firm-seo", "why": "Ranking in the map pack and for case type plus city pages builds a lower cost per case over time. It also protects the firm when click prices rise."},
+    {"service": "law-firm-consulting", "why": "Speed to lead, call handling and follow-up decide how many paid leads become signed contingency agreements. Fixing intake first makes every other channel cheaper."},
+    {"service": "law-firm-traditional-advertising", "why": "Billboards, TV and radio build the name recognition that makes an injured person search your firm by name. We measure them against branded search and direct calls."},
+    {"service": "law-firm-aeo", "why": "People now ask ChatGPT and Google AI Overviews what to do after a crash. Clear, citable answers on your site help your firm get named in those responses."}
+  ],
+  "searches": [
+    "car accident lawyer near me",
+    "truck accident attorney in my city",
+    "do I need a lawyer after a minor car accident",
+    "how much does a personal injury lawyer charge",
+    "slip and fall lawyer free consultation",
+    "motorcycle accident lawyer open now",
+    "what is my car accident case worth",
+    "dog bite attorney near me",
+    "best personal injury lawyer reviews",
+    "how long do I have to file an injury claim"
+  ],
+  "intake": {
+    "h2": "Personal injury intake: minutes decide the case",
+    "text": "An injured caller is often in pain, dealing with insurers and dialing several firms. If your line goes to voicemail, the next firm signs the case. We map every lead path, from LSA calls to web forms and chats, and set response targets measured in minutes, including nights and weekends. We build qualification scripts around liability, injuries, treatment and insurance, then set follow-up sequences for callers who do not sign on the first call. E-sign retainers and same-day sign-up visits close the gap between a good call and a signed contingency agreement."
+  },
+  "faqs": [
+    {"q": "What is the best marketing for personal injury lawyers?", "a": "The best marketing for personal injury lawyers is usually a mix of Google Local Services Ads, paid search on high-value case types, and local SEO, backed by fast intake. The right weighting depends on your market's competition and your firm's review base. A free market plan shows which mix fits your numbers before you spend."},
+    {"q": "How much should a personal injury firm spend on marketing?", "a": "There is no single right number, because it depends on your average fee, sign rate and how competitive your metro is. The better approach is to set a target cost per signed case, then budget backward from the caseload you want. Vincere prices your market for free so you can see realistic costs before you commit."},
+    {"q": "Are Google Local Services Ads worth it for PI lawyers?", "a": "For many personal injury firms, yes. LSA appears at the top of many injury searches and you pay per lead rather than per click, though you must pass Google Screened verification. Results depend heavily on reviews, responsiveness and disputing invalid leads, so LSA works best with disciplined intake."},
+    {"q": "How long does SEO take for a personal injury law firm?", "a": "SEO for a personal injury law firm usually takes several months to show meaningful movement and longer in crowded metros. Map pack gains from reviews and a well-built Google Business Profile often come sooner than competitive organic rankings. That is why many PI firms pair SEO with LSA or PPC while it builds."},
+    {"q": "Should my personal injury firm buy leads from lead vendors?", "a": "Shared leads sold to multiple firms often convert poorly and can raise ethics questions around referral fees and solicitation. Leads your own marketing generates are exclusive to your firm and easier to measure. If you do buy leads, track them by cost per signed case, not cost per lead."},
+    {"q": "Can personal injury lawyers use client testimonials in ads?", "a": "Rules on testimonials, past results and disclaimers vary by state bar, and some states restrict them heavily. Vincere writes copy and ads with rules like ABA Model Rule 7.1 in mind and flags anything that needs your review. Your firm should confirm final compliance under your own state's rules."},
+    {"q": "How do you measure personal injury lawyer marketing?", "a": "We measure personal injury lawyer marketing by signed cases and cost per signed case for each channel, not clicks or impressions. Your client dashboard shows spend, calls, consultations and signed cases in one place, updated live. That makes it clear which channels deserve more budget and which should be cut."}
+  ],
+  "related": ["medical-malpractice-lawyer-marketing", "workers-compensation-lawyer-marketing", "litigation-attorney-marketing"]
+}

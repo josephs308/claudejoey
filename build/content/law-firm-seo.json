@@ -1,0 +1,78 @@
+{
+ "type": "service",
+ "slug": "law-firm-seo",
+ "nav_label": "SEO",
+ "service_name": "SEO for Law Firms",
+ "title": "Law Firm SEO: SEO for Lawyers That Signs Cases | Vincere",
+ "meta_description": "Law firm SEO built around local map rankings, practice area pages and technical health, measured in signed cases. Get a free plan before you pay anything.",
+ "eyebrow": "SEO for Lawyers",
+ "h1": "Law Firm SEO That Builds Rankings You Can Measure in Cases",
+ "lede": "Law firm SEO is a long game in one of the most competitive corners of search. We focus on the searches that bring real clients, from map pack visibility to practice area pages, and report results as signed cases, not keyword counts.",
+ "answer": {
+  "question": "What is SEO for law firms?",
+  "text": "SEO for law firms is the work of earning unpaid visibility in Google for searches prospective clients make, such as a practice area plus a city. It combines Google Business Profile and map pack optimization, practice area and location pages, technical site health, helpful legal content and reputable links, measured by calls and signed cases."
+ },
+ "sections": [
+  {
+   "h2": "Where law firm SEO wins clients",
+   "paragraphs": [
+    "Legal searches split into two very different results. For near me and city searches, the map pack of three local listings often captures the call before anyone scrolls. Below it, organic results reward firms with strong practice area pages, a clean technical site and real authority. A complete SEO for lawyers strategy works on both, because the searcher looking for a divorce attorney in your county sees both at once.",
+    "We start by finding the searches that produce cases for your firm, not the ones with the biggest volume. A single well-ranked page for a specific injury type or charge can outperform a broad keyword that attracts researchers and law students. We map each practice area and city you serve to a target page, then build or rebuild those pages so they answer what a prospective client actually needs to know."
+   ]
+  },
+  {
+   "h2": "Local SEO and your Google Business Profile",
+   "paragraphs": [
+    "Your Google Business Profile is often the first thing a local prospect sees. We make sure categories, practice areas, hours, photos and service descriptions are complete and accurate, and that your firm name, address and phone number match across legal directories and citation sites. Inconsistent listings confuse both Google and clients, and they are one of the most common problems we find in law firm audits.",
+    "Reviews drive map rankings and clicks alike. We help your firm build a steady, ethical review request process that fits your state's rules on client testimonials, and we coach responses that protect confidentiality. For firms with more than one office, we plan location pages and profiles carefully, because Google is strict about what counts as a real office, and virtual office listings can put a profile at risk."
+   ]
+  },
+  {
+   "h2": "Technical SEO, content and authority for attorneys",
+   "paragraphs": [
+    "Many law firm websites are slow, bloated with plugins or built on templates shared with hundreds of other firms. We audit page speed, mobile usability, indexing, internal links, schema markup and duplicate content, then fix what holds you back. When the site itself is the problem, Vincere can pair SEO with a custom-coded website so technical health stops being an ongoing fight.",
+    "Content for attorneys has to be accurate, current and careful about claims. We write practice area pages, local pages and articles that answer real client questions in plain English, reviewed with bar advertising rules in mind. Links come from sources that make sense for a law firm, such as local organizations, legal directories and genuine media mentions, not link farms. We never promise a specific ranking, because nobody can honestly guarantee one."
+   ]
+  }
+ ],
+ "included": [
+  "Technical SEO audit covering speed, indexing, schema and site structure",
+  "Keyword and case-value mapping by practice area and city",
+  "Google Business Profile optimization and ongoing management",
+  "Citation cleanup across legal directories and data aggregators",
+  "New and rewritten practice area and location pages",
+  "Monthly content that answers real client questions",
+  "Ethical review request process and response guidance",
+  "Reputable link building and digital PR"
+ ],
+ "best_for": "Firms that want a durable, compounding source of cases and can commit to SEO for months rather than weeks, often alongside paid channels for faster results.",
+ "process": [
+  {"title": "Audit", "text": "We review your site, profile, citations, content and competitors to find what is holding rankings back."},
+  {"title": "Map to case value", "text": "We prioritize searches by the cases they produce and the competition you face in each market."},
+  {"title": "Fix the foundation", "text": "Technical issues, profile gaps and citation errors get fixed first so new work is not wasted."},
+  {"title": "Build pages and authority", "text": "We publish practice area, location and answer-focused content and earn relevant links."},
+  {"title": "Measure and expand", "text": "We track calls and signed cases from organic and map traffic, then expand into new areas that pay off."}
+ ],
+ "metrics": [
+  {"title": "Map pack and organic visibility", "text": "Where your firm appears for priority searches across the neighborhoods and cities you serve."},
+  {"title": "Organic calls and form fills", "text": "Leads that came from organic search and your Google Business Profile, tracked separately from paid."},
+  {"title": "Leads by practice area page", "text": "Which pages actually produce inquiries, so content investment follows results."},
+  {"title": "Cost per signed case from SEO", "text": "SEO investment divided by the clients it produced, shown next to your other channels in the dashboard."}
+ ],
+ "practice_notes": [
+  {"practice": "Personal Injury", "text": "PI SEO is among the most competitive in legal search, especially for car accident and truck accident terms in large metros. Specific pages for accident types, injuries and local roads often win faster than broad head terms."},
+  {"practice": "Criminal Defense", "text": "Searchers look for charges and courts, not just a lawyer. Pages for DUI, drug possession, assault and each local courthouse match how people search after an arrest."},
+  {"practice": "Estate Planning", "text": "Prospects research for weeks before calling. Educational content on wills, trusts and probate builds trust and earns long-tail visibility that feeds seminars and consults."},
+  {"practice": "Bankruptcy", "text": "People often search privately about debt, wage garnishment and foreclosure before they search for a lawyer. Helpful content on Chapter 7 and Chapter 13 questions catches them early."}
+ ],
+ "faqs": [
+  {"q": "How long does law firm SEO take to work?", "a": "Most firms see early movement within a few months, with stronger results building over six to twelve months or more. Timing depends on your market's competition, your site's history and how much work the foundation needs. Paid channels can bring cases in the meantime."},
+  {"q": "Can you guarantee first-page rankings for our firm?", "a": "No, and you should be cautious of anyone who does. Google controls rankings and changes them constantly. What we commit to is doing the work that earns visibility and reporting honestly on calls and signed cases."},
+  {"q": "What is the difference between local SEO and organic SEO for lawyers?", "a": "Local SEO targets the map pack and your Google Business Profile, which dominate near me and city searches. Organic SEO targets the standard results below, driven by your website's pages and authority. Most law firms need both working together."},
+  {"q": "Do lawyers need a blog for SEO?", "a": "Not a blog for its own sake. Law firms need content that answers questions prospective clients actually ask, organized around practice areas. A few strong, accurate pages usually outperform dozens of thin posts written only to fill a calendar."},
+  {"q": "How much does SEO for lawyers cost?", "a": "It depends on how competitive your practice areas and market are and how much foundation work is needed. A PI firm in a major metro faces a different fight than an estate planning firm in a smaller city. The free plan prices your market before you commit."},
+  {"q": "Is SEO better than PPC for law firms?", "a": "Neither is better in every case. PPC produces leads quickly but stops when spending stops. SEO takes longer but builds a durable source of cases. We usually recommend a mix and shift budget based on cost per signed case."},
+  {"q": "How does law firm SEO relate to AI search?", "a": "They overlap heavily. AI assistants and Google AI Overviews draw on well-structured, trustworthy web content, so strong SEO supports AI visibility. Vincere pairs SEO with answer engine optimization so your firm is ready for both."}
+ ],
+ "related": ["law-firm-aeo", "law-firm-website-design", "local-services-ads-for-lawyers"]
+}

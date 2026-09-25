@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Website Design &amp; Development That Converts | Vincere Marketing</title>
-<meta name="description" content="Custom-coded websites built around conversion. Fast, mobile-first, schema-ready, designed to convert the traffic you already pay for.">
-<meta property="og:title" content="Website Design &amp; Development That Converts | Vincere Marketing">
-<meta property="og:description" content="Custom-coded websites built around conversion. Fast, mobile-first, schema-ready, designed to convert the traffic you already pay for.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://assets.cdn.filesafe.space/PZGG4G2g1iU5tWx0iZRp/media/66ebb087c6a8396f3c541951.png">
-<meta name="theme-color" content="#64315A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2364315A'/%3E%3Cpath d='M16 16h9l7 22 7-22h9L37 48h-10z' fill='%23fff'/%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://mbpresults.com/#organization","name":"Vincere Marketing","alternateName":"Vincere Marketing","url":"https://mbpresults.com/","logo":"https://assets.cdn.filesafe.space/PZGG4G2g1iU5tWx0iZRp/media/66ebb087c6a8396f3c541951.png","image":"https://assets.cdn.filesafe.space/PZGG4G2g1iU5tWx0iZRp/media/66ebb087c6a8396f3c541951.png","telephone":"+1-385-217-1934","email":"info@mbpresults.com","priceRange":"$$","areaServed":{"@type":"Country","name":"United States"},"description":"Full-service marketing for businesses: Google Local Services Ads, SEO, AEO, websites, PPC, Meta Ads and branding."},{"@type":"Service","name":"Websites","serviceType":"Websites","provider":{"@id":"https://mbpresults.com/#organization"},"description":"Most businesses don\u2019t have a traffic problem. They have a site that loses people between the headline and the contact form. We build custom, no page-builder bloat, around one job: turning a visitor into a customer conversation.","areaServed":"US","audience":{"@type":"Audience","audienceType":"Businesses"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Websites deliverables","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom design and front-end build: no theme, no page-builder bloat"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Service and city page architecture that supports SEO from day one"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sub-second load on mobile, with Core Web Vitals in the green"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conversion-first layout: click-to-call, sticky contact, short forms above the fold"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Full schema markup so search and answer engines can read the site properly"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI chat that qualifies visitors and hands warm conversations to your team"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Call tracking, form tracking and CRM handoff wired in at launch"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Accessibility and keyboard navigation handled, not bolted on later"}}]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do we own the site when it\u2019s done?","acceptedAnswer":{"@type":"Answer","text":"Yes. Code, domain, hosting and content are yours. We don\u2019t hold sites hostage to keep a sale."}},{"@type":"Question","name":"How long does a build take?","acceptedAnswer":{"@type":"Answer","text":"A focused service-line site is typically four to six weeks. Larger multi-location builds run eight to twelve. Content readiness on your side is usually what decides it."}},{"@type":"Question","name":"Can you work with our existing brand?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. If the brand needs work too, that\u2019s a separate conversation, and we do that as well."}},{"@type":"Question","name":"What about the AI chat widget?","acceptedAnswer":{"@type":"Answer","text":"It\u2019s trained on your products, services and market, qualifies visitors on need and timeline, and hands warm conversations to your team with a transcript. It\u2019s a conversion tool, not a deflection tool."}}]}]}</script>
-<style>
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --paper:#FFFFFF;
@@ -688,8 +674,8 @@ em{font-style:normal;color:var(--purple)}
 @media(prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 
 /* Vincere type: same self-hosted faces as the Vincere site */
-@font-face{font-family:"Unbounded";src:url("fonts/unbounded-var.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
-@font-face{font-family:"Schibsted Grotesk";src:url("fonts/schibsted-grotesk-var.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Unbounded";src:url("/fonts/unbounded-var.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url("/fonts/schibsted-grotesk-var.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
 h1,h2,h3,.display,.nav-word,.chip-word{font-family:"Unbounded",Arial,sans-serif!important;font-weight:600!important}
 h1{letter-spacing:-.028em!important;line-height:.96!important}
 h2{letter-spacing:-.02em!important;line-height:1.02!important}
@@ -701,228 +687,134 @@ h3{letter-spacing:-.01em!important}
   transform:scaleX(0);transform-origin:0 50%;will-change:transform}
 /* Vincere purple, lightened for text on dark backgrounds */
 .sec-dark .kicker,.sec-dark .metric .k,.band-dark em,.band-dark .srow .sn,.quickbar .qb-tag,.foot .foot-tel{color:var(--purple-lt)!important}
-</style>
-</head>
-<body>
-<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
 
-<nav class="nav" id="nav">
-  <div class="nav-in">
-    <a class="nav-brand" href="index.html" aria-label="Vincere Marketing home">
-      <span class="nav-word">Vincere</span>
-    </a>
-    <div class="nav-mid" id="navMid">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#math">Approach</a>
-      <a href="about.html">About</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:+13852171934">(385) 217-1934</a>
-    </div>
-    <a class="nav-cta" href="#contact"><span class="dot"></span>Get Pricing</a>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+/* ===== shared additions for generated pages ===== */
+:root{--purple-lt:#C9A0C0}
+.nav-in{gap:22px}
+.nav-mid{align-items:center;gap:24px}
+.nav-mid > a,.dd-btn{font-size:14.5px;font-weight:500;color:#fff;opacity:.78;transition:opacity .18s,color .18s}
+.nav-mid > a:hover,.dd-btn:hover,.dd.open .dd-btn{opacity:1}
+.dd{position:relative}
+.dd-btn{display:inline-flex;align-items:center;gap:6px;padding:28px 0;background:none;border:0;cursor:pointer;font-family:inherit}
+.dd-btn svg{width:10px;height:10px;transition:transform .2s}
+.dd.open .dd-btn svg{transform:rotate(180deg)}
+.dd-panel{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);opacity:0;visibility:hidden;pointer-events:none;
+  background:#fff;color:var(--ink);border-radius:18px;box-shadow:0 30px 70px rgba(10,10,10,.28);padding:18px;
+  transition:opacity .18s,transform .18s,visibility .18s;z-index:90}
+.dd.open .dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+@media(hover:hover) and (min-width:1101px){.dd:hover .dd-panel,.dd:focus-within .dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+  .dd:hover .dd-btn svg{transform:rotate(180deg)}}
+.dd-grid{display:grid;gap:4px}
+.dd-svc .dd-grid{grid-template-columns:repeat(3,minmax(0,1fr));width:min(820px,92vw)}
+.dd-pa .dd-grid{grid-template-columns:repeat(3,minmax(0,1fr));width:min(760px,92vw)}
+.dd-link{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;color:var(--ink);transition:background .15s}
+.dd-link:hover,.dd-link:focus-visible{background:#F7F1F6}
+.dd-ic{flex:none;width:34px;height:34px;border-radius:10px;background:#F3EAF1;color:var(--purple);display:flex;align-items:center;justify-content:center}
+.dd-ic svg{width:17px;height:17px}
+.dd-link b{display:block;font-size:14px;font-weight:700;line-height:1.25}
+.dd-link small{display:block;font-size:12.5px;color:#6B6B6B;line-height:1.35;margin-top:3px}
+.dd-pa .dd-link{padding:10px 12px;align-items:center}
+.dd-pa .dd-link b{font-weight:600}
+.dd-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:14px 12px 4px;border-top:1px solid #EFE6ED;font-size:13.5px}
+.dd-foot a{font-weight:700;color:var(--purple)}
+.dd-foot span{color:#6B6B6B}
+.nav-portal{flex:none;display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:14px;font-weight:600;padding:11px 16px;border:1px solid rgba(255,255,255,.28);border-radius:999px;transition:border-color .2s,background .2s}
+.nav-portal:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.nav-portal svg{width:14px;height:14px}
+@media(max-width:1260px){.nav-mid .nav-tel{display:none}}
+@media(max-width:1100px){
+  .nav-mid{position:fixed;inset:80px 0 auto 0;background:var(--ink);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 22px;
+    max-height:calc(100vh - 80px);overflow:auto;transform:translateY(-8px);opacity:0;visibility:hidden;transition:transform .2s,opacity .2s,visibility .2s}
+  .nav-mid.open{transform:none;opacity:1;visibility:visible}
+  .nav-mid > a,.dd-btn{padding:16px 6px;font-size:17px;border-bottom:1px solid rgba(255,255,255,.1);opacity:1;width:100%;justify-content:space-between}
+  .nav-mid .nav-tel{display:block}
+  .dd-panel{position:static;transform:none!important;opacity:1;visibility:visible;pointer-events:auto;display:none;background:transparent;box-shadow:none;padding:6px 0 12px;border-radius:0}
+  .dd.open .dd-panel{display:block}
+  .dd-svc .dd-grid,.dd-pa .dd-grid{grid-template-columns:1fr 1fr;width:auto}
+  .dd-link{color:#fff;padding:10px 6px}
+  .dd-link:hover{background:rgba(255,255,255,.06)}
+  .dd-link small{display:none}
+  .dd-ic{background:rgba(255,255,255,.08);color:var(--purple-lt)}
+  .dd-foot{border-top-color:rgba(255,255,255,.1)}
+  .dd-foot span{display:none}
+  .dd-foot a{color:var(--purple-lt)}
+  .burger{display:flex}
+  .nav-portal{display:none}
+  .nav-mid .nav-portal-m{display:flex}
+}
+.nav-mid .nav-portal-m{display:none;align-items:center;gap:8px}
+@media(max-width:560px){.dd-svc .dd-grid,.dd-pa .dd-grid{grid-template-columns:1fr}}
 
-<header class="phero">
-  <div class="wrap phero-in">
-    <p class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><a href="index.html#services">Services</a><span class="sep">/</span>Websites</p>
-    <div class="rv"><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>Websites</div></div>
-    <h1 class="rv">A website that converts the traffic you&rsquo;re already paying for.</h1>
-    <p class="lede rv">Most businesses don&rsquo;t have a traffic problem. They have a site that loses people between the headline and the contact form. We build custom, no page-builder bloat, around one job: turning a visitor into a customer conversation.</p>
-    <div class="btn-row rv">
-      <a class="btn btn-orange btn-arr" href="tel:+13852171934">Call (385) 217-1934</a>
-      <a class="btn btn-out" href="#contact">Get Pricing</a>
-    </div>
-  </div>
-</header>
+/* page hero on generated pages */
+.phero h1{font-size:clamp(34px,4.6vw,64px)!important;max-width:20ch}
+.crumb a{color:inherit}
+.crumb a:hover{color:var(--purple)}
 
-<nav class="chanbar" aria-label="Marketing channels">
-  <div class="wrap"><div class="chanbar-in"><a href="branding.html">Branding</a><a href="lsa.html">LSA</a><a href="seo.html">SEO</a><a href="aeo.html">AEO</a><a href="ppc.html">PPC</a><a href="meta-ads.html">Meta Ads</a><a href="websites.html" aria-current="page">Websites</a></div></div>
-</nav>
+/* quick answer (AEO) */
+.answer{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:#fff;border:1px solid #EADFE8;border-left:4px solid var(--purple);
+  border-radius:18px;padding:28px 30px;box-shadow:0 18px 44px rgba(100,49,90,.08);max-width:980px}
+.answer-tag{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);background:var(--purple-tint);padding:6px 11px;border-radius:999px;white-space:nowrap}
+.answer h2{font-family:'Schibsted Grotesk',sans-serif!important;font-weight:700!important;font-size:20px!important;letter-spacing:-.01em!important;line-height:1.3!important;margin:0 0 8px}
+.answer p{margin:0;font-size:17px;line-height:1.6;color:var(--ink)}
+@media(max-width:640px){.answer{grid-template-columns:1fr;padding:22px 20px;gap:12px}.answer-tag{justify-self:start}}
+.sec-answer{padding:56px 0 8px}
 
-<section class="sec sec-alt">
-  <div class="wrap">
-    <div class="split uneven">
-      <div class="prose rv"><h3>Built to be measured, not admired</h3><p>Every decision on the page gets tied to a number: time to first byte, scroll depth on product and service pages, form starts versus completions, calls per thousand sessions. A site that looks impressive and converts at half the rate of the last one is a failure, however good the mockup looked.</p><h3>Custom code, not a template with your logo on it</h3><p>Page builders ship four hundred kilobytes of JavaScript to render a headline. We hand-build the front end, which is why our sites load in under a second on a phone on cellular, the exact condition most of your high-intent mobile traffic is in.</p></div>
-      <div class="panel rv">
-        <h4>What&rsquo;s included</h4>
-        <ul class="checks"><li><span class="dot"></span><span>Custom design and front-end build: no theme, no page-builder bloat</span></li><li><span class="dot"></span><span>Service and city page architecture that supports SEO from day one</span></li><li><span class="dot"></span><span>Sub-second load on mobile, with Core Web Vitals in the green</span></li><li><span class="dot"></span><span>Conversion-first layout: click-to-call, sticky contact, short forms above the fold</span></li><li><span class="dot"></span><span>Full schema markup so search and answer engines can read the site properly</span></li><li><span class="dot"></span><span>AI chat that qualifies visitors and hands warm conversations to your team</span></li><li><span class="dot"></span><span>Call tracking, form tracking and CRM handoff wired in at launch</span></li><li><span class="dot"></span><span>Accessibility and keyboard navigation handled, not bolted on later</span></li></ul>
-        <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--line)">
-          <h4>Best for</h4>
-          <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-top:8px">Businesses whose traffic is fine but whose contact volume doesn&rsquo;t match it.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="sec ph-band sec-alt">
-  <div class="wrap">
-    <div class="rv"><div class="ph ph-wide ph-dark sec-ph"><img src="https://images.unsplash.com/photo-1515504846179-94ac6b34ebb9?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1515504846179-94ac6b34ebb9?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1515504846179-94ac6b34ebb9?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1515504846179-94ac6b34ebb9?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1515504846179-94ac6b34ebb9?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1515504846179-94ac6b34ebb9?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="A laptop open to a code editor on a desk" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>photo unavailable</span>'}))"><div class="ph-cap"><b>Hand-built, every time</b>No theme, no page builder, nothing you did not ask for.</div></div></div>
-  </div>
-</section>
+/* long-form prose */
+.lf{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:64px;align-items:start}
+.lf .prose h2{font-size:clamp(24px,2.4vw,32px)!important;margin:0 0 14px;line-height:1.12!important}
+.lf .prose h2:not(:first-child){margin-top:44px}
+.lf .prose p{font-size:16.5px;line-height:1.7;color:var(--ink);margin:0 0 14px}
+.lf .panel{position:sticky;top:110px}
+@media(max-width:980px){.lf{grid-template-columns:1fr;gap:40px}.lf .panel{position:static}}
 
+/* card grids */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #EADFE8;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:8px;color:var(--ink);transition:border-color .2s,transform .2s,box-shadow .2s}
+a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 18px 40px rgba(100,49,90,.12)}
+.card h3{font-family:'Schibsted Grotesk',sans-serif!important;font-weight:700!important;font-size:18px!important;letter-spacing:-.01em!important;line-height:1.25!important;margin:0}
+.card p{margin:0;font-size:14.5px;line-height:1.55;color:#4A4A4A}
+.card .card-ic{width:40px;height:40px;border-radius:12px;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.card .card-ic svg{width:19px;height:19px}
+.card .card-go{margin-top:auto;padding-top:10px;font-size:13.5px;font-weight:700;color:var(--purple)}
+.sec-dark .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff}
+.sec-dark .card p{color:rgba(255,255,255,.72)}
+.sec-dark .card .card-go{color:var(--purple-lt)}
 
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker">How we run it</div>
-      <h2>The order we do this in.</h2>
-    </div>
-    <div class="steps"><div class="step rv"><div class="step-n">01</div><div><h4>Discovery</h4><p>Products and services you want to sell more of, what your sales process actually looks like today, and what happens to a lead in the first five minutes after it arrives.</p></div><div class="step-caret">&rarr;</div></div><div class="step rv"><div class="step-n">02</div><div><h4>Architecture and wireframes</h4><p>Page structure and URL plan agreed before any visual design, so the SEO and AEO work has somewhere to live.</p></div><div class="step-caret">&rarr;</div></div><div class="step rv"><div class="step-n">03</div><div><h4>Design</h4><p>Full-page designs for every template, reviewed against conversion patterns rather than personal taste. Your brand, applied consistently.</p></div><div class="step-caret">&rarr;</div></div><div class="step rv"><div class="step-n">04</div><div><h4>Build and QA</h4><p>Hand-coded, tested on real devices, checked for speed, accessibility and schema validity before anything goes live.</p></div><div class="step-caret">&rarr;</div></div><div class="step rv"><div class="step-n">05</div><div><h4>Launch and measure</h4><p>Redirects mapped, tracking verified, and a 30-day check on conversion rate against the old site, with changes made if the numbers don&rsquo;t move.</p></div><div class="step-caret">&rarr;</div></div></div>
-  </div>
-</section>
+/* searches */
+.qs{display:flex;flex-wrap:wrap;gap:10px}
+.qs li{list-style:none;display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #EADFE8;border-radius:999px;padding:10px 16px;font-size:14.5px;color:var(--ink)}
+.qs li svg{width:14px;height:14px;color:var(--purple);flex:none}
+.qs{padding:0;margin:0}
 
-<section class="sec ph-band">
-  <div class="wrap">
-    <div class="rv"><div class="ph ph-wide ph-dark sec-ph"><img src="https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806" srcset="https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="A desk setup with a large monitor showing a live site" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>photo unavailable</span>'}))"><div class="ph-cap"><b>Fast on the device that matters</b>Judged on a mid-range phone, not your desktop.</div></div></div>
-  </div>
-</section>
-<section class="sec sec-dark">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker">What we report</div>
-      <h2>The numbers we hold ourselves to.</h2>
-      <p class="sub">Not impressions. Not engagement. These are the four we put in front of you every month.</p>
-    </div>
-    <div class="grid4"><div class="metric rv"><div class="k">Contacts per 1,000 sessions</div><p>The conversion number that decides whether the build paid for itself.</p></div><div class="metric rv"><div class="k">Largest Contentful Paint</div><p>Real mobile load speed, which affects both rankings and bounce.</p></div><div class="metric rv"><div class="k">Form start to completion</div><p>Where people quit, and what we changed to stop it.</p></div><div class="metric rv"><div class="k">Chat-to-team handoff</div><p>Qualified conversations that reach a human on your team.</p></div></div>
-  </div>
-</section>
+/* intake band */
+.intake{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.intake p{font-size:17px;line-height:1.7;color:rgba(255,255,255,.82);margin:0}
+@media(max-width:900px){.intake{grid-template-columns:1fr;gap:20px}}
 
-<section class="sec sec-alt">
-  <div class="wrap-narrow">
-    <div class="sec-head rv">
-      <div class="kicker">Questions</div>
-      <h2>Straight answers.</h2>
-    </div>
-    <div class="faq rv"><div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>Do we own the site when it&rsquo;s done?</span><span class="pl">+</span></button><div class="faq-a"><div>Yes. Code, domain, hosting and content are yours. We don&rsquo;t hold sites hostage to keep a sale.</div></div></div><div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>How long does a build take?</span><span class="pl">+</span></button><div class="faq-a"><div>A focused service-line site is typically four to six weeks. Larger multi-location builds run eight to twelve. Content readiness on your side is usually what decides it.</div></div></div><div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>Can you work with our existing brand?</span><span class="pl">+</span></button><div class="faq-a"><div>Absolutely. If the brand needs work too, that&rsquo;s a separate conversation, and we do that as well.</div></div></div><div class="faq-i"><button class="faq-q" type="button" aria-expanded="false"><span>What about the AI chat widget?</span><span class="pl">+</span></button><div class="faq-a"><div>It&rsquo;s trained on your products, services and market, qualifies visitors on need and timeline, and hands warm conversations to your team with a transcript. It&rsquo;s a conversion tool, not a deflection tool.</div></div></div></div>
-  </div>
-</section>
+/* section spacing helpers */
+.sec-head .sub{max-width:62ch}
+.sec-tight{padding:72px 0}
+.sec-alt.sec-lav{background:#F7F1F6}
+.faq-q span:first-child{text-align:left}
+.foot-in{grid-template-columns:1.3fr 1fr 1fr 1fr 1fr}
+.foot h5{color:#fff}
+@media(max-width:1100px){.foot-in{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:640px){.foot-in{grid-template-columns:1fr 1fr}}
+.foot-bot a{color:inherit}
+.skip{position:absolute;left:-9999px;top:8px;z-index:300;background:#fff;color:var(--ink);padding:10px 14px;border-radius:8px}
+.skip:focus{left:8px}
+.nav-mid .dd-link{color:var(--ink);opacity:1}
+.nav-mid .dd-link:hover{color:var(--purple)}
+.nav-mid .dd-foot a{opacity:1;color:var(--purple)}
+@media(max-width:1100px){.nav-mid .dd-link{color:#fff}.nav-mid .dd-foot a{color:var(--purple-lt)}}
+.phero h1{font-size:clamp(32px,3.7vw,54px)!important;max-width:22ch;line-height:1.02!important}
+#contact.sec-grey{background:#F7F1F6}
+.intake h2{font-size:clamp(26px,2.6vw,38px)!important;line-height:1.08!important;margin-top:10px}
+.intake .kicker{font-family:'Schibsted Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-lt)}
+.foot-in{grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr))}
+@media(max-width:1100px){.foot-in{grid-template-columns:repeat(3,minmax(0,1fr))}.foot-in > div:first-child{grid-column:1/-1}}
+@media(max-width:640px){.foot-in{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}}
+.foot li a{overflow-wrap:anywhere}
 
-<section class="sec sec-tight">
-  <div class="wrap">
-    <div class="sec-head rv" style="margin-bottom:36px">
-      <div class="kicker">Pairs well with</div>
-      <h2>What usually runs alongside this.</h2>
-    </div>
-    <div class="rel"><a class="rel-c rv" href="seo.html"><div class="rel-tag">SEO</div><h3>Search Engine Optimization</h3><p>Businesses that can invest through two quarters to lower cost per customer for years.</p><span class="rel-arr">See the service &rarr;</span></a><a class="rel-c rv" href="aeo.html"><div class="rel-tag">AEO</div><h3>Answer Engine Optimization</h3><p>Businesses watching organic clicks slide while rankings hold, and businesses who want the next channel before competitors price it up.</p><span class="rel-arr">See the service &rarr;</span></a><a class="rel-c rv" href="branding.html"><div class="rel-tag">BRAND</div><h3>Branding Packages</h3><p>New businesses, companies after a merger or rebrand, and established businesses whose materials no longer match what they now sell.</p><span class="rel-arr">See the service &rarr;</span></a></div>
-  </div>
-</section>
-
-
-<section class="callout sec-dark">
-  <div class="in">
-    <div>
-      <h2>Find out what this looks like in your market.</h2>
-      <p>We&rsquo;ll pull the data for your city and product and service lines and put real numbers in front of you before you commit to anything.</p>
-    </div>
-    <div class="cbtns">
-      <a class="btn btn-orange btn-arr" href="tel:+13852171934">Call (385) 217-1934</a>
-      <a class="btn btn-out-white" href="#contact">Get Pricing</a>
-    </div>
-  </div>
-</section>
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="rv"><div class="ph ph-wide ph-tint"><img src="https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612" srcset="https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=403 960w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=604 1440w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=806 1920w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1075 2560w, https://images.unsplash.com/photo-1487505983481-9aa2d9f9901a?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1612 3840w" sizes="(max-width: 980px) 100vw, 1220px" width="3840" height="1612" alt="Hand-written front-end code in an editor" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph-fallback',innerHTML:'<span>websites.jpg<br>drop a 4K photo here</span>'}))"></div></div>
-  </div>
-</section>
-
-<section class="sec sec-grey" id="contact">
-  <div class="wrap">
-    <div class="contact-in">
-      <div class="contact-side rv">
-        <div class="sec-head" style="margin-bottom:0">
-          <div class="kicker">Get pricing</div>
-          <h2>Tell us your market.<br>We&rsquo;ll tell you what it costs.</h2>
-          <p class="sub">Send this over and we&rsquo;ll come back with projected lead volume, expected cost per new customer, and exactly what our fee looks like against those numbers, before you commit to anything.</p>
-        </div>
-        <div style="margin-top:52px">
-          <div class="kicker kicker-quiet">Or just call</div>
-          <a class="display-tel" href="tel:+13852171934">(385) 217-1934</a>
-          <p class="email-line"><a href="mailto:info@mbpresults.com">info@mbpresults.com</a></p>
-        </div>
-      </div>
-      <form class="form rv" name="vincere-inquiry" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="fax">
-        <input type="hidden" name="form-name" value="vincere-inquiry">
-        <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
-        <h3>Request a market breakdown</h3>
-        <p class="form-sub">No obligation. If the math doesn&rsquo;t work in your market, we&rsquo;ll say so.</p>
-        <div class="f2">
-          <div class="f"><label for="c-name">Full name</label><input id="c-name" name="name" required autocomplete="name"></div>
-          <div class="f"><label for="c-business">Business name</label><input id="c-business" name="business" required autocomplete="organization"></div>
-        </div>
-        <div class="f2">
-          <div class="f"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" required autocomplete="tel"></div>
-        </div>
-        <div class="f"><label for="c-site">Website</label><input id="c-site" name="website" placeholder="https://" autocomplete="url"></div>
-        <div class="f"><label for="c-int">What are you looking at?</label>
-          <select id="c-int" name="interest">
-            <option>Not sure yet, want a recommendation</option><option>Local Services Ads</option><option>SEO</option><option>AEO</option><option>Websites</option><option>PPC</option><option>Meta Ads</option><option>Branding</option><option>Consulting</option><option>Traditional (billboards, TV, radio)</option><option>Full-service program</option>
-          </select></div>
-        <div class="f"><label for="c-msg">Anything we should know?</label>
-          <textarea id="c-msg" name="message" placeholder="Markets you serve, product and service lines, current spend..."></textarea></div>
-        <button class="btn btn-orange" type="submit">Send It Over</button>
-        <p class="form-note">By submitting you agree to be contacted about your inquiry.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-in">
-      <div>
-        <span class="foot-logo nologo"><span class="chip-word">Vincere<small>Marketing</small></span></span>
-        <p class="foot-desc">Built inside a  business. We still run every channel the way we&rsquo;d run it on our own money.</p>
-        <a class="foot-tel" href="tel:+13852171934">(385) 217-1934</a>
-        <p style="margin-top:10px"><a href="mailto:info@mbpresults.com">info@mbpresults.com</a></p>
-      </div>
-      <div><h5>Services</h5><ul><li><a href="lsa.html">Local Services Ads</a></li><li><a href="seo.html">SEO</a></li><li><a href="aeo.html">AEO</a></li><li><a href="websites.html">Websites</a></li></ul></div>
-      <div><h5>More</h5><ul><li><a href="ppc.html">PPC</a></li><li><a href="meta-ads.html">Meta Ads</a></li><li><a href="branding.html">Branding</a></li></ul></div>
-      <div><h5>Company</h5><ul>
-        <li><a href="about.html">About Vincere</a></li>
-        <li><a href="index.html#math">Approach</a></li>
-        <li><a href="#contact">Get pricing</a></li>
-      </ul></div>
-    </div>
-    <div class="foot-bot">
-      <span>&copy; <span id="yr">2026</span> Vincere Marketing, LLC. All Rights Reserved.</span>
-      <span>Legal marketing &middot; Measured in signed cases</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var n=document.getElementById('nav'),b=document.getElementById('burger'),m=document.getElementById('navMid');
-  function onScroll(){ if(n) n.classList.toggle('stuck',window.scrollY>6); }
-  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-  if(b&&m){b.addEventListener('click',function(){
-    var o=m.classList.toggle('open');b.classList.toggle('on',o);
-    b.setAttribute('aria-expanded',String(o));
-  });}
-
-  document.querySelectorAll('.faq-q').forEach(function(q){
-    q.addEventListener('click',function(){
-      var i=q.closest('.faq-i'),p=i.querySelector('.faq-a'),o=i.classList.toggle('open');
-      q.setAttribute('aria-expanded',String(o));
-      p.style.maxHeight=o?p.scrollHeight+'px':'0px';
-    });
-  });
-  window.addEventListener('resize',function(){
-    document.querySelectorAll('.faq-i.open .faq-a').forEach(function(p){p.style.maxHeight=p.scrollHeight+'px'});
-  });
-
-  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
-})();
-</script>
-
-<script>
-(function(){var b=document.getElementById('scrollProg');if(!b)return;var t=false;
-function u(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;b.style.transform='scaleX('+(m>0?Math.min(1,h.scrollTop/m):0)+')';t=false}
-addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});addEventListener('resize',u);u()})();
-</script>
-</body>
-</html>
+.h4{font-family:"Schibsted Grotesk",sans-serif!important;font-size:18px;font-weight:700!important;letter-spacing:-.01em!important;line-height:1.25!important;margin:0 0 8px}
+.metric h3.k{margin:0 0 10px}

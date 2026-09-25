@@ -1,0 +1,78 @@
+{
+ "type": "service",
+ "slug": "law-firm-aeo",
+ "nav_label": "AEO",
+ "service_name": "Answer Engine Optimization for Law Firms",
+ "title": "Law Firm AEO: AI Search Optimization for Lawyers | Vincere",
+ "meta_description": "Law firm AEO that helps ChatGPT, Google AI Overviews, Perplexity and Gemini find, trust and cite your firm. See where you stand with a free plan, no retainer.",
+ "eyebrow": "Answer Engine Optimization",
+ "h1": "Law Firm AEO: Get Your Firm Cited by AI Answer Engines",
+ "lede": "Prospective clients now ask ChatGPT, Gemini and Perplexity which lawyer to call, and Google often answers with an AI Overview before any link. Law firm AEO makes your firm the source those answers quote and the name they recommend.",
+ "answer": {
+  "question": "What is AEO for law firms?",
+  "text": "AEO, or answer engine optimization, for law firms is the practice of making a firm's expertise easy for AI assistants to find, understand and cite. It includes direct answer content, structured data, consistent entity information across the web, strong reviews and reputable mentions, so tools like ChatGPT, Google AI Overviews, Perplexity and Gemini surface the firm."
+ },
+ "sections": [
+  {
+   "h2": "Why law firm AEO matters now",
+   "paragraphs": [
+    "Search behavior is changing faster in legal than many firms realize. Someone hurt in a crash or served with divorce papers may ask an AI assistant what to do next before they ever type a query into Google. Those assistants summarize, compare and sometimes name firms outright. If your firm is not part of the material they draw from, you may never make the short list, no matter how well you rank below the AI answer.",
+    "Google AI Overviews add a second layer. On many informational legal searches, the overview answers the question at the top of the page and cites a handful of sources. Being one of those sources builds credibility with prospects at the exact moment they are learning about their problem. Law firm AEO treats these citations as a channel of their own, tracked and improved with the same discipline as rankings."
+   ]
+  },
+  {
+   "h2": "How answer engine optimization for lawyers works",
+   "paragraphs": [
+    "AI systems favor content that answers a question clearly, early and in plain language. We restructure practice area pages and write new ones so each opens with a direct, self-contained answer, followed by detail, steps and local context. Frequently asked questions become real, quotable answers instead of filler. We add structured data for your firm, attorneys, services and FAQs so machines can read who you are and what you do without guessing.",
+    "Answer engines also judge whether a firm looks real and trustworthy across the wider web. That means consistent firm and attorney information on your site, Google Business Profile, bar directories and legal listings, plus reviews and mentions from credible sources. We close gaps in that entity footprint, correct conflicting details and pursue mentions in local media and community organizations, because AI tools weigh what others say about you, not only what you say."
+   ]
+  },
+  {
+   "h2": "Measuring AI visibility without guesswork",
+   "paragraphs": [
+    "AI answers vary by wording, location and time, so a single screenshot proves little. We track a defined set of prompts that match how prospects in your practice areas and cities ask for help, across ChatGPT, Perplexity, Gemini and Google AI Overviews. Over time that shows whether your firm is mentioned, cited or recommended more often, and which competitors appear in your place. We report honestly when a platform's behavior shifts.",
+    "Visibility only matters if it produces clients. Calls and form fills from AI referrals and branded searches flow into your Vincere client dashboard beside every other channel, so you can see cost per signed case rather than vague exposure. AEO and SEO share much of the same foundation, which is why we run them from one plan. Content is written with bar advertising rules in mind, because an AI assistant may repeat it word for word."
+   ]
+  }
+ ],
+ "included": [
+  "AI visibility audit across ChatGPT, Perplexity, Gemini and Google AI Overviews",
+  "Prompt tracking set built around your practice areas and cities",
+  "Answer-first rewrites of practice area and FAQ content",
+  "Schema markup for the firm, attorneys, services and FAQs",
+  "Entity cleanup across bar directories, legal listings and profiles",
+  "Review and reputable mention strategy",
+  "Monthly AI visibility report with competitor comparison",
+  "Lead tracking for AI referral and branded search traffic"
+ ],
+ "best_for": "Firms that already invest in SEO or have strong expertise to share and want to be named when prospects ask AI assistants for legal help.",
+ "process": [
+  {"title": "Baseline", "text": "We test how AI assistants currently answer questions about your practice areas and whether your firm appears."},
+  {"title": "Fix the entity", "text": "We make firm and attorney details consistent across your site, profiles and directories."},
+  {"title": "Rewrite for answers", "text": "Key pages get direct, quotable answers, clear structure and schema markup."},
+  {"title": "Build credibility signals", "text": "We grow reviews and earn mentions from sources AI systems tend to trust."},
+  {"title": "Track and refine", "text": "We rerun the prompt set on a schedule and adjust content as answers change."}
+ ],
+ "metrics": [
+  {"title": "AI mention rate", "text": "How often your firm is named across a fixed set of prompts on each AI platform."},
+  {"title": "AI Overview citations", "text": "How many priority legal searches cite your site inside Google AI Overviews."},
+  {"title": "AI referral and branded leads", "text": "Calls and forms from AI referrals and people searching your firm by name."},
+  {"title": "Cost per signed case", "text": "What AEO work costs per new client, reported alongside SEO and paid channels."}
+ ],
+ "practice_notes": [
+  {"practice": "Personal Injury", "text": "Injured people often ask AI what to do after a crash or what their claim might be worth. Clear, cautious answers about next steps and deadlines position your firm as the one to call."},
+  {"practice": "Family Law", "text": "Divorce and custody questions are deeply state-specific. Answers tied to your state's rules and local courts help AI tools match your firm to the right searchers."},
+  {"practice": "Immigration", "text": "Prospects ask about visas, green cards and deadlines, often in Spanish. Bilingual answer content broadens where AI assistants can surface your firm."},
+  {"practice": "Business Law", "text": "Owners ask AI to compare entity types or explain contracts before hiring counsel. Thoughtful, practical answers earn citations with a decision-maker audience."}
+ ],
+ "faqs": [
+  {"q": "How do I get my law firm recommended by ChatGPT?", "a": "Make your firm easy to understand and easy to trust. That means clear answer-first content on your site, consistent firm details across directories, strong reviews and credible mentions elsewhere. No one can force a recommendation, but these signals raise the odds."},
+  {"q": "Is AEO different from SEO for law firms?", "a": "They overlap but are not the same. SEO aims for rankings in search results, while AEO aims for mentions and citations inside AI-generated answers. Both depend on good content and authority, so we run them together from one plan."},
+  {"q": "Can law firms appear in Google AI Overviews?", "a": "Yes, law firm pages are regularly cited in AI Overviews for informational legal questions. Pages that answer the question directly, are well structured and come from a trusted site have a better chance. We track which of your target searches cite you."},
+  {"q": "How do you measure AEO results for lawyers?", "a": "We track a fixed set of prompts across AI platforms and record how often your firm is mentioned or cited. We also measure leads from AI referrals and branded searches in your client dashboard. The final measure is cost per signed case."},
+  {"q": "Does schema markup help law firm AEO?", "a": "Schema markup helps machines read facts about your firm, attorneys, services and FAQs accurately. It is not a shortcut on its own, but it supports clear content and consistent entity data. We implement it as part of every AEO engagement."},
+  {"q": "Is it risky for AI to repeat our legal content?", "a": "It can be if your content is vague, outdated or overpromises. We write with bar advertising rules such as ABA Model Rule 7.1 in mind and avoid anything that reads like a guarantee. Your firm should still review final content for accuracy."},
+  {"q": "How do we start with law firm AEO?", "a": "Start with the free plan. We check how AI assistants currently answer questions in your practice areas, see who they recommend and outline what it will take for your firm to appear. There is no obligation and no retainer to start."}
+ ],
+ "related": ["law-firm-seo", "law-firm-website-design", "law-firm-branding"]
+}

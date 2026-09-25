@@ -1,0 +1,20 @@
+# Old flat URLs -> new service and about pages (301)
+/branding.html  /services/law-firm-branding/  301
+/branding  /services/law-firm-branding/  301
+/lsa.html  /services/local-services-ads-for-lawyers/  301
+/lsa  /services/local-services-ads-for-lawyers/  301
+/seo.html  /services/law-firm-seo/  301
+/seo  /services/law-firm-seo/  301
+/aeo.html  /services/law-firm-aeo/  301
+/aeo  /services/law-firm-aeo/  301
+/ppc.html  /services/law-firm-ppc/  301
+/ppc  /services/law-firm-ppc/  301
+/meta-ads.html  /services/meta-ads-for-lawyers/  301
+/meta-ads  /services/meta-ads-for-lawyers/  301
+/websites.html  /services/law-firm-website-design/  301
+/websites  /services/law-firm-website-design/  301
+/about.html  /about/  301
+/about  /about/  301
+/index.html  /  301
+/services  /services/  301
+/practice-areas  /practice-areas/  301

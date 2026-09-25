@@ -1,0 +1,78 @@
+{
+  "type": "service",
+  "slug": "meta-ads-for-lawyers",
+  "nav_label": "Meta Ads",
+  "service_name": "Meta Ads for Lawyers",
+  "title": "Meta Ads for Lawyers: Facebook & Instagram | Vincere",
+  "meta_description": "Meta ads for lawyers that reach people before they search. Facebook and Instagram campaigns tied to intake and signed cases. Start with a free plan.",
+  "eyebrow": "Facebook and Instagram Ads",
+  "h1": "Meta Ads for Lawyers That Turn Scrollers Into Consultations",
+  "lede": "Meta ads for lawyers reach people on Facebook and Instagram before they ever type a search. That makes them powerful for demand creation and retargeting, and risky if they are run like search ads. Vincere builds Meta campaigns for law firms around lead quality, fast follow-up and cost per signed case.",
+  "answer": {
+    "question": "What are Meta ads for law firms?",
+    "text": "Meta ads for law firms are paid campaigns on Facebook and Instagram that reach people by location, interests and behavior rather than search keywords. Law firms use them to generate leads through instant forms or landing pages, retarget website visitors, and build local awareness. They work best with strong creative, qualifying questions and immediate intake follow-up."
+  },
+  "sections": [
+    {
+      "h2": "Where Meta ads for lawyers fit in your marketing",
+      "paragraphs": [
+        "Google captures people who already know they need a lawyer. Meta reaches people who have a legal problem but have not started looking, or who visited your site last week and did not call. That is why Facebook and Instagram ads suit practice areas with longer consideration, like estate planning, bankruptcy and family law, and why they are a strong retargeting layer for almost every firm.",
+        "Meta is weaker when someone needs a lawyer in the next hour, and Special Ad Category rules can limit some targeting for certain offers. So we treat it as one channel inside a plan, not a replacement for search. The free plan shows whether Meta belongs in your mix, what share of budget it deserves and what launch order makes sense."
+      ]
+    },
+    {
+      "h2": "Creative and offers that earn attention",
+      "paragraphs": [
+        "On Meta, the ad itself does the targeting work. Short videos of an attorney explaining a common mistake, plain-language explainers on what happens after a denied claim, and invitations to a free estate planning seminar tend to outperform stock photos of gavels. We plan creative in series so the algorithm has fresh options and your audience does not see the same ad until it stops working.",
+        "Every ad is written with state bar advertising rules in mind, including ABA Model Rule 7.1 on truthful, non-misleading communications. That means no implied guarantees, no dramatized results and clear identification of your firm. Where your state has specific filing or disclaimer requirements for advertising, we build your review into the approval step before anything goes live. Nothing runs without your sign-off."
+      ]
+    },
+    {
+      "h2": "Qualifying Meta leads before they reach intake",
+      "paragraphs": [
+        "Meta instant forms make it easy to submit a lead, which is also why they can fill a CRM with people who barely remember clicking. We add qualifying questions about case type, timing and location, and we choose between instant forms and landing pages based on the quality your intake team actually sees, not the lowest cost per lead. Disqualified leads get a polite automated reply.",
+        "Speed matters even more on Meta than on search because the prospect was not actively looking. Leads route straight into your CRM with automated texts and emails, and your intake team gets alerted immediately. Outcomes flow back to Meta through conversion tracking so the campaign learns what a real consultation looks like, and spend, leads and cost per signed case appear in your dashboard."
+      ]
+    }
+  ],
+  "included": [
+    "Channel fit and budget recommendation from the free plan",
+    "Audience strategy: local targeting, retargeting and lookalike or broad audiences where allowed",
+    "Ad creative planning, including attorney video concepts and static formats",
+    "Copy written with state bar advertising rules in mind",
+    "Instant forms or landing pages with qualifying questions",
+    "Meta Pixel and Conversions API setup with offline intake outcomes",
+    "CRM routing and automated first-touch follow-up",
+    "Spend, leads and cost per signed case in your client dashboard"
+  ],
+  "best_for": "Firms in practice areas with longer decision cycles, firms that want to retarget existing site traffic, and firms with intake capacity to follow up on new leads within minutes.",
+  "process": [
+    {"title": "Decide if Meta fits", "text": "The free plan looks at your practice areas, case values and competition to decide whether Meta deserves budget and how much."},
+    {"title": "Set up tracking", "text": "We install the Meta Pixel and Conversions API and connect your CRM so real consultations can be reported back."},
+    {"title": "Build creative and forms", "text": "We produce ad concepts, copy and qualifying forms or landing pages, then send them through your compliance review."},
+    {"title": "Launch and test", "text": "Campaigns start with several creative angles so we learn quickly which messages produce qualified leads."},
+    {"title": "Refresh and scale", "text": "Winning ads get more budget, tired creative gets replaced and lead quality is reviewed with your intake team."}
+  ],
+  "metrics": [
+    {"title": "Cost per qualified lead", "text": "What a lead that passes your screening questions costs, not just any form submission."},
+    {"title": "Contact rate", "text": "How many Meta leads your team actually reached, which shows whether follow-up speed is holding."},
+    {"title": "Consultations and signed cases", "text": "Leads that booked, showed and signed, so Meta is judged on the same outcomes as search."},
+    {"title": "Creative performance", "text": "Which ads and angles are producing qualified leads and which are ready to be retired."}
+  ],
+  "practice_notes": [
+    {"practice": "Estate Planning", "text": "Seminar and webinar invitations work well on Meta because the decision is considered and unhurried, and follow-up sequences carry attendees toward a planning consultation."},
+    {"practice": "Personal Injury", "text": "Meta suits retargeting and some mass tort intake, but single event injury cases usually start on search, so we keep Meta focused where it adds cases rather than duplicating Google."},
+    {"practice": "Immigration", "text": "Spanish-language and other multilingual creative lets you reach communities in the language they use, provided your intake team can respond in that language too."},
+    {"practice": "Bankruptcy", "text": "Debt stress builds over time, so educational ads about options like Chapter 7 and Chapter 13 reach people earlier and retargeting keeps your firm present while they decide."}
+  ],
+  "faqs": [
+    {"q": "Do Facebook ads work for lawyers?", "a": "Facebook ads work for lawyers when they are used for the right practice areas and followed up quickly. They are strongest for considered decisions like estate planning, bankruptcy and family law, and for retargeting people who already visited your site. They are weaker for urgent needs that people search for on Google."},
+    {"q": "Are Meta ads for lawyers cheaper than Google Ads?", "a": "Meta ads for lawyers often cost less per lead than Google Ads, but the leads are usually colder because the person was not searching. What matters is cost per signed case, which depends on lead quality and how fast your intake team responds. We compare both channels on that number in your dashboard."},
+    {"q": "Should law firms use instant forms or landing pages on Meta?", "a": "Law firms should choose between Meta instant forms and landing pages based on lead quality, not lead volume. Instant forms produce more leads at a lower cost, while landing pages add friction that filters out casual clicks. Qualifying questions help either option, and we test both against consultations booked."},
+    {"q": "Can lawyers target specific audiences on Facebook?", "a": "Lawyers can target Facebook and Instagram audiences by location and, depending on the offer, by broad interests or lookalike and retargeting audiences. Some targeting options are limited under Meta's Special Ad Category rules for certain ad types. Well-made creative often does more of the targeting work than detailed audience settings."},
+    {"q": "What kind of Meta ads work for law firms?", "a": "The Meta ads that work for law firms usually feel useful rather than salesy: an attorney explaining a common mistake, a clear answer to a frequent question, or an invitation to a seminar. Short video tends to earn more attention than static images. All copy is written with state bar advertising rules in mind."},
+    {"q": "How fast do we need to respond to Meta leads?", "a": "Meta leads should be contacted within minutes, because the person was scrolling rather than searching and their attention moves on quickly. We route leads straight into your CRM with automated texts and alerts to your intake team. Contact rate is reported so slow follow-up shows up before it wastes budget."},
+    {"q": "Can Meta ads help my other marketing?", "a": "Yes. Meta retargeting keeps your firm in front of people who found you through SEO, PPC or a billboard and did not call yet. Awareness campaigns can also lift branded search over time. We track these channels together in one dashboard so Meta is credited fairly, not in isolation."}
+  ],
+  "related": ["law-firm-ppc", "law-firm-branding", "law-firm-consulting"]
+}
