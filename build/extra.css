@@ -135,3 +135,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 .quickbar .qb-f label{color:rgba(255,255,255,.8)!important}
 .quickbar .qb-f input{color:#fff!important;border-bottom-color:rgba(255,255,255,.45)!important}
 .quickbar .qb-f input::placeholder{color:rgba(255,255,255,.62)!important}
+.photo-band .pb-shade{background:
+  linear-gradient(180deg,#0B0A0B 0%,rgba(11,10,11,.85) 10%,rgba(11,10,11,.35) 26%,rgba(11,10,11,0) 40%,rgba(11,10,11,0) 70%,rgba(11,10,11,.6) 88%,#0A0A0A 100%),
+  linear-gradient(90deg,rgba(11,10,11,.86) 0%,rgba(11,10,11,.62) 45%,rgba(11,10,11,.25) 100%),
+  radial-gradient(60% 70% at 15% 60%,rgba(100,49,90,.35),rgba(100,49,90,0) 70%)!important}
