@@ -131,3 +131,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 .foot-logo .vmark{width:42px;height:42px}
 @media(max-width:560px){.vmark{width:30px;height:30px}}
 #services.dk{background:linear-gradient(180deg,#0B0A0B 0,#0B0A0B 40px,rgba(11,10,11,0) 260px),var(--dk-bg)!important}
+.quickbar .qb-sub{color:rgba(255,255,255,.85)!important}
+.quickbar .qb-f label{color:rgba(255,255,255,.8)!important}
+.quickbar .qb-f input{color:#fff!important;border-bottom-color:rgba(255,255,255,.45)!important}
+.quickbar .qb-f input::placeholder{color:rgba(255,255,255,.62)!important}
