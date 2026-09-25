@@ -32,7 +32,7 @@ def render(e, practices, phone_tel, phone_display, email, booking_url=''):
               <div class="bk-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
               <div class="bk-days"></div>
             </div>
-            <div class="bk-times"><p class="bk-times-h">Select a day</p><div class="bk-slots"><p class="bk-empty">Choose a weekday on the calendar to see open times.</p></div><p class="bk-tz"></p></div>
+            <div class="bk-times"><p class="bk-times-h">Available times</p><div class="bk-slots"><p class="bk-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Pick a day to see open times.</p></div><p class="bk-tz"></p></div>
           </div>
         </div>
         <div class="bk-screen" data-s="info" hidden>

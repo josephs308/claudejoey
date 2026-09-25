@@ -7,7 +7,7 @@
     var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
     var cur=0,label='';
     function show(i,quiet){
-      cur=i;screens.forEach(function(s,j){s.hidden=j!==i});
+      cur=i;screens.forEach(function(s,j){s.hidden=j!==i});f.classList.toggle('bk-at0',i===0);
       if(bar)bar.style.width=Math.round(100*i/(screens.length-1))+'%';
       var s=screens[i],r=f.getBoundingClientRect();
       if(!quiet&&(r.top<0||r.top>innerHeight*.6))f.scrollIntoView({behavior:'smooth',block:'start'});
@@ -20,6 +20,7 @@
     var last=new Date(today);last.setDate(last.getDate()+45);
     function ok(d){var w=d.getDay();return d>=first&&d<=last&&w!==0&&w!==6;}
     var view=new Date(first.getFullYear(),first.getMonth(),1),sel=null;
+    (function(){var c=0,d=new Date(first);while(d.getMonth()===first.getMonth()){if(ok(d))c++;d.setDate(d.getDate()+1);}if(c<5)view=new Date(first.getFullYear(),first.getMonth()+1,1);})();
     function fmt(d,o){return d.toLocaleDateString(undefined,o)}
     function draw(){
       mon.textContent=fmt(view,{month:'long',year:'numeric'});
