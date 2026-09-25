@@ -172,7 +172,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 #services.dk .scroll-cue-line{background:rgba(255,255,255,.38)!important}
 #services.dk .scroll-cue-line span{background:#E2C4DB!important}
 /* sticky rail: white */
-.railbar{background:#fff!important;color:var(--ink)!important;border-top:1px solid #EADFE8!important;box-shadow:0 -10px 30px rgba(10,10,10,.12)}
+.railbar{background:#fff!important;color:var(--ink)!important;border-top:3px solid var(--purple)!important;box-shadow:0 -10px 30px rgba(10,10,10,.12)}
 .railbar .rb-txt{color:#4A4A4A!important}
 .railbar .rb-txt b{color:var(--ink)!important}
 .railbar .rb-tel{color:var(--ink)!important;border-color:rgba(10,10,10,.22)!important}
