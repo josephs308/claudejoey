@@ -1156,6 +1156,21 @@ html.js-anim .in .kid,html.js-anim .kid.in{opacity:1;transform:none}
 #services.dk,#about{border-bottom:0!important}
 #about,#math,#contact{border-top:0!important;border-bottom:0!important}
 @media(max-width:640px){#math,#contact.sec-grey{--fd:36px}#contact.sec-grey{padding-bottom:58px!important}}
+/* full-width photo band */
+.photo-band{position:relative;overflow:hidden;min-height:clamp(340px,42vw,560px);display:flex;align-items:center;background:#1A1218}
+.photo-band .pb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.photo-band .pb-shade{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(11,10,11,.86) 0%,rgba(11,10,11,.62) 45%,rgba(11,10,11,.25) 100%),
+  linear-gradient(180deg,rgba(11,10,11,.55) 0%,rgba(11,10,11,0) 22%,rgba(11,10,11,0) 78%,#0A0A0A 100%),
+  radial-gradient(60% 70% at 15% 60%,rgba(100,49,90,.35),rgba(100,49,90,0) 70%)}
+.photo-band .pb-in{position:relative;z-index:1;width:100%}
+.pb-line{margin:0;font-family:"Instrument Serif",Georgia,serif;color:#fff;font-size:clamp(40px,5.6vw,84px);line-height:.98;letter-spacing:-.015em;-webkit-text-stroke:.012em currentColor}
+.pb-line em{font-style:normal;color:#E2C4DB}
+.pb-sub{margin:18px 0 0;color:rgba(255,255,255,.8);font-size:17px;max-width:44ch}
+#math{padding-bottom:84px!important;background:linear-gradient(180deg,#0B0A0B 0,#130C12 calc(var(--fd)*.14),#1F111C calc(var(--fd)*.28),#33192E calc(var(--fd)*.42),#503049 calc(var(--fd)*.56),#7C5E75 calc(var(--fd)*.7),#AE98A9 calc(var(--fd)*.82),#DCCED8 calc(var(--fd)*.92),#F7F1F6 var(--fd),#F7F1F6 100%)!important}
+.photo-band::before{content:"";position:absolute;left:0;right:0;top:0;height:48px;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,#F7F1F6 0%,#DCCED8 18%,#AE98A9 38%,#7C5E75 58%,rgba(51,25,46,.6) 80%,rgba(11,10,11,0) 100%)}
+@media(max-width:640px){.photo-band::before{height:36px}}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
@@ -1357,6 +1372,14 @@ html.js-anim .in .kid,html.js-anim .kid.in{opacity:1;transform:none}
   </div>
 </section>
 
+<section class="photo-band" aria-label="Your phone rings. The case gets signed.">
+  <img class="pb-img" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=800" srcset="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=960&h=480 960w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1440&h=640 1440w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=1920&h=800 1920w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=2560&h=1060 2560w, https://images.unsplash.com/photo-1525182008055-f88b95ff7980?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w=3840&h=1600 3840w" sizes="100vw" alt="Taking an inbound call from a new client" loading="lazy" decoding="async" onerror="this.remove()">
+  <div class="pb-shade" aria-hidden="true"></div>
+  <div class="wrap pb-in rv">
+    <p class="pb-line">Your phone rings.<br><em>The case gets signed.</em></p>
+    <p class="pb-sub">That&rsquo;s the whole job. Everything else is how we get there.</p>
+  </div>
+</section>
 <section class="band band-dark" id="about">
   <div class="wrap">
     <div class="band-head rv" style="grid-template-columns:1fr">
