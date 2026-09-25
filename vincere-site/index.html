@@ -1035,10 +1035,14 @@ h3{letter-spacing:-.01em!important}
 @media(prefers-reduced-motion:reduce){.scroll-cue-line span{animation:none;top:30%}}
 @media(max-width:640px){.scroll-cue{display:none}}
 /* plan section */
-.plan-sec .plan-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:start}
+.plan-sec .plan-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:center}
 .plan-sec h2 em{font-style:normal;color:var(--purple)}
 .plan-lede{font-size:17px;line-height:1.6;color:var(--muted);margin:22px 0 34px;max-width:54ch}
-.plan-steps{list-style:none;margin:0 0 36px;padding:0;position:relative}
+.plan-steps{list-style:none;margin:0;padding:0;position:relative}
+.plan-steps li{background:#fff;border:1px solid #EADFE8;border-radius:18px;padding:22px 24px!important;margin-bottom:14px;box-shadow:0 14px 34px rgba(100,49,90,.06)}
+.plan-steps li:last-child{margin-bottom:0}
+.plan-steps::before{display:none}
+.plan-copy .btn-row{margin-top:8px}
 .plan-steps::before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:1.5px;background:#E3D5E0}
 .plan-steps li{position:relative;display:grid;grid-template-columns:40px 1fr;gap:18px;padding:0 0 26px}
 .plan-steps li:last-child{padding-bottom:0}
@@ -1295,29 +1299,16 @@ h3{letter-spacing:-.01em!important}
     <div class="plan-copy rv">
       <h2>We build your plan<br><em>before you pay.</em></h2>
       <p class="plan-lede">No retainer and no guesswork. We study your market, pick the channels that will actually sign cases, and hand you the plan first. If the numbers don&rsquo;t work, we&rsquo;ll tell you.</p>
-      <ol class="plan-steps">
-        <li><span class="ps-n">01</span><div><h4>Learn your firm</h4><p>Practice areas, case value, close rate and capacity. Your numbers, not an industry benchmark.</p></div></li>
-        <li><span class="ps-n">02</span><div><h4>Price your market</h4><p>Real cost per click, per lead and per case in your city, pulled before you spend a dollar.</p></div></li>
-        <li><span class="ps-n">03</span><div><h4>Pick the right channels</h4><p>Only the ones that fit your market and budget. Some firms need LSA and SEO, some need a billboard. We tell you which, and why.</p></div></li>
-        <li><span class="ps-n">04</span><div><h4>Put it in writing</h4><p>Channel mix, budget, timeline, expected cost per case and our fee, in one plan you keep whether you hire us or not.</p></div></li>
-      </ol>
       <div class="btn-row">
         <a class="btn btn-orange btn-arr" href="#contact">Get my free plan</a>
         <a class="btn btn-out" href="tel:+13852171934">Call (385) 217-1934</a>
       </div>
     </div>
-    <aside class="plan-card rv" aria-label="Example of a Vincere channel plan">
-      <div class="pc-head"><span class="pc-tag">Example plan</span><span class="pc-meta">Personal injury firm &middot; one metro</span></div>
-      <h3 class="pc-title">Recommended channel mix</h3>
-      <ul class="pc-rows">
-        <li><div class="pc-row-top"><b>Consulting</b><span class="pc-when go">Week 1</span></div><div class="pc-bar"><span style="width:10%"></span></div><div class="pc-row-sub">10% &middot; intake and follow-up fixed first</div></li>
-        <li><div class="pc-row-top"><b>Local Services Ads</b><span class="pc-when go">Start now</span></div><div class="pc-bar"><span style="width:40%"></span></div><div class="pc-row-sub">40% of budget &middot; fastest signed cases</div></li>
-        <li><div class="pc-row-top"><b>SEO</b><span class="pc-when go">Month 1</span></div><div class="pc-bar"><span style="width:30%"></span></div><div class="pc-row-sub">30% &middot; lowers cost per case over time</div></li>
-        <li><div class="pc-row-top"><b>Google Search Ads</b><span class="pc-when">Month 3</span></div><div class="pc-bar"><span style="width:20%"></span></div><div class="pc-row-sub">20% &middot; once intake is tracked</div></li>
-        <li class="off"><div class="pc-row-top"><b>Meta Ads</b><span class="pc-when no">Not yet</span></div><div class="pc-row-sub">Market too expensive to start here</div></li>
-      </ul>
-      <div class="pc-foot"><span>Delivered before you sign anything</span><span class="pc-check" aria-hidden="true">&#10003;</span></div>
-    </aside>
+    <ol class="plan-steps rv">
+        <li><span class="ps-n">01</span><div><h4>Learn your firm</h4><p>Practice areas, case value, close rate and capacity. Your numbers, not an industry benchmark.</p></div></li>
+        <li><span class="ps-n">02</span><div><h4>Price your market</h4><p>Real cost per click, per lead and per case in your city, pulled before you spend a dollar.</p></div></li>
+        <li><span class="ps-n">03</span><div><h4>Pick the right channels</h4><p>Only the ones that fit your market and budget. Some firms need LSA and SEO, some need a billboard. We tell you which, and why.</p></div></li>
+    </ol>
   </div>
 </section>
 
