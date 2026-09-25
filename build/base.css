@@ -8,8 +8,8 @@
   --muted:#6B6B6B;
   --line:#E6E3DC;          /* warm line */
   --line-2:rgba(255,255,255,.14);
-  --purple:#2D1228;        /* Vincere purple */
-  --purple-2:#200B1D;
+  --purple:#492141;        /* Vincere purple */
+  --purple-2:#371832;
   --purple-tint:#F3EAF1;
   --purple-lt:#C9A0C0;     /* purple for text on dark */
   --shadow:0 24px 60px rgba(10,10,10,.08);
@@ -108,11 +108,11 @@ em{font-style:normal;color:var(--purple)}
   background:rgba(255,255,255,.6);
 }
 .eyebrow .pulse{width:8px;height:8px;background:var(--purple);border-radius:50%;
-  box-shadow:0 0 0 0 rgba(45,18,40,.5);animation:pulse 2.2s infinite}
+  box-shadow:0 0 0 0 rgba(73,33,65,.5);animation:pulse 2.2s infinite}
 @keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(45,18,40,.5)}
-  70%{box-shadow:0 0 0 10px rgba(45,18,40,0)}
-  100%{box-shadow:0 0 0 0 rgba(45,18,40,0)}
+  0%{box-shadow:0 0 0 0 rgba(73,33,65,.5)}
+  70%{box-shadow:0 0 0 10px rgba(73,33,65,0)}
+  100%{box-shadow:0 0 0 0 rgba(73,33,65,0)}
 }
 .hero h1{margin:30px 0 26px;max-width:15ch;font-size:clamp(40px,5.8vw,80px)}
 .hero .lede{font-size:clamp(19px,1.6vw,23px);line-height:1.55;color:var(--muted);max-width:56ch}
@@ -581,7 +581,7 @@ em{font-style:normal;color:var(--purple)}
 /* subtle brand wash so stock never reads as generic */
 .ph-tint::after{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(160deg,rgba(45,18,40,.14),rgba(10,10,10,.30));
+  background:linear-gradient(160deg,rgba(73,33,65,.14),rgba(10,10,10,.30));
   mix-blend-mode:multiply;
 }
 .ph-dark::after{
@@ -599,7 +599,7 @@ em{font-style:normal;color:var(--purple)}
 .ph-fallback{
   display:flex;align-items:center;justify-content:center;text-align:center;
   background:
-    linear-gradient(135deg,rgba(45,18,40,.10),rgba(10,10,10,.06)),
+    linear-gradient(135deg,rgba(73,33,65,.10),rgba(10,10,10,.06)),
     repeating-linear-gradient(45deg,transparent 0 14px,rgba(10,10,10,.035) 14px 28px);
   border:1px dashed var(--line);border-radius:16px;
 }
