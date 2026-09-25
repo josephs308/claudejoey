@@ -654,7 +654,7 @@ def patch_home():
     s = s.replace('<a class="cx-go" href="#contact">Talk to us about Consulting', f'<a class="cx-go" href="{svc_url("law-firm-consulting")}">Learn more about Consulting')
     s = s.replace('<a class="cx-go" href="#contact">Talk to us about Traditional', f'<a class="cx-go" href="{svc_url("law-firm-traditional-advertising")}">Learn more about Traditional')
     s = s.replace('href="about.html"', 'href="/about/"').replace('href="index.html"', 'href="/"').replace('info@mbpresults.com', EMAIL)
-    s = s.replace('action="thanks.html"', 'action="/thanks.html"').replace('url("fonts/', 'url("/fonts/')
+    s = s.replace('action="thanks.html"', 'action="/thanks.html"').replace('url("/fonts/', 'url("fonts/')
     s = s.replace('Vincere Marketing, LLC', BRAND)
     extra = open(os.path.join(BUILD, 'extra.css')).read() + '\n' + open(os.path.join(BUILD, 'booking.css')).read()
     s = swap_form(s)
