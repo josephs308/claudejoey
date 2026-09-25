@@ -1395,7 +1395,7 @@ a.card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 
 .home-faq{background:#fff!important;padding:56px 0 64px!important}.home-faq .hf-h{font-size:30px;line-height:1.15;letter-spacing:-.02em;margin:0 0 22px}.home-faq .faq-q{padding:14px 0!important;font-size:15.5px!important}.home-faq .faq-q .pl{width:26px!important;height:26px!important;font-size:14px!important}.home-faq .faq-a>div{font-size:14.5px!important;line-height:1.6!important;padding:0 0 16px!important}@media(max-width:560px){.home-faq{padding:40px 0 48px!important}.home-faq .hf-h{font-size:24px}}
 .railbar-in{padding:5px 28px!important;gap:14px!important}.railbar .rb-txt{font-size:13px!important}.railbar .rb-act .btn{padding:0 14px!important;height:26px!important;line-height:26px!important;font-size:12.5px!important;min-height:0!important;box-shadow:none!important;transform:none!important}.railbar .rb-act .btn::before,.railbar .rb-act .btn::after{display:none!important}@media(max-width:980px){.railbar-in{padding:6px 16px!important}}
 /* contact: dark purple */
-section#contact.sec-grey{background:#6B4263!important;color:#fff}
+section#contact.sec-grey{background:#64315A!important;color:#fff}
 section#contact.sec-grey h2{color:#fff}
 section#contact.sec-grey .sub{color:rgba(255,255,255,.78)}
 section#contact.sec-grey .kicker,section#contact.sec-grey .contact-side .kicker[style]{color:#E2C4DB!important}
@@ -1404,6 +1404,20 @@ section#contact.sec-grey .display-tel:hover,section#contact.sec-grey .email-line
 section#contact.sec-grey .email-line,section#contact.sec-grey .email-line a{color:rgba(255,255,255,.72)}
 section#contact.sec-grey .contact-call{border-color:rgba(255,255,255,.18)!important}
 section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!important}
+/* contact side: clean value list */
+.cs2 h2{font-size:clamp(30px,3.2vw,42px)!important;line-height:1.05!important;margin:0!important;color:#fff}
+.cs2 .cs-sub{font-size:17px;line-height:1.55;color:rgba(255,255,255,.82);margin:14px 0 0;max-width:44ch}
+.cs2 .cs-lab{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E9CFE2;margin:34px 0 14px}
+.cs2 .cs-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cs2 .cs-list li{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:15px 18px}
+.cs2 .cs-ic{flex:none;width:26px;height:26px;border-radius:50%;background:#fff;color:#64315A;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.cs2 .cs-ic svg{width:14px;height:14px}
+.cs2 .cs-list b{display:block;font-size:15.5px;font-weight:700;color:#fff;margin-bottom:2px}
+.cs2 .cs-list li span:not(.cs-ic){display:block;font-size:14px;line-height:1.5;color:rgba(255,255,255,.75)}
+.cs2 .cs-note{font-size:14px;line-height:1.55;color:rgba(255,255,255,.72);margin:22px 0 0}
+.cs2 .cs-alt{font-size:14px;color:rgba(255,255,255,.72);margin:16px 0 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.cs2 .cs-alt a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.cs2 .cs-alt a:hover{border-color:#fff}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
@@ -1721,16 +1735,13 @@ section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!importa
 <section class="sec sec-grey" id="contact">
   <div class="wrap">
     <div class="contact-in">
-      <div class="contact-side rv">
-        <div class="sec-head" style="margin-bottom:0">
-          <h2>Tell us your market.<br>We&rsquo;ll tell you what it costs.</h2>
-          <p class="sub">Book a free 30-minute call. We&rsquo;ll come back with projected lead volume, expected cost per signed case, and exactly what our fee looks like against those numbers, before you commit to anything.</p>
-        </div>
-        <div class="contact-call">
-          <div class="kicker kicker-quiet">Or just call</div>
-          <a class="display-tel" href="tel:+15550100199">(555) 010-0199</a>
-          <p class="email-line"><a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a></p>
-        </div>
+      <div class="contact-side cs2 rv">
+        <h2 id="contact-h">Get your free market plan.</h2>
+        <p class="cs-sub">A 30-minute call with a strategist. You leave with real numbers for your firm.</p>
+        <p class="cs-lab">What you walk away with</p>
+        <ul class="cs-list"><li><span class="cs-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Projected lead volume</b><span>What your practice area and city can realistically produce each month.</span></div></li><li><span class="cs-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Cost per signed case</b><span>Expected cost by channel, from live click and lead data in your market.</span></div></li><li><span class="cs-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>A launch plan and our fee</b><span>Which channels to start with, how to split the budget, and exactly what we charge.</span></div></li></ul>
+        <p class="cs-note">No obligation and no retainer to start. If the numbers don&rsquo;t work in your market, we&rsquo;ll tell you.</p>
+        <p class="cs-alt">Prefer to talk now? <a href="tel:+15550100199">(555) 010-0199</a><span aria-hidden="true">&middot;</span><a href="mailto:joe@vincerelegalmarketing.com">joe@vincerelegalmarketing.com</a></p>
       </div>
       <form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax" novalidate>
         <input type="hidden" name="form-name" value="vincere-booking">

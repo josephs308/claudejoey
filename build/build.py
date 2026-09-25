@@ -271,7 +271,26 @@ def contact_photo():
             f'alt="A marketing team working together at a shared desk" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'nophoto\');this.remove()">'
             f'<figcaption><b>Real people, real numbers.</b>Your call is with the team that builds your plan.</figcaption></figure>')
 
+def contact_side():
+    items = [
+        ('Projected lead volume', 'What your practice area and city can realistically produce each month.'),
+        ('Cost per signed case', 'Expected cost by channel, from live click and lead data in your market.'),
+        ('A launch plan and our fee', 'Which channels to start with, how to split the budget, and exactly what we charge.'),
+    ]
+    chk = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    li = ''.join(f'<li><span class="cs-ic">{chk}</span><div><b>{e(t)}</b><span>{e(d)}</span></div></li>' for t, d in items)
+    return f'''<div class="contact-side cs2 rv">
+        <h2 id="contact-h">Get your free market plan.</h2>
+        <p class="cs-sub">A 30-minute call with a strategist. You leave with real numbers for your firm.</p>
+        <p class="cs-lab">What you walk away with</p>
+        <ul class="cs-list">{li}</ul>
+        <p class="cs-note">No obligation and no retainer to start. If the numbers don&rsquo;t work in your market, we&rsquo;ll tell you.</p>
+        <p class="cs-alt">Prefer to talk now? <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><span aria-hidden="true">&middot;</span><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+      </div>
+      '''
+
 def swap_form(html_s):
+    html_s = re.sub(r'<div class="contact-side[^"]*">.*?(?=<(?:form|div) class="form )', lambda m: contact_side(), html_s, count=1, flags=re.S)
     html_s = re.sub(r'<div class="contact-mark">.*?</p>\s*</div>', '', html_s, count=1, flags=re.S)
     html_s = re.sub(r'\s*<figure class="contact-photo">.*?</figure>', '', html_s, flags=re.S)
     html_s = re.sub(r'<(form|div) class="form (?:book )?rv".*?</\1>', lambda m: booking_form(), html_s, count=1, flags=re.S)
