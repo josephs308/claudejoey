@@ -218,6 +218,10 @@ body{
   .right{padding:36px 24px;}
   .left-foot{display:none;}
 }
+.pmark{display:flex;align-items:center;gap:18px}
+.pword{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800;font-size:40px;color:#fff;letter-spacing:-.02em;line-height:1}
+.pword small{display:block;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#C9A0C0;margin-top:8px}
+@media(max-width:760px){.pmark svg{width:48px;height:48px}.pword{font-size:30px}}
 </style>
 </head>
 <body>
@@ -229,7 +233,7 @@ body{
     <!-- Logo -->
     <div style="flex:1;display:flex;align-items:center;justify-content:center;">
       <a href="/" class="logo" style="display:flex;align-items:center;justify-content:center;">
-        <svg width="286" height="84" viewBox="0 0 240 70" style="display:block;background:#fff;border-radius:10px;padding:6px;" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg1" x1="0.3" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#C9A0C0"/><stop offset="100%" stop-color="#64315A"/></linearGradient><linearGradient id="fg2" x1="0.3" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#9B6A8F"/><stop offset="100%" stop-color="#4F2647"/></linearGradient><linearGradient id="fg3" x1="0.3" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#7A4470"/><stop offset="100%" stop-color="#3E1D38"/></linearGradient></defs><g transform="scale(0.85) translate(8,3)"><polygon points="5,20 37,3 69,20" fill="url(#fg1)"/><rect x="5" y="20" width="64" height="5" rx="1" fill="url(#fg2)"/><rect x="4" y="25" width="66" height="3.5" rx="1" fill="url(#fg1)" opacity="0.7"/><rect x="12" y="28.5" width="6" height="26" rx="1.2" fill="url(#fg1)"/><rect x="27" y="28.5" width="6" height="26" rx="1.2" fill="url(#fg1)"/><rect x="42" y="28.5" width="6" height="26" rx="1.2" fill="url(#fg1)"/><rect x="57" y="28.5" width="6" height="26" rx="1.2" fill="url(#fg1)"/><rect x="4" y="54.5" width="66" height="5" rx="1" fill="url(#fg2)"/><rect x="1" y="59.5" width="72" height="4" rx="1" fill="url(#fg3)" opacity="0.8"/><rect x="-1" y="63.5" width="76" height="3" rx="1" fill="url(#fg3)" opacity="0.5"/></g><text x="78" y="36" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="29" fill="#0B0A0B" letter-spacing="1">VINCERE</text><text x="79" y="55" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="17" fill="#374151" letter-spacing="2">LEGAL</text><line x1="146" y1="43" x2="211" y2="43" stroke="#64315A" stroke-width="1.5" stroke-linecap="round"/><line x1="146" y1="47" x2="211" y2="47" stroke="#64315A" stroke-width="1.5" stroke-linecap="round"/><line x1="146" y1="51" x2="211" y2="51" stroke="#64315A" stroke-width="1.5" stroke-linecap="round"/><line x1="146" y1="55" x2="211" y2="55" stroke="#64315A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="pmark"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#64315A"/><path d="M16 16h9l7 22 7-22h9L37 48h-10z" fill="#fff"/></svg><span class="pword">Vincere<small>Legal Marketing</small></span></span>
       </a>
     </div>
 

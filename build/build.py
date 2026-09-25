@@ -92,6 +92,8 @@ def e(t):
 def svc_url(slug): return f'/services/{slug}/'
 def pra_url(slug): return f'/practice-areas/{slug}/'
 
+VMARK = '<svg class="vmark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#64315A"/><path d="M16 16h9l7 22 7-22h9L37 48h-10z" fill="#fff"/></svg>'
+
 CHEV = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 def nav():
@@ -103,7 +105,7 @@ def nav():
 <div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
 <nav class="nav" id="nav" aria-label="Main">
   <div class="nav-in">
-    <a class="nav-brand" href="/" aria-label="{BRAND} home"><span class="nav-word">Vincere</span></a>
+    <a class="nav-brand" href="/" aria-label="{BRAND} home">{VMARK}<span class="nav-word">Vincere</span></a>
     <div class="nav-mid" id="navMid">
       <div class="dd dd-svc"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-services">Services {CHEV}</button>
         <div class="dd-panel" id="dd-services"><div class="dd-grid">{svc}</div>
@@ -131,7 +133,7 @@ def footer():
   <div class="wrap">
     <div class="foot-in">
       <div>
-        <span class="foot-logo nologo"><span class="chip-word">Vincere<small>Legal Marketing</small></span></span>
+        <span class="foot-logo nologo">{VMARK}<span class="chip-word">Vincere<small>Legal Marketing</small></span></span>
         <p class="foot-desc">Full-service marketing for law firms. Every channel, one partner, measured in signed cases.</p>
         <a class="foot-tel" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
         <p style="margin-top:10px"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
