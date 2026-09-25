@@ -311,11 +311,11 @@ def crumb_html(crumbs):
             parts.append(f'<a href="{u}">{e(n)}</a>')
     return '<nav aria-label="Breadcrumb"><p class="crumb">' + '<span class="sep">/</span>'.join(parts) + '</p></nav>'
 
-def hero(crumbs, eyebrow, h1, lede, cta2=('Call ' + PHONE_DISPLAY, f'tel:{PHONE_TEL}')):
+def hero(crumbs, eyebrow, h1, lede, cta2=('Call ' + PHONE_DISPLAY, f'tel:{PHONE_TEL}'), top=True):
+    tops = (crumb_html(crumbs) + f'\n    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>{e(eyebrow)}</div></div>') if top else ''
     return f'''<header class="phero">
   <div class="wrap phero-in">
-    {crumb_html(crumbs)}
-    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>{e(eyebrow)}</div></div>
+    {tops}
     <h1>{e(h1)}</h1>
     <p class="lede">{e(lede)}</p>
     <div class="btn-row">
@@ -408,7 +408,7 @@ def build_service(slug):
             notes += f'<div class="card"><span class="card-ic">{icon("LAW")}</span><h3>{e(n["practice"])}</h3><p>{e(n["text"])}</p></div>'
     related = ''.join(f'<a class="rel-c" href="{svc_url(r)}"><div class="rel-tag">{e(SVC[r][1])}</div><h3>{e(SVC[r][1])}</h3><p>{e(SVC[r][2])}.</p><span class="rel-arr">See the service &rarr;</span></a>' for r in d['related'] if r in SVC and r != slug)
     ph = SVC_PHOTOS.get(slug)
-    body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"])}
+    body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"], top=False)}
 {answer(d["answer"])}
 <section class="sec">
   <div class="wrap"><div class="lf">
@@ -445,7 +445,7 @@ def build_service(slug):
   </div>
 </section>
 {callout("See what " + d["nav_label"] + " would look like for your firm.", "We will price your market, pick the right channels and put the numbers in writing before you commit to anything.")}'''
-    write(url, page(url, d['title'], d['meta_description'], schema, body))
+    write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="svcp">', 1))
     SITEMAP.append((url, '0.9'))
     return d
 

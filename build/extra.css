@@ -213,3 +213,25 @@ section#math{padding-top:72px!important}
 .plan-steps h3.h4{font-family:'Schibsted Grotesk',sans-serif!important;font-size:18px!important;font-weight:700!important;line-height:1.05!important;letter-spacing:-.01em!important;margin:8px 0 4px!important;color:#fff!important;text-transform:none!important}
 .srow h3.h4{font-family:'Schibsted Grotesk',sans-serif!important;font-size:17px!important;font-weight:700!important;line-height:1.05!important;letter-spacing:-.02em!important;margin:0 0 7px!important;color:#fff!important;text-transform:none!important}
 .nf-links a{color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+/* service pages: tighter rhythm */
+.svcp .phero{padding:124px 0 44px!important}
+.svcp .phero h1{margin-bottom:18px!important}
+.svcp .sec-answer{padding:8px 0 0!important}
+.svcp .sec{padding:72px 0!important}
+.svcp .sec-tight{padding:56px 0!important}
+.svcp .callout{padding:64px 0!important}
+.svcp .ph-band{padding:0 0 8px!important}
+.svcp .sec-head{margin-bottom:32px!important}
+.svcp .sec-head h2{margin-bottom:0}
+.svcp .prose h2{margin-top:36px}
+.svcp .prose h2:first-child{margin-top:0}
+.svcp section#contact.sec-grey{padding:72px 0!important}
+/* how it works: compact step cards */
+.svcp .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:0;border-top:0}
+.svcp .step{display:flex!important;flex-direction:column;gap:10px;padding:22px 20px!important;border:1px solid #E6D9E3!important;border-radius:14px;background:#fff;min-height:0}
+.svcp .step-n{font-size:13px!important;font-weight:700;letter-spacing:.08em;color:#fff!important;background:var(--purple);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:1!important;font-family:inherit!important;line-height:1}
+.svcp .step h3.h4{font-size:17px!important;margin:4px 0 6px!important;letter-spacing:-.01em}
+.svcp .step p{font-size:14.5px!important;line-height:1.55!important;max-width:none;color:var(--muted)}
+.svcp .step-caret{display:none!important}
+@media(max-width:560px){.svcp .phero{padding:104px 0 32px!important}.svcp .sec{padding:52px 0!important}.svcp .sec-tight{padding:44px 0!important}.svcp .callout{padding:52px 0!important}.svcp .sec-head{margin-bottom:24px!important}.svcp section#contact.sec-grey{padding:52px 0!important}}
+.svcp .sec-head h2,.svcp #faq h2,.svcp .callout h2{font-size:clamp(28px,3.2vw,44px)!important;line-height:1.08!important}.svcp .sec-head .kicker{margin-bottom:12px!important}
