@@ -1129,6 +1129,20 @@ h3{letter-spacing:-.01em!important}
 .plan-promise li b{font-weight:700}
 .plan-promise li::before{content:"";position:absolute;left:0;top:2px;width:18px;height:18px;border-radius:50%;background:var(--purple)}
 .plan-promise li::after{content:"";position:absolute;left:6px;top:6.5px;width:6px;height:3.5px;border-left:1.8px solid #fff;border-bottom:1.8px solid #fff;transform:rotate(-45deg)}
+/* ---- scroll interactions ---- */
+html.js-anim .rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+html.js-anim .rv.in{opacity:1;transform:none}
+html.js-anim .kid{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 90ms + 120ms)}
+html.js-anim .in .kid,html.js-anim .kid.in{opacity:1;transform:none}
+.plan-steps li{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .45s,opacity .6s}
+.plan-steps li .ps-n{transition:background .35s,color .35s,transform .35s}
+.plan-steps li.is-active{border-color:#CFB3C8;box-shadow:0 24px 50px rgba(100,49,90,.16);transform:translateX(-8px)}
+.plan-steps li.is-active .ps-n{background:var(--purple);color:#fff;transform:scale(1.08)}
+#services.dk{--gy:0%}
+#services.dk{--dk-bg:radial-gradient(1000px 520px at 85% calc(42% + var(--gy)),rgba(100,49,90,.5) 0%,rgba(100,49,90,0) 62%),#0B0A0B}
+.hero-v2 .hero-lead{will-change:transform,opacity}
+@media(prefers-reduced-motion:reduce){html.js-anim .rv,html.js-anim .kid{opacity:1!important;transform:none!important;transition:none!important}
+  .plan-steps li.is-active{transform:none}}
 /* scroll progress bar */
 .scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
   background:linear-gradient(90deg,var(--purple),var(--purple-lt));
@@ -1316,16 +1330,16 @@ h3{letter-spacing:-.01em!important}
         <a class="btn btn-orange btn-arr" href="#contact">Get my free plan</a>
         <a class="btn btn-out" href="tel:+13852171934">Call (385) 217-1934</a>
       </div>
-      <ul class="plan-promise">
-        <li><b>Free, no obligation.</b> The plan costs nothing, and you&rsquo;re not committing to anything by asking for it.</li>
-        <li><b>No retainer to start.</b> You see the numbers and the fee before any contract exists.</li>
-        <li><b>Built only for law firms.</b> Every benchmark and channel call comes from legal marketing, not a generic playbook.</li>
+      <ul class="plan-promise rv">
+        <li class="kid" style="--i:0"><b>Free, no obligation.</b> The plan costs nothing, and you&rsquo;re not committing to anything by asking for it.</li>
+        <li class="kid" style="--i:1"><b>No retainer to start.</b> You see the numbers and the fee before any contract exists.</li>
+        <li class="kid" style="--i:2"><b>Built only for law firms.</b> Every benchmark and channel call comes from legal marketing, not a generic playbook.</li>
       </ul>
     </div>
     <ol class="plan-steps rv">
-        <li><span class="ps-n">01</span><div><h4>Learn your firm</h4><p>Practice areas, case value, close rate and capacity. Your numbers, not an industry benchmark.</p><div class="ps-tags"><span class="ps-lab">What we look at</span><span>Practice areas</span><span>Average case value</span><span>Intake and close rate</span><span>Caseload capacity</span></div></div></li>
-        <li><span class="ps-n">02</span><div><h4>Price your market</h4><p>Real cost per click, per lead and per case in your city, pulled before you spend a dollar.</p><div class="ps-tags"><span class="ps-lab">What we pull</span><span>Cost per click</span><span>Cost per lead</span><span>Competitor ad spend</span><span>Map-pack and LSA competition</span></div></div></li>
-        <li><span class="ps-n">03</span><div><h4>Pick the right channels</h4><p>Only the ones that fit your market and budget. Some firms need LSA and SEO, some need a billboard. We tell you which, and why.</p><div class="ps-tags"><span class="ps-lab">What you get</span><span>Channel mix</span><span>Budget split</span><span>Launch order</span><span>Expected cost per case</span></div></div></li>
+        <li class="kid" style="--i:0"><span class="ps-n">01</span><div><h4>Learn your firm</h4><p>Practice areas, case value, close rate and capacity. Your numbers, not an industry benchmark.</p><div class="ps-tags"><span class="ps-lab">What we look at</span><span>Practice areas</span><span>Average case value</span><span>Intake and close rate</span><span>Caseload capacity</span></div></div></li>
+        <li class="kid" style="--i:1"><span class="ps-n">02</span><div><h4>Price your market</h4><p>Real cost per click, per lead and per case in your city, pulled before you spend a dollar.</p><div class="ps-tags"><span class="ps-lab">What we pull</span><span>Cost per click</span><span>Cost per lead</span><span>Competitor ad spend</span><span>Map-pack and LSA competition</span></div></div></li>
+        <li class="kid" style="--i:2"><span class="ps-n">03</span><div><h4>Pick the right channels</h4><p>Only the ones that fit your market and budget. Some firms need LSA and SEO, some need a billboard. We tell you which, and why.</p><div class="ps-tags"><span class="ps-lab">What you get</span><span>Channel mix</span><span>Budget split</span><span>Launch order</span><span>Expected cost per case</span></div></div></li>
     </ol>
   </div>
 </section>
@@ -1352,10 +1366,10 @@ h3{letter-spacing:-.01em!important}
     </div>
 
     <div class="srail rv">
-      <div class="srow"><div class="sn">01</div><div><h4>One team across all nine channels</h4><p>No stitching together an SEO shop, a paid agency and a web guy who each blame the other two. One team, one set of numbers, nowhere for a bad channel to hide.</p></div></div>
-      <div class="srow"><div class="sn">02</div><div><h4>Performance-based where it fits</h4><p>On channels where the math supports it, our fee moves with results. We&rsquo;ll tell you plainly which ones those are and which are flat-fee work.</p></div></div>
-      <div class="srow"><div class="sn">03</div><div><h4>You own every account</h4><p>Ad accounts, website code, domains, tracking and creative all stay in your name, so leaving is never a hostage negotiation.</p></div></div>
-      <div class="srow"><div class="sn">04</div><div><h4>Reporting in cost per new customer</h4><p>Not impressions, not engagement, not a dashboard screenshot. The number that decides whether the spend was worth it.</p></div></div>
+      <div class="srow kid" style="--i:0"><div class="sn">01</div><div><h4>One team across all nine channels</h4><p>No stitching together an SEO shop, a paid agency and a web guy who each blame the other two. One team, one set of numbers, nowhere for a bad channel to hide.</p></div></div>
+      <div class="srow kid" style="--i:1"><div class="sn">02</div><div><h4>Performance-based where it fits</h4><p>On channels where the math supports it, our fee moves with results. We&rsquo;ll tell you plainly which ones those are and which are flat-fee work.</p></div></div>
+      <div class="srow kid" style="--i:2"><div class="sn">03</div><div><h4>You own every account</h4><p>Ad accounts, website code, domains, tracking and creative all stay in your name, so leaving is never a hostage negotiation.</p></div></div>
+      <div class="srow kid" style="--i:3"><div class="sn">04</div><div><h4>Reporting in cost per new customer</h4><p>Not impressions, not engagement, not a dashboard screenshot. The number that decides whether the spend was worth it.</p></div></div>
     </div>
   </div>
 </section>
@@ -1527,6 +1541,27 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
 function u(){var y=window.scrollY||document.documentElement.scrollTop,o=Math.max(0,1-y/160);
 c.style.opacity=o;c.style.transform='translateY('+(-(1-o)*10)+'px)';c.style.pointerEvents=o<.05?'none':'';c.style.visibility=o<.01?'hidden':'';t=false}
 addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});u()})();
+</script>
+<script>
+(function(){
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(rm||!('IntersectionObserver' in window))return;
+  var root=document.documentElement;root.classList.add('js-anim');
+  /* reveal on enter */
+  var els=[].slice.call(document.querySelectorAll('.rv, .srow.kid'));
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -12% 0px',threshold:.08});
+  els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight*.95)el.classList.add('in');else io.observe(el);});
+  /* active plan step */
+  var steps=[].slice.call(document.querySelectorAll('.plan-steps li'));
+  if(steps.length&&innerWidth>980){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){steps.forEach(function(s){s.classList.toggle('is-active',s===e.target)})}})},{rootMargin:'-45% 0px -45% 0px'});steps.forEach(function(s){so.observe(s)});}
+  /* parallax: services glow + hero ease-out */
+  var svc=document.getElementById('services'),lead=document.querySelector('.hero-v2 .hero-lead'),t=false;
+  function f(){var vh=innerHeight;
+    if(svc){var r=svc.getBoundingClientRect(),p=(vh-r.top)/(vh+r.height);p=Math.max(0,Math.min(1,p));svc.style.setProperty('--gy',((p-.5)*40).toFixed(1)+'%');}
+    if(lead){var y=Math.min(scrollY,600);lead.style.transform='translateY('+(y*.18).toFixed(1)+'px)';lead.style.opacity=(1-y/900).toFixed(3);}
+    t=false}
+  addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(f)}},{passive:true});f();
+})();
 </script>
 </body>
 </html>
