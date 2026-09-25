@@ -273,9 +273,8 @@ def contact_photo():
             f'<figcaption><b>Real people, real numbers.</b>Your call is with the team that builds your plan.</figcaption></figure>')
 
 def swap_form(html_s):
-    html_s = re.sub(r'<div class="contact-mark">.*?</p>\s*</div>', lambda m: contact_photo(), html_s, count=1, flags=re.S)
-    if 'class="contact-photo"' not in html_s and 'class="email-line"' in html_s:
-        html_s = re.sub(r'(<p class="email-line">.*?</p>\s*</div>)', lambda m: m.group(1) + '\n        ' + contact_photo(), html_s, count=1, flags=re.S)
+    html_s = re.sub(r'<div class="contact-mark">.*?</p>\s*</div>', '', html_s, count=1, flags=re.S)
+    html_s = re.sub(r'\s*<figure class="contact-photo">.*?</figure>', '', html_s, flags=re.S)
     html_s = re.sub(r'<(form|div) class="form (?:book )?rv".*?</\1>', lambda m: booking_form(), html_s, count=1, flags=re.S)
     return html_s.replace(SUB_OLD, SUB_NEW)
 
