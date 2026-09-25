@@ -140,9 +140,9 @@ def footer():
         <a class="foot-tel" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
         <p style="margin-top:10px"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
-      <div><h5>Services</h5><ul>{svc}</ul></div>
-      <div class="foot-pa"><h5>Practice areas</h5><div class="foot-pa-cols"><ul>{p1}</ul><ul>{p2}<li><a href="/practice-areas/">All practice areas</a></li></ul></div></div>
-      <div><h5>Company</h5><ul>
+      <div><p class="fh">Services</p><ul>{svc}</ul></div>
+      <div class="foot-pa"><p class="fh">Practice areas</p><div class="foot-pa-cols"><ul>{p1}</ul><ul>{p2}<li><a href="/practice-areas/">All practice areas</a></li></ul></div></div>
+      <div><p class="fh">Company</p><ul>
         <li><a href="/about/">About Vincere</a></li>
         <li><a href="/#math">Approach</a></li>
         <li><a href="{PORTAL}">Client Portal</a></li>
@@ -577,7 +577,78 @@ import urllib.parse as _up
 def favicon_uri():
     return 'data:image/svg+xml,' + _up.quote(FAVICON, safe=" =:/',.-")
 
+def build_404():
+    url = '/404.html'
+    body = f'''<header class="phero" style="min-height:70vh">
+  <div class="wrap phero-in">
+    <div><div class="eyebrow" style="margin-bottom:26px"><span class="pulse"></span>Page not found</div></div>
+    <h1>That page moved or never existed.</h1>
+    <p class="lede">The link may be old or mistyped. Everything we do is one click away below, or book a free strategy call and we will walk through your market.</p>
+    <div class="btn-row"><a class="btn btn-orange btn-arr" href="/#contact">Book a free strategy call</a><a class="btn btn-out" href="/">Back to home</a></div>
+    <p class="lede nf-links" style="margin-top:28px"><a href="/services/">All services</a> &middot; <a href="/practice-areas/">All practice areas</a> &middot; <a href="/about/">About Vincere</a></p>
+  </div>
+</header>'''
+    h = head(url, 'Page not found | Vincere Legal Marketing', 'The page you were looking for could not be found. Browse Vincere Legal Marketing services and practice areas.', [org_node(), website_node()], robots='noindex,follow')
+    out = h + nav() + '\n<main id="main">\n' + body + '\n</main>\n' + footer() + '\n' + SCRIPTS + '\n</body>\n</html>\n'
+    open(os.path.join(SITE, '404.html'), 'w').write(out.replace('href="#contact"', 'href="/#contact"'))
+
+def first_sentence(t):
+    m = re.match(r'(.+?[.!?])(\s|$)', t)
+    return m.group(1) if m else t
+
+def build_llms():
+    lines = [f'# {BRAND}', '',
+             f'> {BRAND} is a full-service marketing partner for US law firms: consulting and intake, branding, Google Local Services Ads, SEO, answer engine optimization (AEO), PPC, Meta ads, traditional media and websites. Every engagement starts with a free market plan, and results are measured in signed cases.', '',
+             f'Contact: {EMAIL}. Book a free 30-minute strategy call at {DOMAIN}/#contact.', '', '## Services', '']
+    for sl, lab, *_ in SERVICES:
+        fp = os.path.join(CONTENT, sl + '.json')
+        if os.path.exists(fp):
+            d = json.load(open(fp)); lines.append(f'- [{lab}]({DOMAIN}{svc_url(sl)}): {first_sentence(d["answer"]["text"])}')
+    lines += ['', '## Practice areas', '']
+    for sl, lab in PRACTICES:
+        fp = os.path.join(CONTENT, sl + '.json')
+        if os.path.exists(fp):
+            d = json.load(open(fp)); lines.append(f'- [{lab} marketing]({DOMAIN}{pra_url(sl)}): {first_sentence(d["answer"]["text"])}')
+    lines += ['', '## Company', '', f'- [Home]({DOMAIN}/): Law firm marketing agency overview, how the free plan works, and FAQs.',
+              f'- [All services]({DOMAIN}/services/): Overview of every marketing channel Vincere runs for law firms.',
+              f'- [All practice areas]({DOMAIN}/practice-areas/): Marketing approach for each legal practice area.',
+              f'- [About]({DOMAIN}/about/): How Vincere works: one partner, a plan before you pay, intake first, measured in signed cases.', '']
+    open(os.path.join(SITE, 'llms.txt'), 'w').write('\n'.join(lines))
+
+HEADERS = """/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/portal/*
+  X-Robots-Tag: noindex
+
+/thanks.html
+  X-Robots-Tag: noindex
+
+/404.html
+  X-Robots-Tag: noindex
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+"""
+
 def build_misc():
+    open(os.path.join(SITE, '_headers'), 'w').write(HEADERS)
+    build_llms()
+    img_dir = os.path.join(SITE, 'images')
+    if os.path.isdir(img_dir):
+        for f in os.listdir(img_dir):
+            if f.endswith('.txt'): os.replace(os.path.join(img_dir, f), os.path.join(BUILD, 'PHOTO-CREDITS.txt'))
+        if not os.listdir(img_dir): os.rmdir(img_dir)
     open(os.path.join(SITE, 'favicon.svg'), 'w').write(FAVICON)
     urls = [('/', '1.0')] + SITEMAP
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
@@ -726,6 +797,7 @@ def main():
     patch_home()
     build_portal()
     build_thanks()
+    build_404()
     remove_old()
     build_misc()
     print('built', len(SITEMAP), 'pages')

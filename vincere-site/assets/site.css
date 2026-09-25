@@ -897,6 +897,12 @@ section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!importa
 .cs2 h2,.cs2 .cs-sub,.cs2 .cs-list li,.cs2 .cs-alt,.cs2 .cs-alt a{color:#fff!important}.cs2 .cs-alt a{border-bottom-color:rgba(255,255,255,.5)!important}
 section#math{padding-top:72px!important}
 .rv{transition-duration:.55s!important}
+/* heading-order fixes: same look, correct levels */
+.foot .fh{font-family:'Schibsted Grotesk',sans-serif;font-size:12px;font-weight:600;line-height:1.6;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 20px}
+.foot-pa .fh{text-align:center}
+.plan-steps h3.h4{font-family:'Schibsted Grotesk',sans-serif!important;font-size:18px!important;font-weight:700!important;line-height:1.05!important;letter-spacing:-.01em!important;margin:8px 0 4px!important;color:#fff!important;text-transform:none!important}
+.srow h3.h4{font-family:'Schibsted Grotesk',sans-serif!important;font-size:17px!important;font-weight:700!important;line-height:1.05!important;letter-spacing:-.02em!important;margin:0 0 7px!important;color:#fff!important;text-transform:none!important}
+.nf-links a{color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(100,49,90,.12)}
