@@ -1027,6 +1027,17 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
   linear-gradient(180deg,rgba(255,255,255,.25) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,0) 80%,rgba(255,255,255,.3) 100%)!important}
 .hero-bg img{filter:saturate(1.08) contrast(1.04)}
 @media(max-width:980px){.hero-bg::after{background:linear-gradient(180deg,rgba(255,255,255,.82) 0%,rgba(255,255,255,.9) 50%,var(--paper) 86%)!important}}
+/* service metrics: heading left, 2x2 icon grid right */
+.mx-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.mx-sec .mx-split .sec-head{margin-bottom:0!important}
+.mx-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 36px}
+.mx-i{display:flex;gap:16px;align-items:flex-start}
+.mx-ic{flex:none;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--purple);display:flex;align-items:center;justify-content:center}
+.mx-ic svg{width:20px;height:20px}
+.mx-i h3{color:#fff!important;font-size:17px!important;margin:2px 0 6px!important;letter-spacing:-.01em}
+.mx-i p{color:rgba(255,255,255,.68);font-size:14.5px;line-height:1.55;margin:0}
+@media(max-width:900px){.mx-split{grid-template-columns:minmax(0,1fr);gap:28px}}
+@media(max-width:560px){.mx-grid{grid-template-columns:minmax(0,1fr);gap:22px}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}

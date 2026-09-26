@@ -84,6 +84,37 @@ ICONS = {
  'Q':'<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/>',
 }
 
+MX_ICONS = {
+ 'search':'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+ 'click':'<path d="M9 3v4M3 9h4M5 5l2.5 2.5M12 12l8 3-3.5 1.5L15 20z"/>',
+ 'phone':'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+ 'dollar':'<path d="M12 3v18M16 7.5c0-1.9-1.8-3-4-3s-4 1.1-4 3 1.8 2.6 4 3 4 1.1 4 3-1.8 3-4 3-4-1.1-4-3"/>',
+ 'ai':'<path d="M4 5h16v11H9l-5 4z"/><path d="M9 10h.01M12 10h.01M15 10h.01"/>',
+ 'clock':'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ 'calendar':'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+ 'check':'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/>',
+ 'chart':'<path d="M4 20V4M4 20h16"/><path d="M8 16l4-5 3 3 5-6"/>',
+ 'pin':'<path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+ 'bolt':'<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+ 'filter':'<path d="M4 5h16l-6 8v5l-4 2v-7z"/>',
+ 'star':'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.5 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+ 'form':'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+}
+def metric_icon(title):
+    t = title.lower()
+    for keys, k in [(('creative',), 'star'), (('to signed', 'signed rate'), 'check'), (('contact rate',), 'phone'), (('ai referral',), 'form'),
+                    (('cost', 'fee', 'spend'), 'dollar'), (('speed to lead', 'response', 'answer'), 'clock'),
+                    (('ai ', 'ai mention', 'citation'), 'ai'), (('page speed',), 'bolt'), (('map pack', 'placement'), 'pin'),
+                    (('click',), 'click'), (('booking', 'consultation', 'consult'), 'calendar'), (('signed',), 'check'),
+                    (('call',), 'phone'), (('form', 'lead'), 'form'), (('search term',), 'filter'),
+                    (('creative',), 'star'), (('branded search', 'visibility', 'lift'), 'chart'), (('search',), 'search')]:
+        if any(x in t for x in keys): return k
+    return 'chart'
+
+def mx_svg(k):
+    return ('<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
+            f'stroke-linecap="round" stroke-linejoin="round">{MX_ICONS[k]}</svg>')
+
 def icon(key, cls=''):
     c = f' class="{cls}"' if cls else ''
     return (f'<svg{c} width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
@@ -398,7 +429,7 @@ def build_service(slug):
               faq_node(url, d['faqs'])]
     incl = ''.join(f'<li><span class="dot"></span><span>{e(x)}</span></li>' for x in d['included'])
     steps = ''.join(f'<div class="step"><div class="step-n">{i+1:02d}</div><div><h3 class="h4">{e(s["title"])}</h3><p>{e(s["text"])}</p></div><div class="step-caret">&rarr;</div></div>' for i, s in enumerate(d['process']))
-    metrics = ''.join(f'<div class="metric"><h3 class="k">{e(m["title"])}</h3><p>{e(m["text"])}</p></div>' for m in d['metrics'])
+    metrics = ''.join(f'<div class="mx-i"><span class="mx-ic">{mx_svg(metric_icon(m["title"]))}</span><div><h3>{e(m["title"])}</h3><p>{e(m["text"])}</p></div></div>' for m in d['metrics'])
     related = ''.join(f'<a class="rel-c" href="{svc_url(r)}"><div class="rel-tag">{e(SVC[r][1])}</div><h3>{e(SVC[r][1])}</h3><p>{e(SVC[r][2])}.</p><span class="rel-arr">See the service &rarr;</span></a>' for r in d['related'] if r in SVC and r != slug)
     ph = SVC_PHOTOS.get(slug)
     body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"], top=False)}
@@ -418,11 +449,11 @@ def build_service(slug):
     <div class="steps">{steps}</div>
   </div>
 </section>
-<section class="sec sec-dark">
-  <div class="wrap">
+<section class="sec sec-dark mx-sec">
+  <div class="wrap"><div class="mx-split">
     <div class="sec-head"><h2>The numbers we hold ourselves to.</h2><p class="sub">All of it lives in your client dashboard, live, next to every other channel.</p></div>
-    <div class="grid4">{metrics}</div>
-  </div>
+    <div class="mx-grid">{metrics}</div>
+  </div></div>
 </section>
 {faq_html(d["faqs"], d["nav_label"] + " questions, answered.")}
 <section class="sec sec-tight">
