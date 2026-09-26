@@ -413,3 +413,5 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
 .nav-brand .nav-word{align-items:flex-start!important;font-size:20px!important;letter-spacing:-.01em!important}
 .nav-brand .nav-word small{font-size:9.4px!important;font-weight:600!important;letter-spacing:.22em!important;padding-left:0!important;color:rgba(255,255,255,.55)!important;margin-top:5px!important}
 @media(max-width:560px){.nav-brand .vmark{width:42px!important;height:42px!important}.nav-brand .nav-word{font-size:19px!important}.nav-brand .nav-word small{font-size:9px!important}}
+@media(min-width:1101px){.nav-mid > a,.nav-mid .dd-btn{font-size:15.5px!important}.nav-mid .dd-btn svg{width:11px;height:11px}}
+@media(min-width:1101px){.nav-mid{gap:18px!important}}@media(min-width:1101px) and (max-width:1280px){.nav-mid > a,.nav-mid .dd-btn{font-size:14.5px!important}.nav-mid{margin-left:32px!important;margin-right:16px!important;gap:14px!important}}
