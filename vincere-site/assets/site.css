@@ -1023,9 +1023,9 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
 .plan-steps li:hover .ps-n,.plan-steps li .ps-n:hover{background:var(--purple)!important;border-color:var(--purple)!important;color:#fff!important;transform:scale(1.08)}
 /* hero photo: more prominent (clear on the right, white only behind the headline) */
 .hero-bg::after{background:
-  linear-gradient(96deg,var(--paper) 0%,var(--paper) 44%,rgba(255,255,255,.88) 54%,rgba(255,255,255,.4) 66%,rgba(255,255,255,.08) 80%,rgba(255,255,255,0) 100%),
+  linear-gradient(96deg,var(--paper) 0%,var(--paper) 44%,rgba(255,255,255,.9) 54%,rgba(255,255,255,.55) 66%,rgba(255,255,255,.3) 80%,rgba(255,255,255,.2) 100%),
   linear-gradient(180deg,rgba(255,255,255,.25) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,0) 80%,rgba(255,255,255,.3) 100%)!important}
-.hero-bg img{filter:saturate(1.08) contrast(1.04)}
+.hero-bg img{filter:saturate(1.04) contrast(1.02)}
 @media(max-width:980px){.hero-bg::after{background:linear-gradient(180deg,rgba(255,255,255,.82) 0%,rgba(255,255,255,.9) 50%,var(--paper) 86%)!important}}
 /* service metrics: heading left, 2x2 icon grid right */
 .mx-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
