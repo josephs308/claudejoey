@@ -11,6 +11,11 @@ description: "One or two sentences that answer the question and make a law firm 
 date: 2026-01-15
 # Optional. Set this when you edit an old post.
 updated: 2026-01-15
+# Optional. The photo at the top of the post and on the blog page. Use an Unsplash photo ID
+# (the part after unsplash.com/photos/, e.g. photo-1586125674857-4eb86880905d) or a full image URL.
+# Leave it out and the post uses the photo of its first related service.
+cover: "photo-1586125674857-4eb86880905d"
+cover_alt: "Describe the photo for screen readers and Google"
 category: "SEO"
 # Optional. Set to true to hide the post while you work on it.
 draft: true
@@ -46,3 +51,7 @@ Normal paragraphs are just text with a blank line between them. You can use **bo
 2. Like this
 
 > A line starting with > becomes a pull quote.
+
+![Describe the photo](photo-1586125674857-4eb86880905d "Optional caption shown on the photo")
+
+A line like the one above adds a photo inside the post.

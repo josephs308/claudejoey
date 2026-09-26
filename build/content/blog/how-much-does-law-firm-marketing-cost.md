@@ -3,6 +3,8 @@ title: "How Much Does Law Firm Marketing Cost? A Plain-English Guide"
 seo_title: "How Much Does Law Firm Marketing Cost? | Vincere"
 description: "What drives law firm marketing costs, how to budget by channel, and why cost per signed case matters more than any monthly fee. A guide for managing partners."
 date: 2026-09-26
+cover: "photo-1686061593213-98dad7c599b9"
+cover_alt: "Marketing analytics dashboard showing spend and results"
 category: "Budgets"
 summary_question: "How much does law firm marketing cost?"
 summary: "Law firm marketing has no single price. Cost depends on your practice area, your city, the channels you use and how well your intake converts leads. The number that matters is cost per signed case, which is what you spend divided by the clients you actually sign."
@@ -57,6 +59,8 @@ Start with what a new client is worth to your firm and how many new clients you 
 5. Multiply it out to see what a signed case should cost, and whether the numbers work.
 
 If the math does not work in your market for a given channel, that channel is the wrong starting point, no matter how popular it is.
+
+![Laptop showing a Google search results page](photo-1557200134-90327ee9fafa "Paid search puts you at the top fast, but only cost per signed case shows if it pays.")
 
 ## Why cost per signed case beats every other number
 

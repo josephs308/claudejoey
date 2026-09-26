@@ -18,6 +18,18 @@ def md_inline(t):
     return t
 
 
+def img_url(pid, w, h):
+    if pid.startswith('http') or pid.startswith('/'):
+        return pid
+    return f'https://images.unsplash.com/{pid}?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
+
+def img_tag(pid, alt, w, h, cls='', sizes='100vw', eager=False):
+    ss = ', '.join(f'{img_url(pid, x, round(x*h/w))} {x}w' for x in (480, 800, 1200, 1600, 2000))
+    load = 'eager" fetchpriority="high' if eager else 'lazy'
+    return (f'<img class="{cls}" src="{img_url(pid, w, h)}" srcset="{ss}" sizes="{sizes}" width="{w}" height="{h}" '
+            f'alt="{html.escape(alt, quote=True)}" loading="{load}" decoding="async" onerror="this.parentNode.classList.add(\'noimg\');this.remove()">')
+
+
 def md_to_html(src):
     """Small Markdown subset: ## and ### headings, paragraphs, - and 1. lists, > quotes, links, bold, italic."""
     out, para, lst, lst_kind = [], [], [], None
@@ -38,6 +50,12 @@ def md_to_html(src):
         line = raw.rstrip()
         if not line.strip():
             flush_para(); flush_list(); continue
+        mi = re.match(r'^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)\s*$', line.strip())
+        if mi:
+            flush_para(); flush_list()
+            cap = f'<figcaption>{md_inline(mi.group(3))}</figcaption>' if mi.group(3) else ''
+            out.append(f'<figure class="post-fig">{img_tag(mi.group(2), mi.group(1), 1600, 900, sizes="(max-width: 1000px) 100vw, 900px")}{cap}</figure>')
+            continue
         m = re.match(r'^(#{2,3})\s+(.*)', line)
         if m:
             flush_para(); flush_list()
@@ -85,6 +103,8 @@ def load_posts(content_dir):
         meta['date'] = str(meta['date'])
         meta['updated'] = str(meta.get('updated') or meta['date'])
         meta['html'] = md_to_html(body)
+        meta['cover'] = meta.get('cover') or ''
+        meta['cover_alt'] = meta.get('cover_alt') or meta['title']
         words = len(re.sub(r'<[^>]+>', ' ', meta['html']).split())
         meta['minutes'] = max(1, round(words / WORDS_PER_MIN))
         posts.append(meta)
@@ -104,6 +124,11 @@ def build_blog(B):
     if not posts:
         return []
     ARTICLE = {'@type': 'Organization', '@id': B.ORG_ID}
+    for p in posts:
+        if not p['cover']:
+            for sv in p.get('related_services', []):
+                if sv in B.SVC_PHOTOS:
+                    p['cover'], p['cover_alt'] = B.SVC_PHOTOS[sv][0], B.SVC_PHOTOS[sv][1]; break
 
     for p in posts:
         url = f'/blog/{p["slug"]}/'
@@ -115,7 +140,7 @@ def build_blog(B):
                   {'@type': 'BlogPosting', '@id': f'{DOMAIN}{url}#article', 'headline': p['title'],
                    'description': p['description'], 'datePublished': p['date'], 'dateModified': p['updated'],
                    'author': ARTICLE, 'publisher': ARTICLE, 'mainEntityOfPage': {'@id': f'{DOMAIN}{url}#webpage'},
-                   'image': f'{DOMAIN}{p.get("image") or "/assets/og-image.png"}', 'inLanguage': 'en-US',
+                   'image': (img_url(p['cover'], 1200, 630) if p['cover'] else f'{DOMAIN}/assets/og-image.png'), 'inLanguage': 'en-US',
                    'articleSection': p.get('category', 'Law firm marketing'), 'wordCount': len(re.sub(r'<[^>]+>', ' ', p['html']).split())}]
         if p.get('faqs'):
             schema.append(B.faq_node(url, p['faqs']))
@@ -134,6 +159,7 @@ def build_blog(B):
     <p class="post-meta">{meta_line}</p>
   </div>
 </header>
+{f'<div class="wrap post-cover-wrap"><figure class="post-cover">{img_tag(p["cover"], p["cover_alt"], 1600, 640, sizes="(max-width: 1400px) 100vw, 1280px", eager=True)}</figure></div>' if p["cover"] else ""}
 <article class="sec post">
   <div class="wrap">{B.article_layout(p["html"], lead)}</div>
 </article>
@@ -148,12 +174,12 @@ def build_blog(B):
     crumbs = [('Home', '/'), ('Blog', url)]
     title = 'Law Firm Marketing Blog | Vincere Legal Marketing'
     desc = 'Plain-English guides on law firm marketing: SEO, AEO, Local Services Ads, PPC, intake and budgets, written for managing partners who want signed cases.'
-    cards = ''.join(f'''<a class="blog-card" href="/blog/{p["slug"]}/">
-      <span class="bc-cat">{e(p.get("category", "Law firm marketing"))}</span>
-      <h2>{e(p["title"])}</h2>
-      <p>{e(p["description"])}</p>
-      <span class="bc-meta">{nice_date(p["date"])} &middot; {p["minutes"]} min read</span>
-    </a>''' for p in posts)
+    def card(p, feat=False):
+        pic = f'<div class="bc-img">{img_tag(p["cover"], p["cover_alt"], 1200 if feat else 800, 700 if feat else 480, sizes="(max-width: 900px) 100vw, " + ("720px" if feat else "420px"))}</div>' if p['cover'] else '<div class="bc-img noimg"></div>'
+        return (f'<a class="blog-card{" feat" if feat else ""}" href="/blog/{p["slug"]}/">{pic}<div class="bc-body">'
+                f'<span class="bc-cat">{e(p.get("category", "Law firm marketing"))}</span><h2>{e(p["title"])}</h2><p>{e(p["description"])}</p>'
+                f'<span class="bc-meta">{nice_date(p["date"])} &middot; {p["minutes"]} min read</span></div></a>')
+    cards = card(posts[0], True) + ''.join(card(p) for p in posts[1:])
     faqs = [
         {'q': 'Who is the Vincere blog for?', 'a': 'The Vincere blog is written for managing partners, firm owners and marketing leads at US law firms who want more signed cases. Each post explains one marketing topic in plain language, with steps you can act on.'},
         {'q': 'How can I get marketing advice for my own firm?', 'a': 'Book a free 30-minute strategy call with Vincere. We price your market, look at your intake and recommend a channel mix and launch order for your practice area and city, with no obligation.'},
