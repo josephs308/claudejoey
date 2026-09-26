@@ -139,7 +139,7 @@ def nav():
 <div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
 <nav class="nav" id="nav" aria-label="Main">
   <div class="nav-in">
-    <a class="nav-brand" href="/" aria-label="{BRAND} home">{VMARK}<span class="nav-word">Vincere</span></a>
+    <a class="nav-brand" href="/" aria-label="{BRAND} home">{VMARK}<span class="nav-word">Vincere<small>Legal Marketing</small></span></a>
     <div class="nav-mid" id="navMid">
       <div class="dd dd-svc"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-services">Services {CHEV}</button>
         <div class="dd-panel" id="dd-services"><div class="dd-grid">{svc}</div>
