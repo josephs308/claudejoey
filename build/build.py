@@ -843,7 +843,7 @@ def remove_old():
 # original fallback in place: Georgia for the hero serif, Arial for headings,
 # the device's system font for body text.
 def system_fonts(t):
-    t = re.sub(r'@font-face\{[^}]*\}\n?', '', t)
+    t = re.sub(r'@font-face\{(?![^}]*Vincere Wordmark)[^}]*\}\n?', '', t)
     t = re.sub(r'<link rel="preload"[^>]*as="font"[^>]*>\n?', '', t)
     for name in ('Schibsted Grotesk', 'Unbounded', 'Instrument Serif'):
         for q in ("'", '"'):
