@@ -726,6 +726,28 @@ document.addEventListener('click',function(ev){if(!ev.target.closest('.dd'))shut
 document.addEventListener('keydown',function(ev){if(ev.key==='Escape')shut();});})();
 </script>"""
 
+GP_CHECK = '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
+
+def glass_panels(s):
+    """Homepage service tabs: rebuild each .cx panel as a glass card with feature tiles (idempotent)."""
+    pat = re.compile(r'<div class="cx">\s*<div class="cx-txt">(.*?)</div>\s*<a class="cx-go" href="([^"]+)">(.*?)</a>\s*</div>', re.S)
+    def rep(m):
+        blk = m.group(1)
+        ic = re.search(r'<span class="cx-ic">(.*?)</span>\s*<h3>', blk, re.S).group(1)
+        t = re.search(r'<h3>(.*?)</h3>', blk).group(1)
+        d = re.search(r'<p class="cp">(.*?)</p>', blk, re.S).group(1)
+        facts = re.findall(r'<span>(.*?)</span>', re.search(r'<div class="cx-facts">(.*?)</div>', blk, re.S).group(1))
+        items = re.findall(r'<li>(.*?)</li>', re.search(r'<ul class="cx-list">(.*?)</ul>', blk, re.S).group(1))
+        tiles = ''.join(f'<li><i>{GP_CHECK}</i><span>{x}</span></li>' for x in items)
+        fs = ''.join(f'<span>{x}</span>' for x in facts)
+        return (f'<div class="gp"><div class="gp-in">'
+                f'<div class="gp-hd"><div class="gp-t"><span class="gp-ic">{ic}</span><h3>{t}</h3></div><p class="gp-d">{d}</p></div>'
+                f'<div class="gp-f">{fs}</div>'
+                f'<ul class="gp-list">{tiles}</ul>'
+                f'<a class="gp-go" href="{m.group(2)}">{m.group(3).strip()}</a>'
+                f'</div></div>')
+    return pat.sub(rep, s)
+
 def patch_home():
     path = os.path.join(SITE, 'index.html'); s = open(path).read()
     s = re.sub(r'<a class="skip".*?</a>\n', '', s)
@@ -772,6 +794,7 @@ def patch_home():
     s = s.replace('Vincere Marketing, LLC', BRAND)
     extra = open(os.path.join(BUILD, 'extra.css')).read() + '\n' + open(os.path.join(BUILD, 'booking.css')).read()
     s = swap_form(s)
+    s = glass_panels(s)
     s = re.sub(r'<section class="sec home-faq" id="faq">.*?</section>\n', '', s, flags=re.S)
     s = s.replace('<div class="railbar" id="railbar">', home_faq() + '<div class="railbar" id="railbar">', 1)
     s = re.sub(r'<script id="bk-js">.*?</script>\n?', '', s, flags=re.S)
