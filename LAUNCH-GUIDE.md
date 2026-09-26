@@ -97,3 +97,26 @@ The `build/` folder in the repository creates every page:
 - Styles live in `build/extra.css` and `build/booking.css`.
 
 After an edit, run `python3 build/build.py`, then `python3 build/audit.py` to recheck SEO. Then re-upload `vincere-site`.
+
+## Publishing a blog post
+
+The blog lives at `/blog/`. Every post automatically gets:
+- its own page at `/blog/your-post-url/`
+- BlogPosting and breadcrumb schema, plus FAQ schema if the post has FAQs
+- a place on the blog index and in `sitemap.xml`
+- an entry in the RSS feed (`/blog/feed.xml`) and in `llms.txt`
+- links to related service pages and to other posts
+
+**To write a post:**
+1. Copy `build/content/blog/_TEMPLATE.md` and rename the copy to the post's web address, such as `lsa-vs-ppc-for-lawyers.md` (lowercase, dashes).
+2. Fill in the header fields at the top:
+   - **Required:** title, description (120–160 characters) and date.
+   - **Optional:** a quick answer, related services and FAQs.
+3. Write the post in plain text below the header:
+   - `##` starts a section heading and `-` starts a bullet.
+   - `**bold**` makes text bold.
+   - `[text](/link/)` makes a link.
+4. Run `python3 build/build.py`, then `python3 build/audit.py`. The audit flags a title or description that's too long or too short.
+5. Re-upload the `vincere-site` folder to Netlify.
+
+To hide a post while it's still being written, add `draft: true` to its header. Or send the text to Claude and it will format, check and publish it for you.

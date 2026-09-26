@@ -5,7 +5,7 @@ Content lives in build/content/*.json. Shared shell (nav, footer, contact
 form, schema) is defined here so every page stays consistent. Run from the
 repo root:  python3 build/build.py
 """
-import html, json, os, re, datetime, shutil
+import html, json, os, re, datetime, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, 'vincere-site')
@@ -149,6 +149,7 @@ def nav():
           <div class="dd-foot"><span>Marketing built around how your clients hire.</span><a href="/practice-areas/">All practice areas &rarr;</a></div></div></div>
       <a href="/#math">Approach</a>
       <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
       <a href="#contact">Contact</a>
       <a class="nav-portal-m" href="{PORTAL}">{icon("LOCK")} Client Portal</a>
     </div>
@@ -175,6 +176,7 @@ def footer():
       <div class="foot-pa"><p class="fh">Practice areas</p><div class="foot-pa-cols"><ul>{p1}</ul><ul>{p2}<li><a href="/practice-areas/">All practice areas</a></li></ul></div></div>
       <div><p class="fh">Company</p><ul>
         <li><a href="/about/">About Vincere</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="/#math">Approach</a></li>
         <li><a href="{PORTAL}">Client Portal</a></li>
         <li><a href="#contact">Get pricing</a></li>
@@ -278,6 +280,7 @@ def head(url, title, desc, schema, robots='index,follow,max-image-preview:large,
 <meta name="theme-color" content="#492141">
 <link rel="icon" href="{favicon_uri()}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Vincere Legal Marketing Blog" href="/blog/feed.xml">
 <link rel="stylesheet" href="/assets/site.css">
 {jsonld(schema)}
 </head>
@@ -413,6 +416,7 @@ def practice_for_note(name):
 
 # ---------------------------------------------------------------- builders
 SITEMAP = []
+BLOG_POSTS = []
 
 def build_service(slug):
     d = load(slug)
@@ -636,6 +640,9 @@ def build_llms():
         fp = os.path.join(CONTENT, sl + '.json')
         if os.path.exists(fp):
             d = json.load(open(fp)); lines.append(f'- [{lab} marketing]({DOMAIN}{pra_url(sl)}): {first_sentence(d["answer"]["text"])}')
+    if BLOG_POSTS:
+        lines += ['', '## Blog', ''] + [f'- [{p["title"]}]({DOMAIN}/blog/{p["slug"]}/): {p["description"]}' for p in BLOG_POSTS]
+        lines += [f'- [All posts]({DOMAIN}/blog/): Law firm marketing guides from Vincere.']
     lines += ['', '## Company', '', f'- [Home]({DOMAIN}/): Law firm marketing agency overview, how the free plan works, and FAQs.',
               f'- [All services]({DOMAIN}/services/): Overview of every marketing channel Vincere runs for law firms.',
               f'- [All practice areas]({DOMAIN}/practice-areas/): Marketing approach for each legal practice area.',
@@ -746,7 +753,8 @@ def patch_home():
 <meta name="twitter:title" content="{e(HOME_TITLE)}">
 <meta name="twitter:description" content="{e(HOME_DESC)}">
 <meta name="twitter:image" content="{DOMAIN}/assets/og-image.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">"""
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Vincere Legal Marketing Blog" href="/blog/feed.xml">"""
     d = f'<meta name="description" content="{e(HOME_DESC)}">'
     s = s.replace(d, d + social, 1)
     wp = webpage_node('/', 'WebPage', HOME_TITLE, HOME_DESC); wp.pop('breadcrumb'); wp['@id'] = f'{DOMAIN}/#webpage'
@@ -857,6 +865,9 @@ def main():
     if os.path.exists(os.path.join(CONTENT, 'services-hub.json')): build_hub('services')
     if os.path.exists(os.path.join(CONTENT, 'practice-hub.json')): build_hub('practice')
     if os.path.exists(os.path.join(CONTENT, 'about.json')): build_about()
+    global BLOG_POSTS
+    import blog
+    BLOG_POSTS = blog.build_blog(sys.modules[__name__])
     patch_home()
     build_portal()
     build_thanks()

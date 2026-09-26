@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Vincere Legal Marketing Blog</title>
+  <link>https://vincerelegalmarketing.com/blog/</link>
+  <atom:link href="https://vincerelegalmarketing.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Plain-English guides on law firm marketing: SEO, AEO, Local Services Ads, PPC, intake and budgets, written for managing partners who want signed cases.</description>
+  <language>en-us</language>
+  <item>
+    <title>How Much Does Law Firm Marketing Cost? A Plain-English Guide</title>
+    <link>https://vincerelegalmarketing.com/blog/how-much-does-law-firm-marketing-cost/</link>
+    <guid>https://vincerelegalmarketing.com/blog/how-much-does-law-firm-marketing-cost/</guid>
+    <pubDate>Sat, 26 Sep 2026 09:00:00 +0000</pubDate>
+    <description>What drives law firm marketing costs, how to budget by channel, and why cost per signed case matters more than any monthly fee. A guide for managing partners.</description>
+  </item>
+  <item>
+    <title>What Is AEO for Law Firms? How to Get Cited by AI Answers</title>
+    <link>https://vincerelegalmarketing.com/blog/what-is-aeo-for-law-firms/</link>
+    <guid>https://vincerelegalmarketing.com/blog/what-is-aeo-for-law-firms/</guid>
+    <pubDate>Fri, 25 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Answer engine optimization helps your firm get named in ChatGPT, Perplexity and Google AI Overviews. What AEO is, how it differs from SEO, and where to start.</description>
+  </item>
+</channel>
+</rss>
