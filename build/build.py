@@ -198,6 +198,7 @@ SCRIPTS = '''<script>
     m.addEventListener('click',function(ev){var a=ev.target.closest('a');if(a&&m.classList.contains('open')){m.classList.remove('open');b.classList.remove('on');b.setAttribute('aria-expanded','false');}});}
   var dds=[].slice.call(document.querySelectorAll('.dd'));
   dds.forEach(function(d){var btn=d.querySelector('.dd-btn');btn.addEventListener('click',function(ev){ev.stopPropagation();var o=!d.classList.contains('open');
+  dds.forEach(function(d){d.addEventListener('mouseenter',function(){dds.forEach(function(x){if(x!==d){x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false');if(x.contains(document.activeElement))document.activeElement.blur();}});});});
     dds.forEach(function(x){x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false')});
     d.classList.toggle('open',o);btn.setAttribute('aria-expanded',String(o));});});
   document.addEventListener('click',function(ev){if(!ev.target.closest('.dd'))dds.forEach(function(x){x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false')});});
@@ -722,6 +723,7 @@ DD_JS = """<script id="dd-js">
 (function(){var dds=[].slice.call(document.querySelectorAll('.dd'));
 function shut(){dds.forEach(function(x){x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false')});}
 dds.forEach(function(d){var btn=d.querySelector('.dd-btn');btn.addEventListener('click',function(ev){ev.stopPropagation();var o=!d.classList.contains('open');shut();d.classList.toggle('open',o);btn.setAttribute('aria-expanded',String(o));});});
+dds.forEach(function(d){d.addEventListener('mouseenter',function(){dds.forEach(function(x){if(x!==d){x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false');if(x.contains(document.activeElement))document.activeElement.blur();}});});});
 document.addEventListener('click',function(ev){if(!ev.target.closest('.dd'))shut();});
 document.addEventListener('keydown',function(ev){if(ev.key==='Escape')shut();});})();
 </script>"""

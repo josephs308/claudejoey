@@ -700,7 +700,7 @@ h3{letter-spacing:-.01em!important}
   background:#fff;color:var(--ink);border-radius:18px;box-shadow:0 30px 70px rgba(10,10,10,.28);padding:18px;
   transition:opacity .18s,transform .18s,visibility .18s;z-index:90}
 .dd.open .dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
-@media(hover:hover) and (min-width:1101px){.dd:hover .dd-panel,.dd:focus-within .dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+@media(hover:hover) and (min-width:1101px){.dd:hover .dd-panel,.dd:has(:focus-visible) .dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
   .dd:hover .dd-btn svg{transform:rotate(180deg)}}
 .dd-grid{display:grid;gap:4px}
 .dd-svc .dd-grid{grid-template-columns:repeat(3,minmax(0,1fr));width:min(820px,92vw)}
@@ -1079,6 +1079,8 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
 @media(max-width:1100px){.gp-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.gp-in{grid-template-columns:minmax(0,1fr);padding:28px 22px;gap:22px}.gp-f{flex-direction:row;flex-wrap:wrap;align-items:flex-start}.gp h3{font-size:24px!important}.gp-list{grid-template-columns:minmax(0,1fr)}.gp-go{justify-self:stretch;justify-content:center}}
 .gp-go{font-size:15px!important;line-height:1.2}
+@media(min-width:1101px){.nav-mid{flex:1;justify-content:space-evenly;margin-left:56px!important;margin-right:28px;gap:0!important}}
+@media(max-width:1100px){.nav-mid .nav-portal-m{justify-content:flex-start!important;gap:10px!important}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
