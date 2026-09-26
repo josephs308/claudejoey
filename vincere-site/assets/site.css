@@ -1095,6 +1095,12 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
 .nav-brand .nav-word{display:inline-flex!important;flex-direction:column;align-items:center;font-size:25px!important;line-height:1}
 .nav-brand .nav-word small{display:block;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif!important;font-size:7.6px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#A6A6A6;margin-top:5px;padding-left:.17em;white-space:nowrap}
 @media(max-width:560px){.nav-brand .vmark{width:40px!important;height:40px!important}.nav-brand .nav-word{font-size:23px!important}.nav-brand .nav-word small{font-size:7px}}
+/* header logo: match the footer lockup (left-aligned tagline, lighter, wider) */
+.nav-brand{gap:12.5px!important}
+.nav-brand .vmark{width:44px!important;height:44px!important}
+.nav-brand .nav-word{align-items:flex-start!important;font-size:20px!important;letter-spacing:-.01em!important}
+.nav-brand .nav-word small{font-size:9.4px!important;font-weight:600!important;letter-spacing:.22em!important;padding-left:0!important;color:rgba(255,255,255,.55)!important;margin-top:5px!important}
+@media(max-width:560px){.nav-brand .vmark{width:42px!important;height:42px!important}.nav-brand .nav-word{font-size:19px!important}.nav-brand .nav-word small{font-size:9px!important}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
