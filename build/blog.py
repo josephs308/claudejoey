@@ -117,6 +117,8 @@ def nice_date(iso):
     return d.strftime('%B %-d, %Y')
 
 
+FILTER_JS = "<script>(function(){var cs=document.querySelectorAll('.bh-chip'),cards=document.querySelectorAll('.blog-card');cs.forEach(function(b){b.addEventListener('click',function(){var c=b.dataset.cat;cs.forEach(function(x){x.classList.toggle('on',x===b)});cards.forEach(function(k){k.hidden=!(c==='all'||k.dataset.cat===c)});});});})();</script>"
+
 def build_blog(B):
     """B is the build module (helpers, constants, SITEMAP)."""
     e, DOMAIN = B.e, B.DOMAIN
@@ -176,7 +178,7 @@ def build_blog(B):
     desc = 'Plain-English guides on law firm marketing: SEO, AEO, Local Services Ads, PPC, intake and budgets, written for managing partners who want signed cases.'
     def card(p, feat=False):
         pic = f'<div class="bc-img">{img_tag(p["cover"], p["cover_alt"], 1200 if feat else 800, 700 if feat else 480, sizes="(max-width: 900px) 100vw, " + ("720px" if feat else "420px"))}</div>' if p['cover'] else '<div class="bc-img noimg"></div>'
-        return (f'<a class="blog-card{" feat" if feat else ""}" href="/blog/{p["slug"]}/">{pic}<div class="bc-body">'
+        return (f'<a class="blog-card{" feat" if feat else ""}" data-cat="{e(p.get("category", "Law firm marketing"))}" href="/blog/{p["slug"]}/">{pic}<div class="bc-body">'
                 f'<span class="bc-cat">{e(p.get("category", "Law firm marketing"))}</span><h2>{e(p["title"])}</h2><p>{e(p["description"])}</p>'
                 f'<span class="bc-meta">{nice_date(p["date"])} &middot; {p["minutes"]} min read</span></div></a>')
     cards = card(posts[0], True) + ''.join(card(p) for p in posts[1:])
@@ -191,17 +193,25 @@ def build_blog(B):
               {'@type': 'ItemList', '@id': f'{DOMAIN}{url}#posts', 'name': 'Vincere blog posts',
                'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': f'{DOMAIN}/blog/{p["slug"]}/', 'name': p['title']} for i, p in enumerate(posts)]},
               B.faq_node(url, faqs)]
-    body = f'''<header class="phero">
+    cats = []
+    for p in posts:
+        c = p.get('category', 'Law firm marketing')
+        if c not in cats: cats.append(c)
+    chips = '<button type="button" class="bh-chip on" data-cat="all">All posts</button>' + ''.join(f'<button type="button" class="bh-chip" data-cat="{e(c)}">{e(c)}</button>' for c in cats)
+    body = f'''<header class="phero blog-hero">
   <div class="wrap phero-in">
     {B.crumb_html(crumbs)}
-    <h1>Law firm marketing, explained.</h1>
+    <p class="bh-kick">The Vincere blog</p>
+    <h1>Law firm marketing, <em>explained.</em></h1>
     <p class="lede">Straight answers on getting more signed cases: what each channel costs, how long it takes to work, and what to fix first. No fluff, no jargon.</p>
+    <div class="bh-chips" role="group" aria-label="Filter posts by topic">{chips}</div>
   </div>
 </header>
 <section class="sec">
   <div class="wrap"><div class="blog-grid">{cards}</div></div>
 </section>
-{B.faq_html(faqs)}'''
+{B.faq_html(faqs)}
+{FILTER_JS}'''
     B.write(url, B.page(url, title, desc, schema, body).replace('<main id="main">', '<main id="main" class="svcp blogp">', 1))
     B.SITEMAP.append((url, '0.8'))
 

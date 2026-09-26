@@ -1149,6 +1149,29 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .post-fig{margin:34px 0;border-radius:16px;aspect-ratio:16/9}
 .post-fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;color:#fff;font-size:14px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.65))}
 @media(max-width:900px){.blog-card.feat{grid-template-columns:1fr}.blog-card.feat .bc-img{min-height:0;aspect-ratio:16/10}.blog-card.feat .bc-body{padding:24px}.post-cover{aspect-ratio:16/10;border-radius:16px}}
+/* blog index header: dark band with brand glow */
+.blogp .blog-hero,.dark-hero{background:radial-gradient(55% 90% at 88% 10%,rgba(106,54,96,.6),rgba(106,54,96,0) 70%),radial-gradient(40% 70% at 5% 100%,rgba(73,33,65,.35),rgba(73,33,65,0) 70%),#0B0A0B!important;color:#fff;padding:128px 0 64px!important}
+.blogp .blog-hero::before,.blogp .blog-hero::after,.dark-hero::before,.dark-hero::after{display:none!important}
+.blog-hero .crumb,.blog-hero .crumb a,.dark-hero .crumb,.dark-hero .crumb a{color:rgba(255,255,255,.65)!important}
+.blog-hero .crumb [aria-current]{color:#C8C8C8}
+.bh-kick{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#C8C8C8;margin:6px 0 14px}
+.blog-hero h1,.dark-hero h1{color:#fff!important;max-width:16ch}
+.blog-hero h1 em{font-style:normal;color:#A6A6A6}
+.blog-hero .lede,.dark-hero .lede{color:rgba(255,255,255,.78)!important;max-width:56ch}
+.bh-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.bh-chip{font:inherit;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 16px;cursor:pointer;transition:background .18s,border-color .18s}
+.bh-chip:hover{border-color:rgba(255,255,255,.45)}
+.bh-chip.on{background:#fff;color:var(--purple);border-color:#fff}
+.blogp .blog-hero + .sec{padding-top:56px!important}
+.blog-card[hidden]{display:none!important}
+@media(max-width:560px){.blogp .blog-hero{padding:104px 0 44px!important}}
+
+.dark-hero{color:#fff}
+.dark-hero .btn-out{color:#fff!important;border-color:rgba(255,255,255,.45)!important;background:transparent!important}
+.dark-hero .btn-out:hover{border-color:#fff!important}
+.dark-hero + section{padding-top:64px!important}
+.dark-hero h1{max-width:20ch!important}.svcp .dark-hero + .sec-answer{padding-top:40px!important}
+.blogp .blog-hero h1{max-width:22ch!important}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}

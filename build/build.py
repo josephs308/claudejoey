@@ -457,7 +457,7 @@ def build_service(slug):
     metrics = ''.join(f'<div class="mx-i"><span class="mx-ic">{mx_svg(metric_icon(m["title"]))}</span><div><h3>{e(m["title"])}</h3><p>{e(m["text"])}</p></div></div>' for m in d['metrics'])
     related = ''.join(f'<a class="rel-c" href="{svc_url(r)}"><div class="rel-tag">{e(SVC[r][1])}</div><h3>{e(SVC[r][1])}</h3><p>{e(SVC[r][2])}.</p><span class="rel-arr">See the service &rarr;</span></a>' for r in d['related'] if r in SVC and r != slug)
     ph = SVC_PHOTOS.get(slug)
-    body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"], top=False)}
+    body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"], top=False).replace('<header class="phero">', '<header class="phero dark-hero">', 1)}
 {answer(d["answer"])}
 <section class="sec">
   <div class="wrap"><div class="lf">
@@ -579,7 +579,7 @@ def build_hub(kind):
               {'@type': 'ItemList', '@id': f'{DOMAIN}{url}#list', 'numberOfItems': len(items),
                'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': n, 'url': f'{DOMAIN}{u}'} for i, (_, n, u) in enumerate(items)]},
               faq_node(url, d['faqs'])]
-    body = f'''{hero(crumbs, eyebrow, d["h1"], d["lede"])}
+    body = f'''{hero(crumbs, eyebrow, d["h1"], d["lede"]).replace('<header class="phero">', '<header class="phero dark-hero">', 1)}
 {answer(d["answer"])}
 <section class="sec">
   <div class="wrap"><div class="cards">{cards}</div></div>
@@ -596,7 +596,7 @@ def build_about():
               crumbs_node(url, crumbs), faq_node(url, d['faqs'])]
     pr = ''.join(f'<div class="card"><h3>{e(p["title"])}</h3><p>{e(p["text"])}</p></div>' for p in d['principles'])
     svc = ''.join(svc_card(s, SVC[s][2] + '.') for s, *_ in SERVICES)
-    body = f'''{hero(crumbs, "About Vincere", d["h1"], d["lede"])}
+    body = f'''{hero(crumbs, "About Vincere", d["h1"], d["lede"]).replace('<header class="phero">', '<header class="phero dark-hero">', 1)}
 <section class="sec">
   <div class="wrap"><div class="lf">
     <div class="prose">{prose_sections(d["sections"])}</div>
