@@ -202,13 +202,13 @@ section#contact.sec-grey .form{box-shadow:0 24px 60px rgba(40,10,35,.25)!importa
 .cs2 .cs-alt a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
 .cs2 .cs-alt a:hover{border-color:#fff}
 @media(min-width:901px){section#contact .contact-in{align-items:center!important}}
-.foot-pa{grid-column:span 2}.foot-pa h5{text-align:center}.foot-pa-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:inherit;gap:0 48px}@media(max-width:560px){.foot-pa-cols{gap:0 20px}}
+.foot-pa{grid-column:span 2}.foot-pa-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:inherit;gap:0 48px}@media(max-width:560px){.foot-pa-cols{gap:0 20px}}
 .cs2 h2,.cs2 .cs-sub,.cs2 .cs-list li,.cs2 .cs-alt,.cs2 .cs-alt a{color:#fff!important}.cs2 .cs-alt a{border-bottom-color:rgba(255,255,255,.5)!important}
 section#math{padding-top:72px!important}
 .rv{transition-duration:.55s!important}
 /* heading-order fixes: same look, correct levels */
 .foot .fh{font-family:'Schibsted Grotesk',sans-serif;font-size:12px;font-weight:600;line-height:1.6;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 20px}
-.foot-pa .fh{text-align:center}
+
 .plan-steps h3.h4{font-family:'Schibsted Grotesk',sans-serif!important;font-size:18px!important;font-weight:700!important;line-height:1.05!important;letter-spacing:-.01em!important;margin:8px 0 4px!important;color:#fff!important;text-transform:none!important}
 .srow h3.h4{font-family:'Schibsted Grotesk',sans-serif!important;font-size:17px!important;font-weight:700!important;line-height:1.05!important;letter-spacing:-.02em!important;margin:0 0 7px!important;color:#fff!important;text-transform:none!important}
 .nf-links a{color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px}
@@ -441,3 +441,4 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
 .blogp .post-hero h1{max-width:22ch!important}
 @media(max-width:1000px){.art-grid{grid-template-columns:minmax(0,1fr);gap:32px}.art-side{position:static}.toc{display:none}}
 .blogp .post-hero{padding-bottom:24px!important}.blogp .post{padding-top:28px!important}
+.foot-pa .fh{text-align:left!important}
