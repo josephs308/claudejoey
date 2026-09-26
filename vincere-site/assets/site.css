@@ -1130,6 +1130,7 @@ main #faq.faq-sec .sec-head h2{font-size:30px!important;line-height:1.15!importa
 @media(max-width:1000px){.art-grid{grid-template-columns:minmax(0,1fr);gap:32px}.art-side{position:static}.toc{display:none}}
 .blogp .post-hero{padding-bottom:24px!important}.blogp .post{padding-top:28px!important}
 .foot-pa .fh{text-align:left!important}
+section#services{padding-bottom:44px!important}section#math{padding-top:48px!important}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
