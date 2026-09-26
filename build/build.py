@@ -126,7 +126,25 @@ def e(t):
 def svc_url(slug): return f'/services/{slug}/'
 def pra_url(slug): return f'/practice-areas/{slug}/'
 
-VMARK = '<svg class="vmark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#492141"/><path d="M53.11 12Q53.31 12 53.31 12.38Q53.31 12.76 53.11 12.76Q50.89 12.76 48.97 14.48Q47.06 16.2 45.85 19.45L33.43 51.75Q33.37 52 32.76 52Q32.16 52 32.03 51.75L15.92 17.29Q14.83 14.99 13.69 13.88Q12.54 12.76 10.89 12.76Q10.69 12.76 10.69 12.38Q10.69 12 10.89 12Q11.71 12 12.25 12.06Q12.8 12.13 13.59 12.16Q14.39 12.19 15.73 12.19Q18.78 12.19 20.73 12.16Q22.67 12.13 23.97 12.06Q25.28 12 26.3 12Q26.49 12 26.49 12.38Q26.49 12.76 26.3 12.76Q23.62 12.76 22.7 14.1Q21.78 15.44 22.99 17.92L35.28 44.55L32.67 48.94L44.13 19.2Q45.22 16.33 44.26 14.55Q43.31 12.76 40.06 12.76Q39.87 12.76 39.87 12.38Q39.87 12 40.06 12Q41.78 12 43.37 12.1Q44.96 12.19 47.51 12.19Q49.29 12.19 50.41 12.1Q51.52 12 53.11 12Z" fill="#fff"/></svg>'
+VPATH = "M53.11 12Q53.31 12 53.31 12.38Q53.31 12.76 53.11 12.76Q50.89 12.76 48.97 14.48Q47.06 16.2 45.85 19.45L33.43 51.75Q33.37 52 32.76 52Q32.16 52 32.03 51.75L15.92 17.29Q14.83 14.99 13.69 13.88Q12.54 12.76 10.89 12.76Q10.69 12.76 10.69 12.38Q10.69 12 10.89 12Q11.71 12 12.25 12.06Q12.8 12.13 13.59 12.16Q14.39 12.19 15.73 12.19Q18.78 12.19 20.73 12.16Q22.67 12.13 23.97 12.06Q25.28 12 26.3 12Q26.49 12 26.49 12.38Q26.49 12.76 26.3 12.76Q23.62 12.76 22.7 14.1Q21.78 15.44 22.99 17.92L35.28 44.55L32.67 48.94L44.13 19.2Q45.22 16.33 44.26 14.55Q43.31 12.76 40.06 12.76Q39.87 12.76 39.87 12.38Q39.87 12 40.06 12Q41.78 12 43.37 12.1Q44.96 12.19 47.51 12.19Q49.29 12.19 50.41 12.1Q51.52 12 53.11 12Z"
+
+def vmark_svg(uid, cls='vmark', q='"', xmlns=False):
+    """Two-tone V mark. uid keeps gradient ids unique when the mark appears more than once on a page."""
+    a = lambda k, v: f'{k}={q}{v}{q}'
+    ns = (' ' + a('xmlns', 'http://www.w3.org/2000/svg')) if xmlns else ''
+    c = (' ' + a('class', cls)) if cls else ''
+    h = '' if xmlns else ' ' + a('aria-hidden', 'true')
+    return (f'<svg{ns}{c} ' + a('viewBox', '0 0 64 64') + f'{h}><defs>'
+            f'<linearGradient ' + a('id', 'vg' + uid) + ' ' + a('x1', '0') + ' ' + a('y1', '0') + ' ' + a('x2', '1') + ' ' + a('y2', '1') + '>'
+            '<stop ' + a('offset', '0') + ' ' + a('stop-color', '#6A3660') + '/><stop ' + a('offset', '1') + ' ' + a('stop-color', '#2A1027') + '/></linearGradient>'
+            f'<linearGradient ' + a('id', 'vt' + uid) + ' ' + a('x1', '0') + ' ' + a('y1', '0') + ' ' + a('x2', '1') + ' ' + a('y2', '0') + '>'
+            '<stop ' + a('offset', '.5') + ' ' + a('stop-color', '#fff') + '/><stop ' + a('offset', '.5') + ' ' + a('stop-color', '#D6C3D2') + '/></linearGradient></defs>'
+            '<rect ' + a('width', '64') + ' ' + a('height', '64') + ' ' + a('rx', '14') + ' ' + a('fill', f'url(#vg{uid})') + '/>'
+            '<path ' + a('d', 'M64 40V50A14 14 0 0 1 50 64H30Z') + ' ' + a('fill', '#fff') + ' ' + a('fill-opacity', '.06') + '/>'
+            '<path ' + a('d', VPATH) + ' ' + a('fill', f'url(#vt{uid})') + '/></svg>')
+
+VMARK = vmark_svg('n')
+VMARK_FOOT = vmark_svg('f')
 
 CHEV = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
@@ -167,7 +185,7 @@ def footer():
   <div class="wrap">
     <div class="foot-in">
       <div>
-        <span class="foot-logo nologo">{VMARK}<span class="chip-word">Vincere<small>Legal Marketing</small></span></span>
+        <span class="foot-logo nologo">{VMARK_FOOT}<span class="chip-word">Vincere<small>Legal Marketing</small></span></span>
         <p class="foot-desc">Full-service marketing for law firms. Every channel, one partner, measured in signed cases.</p>
         <a class="foot-tel" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
         <p style="margin-top:10px"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
@@ -624,7 +642,7 @@ def build_css():
     os.makedirs(os.path.join(SITE, 'assets'), exist_ok=True)
     open(os.path.join(SITE, 'assets', 'site.css'), 'w').write(css)
 
-FAVICON = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='#492141'/><path d='M53.11 12Q53.31 12 53.31 12.38Q53.31 12.76 53.11 12.76Q50.89 12.76 48.97 14.48Q47.06 16.2 45.85 19.45L33.43 51.75Q33.37 52 32.76 52Q32.16 52 32.03 51.75L15.92 17.29Q14.83 14.99 13.69 13.88Q12.54 12.76 10.89 12.76Q10.69 12.76 10.69 12.38Q10.69 12 10.89 12Q11.71 12 12.25 12.06Q12.8 12.13 13.59 12.16Q14.39 12.19 15.73 12.19Q18.78 12.19 20.73 12.16Q22.67 12.13 23.97 12.06Q25.28 12 26.3 12Q26.49 12 26.49 12.38Q26.49 12.76 26.3 12.76Q23.62 12.76 22.7 14.1Q21.78 15.44 22.99 17.92L35.28 44.55L32.67 48.94L44.13 19.2Q45.22 16.33 44.26 14.55Q43.31 12.76 40.06 12.76Q39.87 12.76 39.87 12.38Q39.87 12 40.06 12Q41.78 12 43.37 12.1Q44.96 12.19 47.51 12.19Q49.29 12.19 50.41 12.1Q51.52 12 53.11 12Z' fill='#fff'/></svg>"
+FAVICON = vmark_svg('x', cls='', q="'", xmlns=True)
 
 import urllib.parse as _up
 def favicon_uri():
@@ -851,6 +869,7 @@ def build_portal():
     os.makedirs(os.path.join(SITE, 'portal'), exist_ok=True)
     ps = open(os.path.join(BUILD, 'portal.html')).read()
     ps = re.sub(r'<link rel="icon"[^>]*>', f'<link rel="icon" type="image/svg+xml" href="{favicon_uri()}">', ps, count=1)
+    ps = re.sub(r'(<span class="pmark">)<svg.*?</svg>', lambda m: m.group(1) + vmark_svg('p', cls='').replace('<svg ', '<svg width="64" height="64" ', 1), ps, count=1, flags=re.S)
     open(os.path.join(SITE, 'portal', 'index.html'), 'w').write(ps)
 
 def remove_old():
