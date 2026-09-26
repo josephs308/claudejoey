@@ -122,7 +122,7 @@ def build_blog(B):
         meta_line = f'<span>{e(p.get("category", "Law firm marketing"))}</span><span>{nice_date(p["date"])}</span><span>{p["minutes"]} min read</span>'
         if p['updated'] != p['date']:
             meta_line += f'<span>Updated {nice_date(p["updated"])}</span>'
-        quick = B.answer({'question': p['summary_question'], 'text': p['summary']}) if p.get('summary') and p.get('summary_question') else ''
+        lead = (f'<div class="answer post-answer"><span class="answer-tag">Quick answer</span><div><h2 class="qa-h">{e(p["summary_question"])}</h2><p>{e(p["summary"])}</p></div></div>') if p.get('summary') and p.get('summary_question') else ''
         related_svc = ''.join(f'<a class="rel-c" href="{B.svc_url(s)}"><div class="rel-tag">Service</div><h3>{e(B.SVC[s][1])}</h3><p>{e(B.SVC[s][2])}.</p><span class="rel-arr">See the service &rarr;</span></a>'
                               for s in p.get('related_services', []) if s in B.SVC)
         others = [o for o in posts if o['slug'] != p['slug']][:3]
@@ -134,9 +134,8 @@ def build_blog(B):
     <p class="post-meta">{meta_line}</p>
   </div>
 </header>
-{quick}
 <article class="sec post">
-  <div class="wrap"><div class="post-body">{p["html"]}</div></div>
+  <div class="wrap">{B.article_layout(p["html"], lead)}</div>
 </article>
 {B.faq_html(p["faqs"], "Questions about this topic") if p.get("faqs") else ""}
 {f'<section class="sec sec-tight"><div class="wrap"><div class="sec-head"><h2>Services mentioned in this post.</h2></div><div class="rel">{related_svc}</div></div></section>' if related_svc else ""}

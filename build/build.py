@@ -389,6 +389,26 @@ def photo(pid, alt, cap_b, cap):
   <div class="wrap"><figure style="margin:0"><div class="ph ph-wide ph-dark sec-ph"><img src="{u(1920,806)}" srcset="{ss}" sizes="(max-width: 980px) 100vw, 1280px" width="1920" height="806" alt="{e(alt)}" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{{className:'ph-fallback',innerHTML:'<span>photo unavailable</span>'}}))"><figcaption class="ph-cap"><b>{e(cap_b)}</b>{e(cap)}</figcaption></div></figure></div>
 </section>'''
 
+def slugify(t):
+    return re.sub(r'[^a-z0-9]+', '-', html.unescape(re.sub(r'<[^>]+>', '', t)).lower()).strip('-')[:60]
+
+def article_layout(body_html, lead_html='', cta_h='Get your free market plan.', cta_p='A 30-minute call with a strategist. No obligation, no retainer.'):
+    """Reading column plus a sticky sidebar: 'On this page' links to each h2 and a booking card."""
+    toc, seen = [], set()
+    def add_id(m):
+        attrs, inner = m.group(1), m.group(2)
+        sid = slugify(inner) or 'section'
+        while sid in seen: sid += '-2'
+        seen.add(sid); toc.append((sid, re.sub(r'<[^>]+>', '', inner)))
+        return f'<h2 id="{sid}"{attrs}>{inner}</h2>'
+    body_html = re.sub(r'<h2([^>]*)>(.*?)</h2>', add_id, body_html)
+    links = ''.join(f'<li><a href="#{i}">{t}</a></li>' for i, t in toc)
+    toc_html = f'<nav class="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol>{links}</ol></nav>' if len(toc) > 1 else ''
+    side = (f'<aside class="art-side">{toc_html}'
+            f'<div class="side-cta"><p class="side-h">{e(cta_h)}</p><p>{e(cta_p)}</p>'
+            f'<a class="btn btn-orange btn-arr" href="#contact">Book a free strategy call</a></div></aside>')
+    return f'<div class="art-grid"><div class="art-main">{lead_html}<div class="post-body">{body_html}</div></div>{side}</div>'
+
 def prose_sections(sections):
     return ''.join(f'<h2>{e(s["h2"])}</h2>' + ''.join(f'<p>{e(p)}</p>' for p in s['paragraphs']) for s in sections)
 
@@ -516,7 +536,7 @@ def build_practice(slug):
   </div></div>
 </section>
 <section class="sec sec-lav pa-prose">
-  <div class="wrap"><div class="prose">{prose_sections(d["sections"])}</div></div>
+  <div class="wrap">{article_layout(prose_sections(d["sections"]), cta_h="Get a " + d["practice"] + " marketing plan.")}</div>
 </section>
 <section class="sec pa-ch">
   <div class="wrap">
