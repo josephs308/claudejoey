@@ -1172,6 +1172,13 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .dark-hero + section{padding-top:64px!important}
 .dark-hero h1{max-width:20ch!important}.svcp .dark-hero + .sec-answer{padding-top:40px!important}
 .blogp .blog-hero h1{max-width:22ch!important}
+/* desktop dropdowns: center under the whole nav bar, not the link */
+@media(min-width:1101px){
+.nav-in{position:relative}
+.nav-mid .dd{position:static!important}
+.nav-mid .dd-panel{top:calc(100% - 6px)!important;left:50%!important}
+.nav-mid .dd-panel::before{content:"";position:absolute;left:0;right:0;top:-26px;height:26px}
+}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
