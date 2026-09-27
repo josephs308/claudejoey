@@ -115,6 +115,30 @@ def mx_svg(k):
     return ('<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
             f'stroke-linecap="round" stroke-linejoin="round">{MX_ICONS[k]}</svg>')
 
+PRA_ICONS = {
+ 'personal-injury-lawyer-marketing':'<path d="M9 4h6v5h5v6h-5v5H9v-5H4V9h5z"/>',
+ 'criminal-defense-lawyer-marketing':'<path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
+ 'family-law-marketing':'<circle cx="8" cy="7" r="2.5"/><circle cx="16" cy="7" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M3.5 20c0-3 2-5 4.5-5s3 1 4 1 1.5-1 4-1 4.5 2 4.5 5"/>',
+ 'estate-planning-attorney-marketing':'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6M10 17h4"/>',
+ 'real-estate-attorney-marketing':'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+ 'business-lawyer-marketing':'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/>',
+ 'litigation-attorney-marketing':'<path d="M14 5l5 5M10.5 8.5l5 5"/><path d="M12.5 3.5l8 8-3 3-8-8z"/><path d="M11 12l-7.5 7.5"/><path d="M13 21h8"/>',
+ 'employment-lawyer-marketing':'<circle cx="12" cy="7" r="3"/><path d="M5 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><path d="M12 14l-1.5 3L12 21l1.5-4z"/>',
+ 'immigration-lawyer-marketing':'<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+ 'bankruptcy-attorney-marketing':'<path d="M3 5h4l3 5 3-3 4 6 4-2"/><path d="M17 13h4v-4" transform="rotate(0)"/><path d="M3 20h18"/>',
+ 'workers-compensation-lawyer-marketing':'<path d="M4 17h16"/><path d="M5 17v-3a7 7 0 0 1 14 0v3"/><path d="M10 7.5V5.5a2 2 0 0 1 4 0v2"/><path d="M12 7v5"/>',
+ 'medical-malpractice-lawyer-marketing':'<path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v3a4 4 0 0 0 8 0v-2"/><circle cx="18" cy="12" r="2"/>',
+ 'dui-lawyer-marketing':'<path d="M6.5 10l1.3-3.2A2 2 0 0 1 9.7 5.5h4.6a2 2 0 0 1 1.9 1.3L17.5 10"/><rect x="4" y="10" width="16" height="6" rx="2"/><path d="M6 16v2.5M18 16v2.5"/><circle cx="8" cy="13" r="1"/><circle cx="16" cy="13" r="1"/>',
+ 'intellectual-property-attorney-marketing':'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/>',
+ 'tax-attorney-marketing':'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/>',
+}
+
+def pra_icon(slug):
+    body = PRA_ICONS.get(slug)
+    if not body: return icon('LAW')
+    return ('<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
+            f'stroke-linecap="round" stroke-linejoin="round">{body}</svg>')
+
 def icon(key, cls=''):
     c = f' class="{cls}"' if cls else ''
     return (f'<svg{c} width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
@@ -151,7 +175,7 @@ CHEV = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5L5 7l3.5-3.
 def nav():
     svc = ''.join(f'<a class="dd-link" href="{svc_url(s)}"><span class="dd-ic">{icon(ic)}</span><span><b>{e(lab)}</b><small>{e(blurb)}</small></span></a>'
                   for s, lab, blurb, ic, _ in SERVICES)
-    pra = ''.join(f'<a class="dd-link" href="{pra_url(s)}"><span class="dd-ic">{icon("LAW")}</span><span><b>{e(lab)}</b></span></a>'
+    pra = ''.join(f'<a class="dd-link" href="{pra_url(s)}"><span class="dd-ic">{pra_icon(s)}</span><span><b>{e(lab)}</b></span></a>'
                   for s, lab in PRACTICES)
     return f'''<a class="skip" href="#main">Skip to content</a>
 <div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
@@ -435,7 +459,7 @@ def svc_card(slug, text):
     return f'<a class="card" href="{svc_url(slug)}"><span class="card-ic">{icon(s[3])}</span><h3>{e(s[1])}</h3><p>{e(text)}</p><span class="card-go">Learn more about {e(s[1])} &rarr;</span></a>'
 
 def pra_card(slug, text):
-    return f'<a class="card" href="{pra_url(slug)}"><span class="card-ic">{icon("LAW")}</span><h3>{e(PRA[slug])} marketing</h3><p>{e(text)}</p><span class="card-go">See the playbook &rarr;</span></a>'
+    return f'<a class="card" href="{pra_url(slug)}"><span class="card-ic">{pra_icon(slug)}</span><h3>{e(PRA[slug])} marketing</h3><p>{e(text)}</p><span class="card-go">See the playbook &rarr;</span></a>'
 
 def write(url, content):
     path = os.path.join(SITE, url.strip('/'), 'index.html') if url != '/' else os.path.join(SITE, 'index.html')
