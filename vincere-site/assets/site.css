@@ -1186,6 +1186,14 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .callout-purple .btn-out{color:#fff!important;border-color:rgba(255,255,255,.55)!important;background:transparent!important}
 .callout-purple .btn-out:hover{border-color:#fff!important}
 .callout.callout-purple .in{max-width:1360px!important;margin:0 auto!important;padding-left:40px!important;padding-right:40px!important}@media(max-width:560px){.callout.callout-purple .in{padding-left:22px!important;padding-right:22px!important}}.callout-purple h2{max-width:22ch}
+/* homepage header: faint purple glow from the left that drifts on scroll */
+.hero-v2 .hero-stage{isolation:isolate}
+.hero-glow{position:absolute;z-index:0;pointer-events:none;left:-22%;top:-20%;width:62%;height:150%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(122,62,110,.30),rgba(106,54,96,.12) 55%,rgba(106,54,96,0) 100%);
+  filter:blur(14px);transform:translate3d(var(--glx,0px),var(--gly,0px),0);transition:transform .15s linear;will-change:transform}
+@media(max-width:700px){.hero-glow{width:120%;left:-50%}}
+@media(prefers-reduced-motion:reduce){.hero-glow{transform:none}}
+.hero-glow{z-index:1!important;mix-blend-mode:multiply}.hero-v2 .hero-stage .hero-in{z-index:2!important}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}

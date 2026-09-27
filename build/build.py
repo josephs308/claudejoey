@@ -783,6 +783,10 @@ def home_faq():
 </section>
 '''
 
+GLOW_JS = """<script id="glow-js">(function(){var g=document.querySelector('.hero-glow');if(!g||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var h=g.parentNode,t=false;
+function m(){var r=h.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/Math.max(1,r.height)));g.style.setProperty('--glx',(p*160).toFixed(1)+'px');g.style.setProperty('--gly',(p*110).toFixed(1)+'px');t=false}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(m)}},{passive:true});m();})();</script>"""
+
 DD_JS = """<script id="dd-js">
 (function(){var dds=[].slice.call(document.querySelectorAll('.dd'));
 function shut(){dds.forEach(function(x){x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false')});}
@@ -872,6 +876,10 @@ def patch_home():
         s = s.replace('</style>', '/* nav dropdowns */\n' + extra + '\n</style>', 1)
     s = re.sub(r'<script id="dd-js">.*?</script>\n?', '', s, flags=re.S)
     s = s.replace('</body>', DD_JS + '\n</body>', 1)
+    s = re.sub(r'<div class="hero-glow"[^>]*></div>', '', s)
+    s = s.replace('<div class="hero-bg"', '<div class="hero-glow" aria-hidden="true"></div><div class="hero-bg"', 1)
+    s = re.sub(r'<script id="glow-js">.*?</script>\n?', '', s, flags=re.S)
+    s = s.replace('</body>', GLOW_JS + '\n</body>', 1)
     if '<main id="main">' not in s:
         s = s.replace('<header class="hero hero-v2">', '<main id="main">\n<header class="hero hero-v2">', 1)
         s = s.replace('<footer class="foot">', '</main>\n<footer class="foot">', 1)
