@@ -1179,6 +1179,12 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .nav-mid .dd-panel{top:calc(100% - 6px)!important;left:50%!important}
 .nav-mid .dd-panel::before{content:"";position:absolute;left:0;right:0;top:-26px;height:26px}
 }
+/* service CTA band: brand purple */
+.callout.callout-purple{background:radial-gradient(60% 120% at 90% 0%,rgba(255,255,255,.12),rgba(255,255,255,0) 60%),linear-gradient(120deg,#6A3660 0%,#492141 55%,#34162F 100%)!important;border:0!important}
+.callout-purple p{color:rgba(255,255,255,.85)!important}
+.callout-purple .btn-orange{background:#fff!important;color:var(--purple)!important;box-shadow:0 10px 26px rgba(0,0,0,.25)!important}
+.callout-purple .btn-out{color:#fff!important;border-color:rgba(255,255,255,.55)!important;background:transparent!important}
+.callout-purple .btn-out:hover{border-color:#fff!important}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}

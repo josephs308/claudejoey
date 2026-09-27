@@ -522,6 +522,7 @@ def build_service(slug):
     <div class="mx-grid">{metrics}</div>
   </div></div>
 </section>
+{callout("See what " + d["nav_label"] + " would look like for your firm.", "We will price your market, pick the right channels and put the numbers in writing before you commit to anything.").replace('<section class="callout sec-dark">', '<section class="callout sec-dark callout-purple">', 1)}
 {faq_html(d["faqs"], d["nav_label"] + " questions, answered.")}
 <section class="sec sec-tight">
   <div class="wrap">
@@ -529,7 +530,7 @@ def build_service(slug):
     <div class="rel">{related}</div>
   </div>
 </section>
-{callout("See what " + d["nav_label"] + " would look like for your firm.", "We will price your market, pick the right channels and put the numbers in writing before you commit to anything.")}'''
+'''
     write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="svcp">', 1))
     SITEMAP.append((url, '0.9'))
     return d
@@ -592,6 +593,7 @@ def build_practice(slug):
     <p>{e(d["intake"]["text"])}</p>
   </div></div>
 </section>
+{callout("Get a " + d["practice"] + " marketing plan for your market.", "We will price your market, pick the right channels and show you the expected cost per signed case before you spend a dollar.").replace('<section class="callout sec-dark">', '<section class="callout sec-dark callout-purple">', 1)}
 {faq_html(d["faqs"], d["nav_label"] + " marketing questions, answered.")}
 <section class="sec sec-tight">
   <div class="wrap">
@@ -599,7 +601,7 @@ def build_practice(slug):
     <div class="rel">{related}</div>
   </div>
 </section>
-{callout("Get a " + d["practice"] + " marketing plan for your market.", "We will price your market, pick the right channels and show you the expected cost per signed case before you spend a dollar.")}'''
+'''
     write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="prap">', 1))
     SITEMAP.append((url, '0.9'))
     return d
