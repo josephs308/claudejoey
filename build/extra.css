@@ -497,3 +497,4 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .callout-purple .btn-orange{background:#fff!important;color:var(--purple)!important;box-shadow:0 10px 26px rgba(0,0,0,.25)!important}
 .callout-purple .btn-out{color:#fff!important;border-color:rgba(255,255,255,.55)!important;background:transparent!important}
 .callout-purple .btn-out:hover{border-color:#fff!important}
+.callout.callout-purple .in{max-width:1360px!important;margin:0 auto!important;padding-left:40px!important;padding-right:40px!important}@media(max-width:560px){.callout.callout-purple .in{padding-left:22px!important;padding-right:22px!important}}.callout-purple h2{max-width:22ch}
