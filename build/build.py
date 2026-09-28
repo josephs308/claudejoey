@@ -756,7 +756,14 @@ def build_misc():
             red.append(f'/{old}  {svc_url(s)}  301')
             red.append(f'/{old[:-5]}  {svc_url(s)}  301')
     red += ['/about.html  /about/  301', '/about  /about/  301', '/index.html  /  301',
-            '/services  /services/  301', '/practice-areas  /practice-areas/  301']
+            '/services  /services/  301', '/practice-areas  /practice-areas/  301',
+            '', '# Previous site (Astro) URLs -> new pages (301)',
+            '/pillar-seo  /services/law-firm-seo/  301', '/pillar-seo.html  /services/law-firm-seo/  301',
+            '/pillar-aeo  /services/law-firm-aeo/  301', '/pillar-aeo.html  /services/law-firm-aeo/  301',
+            '/pillar-speed  /services/law-firm-website-design/  301', '/pillar-speed.html  /services/law-firm-website-design/  301',
+            '/pillar-conversion  /services/law-firm-website-design/  301', '/pillar-conversion.html  /services/law-firm-website-design/  301',
+            '/thank-you  /thanks.html  301', '/thank-you.html  /thanks.html  301',
+            '/portal.html  /portal/  301']
     open(os.path.join(SITE, '_redirects'), 'w').write('\n'.join(red) + '\n')
 
 # ---------------------------------------------------------------- home + thanks
