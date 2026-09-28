@@ -790,6 +790,8 @@ def home_faq():
 </section>
 '''
 
+PBJ_HTML = '<div class="pbj" aria-label="How a search becomes a signed client"><div class="pbj-track" aria-hidden="true"><i></i></div><ol class="pbj-steps"><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><b>Search</b><small>They look for a lawyer</small></li><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><b>Found</b><small>Your firm is the answer</small></li><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></span><b>Call</b><small>Answered in minutes</small></li><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><b>Signed</b><small>A new client</small></li></ol></div>'
+PBJ_JS = '<script id="pbj-js">(function(){var w=document.querySelector(\'.pbj\');if(!w||matchMedia(\'(prefers-reduced-motion: reduce)\').matches)return;var b=w.closest(\'.photo-band\'),st=w.querySelectorAll(\'.pbj-s\'),t=false;w.classList.add(\'js\');\nfunction f(){t=false;var r=b.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height*.9)));w.style.setProperty(\'--p\',p.toFixed(3));for(var i=0;i<st.length;i++)st[i].classList.toggle(\'lit\',p>=i/(st.length-1)-.001)}\naddEventListener(\'scroll\',function(){if(!t){t=true;requestAnimationFrame(f)}},{passive:true});addEventListener(\'resize\',f);f()})();</script>'
 GLOW_JS = """<script id="glow-js">(function(){var g=document.querySelector('.hero-glow');if(!g||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var h=g.parentNode,t=false;
 function m(){var r=h.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/Math.max(1,r.height)));g.style.setProperty('--glx',(p*160).toFixed(1)+'px');g.style.setProperty('--gly',(p*110).toFixed(1)+'px');t=false}
 addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(m)}},{passive:true});m();})();</script>"""
@@ -887,6 +889,10 @@ def patch_home():
     s = re.sub(r'<div class="hero-glow"[^>]*></div>', '', s)
     s = s.replace('<div class="hero-bg"', '<div class="hero-glow" aria-hidden="true"></div><div class="hero-bg"', 1)
     s = re.sub(r'<script id="glow-js">.*?</script>\n?', '', s, flags=re.S)
+    s = re.sub(r'<div class="pbj".*?</ol></div>', '', s, flags=re.S)
+    s = re.sub(r'<p class="pb-sub">(.*?)</p>', lambda m: m.group(0) + PBJ_HTML, s, count=1, flags=re.S)
+    s = re.sub(r'<script id="pbj-js">.*?</script>\n?', '', s, flags=re.S)
+    s = s.replace('</body>', PBJ_JS + '\n</body>', 1)
     s = s.replace('</body>', GLOW_JS + '\n</body>', 1)
     if '<main id="main">' not in s:
         s = s.replace('<header class="hero hero-v2">', '<main id="main">\n<header class="hero hero-v2">', 1)
