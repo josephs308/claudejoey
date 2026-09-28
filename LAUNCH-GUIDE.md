@@ -86,7 +86,7 @@ Every public page has:
 
 ## Before launch: things only you can supply
 
-- **Real phone number.** `(555) 010-0199` is a placeholder. It appears in the booking section, the footer, the thank-you page and the structured data. Send the real number and it gets updated everywhere with one change.
+- **Phone number.** Currently your cell, (619) 991-7205. To change it, edit PHONE_DISPLAY, PHONE_E164 and PHONE_TEL in `build/build.py` and rebuild.
 - **LinkedIn URL.** The structured data lists `linkedin.com/company/vincere-legal-marketing`. Confirm that page exists, or send the right link.
 - **Booking confirmations.** After booking, the form says "We just sent a calendar invite." The form delivers the booking through Netlify, but it doesn't send an invite by itself. Connect Netlify Forms to Zapier and Google Calendar, or change that line.
 

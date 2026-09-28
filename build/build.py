@@ -14,9 +14,9 @@ CONTENT = os.path.join(BUILD, 'content')
 
 DOMAIN = 'https://vincerelegalmarketing.com'
 BRAND = 'Vincere Legal Marketing'
-PHONE_DISPLAY = '(555) 010-0199'  # placeholder until Vincere's real number is set
-PHONE_TEL = '+15550100199'
-PHONE_E164 = '+1-555-010-0199'
+PHONE_DISPLAY = '(619) 991-7205'  # placeholder until Vincere's real number is set
+PHONE_TEL = '+16199917205'
+PHONE_E164 = '+1-619-991-7205'
 EMAIL = 'joe@vincerelegalmarketing.com'
 PORTAL = '/portal/'
 LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
