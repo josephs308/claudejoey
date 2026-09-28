@@ -856,11 +856,12 @@ def patch_home():
 <link rel="alternate" type="application/rss+xml" title="Vincere Legal Marketing Blog" href="/blog/feed.xml">"""
     d = f'<meta name="description" content="{e(HOME_DESC)}">'
     s = s.replace(d, d + social, 1)
-    wp = webpage_node('/', 'WebPage', HOME_TITLE, HOME_DESC); wp.pop('breadcrumb'); wp['@id'] = f'{DOMAIN}/#webpage'
-    schema = [org_node(), website_node(), wp,
+    wp = webpage_node('/', 'WebPage', HOME_TITLE, HOME_DESC); wp['@id'] = f'{DOMAIN}/#webpage'
+    schema = [org_node(), website_node(), wp, crumbs_node('/', [('Home', '/')]),
               {'@type': 'ItemList', '@id': f'{DOMAIN}/#services', 'name': 'Law firm marketing services',
                'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': lab, 'url': f'{DOMAIN}{svc_url(sl)}'} for i, (sl, lab, *_) in enumerate(SERVICES)]},
               faq_node('/', HOME_FAQS)]
+    s = s.replace('sizes="100vw"  alt=""', 'sizes="100vw" alt="Law firm team meeting about marketing and new clients"', 1)
     s = re.sub(r'<script type="application/ld\+json">.*?</script>', lambda m: jsonld(schema), s, count=1, flags=re.S)
     for sl, lab, _, _, old in SERVICES:
         if old: s = s.replace(f'href="{old}"', f'href="{svc_url(sl)}"')
