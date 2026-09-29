@@ -1207,6 +1207,11 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .pbj.js .pbj-s:not(.lit) b{color:rgba(255,255,255,.55)}
 .pbj.js .pbj-s:not(.lit) small{color:rgba(255,255,255,.4)}
 @media(max-width:640px){.pbj-steps{grid-template-columns:repeat(2,1fr);row-gap:22px}.pbj-track{display:none}}
+/* "Coming soon" badge (ChatGPT Ads) */
+.soon{display:inline-block;vertical-align:middle;margin-left:8px;padding:3px 9px;border-radius:999px;background:#492141;color:#fff;font:700 10.5px/1.4 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.soon-s{margin-left:6px;padding:2px 7px;font-size:9.5px;background:#EDE3EB;color:#492141}
+.soon-hero{margin:0 0 14px;background:#fff;color:#492141;font-size:11.5px;padding:5px 12px}
+.card h3 .soon{position:relative;top:-2px}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}

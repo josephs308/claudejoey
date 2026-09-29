@@ -35,7 +35,10 @@ SERVICES = [  # slug, nav label, short dropdown blurb, icon key, old url
     ('meta-ads-for-lawyers', 'Meta Ads', 'Facebook and Instagram campaigns', 'META', 'meta-ads.html'),
     ('law-firm-traditional-advertising', 'Traditional', 'Billboards, TV, radio and direct mail', 'TRAD', None),
     ('law-firm-website-design', 'Websites', 'Fast, custom-coded firm websites', 'WEB', 'websites.html'),
+    ('chatgpt-ads-for-lawyers', 'ChatGPT Ads', 'Paid placement inside ChatGPT', 'GPT', None),
 ]
+SOON = {'chatgpt-ads-for-lawyers'}  # services shown with a "Coming soon" badge
+def soon(slug, cls='soon', label='Coming soon'): return f' <span class="{cls}">{label}</span>' if slug in SOON else ''
 SVC = {s[0]: s for s in SERVICES}
 
 PRACTICES = [
@@ -78,6 +81,7 @@ ICONS = {
  'PPC':'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8"/>',
  'META':'<path d="M3 10v4l11 5V5z"/><path d="M14 8a4 4 0 0 1 0 8M6.5 15.5L8 21h3l-1.2-4"/>',
  'TRAD':'<rect x="3" y="4" width="18" height="10" rx="1.5"/><path d="M8 14v7M16 14v7M6 21h4M14 21h4"/>',
+ 'GPT':'<path d="M4 5h16v11H9l-5 4z"/><path d="M14 8.3h-2.6a1.3 1.3 0 0 0 0 2.6h1.2a1.3 1.3 0 0 1 0 2.6H10M12 7v1.3M12 13.5v1.3"/>',
  'WEB':'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h.01M9 6.5h.01"/>',
  'LAW':'<path d="M12 3v18M7 21h10M4 7h16M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/>',
  'LOCK':'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
@@ -173,7 +177,7 @@ VMARK_FOOT = vmark_svg('f')
 CHEV = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 def nav():
-    svc = ''.join(f'<a class="dd-link" href="{svc_url(s)}"><span class="dd-ic">{icon(ic)}</span><span><b>{e(lab)}</b><small>{e(blurb)}</small></span></a>'
+    svc = ''.join(f'<a class="dd-link" href="{svc_url(s)}"><span class="dd-ic">{icon(ic)}</span><span><b>{e(lab)}{soon(s, "soon soon-s", "Soon")}</b><small>{e(blurb)}</small></span></a>'
                   for s, lab, blurb, ic, _ in SERVICES)
     pra = ''.join(f'<a class="dd-link" href="{pra_url(s)}"><span class="dd-ic">{pra_icon(s)}</span><span><b>{e(lab)}</b></span></a>'
                   for s, lab in PRACTICES)
@@ -185,7 +189,7 @@ def nav():
     <div class="nav-mid" id="navMid">
       <div class="dd dd-svc"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-services">Services {CHEV}</button>
         <div class="dd-panel" id="dd-services"><div class="dd-grid">{svc}</div>
-          <div class="dd-foot"><span>Nine channels, one partner, one plan.</span><a href="/services/">All services &rarr;</a></div></div></div>
+          <div class="dd-foot"><span>Every channel, one partner, one plan.</span><a href="/services/">All services &rarr;</a></div></div></div>
       <div class="dd dd-pa"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-practice">Practice Areas {CHEV}</button>
         <div class="dd-panel" id="dd-practice"><div class="dd-grid">{pra}</div>
           <div class="dd-foot"><span>Marketing built around how your clients hire.</span><a href="/practice-areas/">All practice areas &rarr;</a></div></div></div>
@@ -456,7 +460,7 @@ def prose_sections(sections):
 
 def svc_card(slug, text):
     s = SVC[slug]
-    return f'<a class="card" href="{svc_url(slug)}"><span class="card-ic">{icon(s[3])}</span><h3>{e(s[1])}</h3><p>{e(text)}</p><span class="card-go">Learn more about {e(s[1])} &rarr;</span></a>'
+    return f'<a class="card" href="{svc_url(slug)}"><span class="card-ic">{icon(s[3])}</span><h3>{e(s[1])}{soon(slug)}</h3><p>{e(text)}</p><span class="card-go">{"See what&rsquo;s coming" if slug in SOON else "Learn more about " + e(s[1])} &rarr;</span></a>'
 
 def pra_card(slug, text):
     return f'<a class="card" href="{pra_url(slug)}"><span class="card-ic">{pra_icon(slug)}</span><h3>{e(PRA[slug])} marketing</h3><p>{e(text)}</p><span class="card-go">See the playbook &rarr;</span></a>'
@@ -531,6 +535,12 @@ def build_service(slug):
   </div>
 </section>
 '''
+    if slug in SOON:
+        body = (body.replace('Get my free plan</a>', 'Join the early-access list</a>')
+                    .replace('<h1>', '<span class="soon soon-hero">Coming soon</span>\n    <h1>', 1)
+                    .replace(f'See what {e(d["nav_label"])} would look like for your firm.', f'Get early access to {e(d["nav_label"])}.', 1)
+                    .replace('We will price your market, pick the right channels and put the numbers in writing before you commit to anything.',
+                             'Book a free strategy call, mention ChatGPT Ads, and we will reserve your spot and start the research for your market.', 1))
     write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="svcp">', 1))
     SITEMAP.append((url, '0.9'))
     return d
@@ -655,7 +665,7 @@ def build_about():
   <div class="wrap"><div class="sec-head"><h2>What we hold ourselves to.</h2></div><div class="cards">{pr}</div></div>
 </section>
 <section class="sec">
-  <div class="wrap"><div class="sec-head"><h2>Nine channels. One partner.</h2></div><div class="cards cards-3">{svc}</div></div>
+  <div class="wrap"><div class="sec-head"><h2>Every channel. One partner.</h2></div><div class="cards cards-3">{svc}</div></div>
 </section>
 {faq_html(d["faqs"])}'''
     write(url, page(url, d['title'], d['meta_description'], schema, body).replace('<main id="main">', '<main id="main" class="svcp">', 1))

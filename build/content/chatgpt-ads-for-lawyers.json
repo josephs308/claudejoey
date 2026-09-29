@@ -1,0 +1,70 @@
+{
+  "type": "service",
+  "slug": "chatgpt-ads-for-lawyers",
+  "nav_label": "ChatGPT Ads",
+  "service_name": "ChatGPT Ads for Law Firms",
+  "title": "ChatGPT Ads for Lawyers (Coming Soon) | Vincere",
+  "meta_description": "ChatGPT ads for law firms are coming. Vincere is building paid ChatGPT campaigns for lawyers, measured in signed cases. Join the early-access list today.",
+  "eyebrow": "Coming soon: ChatGPT Ads",
+  "h1": "ChatGPT Ads for Lawyers: Be the Firm People See When They Ask AI",
+  "lede": "More people now ask ChatGPT what to do after an accident, an arrest or a divorce filing before they ever search Google. OpenAI has started bringing advertising into ChatGPT, and we are building the law firm playbook now so our clients are ready the moment it opens up.",
+  "answer": {
+    "question": "What are ChatGPT ads for law firms?",
+    "text": "ChatGPT ads for law firms are paid placements shown inside ChatGPT, kept separate from and clearly labeled apart from the AI's own answer. OpenAI has begun introducing ads into ChatGPT, and access for advertisers is still limited. Vincere is preparing law firm campaigns now and will open this service to clients as the platform becomes available."
+  },
+  "sections": [
+    {
+      "h2": "Why ChatGPT ads matter for law firms",
+      "paragraphs": [
+        "Legal problems start with a question. Someone who was just rear-ended, served with papers or pulled over for a DUI wants to know what to do next, and a growing share of them ask an AI assistant first. Those conversations are long, specific and full of intent. They are exactly the moments a law firm wants to be in front of.",
+        "Until now, the only way to show up in those conversations was to be cited organically, which is what our AEO service does. Paid placement adds a second lever: a way to appear in front of people asking about your practice area in your market, on a schedule and budget you control."
+      ]
+    },
+    {
+      "h2": "How ChatGPT ads differ from Google Ads and AEO",
+      "paragraphs": [
+        "Google Ads match your ad to a short search phrase. ChatGPT conversations are longer and more descriptive, so relevance comes from the full context of what someone is asking, not a single keyword. That changes how campaigns are planned, written and measured.",
+        "AEO and ChatGPT ads work together. AEO earns your firm a place in the AI's own answer, and ads buy a visible, labeled spot beside it. Firms that do both get two chances to be seen in the same conversation, one earned and one paid."
+      ]
+    },
+    {
+      "h2": "What we are doing now, before it opens",
+      "paragraphs": [
+        "We are mapping the questions people ask ChatGPT for each practice area, preparing ad copy that follows state bar advertising rules, and building the landing pages and tracking needed to measure calls, forms and signed cases from AI traffic.",
+        "Early-access firms get that groundwork done for their market first, so their campaigns can launch as soon as advertising is available to them rather than weeks later. Every ad will follow the same rule as the rest of our work: it is measured by the signed cases it produces."
+      ]
+    }
+  ],
+  "included": [
+    "Market research on the questions your clients ask ChatGPT",
+    "Ad copy written to state bar advertising rules",
+    "Landing pages built for AI-referred visitors",
+    "Call and form tracking for ChatGPT traffic",
+    "Coordination with your AEO so paid and earned work together",
+    "Reporting in your client dashboard, measured in signed cases",
+    "Priority launch as the platform opens to law firms"
+  ],
+  "best_for": "Firms that want to be first in a new channel, especially practice areas where people research heavily before they call: personal injury, family law, criminal defense, immigration and estate planning.",
+  "process": [
+    {"title": "Join early access", "text": "Tell us your practice areas and market so we can reserve your spot and start the research."},
+    {"title": "Map the questions", "text": "We document how prospective clients in your practice area describe their problem to AI assistants."},
+    {"title": "Build the foundation", "text": "Compliant ad copy, landing pages and tracking are prepared before launch, not after."},
+    {"title": "Launch", "text": "As advertising opens to your firm, campaigns go live with a clear budget and targets agreed in writing."},
+    {"title": "Measure and refine", "text": "We report calls, forms and signed cases from ChatGPT next to every other channel and shift spend to what works."}
+  ],
+  "metrics": [
+    {"title": "AI referral leads", "text": "Calls and forms that come from people who saw your firm in ChatGPT."},
+    {"title": "Cost per lead", "text": "What each qualified lead from ChatGPT ads costs, compared with your other channels."},
+    {"title": "Consultations booked", "text": "How many ChatGPT leads become scheduled consultations with your firm."},
+    {"title": "Cost per signed case", "text": "The number that decides whether the channel earns more budget."}
+  ],
+  "practice_notes": [],
+  "faqs": [
+    {"q": "Can law firms advertise on ChatGPT yet?", "a": "Not broadly. OpenAI has started introducing ads in ChatGPT, but advertiser access is still limited. Vincere is preparing law firm campaigns now so early-access clients can launch as soon as it opens to them."},
+    {"q": "Are ChatGPT ads part of the AI's answer?", "a": "No. Ads are shown separately from ChatGPT's own answer and labeled as ads. Being part of the answer itself is earned through answer engine optimization, which is why we pair the two."},
+    {"q": "How much will ChatGPT ads cost?", "a": "Pricing for advertisers has not settled yet. As with every channel we run, we will price your market first and put the expected cost per lead and per signed case in writing before you commit."},
+    {"q": "Do lawyer advertising rules apply to ChatGPT ads?", "a": "Yes. State bar rules on attorney advertising apply to every channel, including AI platforms. Every ad we write is reviewed against the advertising rules in your state."},
+    {"q": "How do I get early access?", "a": "Book a free strategy call and mention ChatGPT Ads. We will add your firm to the early-access list and start the research for your market."}
+  ],
+  "related": ["law-firm-aeo", "law-firm-ppc", "law-firm-seo"]
+}

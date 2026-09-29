@@ -8,7 +8,7 @@
 vincere-site/
 ├── index.html                  Home page
 ├── about/index.html            /about/
-├── services/index.html         /services/  (hub for all 9 services)
+├── services/index.html         /services/  (hub for all 10 services)
 │   ├── law-firm-consulting/
 │   ├── law-firm-branding/
 │   ├── local-services-ads-for-lawyers/
@@ -17,7 +17,8 @@ vincere-site/
 │   ├── law-firm-ppc/
 │   ├── meta-ads-for-lawyers/
 │   ├── law-firm-traditional-advertising/
-│   └── law-firm-website-design/
+│   ├── law-firm-website-design/
+│   └── chatgpt-ads-for-lawyers/   (Coming soon)
 ├── practice-areas/index.html   /practice-areas/  (hub for all 15)
 │   ├── personal-injury-lawyer-marketing/
 │   ├── criminal-defense-lawyer-marketing/
