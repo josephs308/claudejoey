@@ -2,15 +2,15 @@
   "type": "service",
   "slug": "law-firm-consulting",
   "nav_label": "Consulting",
-  "service_name": "Law Firm Consulting, Intake and AI Integration",
-  "title": "Law Firm Consulting & AI Agents for Intake | Vincere",
-  "meta_description": "Law firm consulting that fixes intake and adds AI agents that answer every lead 24/7, follow up and book consults, so more leads become signed cases.",
-  "eyebrow": "Consulting & AI Integration",
-  "h1": "Law Firm Consulting and AI Agents That Turn More Leads Into Signed Cases",
-  "lede": "Most firms do not have a lead problem first. They have an intake problem. We fix speed to lead, follow-up and consult booking, then add AI agents that answer every call, text and chat around the clock, so no lead waits and your team spends its time on real conversations.",
+  "service_name": "Law Firm Marketing and Growth Consulting",
+  "title": "Law Firm Marketing Consulting & Growth Strategy | Vincere",
+  "meta_description": "Law firm marketing consulting: intake audits, market plans, budgets and channel strategy so every dollar is measured in signed cases. Start with a free plan.",
+  "eyebrow": "Law Firm Consulting",
+  "h1": "Law Firm Consulting: A Growth Plan Built on Your Numbers",
+  "lede": "Before you spend another dollar, we find where your firm is losing cases. Our consulting audits your intake, prices your market and builds a channel plan and budget around what a signed case is really worth to you.",
   "answer": {
-    "question": "What is law firm consulting and AI integration?",
-    "text": "Law firm consulting and AI integration is a hands-on rebuild of how a firm turns inquiries into signed clients. It covers intake scripts, response time, CRM setup and follow-up, plus AI agents that answer and qualify leads 24/7, book consultations and handle routine updates under attorney supervision, so every lead is tracked from first contact to signed engagement."
+    "question": "What is law firm marketing consulting?",
+    "text": "Law firm marketing consulting is a hands-on review of how a firm wins clients, followed by a written growth plan. It covers intake and response time, market pricing, channel mix, budget, vendor performance and reporting, so every marketing decision is judged by cost per signed case."
   },
   "sections": [
     {
@@ -21,24 +21,17 @@
       ]
     },
     {
-      "h2": "AI agents that answer every lead, day and night",
+      "h2": "A market plan and budget you can act on",
       "paragraphs": [
-        "Most leads that go cold were never answered in the first place. A call at 9 p.m., a web form on Sunday, a text while the receptionist is on another line. We build AI intake agents that respond in seconds on the phone, by text and in website chat. They greet the caller, ask your intake questions, screen for practice area, location and conflicts, and book a consultation straight onto the right attorney's calendar or hand off to a person when it matters.",
-        "Every agent works from scripts your firm approves, in your firm's voice. It never gives legal advice, it says clearly that it is an automated assistant, and it escalates emergencies, existing clients and anything sensitive to a human right away. You get a transcript and summary of every conversation in your CRM, so your team walks into each consult already knowing the story."
+        "We price your practice areas in your city: what clicks and leads cost, who you compete with in the map pack and on Local Services Ads, and what a signed case should cost you. Then we recommend a channel mix and a launch order that fits your budget and capacity, not a generic package.",
+        "You get the plan in writing, with expected cost per lead and per signed case for each channel. If a channel does not make sense in your market, we say so, even if it is one we sell."
       ]
     },
     {
-      "h2": "CRM, automations and lead-to-client workflows",
+      "h2": "Vendor, reporting and team review",
       "paragraphs": [
-        "We map the path a lead takes from first contact to signed retainer, then build it into your CRM so nothing depends on memory. That means lead sources tagged correctly, intake stages that match how your firm actually works, and automated text and email follow-up that fires when a caller does not book. We work with the intake and practice management tools legal teams commonly use, and we help you choose one if your current setup is a spreadsheet.",
-        "Automation should support your people, not replace the human conversation a scared client needs. We write follow-up sequences in plain language, keep them compliant with the attorney advertising rules in your state, and set clear handoffs to a live intake specialist or attorney. Your team gets task reminders, missed-call alerts and a daily view of which leads are waiting, so the right person calls back while the prospect still wants to talk."
-      ]
-    },
-    {
-      "h2": "AI integration for your team, not just your intake",
-      "paragraphs": [
-        "The same tools can take hours of routine work off your staff each week. We set up AI that drafts consult summaries and follow-up emails, keeps CRM records current, sends plain-language case status updates, requests reviews at the right moments and flags leads that have gone quiet. Your people review and approve; the busywork disappears.",
-        "We build with confidentiality and professional responsibility first. That means tools with proper data protections, no client information used to train public models, attorney review of anything client-facing, and setups that follow ABA guidance on generative AI and your state bar's rules. You own every workflow, agent and prompt we build, and we document them so your firm is never locked in."
+        "Many firms already pay several vendors without a clear view of what each one produces. We review your current agencies, tools and reports, and show which ones are driving signed cases and which are not.",
+        "We set up reporting that connects spend to signed cases, train your intake team on scripts and response standards, and give you a short list of the fixes that will matter most. When you are ready to automate intake with AI, our AI and Intake Automation service builds it."
       ]
     },
     {
@@ -51,49 +44,49 @@
   ],
   "included": [
     "Intake audit with call recordings, response time and missed-lead review",
-    "AI intake agent for calls, texts and website chat, answering 24/7",
+    "Market pricing: click costs, cost per lead and competitor activity",
+    "Channel mix, launch order and budget recommendation",
+    "Expected cost per lead and per signed case, in writing",
+    "Vendor and agency performance review",
     "Intake scripts and qualification questions by practice area",
-    "CRM selection, setup and lead source tracking",
-    "Automated follow-up by text and email, with handoff to your team",
-    "Consult booking, confirmation and no-show recovery workflow",
-    "AI tools for staff: consult summaries, client updates and review requests",
-    "Client dashboard connecting marketing spend to signed cases"
+    "Staff training on speed to lead and follow-up",
+    "Reporting that connects marketing spend to signed cases"
   ],
-  "best_for": "Firms that get calls and form fills but miss too many after hours, follow up too slowly, or want AI to take routine intake and admin work off their staff.",
+  "best_for": "Firms that want a clear, numbers-based plan before they spend, or that pay several vendors and are not sure what is working.",
   "process": [
     {
-      "title": "Listen to the intake",
-      "text": "We review call recordings, form responses and CRM data to see where leads stall or disappear."
+      "title": "Learn your firm",
+      "text": "We review your practice areas, case values, intake, close rate and capacity."
     },
     {
-      "title": "Map the lead-to-client path",
-      "text": "We document every step from first contact to signed retainer and mark where AI and automation should help."
+      "title": "Audit intake and vendors",
+      "text": "We listen to calls, check response times and review what each current vendor delivers."
     },
     {
-      "title": "Build the system and agents",
-      "text": "We configure your CRM, AI intake agents, automations and booking flow, then test them with real scenarios."
+      "title": "Price your market",
+      "text": "We measure click costs, lead costs and competition for your practice areas in your city."
     },
     {
-      "title": "Train the team",
-      "text": "Your intake staff and attorneys learn the new process and when the AI hands off to them, with clear owners for every stage."
+      "title": "Write the plan",
+      "text": "You get a channel mix, budget, launch order and expected cost per signed case, in writing."
     },
     {
-      "title": "Measure and tune",
-      "text": "We review transcripts and results in your dashboard and adjust scripts, timing and routing as the data comes in."
+      "title": "Train and track",
+      "text": "We train your team and set up reporting so progress is measured in signed cases."
     }
   ],
   "metrics": [
     {
       "title": "Speed to lead",
-      "text": "How long it takes your firm, or your AI agent, to make first contact with a new inquiry."
-    },
-    {
-      "title": "After-hours leads answered",
-      "text": "Calls, texts and chats handled at night and on weekends that used to go to voicemail."
+      "text": "How long it takes your firm to make first contact with a new inquiry, by source and time of day."
     },
     {
       "title": "Consult to signed rate",
       "text": "How many consultations turn into signed clients, broken out by attorney and practice area."
+    },
+    {
+      "title": "Cost per lead",
+      "text": "What each qualified lead costs by channel, compared with your market benchmarks."
     },
     {
       "title": "Cost per signed case",
@@ -121,35 +114,11 @@
   "faqs": [
     {
       "q": "What does a law firm consultant actually do?",
-      "a": "A law firm consultant reviews how your firm turns inquiries into clients and fixes the weak points. At Vincere that means intake scripts, response time, CRM setup, follow-up automations and reporting. The goal is more signed cases from the leads you already have."
-    },
-    {
-      "q": "What can AI agents do for a law firm?",
-      "a": "AI agents can answer calls, texts and website chats 24/7, ask your intake questions, screen for practice area and location, book consultations and log everything in your CRM. Behind the scenes they can draft consult summaries, client updates and follow-up emails for your staff to approve."
-    },
-    {
-      "q": "Will an AI agent give legal advice to callers?",
-      "a": "No. We configure every agent to gather information, book consultations and route people to your team, never to give legal advice. It identifies itself as an automated assistant and hands emergencies, existing clients and sensitive situations to a person immediately."
-    },
-    {
-      "q": "Is client information safe with AI tools?",
-      "a": "It can be, when the tools are chosen and set up carefully. We use providers with business-grade data protections, keep client data out of public model training, limit what each agent can access, and follow ABA guidance on generative AI and your state bar's rules. Your firm keeps ownership of all data and workflows."
+      "a": "A law firm consultant reviews how your firm wins clients and fixes the weak points. At Vincere that means an intake audit, market pricing, a channel plan and budget, a vendor review and team training. The goal is more signed cases from the budget you already have."
     },
     {
       "q": "Why should we fix intake before spending more on marketing?",
       "a": "Because more leads do not help if your team cannot answer and book them. Slow callbacks and missed follow-up waste ad spend on every channel. Fixing intake first makes SEO, PPC and every other channel produce more signed cases for the same budget."
-    },
-    {
-      "q": "Do we need a new CRM?",
-      "a": "Not always. Many firms already own a capable intake or practice management tool that is simply set up poorly. We review what you have, configure it properly if it fits, and help you choose a replacement only when it clearly holds the firm back."
-    },
-    {
-      "q": "Can you help with after-hours and weekend intake?",
-      "a": "Yes. We design coverage plans that fit your practice, whether that is an answering service, an on-call rotation or automated text response with a fast human callback. Criminal defense and personal injury firms usually need the most coverage."
-    },
-    {
-      "q": "Will automated follow-up feel impersonal to clients?",
-      "a": "It should not, if it is written well. We keep messages short, human and specific to the caller's situation, and every sequence hands off to a real person quickly. Automation handles reminders so your staff can spend time on actual conversations."
     },
     {
       "q": "How does law firm consulting connect to your other services?",
@@ -158,10 +127,14 @@
     {
       "q": "How do we get started?",
       "a": "Start with the free plan. We learn your practice areas, case values, intake and close rates, then show you where leads are leaking and which channels make sense. There is no obligation and no retainer to start."
+    },
+    {
+      "q": "What is the difference between consulting and AI and Intake Automation?",
+      "a": "Consulting is the strategy: audits, a market plan, budget and training. AI and Intake Automation is the build: AI agents, CRM setup and automated follow-up that run your intake day to day. Many firms start with consulting, then automate what the audit finds."
     }
   ],
   "related": [
-    "law-firm-website-design",
+    "ai-intake-automation-for-law-firms",
     "local-services-ads-for-lawyers",
     "law-firm-ppc"
   ]

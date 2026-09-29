@@ -26,7 +26,8 @@ TODAY = datetime.date.today().isoformat()
 BOOKING_URL = ''
 
 SERVICES = [  # slug, nav label, short dropdown blurb, icon key, old url
-    ('law-firm-consulting', 'Consulting', 'Intake, CRM and AI agents', 'CONSULT', None),
+    ('law-firm-consulting', 'Consulting', 'Audits, market plans and growth strategy', 'CONSULT', None),
+    ('ai-intake-automation-for-law-firms', 'AI & Intake Automation', 'AI agents, CRM and follow-up, 24/7', 'AI', None),
     ('law-firm-branding', 'Branding', 'Positioning, messaging and identity', 'BRAND', 'branding.html'),
     ('local-services-ads-for-lawyers', 'Local Services Ads', 'Google Screened, pay-per-lead calls', 'LSA', 'lsa.html'),
     ('law-firm-seo', 'SEO', 'Rank in Google search and the map pack', 'SEO', 'seo.html'),
@@ -81,6 +82,7 @@ ICONS = {
  'PPC':'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8"/>',
  'META':'<path d="M3 10v4l11 5V5z"/><path d="M14 8a4 4 0 0 1 0 8M6.5 15.5L8 21h3l-1.2-4"/>',
  'TRAD':'<rect x="3" y="4" width="18" height="10" rx="1.5"/><path d="M8 14v7M16 14v7M6 21h4M14 21h4"/>',
+ 'AI':'<rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2.5v2.5M15 2.5v2.5M9 19v2.5M15 19v2.5M2.5 9H5M2.5 15H5M19 9h2.5M19 15h2.5"/><path d="M12 8.3l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z"/>',
  'GPT':'<path d="M4 5h16v11H9l-5 4z"/><path d="M14 8.3h-2.6a1.3 1.3 0 0 0 0 2.6h1.2a1.3 1.3 0 0 1 0 2.6H10M12 7v1.3M12 13.5v1.3"/>',
  'WEB':'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h.01M9 6.5h.01"/>',
  'LAW':'<path d="M12 3v18M7 21h10M4 7h16M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/>',

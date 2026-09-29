@@ -8,8 +8,9 @@
 vincere-site/
 ├── index.html                  Home page
 ├── about/index.html            /about/
-├── services/index.html         /services/  (hub for all 10 services)
+├── services/index.html         /services/  (hub for all 11 services)
 │   ├── law-firm-consulting/
+│   ├── ai-intake-automation-for-law-firms/
 │   ├── law-firm-branding/
 │   ├── local-services-ads-for-lawyers/
 │   ├── law-firm-seo/
