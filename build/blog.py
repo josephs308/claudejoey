@@ -21,7 +21,7 @@ def md_inline(t):
 def img_url(pid, w, h):
     if pid.startswith('http') or pid.startswith('/'):
         return pid
-    return f'https://images.unsplash.com/{pid}?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
+    return f'https://images.unsplash.com/{pid}?auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
 
 def img_tag(pid, alt, w, h, cls='', sizes='100vw', eager=False):
     ss = ', '.join(f'{img_url(pid, x, round(x*h/w))} {x}w' for x in (480, 800, 1200, 1600, 2000))

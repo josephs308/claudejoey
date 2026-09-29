@@ -343,7 +343,7 @@ SUB_NEW = 'Book a free 30-minute call. We&rsquo;ll come back with projected lead
 
 CONTACT_PHOTO_ID = 'photo-1758873268745-dd2cf0d677b5'
 def contact_photo():
-    def u(w, h): return f'https://images.unsplash.com/{CONTACT_PHOTO_ID}?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
+    def u(w, h): return f'https://images.unsplash.com/{CONTACT_PHOTO_ID}?auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
     ss = ', '.join(f'{u(w, h)} {w}w' for w, h in [(640, 320), (960, 480), (1280, 640)])
     return (f'<figure class="contact-photo"><img src="{u(960,480)}" srcset="{ss}" sizes="(max-width: 900px) 100vw, 560px" width="960" height="480" '
             f'alt="A marketing team working together at a shared desk" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'nophoto\');this.remove()">'
@@ -429,7 +429,7 @@ def callout(h, p):
 </section>'''
 
 def photo(pid, alt, cap_b, cap):
-    def u(w, h): return f'https://images.unsplash.com/{pid}?fm=jpg&auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
+    def u(w, h): return f'https://images.unsplash.com/{pid}?auto=format&fit=crop&crop=entropy&q=80&w={w}&h={h}'
     ss = ', '.join(f'{u(w, h)} {w}w' for w, h in [(960, 403), (1440, 604), (1920, 806), (2560, 1075)])
     return f'''<section class="sec ph-band" style="padding:0 0 72px">
   <div class="wrap"><figure style="margin:0"><div class="ph ph-wide ph-dark sec-ph"><img src="{u(1920,806)}" srcset="{ss}" sizes="(max-width: 980px) 100vw, 1280px" width="1920" height="806" alt="{e(alt)}" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{{className:'ph-fallback',innerHTML:'<span>photo unavailable</span>'}}))"><figcaption class="ph-cap"><b>{e(cap_b)}</b>{e(cap)}</figcaption></div></figure></div>
@@ -801,10 +801,12 @@ def home_faq():
 '''
 
 PBJ_HTML = '<div class="pbj" aria-label="How a search becomes a signed client"><div class="pbj-track" aria-hidden="true"><i></i></div><ol class="pbj-steps"><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><b>Search</b><small>They look for a lawyer</small></li><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><b>Found</b><small>Your firm is the answer</small></li><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></span><b>Call</b><small>Answered in minutes</small></li><li class="pbj-s"><span class="pbj-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><b>Signed</b><small>A new client</small></li></ol></div>'
-PBJ_JS = '<script id="pbj-js">(function(){var w=document.querySelector(\'.pbj\');if(!w||matchMedia(\'(prefers-reduced-motion: reduce)\').matches)return;var b=w.closest(\'.photo-band\'),st=w.querySelectorAll(\'.pbj-s\'),t=false;w.classList.add(\'js\');\nfunction f(){t=false;var r=b.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height*.9)));w.style.setProperty(\'--p\',p.toFixed(3));for(var i=0;i<st.length;i++)st[i].classList.toggle(\'lit\',p>=i/(st.length-1)-.001)}\naddEventListener(\'scroll\',function(){if(!t){t=true;requestAnimationFrame(f)}},{passive:true});addEventListener(\'resize\',f);f()})();</script>'
-GLOW_JS = """<script id="glow-js">(function(){var g=document.querySelector('.hero-glow');if(!g||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var h=g.parentNode,t=false;
-function m(){var r=h.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/Math.max(1,r.height)));g.style.setProperty('--glx',(p*160).toFixed(1)+'px');g.style.setProperty('--gly',(p*110).toFixed(1)+'px');t=false}
-addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(m)}},{passive:true});m();})();</script>"""
+PBJ_JS = '<script id="pbj-js">(function(){var w=document.querySelector(\'.pbj\');if(!w||!window.VF||matchMedia(\'(prefers-reduced-motion: reduce)\').matches)return;var b=w.closest(\'.photo-band\'),st=w.querySelectorAll(\'.pbj-s\');w.classList.add(\'js\');\nVF.add(function(){var r=b.getBoundingClientRect();return Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height*.9)))},function(p){w.style.setProperty(\'--p\',p.toFixed(3));for(var i=0;i<st.length;i++)st[i].classList.toggle(\'lit\',p>=i/(st.length-1)-.001)})})();</script>'
+VF_JS = """<script id="vf-js">window.VF=(function(){var q=[],t=false;function run(){t=false;var d=[],i;for(i=0;i<q.length;i++)d.push(q[i].r());for(i=0;i<q.length;i++)q[i].w(d[i])}
+function k(){if(!t){t=true;requestAnimationFrame(run)}}addEventListener('scroll',k,{passive:true});addEventListener('resize',k);
+return{add:function(r,w){q.push({r:r,w:w});k()}}})();</script>"""
+GLOW_JS = """<script id="glow-js">(function(){var g=document.querySelector('.hero-glow');if(!g||!window.VF||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var h=g.parentNode;
+VF.add(function(){var r=h.getBoundingClientRect();return Math.max(0,Math.min(1,-r.top/Math.max(1,r.height)))},function(p){g.style.setProperty('--glx',(p*160).toFixed(1)+'px');g.style.setProperty('--gly',(p*110).toFixed(1)+'px')})})();</script>"""
 
 DD_JS = """<script id="dd-js">
 (function(){var dds=[].slice.call(document.querySelectorAll('.dd'));
@@ -899,6 +901,8 @@ def patch_home():
     s = re.sub(r'<div class="hero-glow"[^>]*></div>', '', s)
     s = s.replace('<div class="hero-bg"', '<div class="hero-glow" aria-hidden="true"></div><div class="hero-bg"', 1)
     s = re.sub(r'<script id="glow-js">.*?</script>\n?', '', s, flags=re.S)
+    s = re.sub(r'<script id="vf-js">.*?</script>\n?', '', s, flags=re.S)
+    s = re.sub(r'(<body[^>]*>)', lambda m: m.group(1) + '\n' + VF_JS, s, count=1)
     s = re.sub(r'<div class="pbj".*?</ol></div>', '', s, flags=re.S)
     s = re.sub(r'<p class="pb-sub">(.*?)</p>', lambda m: m.group(0) + PBJ_HTML, s, count=1, flags=re.S)
     s = re.sub(r'<script id="pbj-js">.*?</script>\n?', '', s, flags=re.S)
