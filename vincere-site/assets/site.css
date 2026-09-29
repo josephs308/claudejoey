@@ -1215,6 +1215,24 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 /* footer bottom line: meet WCAG AA contrast (was .4 white, ~3.7:1) */
 .foot-bot{color:rgba(255,255,255,.62)}
 
+/* homepage hero: dark cinematic background (option 3) */
+.hero-stage{background:#0B0A0B}
+.hero-bg img{filter:grayscale(.35) brightness(.8) contrast(1.05)}
+.hero-bg::after{background:linear-gradient(95deg,#0B0A0B 0%,#0B0A0B 32%,rgba(11,10,11,.82) 50%,rgba(11,10,11,.35) 75%,rgba(11,10,11,.2) 100%),radial-gradient(55% 80% at 82% 25%,rgba(142,79,128,.45),rgba(142,79,128,0) 70%),linear-gradient(180deg,rgba(11,10,11,0) 70%,#0B0A0B 100%)!important}
+.hero-glow{mix-blend-mode:screen!important;opacity:.9}
+.hero-v2 h1{color:#fff}.hero-v2 h1 em{color:#C9A0C0!important}
+.hero-index{color:rgba(255,255,255,.62)!important}.hero-index span:not(:last-child)::after{color:#C9A0C0}
+.hero-v2 .btn-out{color:#fff!important;border-color:rgba(255,255,255,.55)!important;background:transparent!important}
+@media(max-width:980px){.hero-bg::after{background:linear-gradient(180deg,rgba(11,10,11,.8),rgba(11,10,11,.9) 50%,#0B0A0B 90%)!important}}
+/* homepage hero: purple Book a Call with white light circling the border */
+@property --ba{syntax:'<angle>';initial-value:0deg;inherits:false}
+.hero-v2 .hero-row .btn-orange{color:#fff!important;border:2.5px solid transparent!important;
+  background:linear-gradient(135deg,#7A3F6E 0%,#5A2A52 55%,#492141 100%) padding-box,conic-gradient(from var(--ba),rgba(255,255,255,.25) 0deg,rgba(255,255,255,.35) 200deg,#E9C9E0 250deg,#fff 285deg,#E9C9E0 310deg,rgba(255,255,255,.25) 360deg) border-box!important;
+  box-shadow:0 0 18px rgba(255,255,255,.18),0 16px 44px rgba(122,63,110,.55)!important;animation:btnSpin 3.2s linear infinite}
+.hero-v2 .hero-row .btn-orange:hover{box-shadow:0 0 26px rgba(255,255,255,.3),0 18px 48px rgba(122,63,110,.65)!important}
+@keyframes btnSpin{to{--ba:360deg}}
+@media(prefers-reduced-motion:reduce){.hero-v2 .hero-row .btn-orange{animation:none}}
+
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
 .book h3{font-family:sans-serif!important;font-weight:700!important;font-size:24px!important;letter-spacing:-.015em!important;margin:0 0 6px}
