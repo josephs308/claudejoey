@@ -26,7 +26,7 @@ TODAY = datetime.date.today().isoformat()
 BOOKING_URL = ''
 
 SERVICES = [  # slug, nav label, short dropdown blurb, icon key, old url
-    ('law-firm-consulting', 'Consulting', 'Intake, CRM and lead-to-client systems', 'CONSULT', None),
+    ('law-firm-consulting', 'Consulting', 'Intake, CRM and AI agents', 'CONSULT', None),
     ('law-firm-branding', 'Branding', 'Positioning, messaging and identity', 'BRAND', 'branding.html'),
     ('local-services-ads-for-lawyers', 'Local Services Ads', 'Google Screened, pay-per-lead calls', 'LSA', 'lsa.html'),
     ('law-firm-seo', 'SEO', 'Rank in Google search and the map pack', 'SEO', 'seo.html'),
