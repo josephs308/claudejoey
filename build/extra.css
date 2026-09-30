@@ -575,7 +575,7 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .hero-scroll:hover i{border-color:#C9A0C0;background:rgba(142,79,128,.18)}
 .hero-scroll svg{width:18px;height:18px}
 @keyframes heroNudge{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-@media(max-width:980px){.hero-scroll{bottom:10px;font-size:10px}.hero-v2 .hero-stage{padding-bottom:96px!important}.hero-v2 .hero-row{padding-bottom:40px!important}}
+@media(max-width:980px){.hero-scroll{bottom:6px;font-size:10px}.hero-v2 .hero-stage{padding-bottom:96px!important}.hero-v2 .hero-row{padding-bottom:40px!important}}
 @media(prefers-reduced-motion:reduce){.hero-scroll i{animation:none}}
 /* nav: super thin white line along the bottom */
 .nav{border-bottom:1px solid rgba(255,255,255,.16)!important}
@@ -586,4 +586,4 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 @media(max-width:620px){.hero-v2 .hero-note{font-size:15.5px;margin-top:20px}}
 /* homepage hero: keep the subline off the busy part of the photo */
 @media(min-width:981px){.hero-v2 h1 em span{display:block}}
-@media(min-width:981px){.hero-scroll{bottom:auto;top:min(calc(100vh - 96px),calc(100% - 96px))}}
+@media(min-width:981px){.hero-scroll{bottom:auto;top:min(calc(100vh - 90px),calc(100% - 90px))}}
