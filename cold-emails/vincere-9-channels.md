@@ -258,79 +258,83 @@ track yours?
 
 ---
 
-# Peer-credibility openers (the MBP "attorney to attorney" play)
+# Insider openers: whole-agency pitch
 
-The MBP email worked because it was true: Tyler Brown is a practicing attorney
-who actually got LSA working at his own firm. Lawyers trust another lawyer's
-results more than any agency pitch. The credibility has to be real for Vincere
-too. A lawyer will look up the sender on LinkedIn or the bar directory before
-replying, and in most states it's illegal for a non-lawyer to present
-themselves as an attorney.
+Vincere has no attorney, so nothing here claims to be one. Don't name any past
+company or client. The credibility comes from having worked inside law firm
+marketing, talking about a problem every managing partner recognizes.
 
-Pick the version that's true for you.
+## 1. "Five vendors, no answer" (lead with this one)
 
-## A. A real attorney sends it (closest to MBP)
-
-Requires a licensed attorney who is a partner, advisor or client of Vincere and
-agrees to send from their name. The results have to be theirs.
-
-**Subject:** what fixed marketing at my firm
+**Subject:** who owns your marketing numbers?
 
 Hi {{first_name}},
 
-I'm {{attorney}}, a {{practice}} attorney in {{state}}. Two years ago my firm was
-spending [$X] a month on marketing, and I couldn't tell you which of it signed cases.
+I've spent years inside law firm marketing: ads, SEO, websites, intake. The
+same thing comes up at almost every firm.
 
-We fixed that: [real result, e.g. "LSA and intake got us to 31 signed cases a
-month at $640 each"]. Now I'm helping a few other firms do the same through
-Vincere.
+There's an SEO person, an ads agency, a web developer and maybe a billboard rep.
+Each one sends a report. Nobody can tell the partner what a signed case actually
+costs.
 
-This isn't a retainer pitch. I'm glad to show you what we changed. Worth 15 minutes?
+I started Vincere to be the one team that runs all of it and answers that
+question in one dashboard.
 
-{{attorney}}, Esq.
-
-## B. Joey: "I've run the accounts for law firms" (true today)
-
-You managed LSA for law firms at MBP. That's operator-to-attorney credibility,
-and it's real. Fill in the real numbers. Don't name past clients without
-their permission, and check you're free to mention MBP.
-
-**Subject:** ran LSA for [X] law firms
-
-Hi {{first_name}},
-
-For the last [2] years I managed Google Local Services Ads for [X] law firms,
-across PI, criminal defense and estate planning.
-
-The firms that won weren't the ones spending the most. They answered the phone
-fast and asked every client for a review.
-
-I started Vincere to do that for a firm's whole marketing, not just LSA. Want me
-to tell you the first thing I'd fix at {{firm}}?
+Can you tell me what a signed case cost {{firm}} last month? If not, I'd like to
+show you how we'd find out.
 
 Joey
 
-**Short version (same style as "Have you given up on LSA?"):**
+## 2. The survey
 
-> Hi {{first_name}}, is {{firm}} still running Local Services Ads? Joey
-
-## C. A client attorney vouches for you
-
-Only with the attorney's written OK, and only results they've approved you sharing.
-
-**Subject:** {{client_attorney}} suggested I reach out
+**Subject:** quick question for {{city}} {{practice}} attorneys
 
 Hi {{first_name}},
 
-{{client_attorney}} at {{client_firm}} and I have been working on their LSA and
-intake since [month]. [Approved result, e.g. "Their cost per signed case dropped
-from $1,100 to $700."]
+I'm asking 25 {{practice}} attorneys in {{city}} one question:
 
-They thought {{firm}} might be dealing with the same thing in {{city}}. Open to
-a quick look at what we did?
+Which channel brings in your cheapest signed case right now: Google Ads, LSA,
+SEO, referrals, Facebook or something else?
 
-{{sender}}
+I'll send everyone the anonymous results, so you'll see how {{firm}} compares
+to the rest of the market. A one-word answer is plenty.
 
-**P.S. version for any email in this file:**
+Joey, Vincere Legal Marketing
 
-> P.S. "[Quote]" — {{client_attorney}}, Esq., {{client_firm}}
+> Follow-up: "{{first_name}}, the {{city}} results are in: [X] beat everything
+> else, and most firms were overspending on [Y]. Want the breakdown and where
+> {{firm}} likely sits?" You have to actually run the survey and send people the results.
+
+## 3. The free plan: nothing to lose
+
+**Subject:** {{firm}}'s marketing plan, before you pay anything
+
+Hi {{first_name}},
+
+Most agencies want a retainer before they tell you anything. We do it the other
+way around.
+
+We study {{firm}} and your {{city}} market, then send you a written plan: which
+of the 9 channels to use (Google, AI search, social, billboards and more), in
+what order, with what budget, and what each case should cost. If a channel
+won't pay off for you, the plan says so.
+
+It's free, whether or not you hire us. Want yours?
+
+Joey
+
+## 4. One-liner
+
+**Subject:** {{firm}}
+
+Hi {{first_name}}, do you know which of your marketing actually signs cases?
+
+Joey
+
+## How to use them
+
+- **Sequence:** send #4 or #1 first, then #3 as the follow-up, so the free plan
+  is what they say yes to.
+- **Testing:** run #2 from its own inboxes as a separate test.
+- **Later:** once Vincere has a happy attorney client, ask for a one-line quote
+  for a P.S. and permission to say "[Name] at [Firm] suggested I reach out."
