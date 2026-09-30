@@ -1232,13 +1232,6 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .hero-v2 .hero-row .btn-orange:hover{box-shadow:0 0 26px rgba(255,255,255,.3),0 18px 48px rgba(122,63,110,.65)!important}
 @keyframes btnSpin{to{--ba:360deg}}
 @media(prefers-reduced-motion:reduce){.hero-v2 .hero-row .btn-orange{animation:none}}
-/* homepage services band: faded photo behind the heading */
-#services{position:relative;isolation:isolate}
-#services .svc-bg{position:absolute;left:0;right:0;top:0;height:min(620px,70vw);z-index:-1;overflow:hidden;pointer-events:none;
-  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,rgba(0,0,0,.85) 45%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%,rgba(0,0,0,.85) 45%,transparent 100%)}
-#services .svc-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.28;filter:grayscale(.5) brightness(.8) contrast(1.05)}
-#services .svc-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,11,.85) 0%,rgba(11,10,11,.35) 45%,rgba(73,33,65,.25) 100%)}
-@media(max-width:700px){#services .svc-bg{height:420px}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
