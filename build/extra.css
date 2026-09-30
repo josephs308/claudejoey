@@ -552,7 +552,7 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 @media(max-width:980px){.hero-bg picture{width:100%;-webkit-mask-image:none;mask-image:none}.hero-bg picture img{object-fit:cover;object-position:75% 10%;-webkit-mask-image:none;mask-image:none}}
 /* homepage hero: blend the top into the nav and fade the bottom into the next section */
 .hero-v2 .hero-stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,#0A0A0A 0,#0A0A0A 80px,rgba(10,10,10,0) 150px),linear-gradient(0deg,#0B0A0B 0,rgba(11,10,11,.85) 60px,rgba(11,10,11,0) 200px)}
+  background:linear-gradient(180deg,#0A0A0A 0,#0A0A0A 80px,rgba(10,10,10,0) 120px),linear-gradient(0deg,#0B0A0B 0,rgba(11,10,11,.85) 60px,rgba(11,10,11,0) 200px)}
 /* homepage hero: no photo on phones and tablets */
 @media(max-width:980px){.hero-bg picture{display:none}}
 /* homepage hero: lighter photo treatment */
@@ -564,8 +564,8 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 @media(min-width:981px){
 .hero-v2 .hero-stage{min-height:max(740px,92vh);display:flex;flex-direction:column;justify-content:flex-start;padding-top:128px!important;padding-bottom:120px!important}
 .hero-v2 .hero-stage>.hero-in{width:100%}
-.hero-bg picture{top:80px!important;bottom:auto!important;height:min(750px,calc(100% - 80px))!important;width:auto!important;max-width:none;aspect-ratio:3/2;transform:none}
-.hero-bg picture img{object-fit:cover!important;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 80%,transparent 100%)!important;mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 84%,transparent 100%)!important}
+.hero-bg picture{top:112px!important;bottom:auto!important;height:min(750px,calc(100% - 112px))!important;width:auto!important;max-width:none;aspect-ratio:3/2;transform:none}
+.hero-bg picture img{object-fit:cover!important;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 80%,transparent 100%)!important;mask-image:linear-gradient(180deg,transparent 0%,#000 5%,#000 84%,transparent 100%)!important}
 }
 @media(max-width:980px){.hero-v2 .hero-stage{padding-bottom:40px}}
 /* homepage hero: scroll to learn more */
