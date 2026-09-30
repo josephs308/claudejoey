@@ -255,3 +255,82 @@ track yours?
 - **Compliance:** include a physical address and an opt-out line
   ("Not relevant? Reply 'no' and I won't follow up"). That's required under CAN-SPAM.
 - **Measure positive replies per 100 sends,** not opens. Open tracking is unreliable and hurts deliverability.
+
+---
+
+# Peer-credibility openers (the MBP "attorney to attorney" play)
+
+The MBP email worked because it was true: Tyler Brown is a practicing attorney
+who actually got LSA working at his own firm. Lawyers trust another lawyer's
+results more than any agency pitch. The credibility has to be real for Vincere
+too. A lawyer will look up the sender on LinkedIn or the bar directory before
+replying, and in most states it's illegal for a non-lawyer to present
+themselves as an attorney.
+
+Pick the version that's true for you.
+
+## A. A real attorney sends it (closest to MBP)
+
+Requires a licensed attorney who is a partner, advisor or client of Vincere and
+agrees to send from their name. The results have to be theirs.
+
+**Subject:** what fixed marketing at my firm
+
+Hi {{first_name}},
+
+I'm {{attorney}}, a {{practice}} attorney in {{state}}. Two years ago my firm was
+spending [$X] a month on marketing, and I couldn't tell you which of it signed cases.
+
+We fixed that: [real result, e.g. "LSA and intake got us to 31 signed cases a
+month at $640 each"]. Now I'm helping a few other firms do the same through
+Vincere.
+
+This isn't a retainer pitch. I'm glad to show you what we changed. Worth 15 minutes?
+
+{{attorney}}, Esq.
+
+## B. Joey: "I've run the accounts for law firms" (true today)
+
+You managed LSA for law firms at MBP. That's operator-to-attorney credibility,
+and it's real. Fill in the real numbers. Don't name past clients without
+their permission, and check you're free to mention MBP.
+
+**Subject:** ran LSA for [X] law firms
+
+Hi {{first_name}},
+
+For the last [2] years I managed Google Local Services Ads for [X] law firms,
+across PI, criminal defense and estate planning.
+
+The firms that won weren't the ones spending the most. They answered the phone
+fast and asked every client for a review.
+
+I started Vincere to do that for a firm's whole marketing, not just LSA. Want me
+to tell you the first thing I'd fix at {{firm}}?
+
+Joey
+
+**Short version (same style as "Have you given up on LSA?"):**
+
+> Hi {{first_name}}, is {{firm}} still running Local Services Ads? Joey
+
+## C. A client attorney vouches for you
+
+Only with the attorney's written OK, and only results they've approved you sharing.
+
+**Subject:** {{client_attorney}} suggested I reach out
+
+Hi {{first_name}},
+
+{{client_attorney}} at {{client_firm}} and I have been working on their LSA and
+intake since [month]. [Approved result, e.g. "Their cost per signed case dropped
+from $1,100 to $700."]
+
+They thought {{firm}} might be dealing with the same thing in {{city}}. Open to
+a quick look at what we did?
+
+{{sender}}
+
+**P.S. version for any email in this file:**
+
+> P.S. "[Quote]" — {{client_attorney}}, Esq., {{client_firm}}
