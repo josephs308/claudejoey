@@ -1272,6 +1272,8 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .hero-v2 .hero-note{margin:26px 0 0;max-width:40ch;padding-left:16px;border-left:2px solid #8E4F80;color:rgba(255,255,255,.82);font-size:17.5px;line-height:1.55;text-shadow:0 2px 18px rgba(11,10,11,.7)}
 .hero-v2 .hero-note b{color:#E9C9E0;font-weight:600}
 @media(max-width:620px){.hero-v2 .hero-note{font-size:15.5px;margin-top:20px}}
+/* homepage hero: keep the subline off the busy part of the photo */
+@media(min-width:981px){.hero-v2 h1 em span{display:block}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
