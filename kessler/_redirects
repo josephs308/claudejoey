@@ -1,0 +1,4 @@
+# Netlify: the homepage lives at authority-site.html, so serve it at the root
+# without changing the canonical URL of any existing page.
+/                 /authority-site.html   200
+/index.html       /authority-site.html   301

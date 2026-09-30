@@ -1,0 +1,49 @@
+# Kessler & Associates
+
+> New York City personal injury trial firm. The partners are former insurance
+> defense attorneys who now represent injured people. $300M+ recovered.
+> Free case review; contingency fee, so no fee unless the case is won.
+
+Office: One World Trade Center, Suite 8500, New York, NY 10007.
+Phone: (212) 555-0380. Email: intake@kesslerlaw.com. Available 24/7.
+Languages: English, Spanish, Mandarin, Cantonese.
+Serving: Manhattan, Brooklyn, Queens, the Bronx, Staten Island, Long Island, Westchester.
+
+## Practice areas
+
+- [Car, Truck & Rideshare Accidents](https://sweet-platypus-bc9aa4.netlify.app/authority-car-accident.html): New York is a no-fault state, but an injury meeting the serious-injury threshold in Insurance Law 5102(d) opens full damages including pain and suffering.
+- [Construction & Labor Law](https://sweet-platypus-bc9aa4.netlify.app/authority-construction.html): Labor Law 240, the Scaffold Law, imposes absolute liability on owners and general contractors for gravity-related accidents, without proof of negligence.
+- [Medical Malpractice](https://sweet-platypus-bc9aa4.netlify.app/authority-malpractice.html): Requires proof that care fell below the accepted standard and caused harm. New York places no cap on non-economic damages.
+- [Wrongful Death](https://sweet-platypus-bc9aa4.netlify.app/authority-wrongful-death.html): Two years from the date of death under EPTL 5-4.1, with a survival action for pre-death pain and suffering running alongside.
+- [Catastrophic Injuries](https://sweet-platypus-bc9aa4.netlify.app/authority-catastrophic.html): Spinal cord, brain injury, amputation and burns, costed across a full life expectancy with certified life-care planning and forensic economics.
+- [Premises Liability](https://sweet-platypus-bc9aa4.netlify.app/authority-premises.html): Turns on notice. Under NYC Administrative Code 7-210 the abutting property owner, not the City, maintains the sidewalk.
+
+## Areas served
+
+- [Manhattan](https://sweet-platypus-bc9aa4.netlify.app/authority-manhattan.html): Cases filed in New York County Supreme Court.
+- [Brooklyn](https://sweet-platypus-bc9aa4.netlify.app/authority-brooklyn.html): Cases filed in Kings County Supreme Court.
+- [Queens](https://sweet-platypus-bc9aa4.netlify.app/authority-queens.html): Cases filed in Queens County Supreme Court.
+- [The Bronx](https://sweet-platypus-bc9aa4.netlify.app/authority-bronx.html): Cases filed in Bronx County Supreme Court.
+- [Staten Island](https://sweet-platypus-bc9aa4.netlify.app/authority-staten-island.html): Cases filed in Richmond County Supreme Court.
+- [Long Island](https://sweet-platypus-bc9aa4.netlify.app/authority-long-island.html): Nassau and Suffolk County Supreme Courts.
+- [Westchester](https://sweet-platypus-bc9aa4.netlify.app/authority-westchester.html): Westchester County Supreme Court, White Plains.
+- [Harlem](https://sweet-platypus-bc9aa4.netlify.app/authority-harlem.html): Part of New York County; all New York City rules apply.
+
+## Guides
+
+- [What to Do After a Car Accident in New York City](https://sweet-platypus-bc9aa4.netlify.app/authority-blog-1.html): The steps to take in the first 72 hours, and the mistakes that reduce a claim.
+- [New York No-Fault Insurance: When Can You Sue?](https://sweet-platypus-bc9aa4.netlify.app/authority-blog-2.html): How the serious-injury threshold works and what it unlocks.
+- [What Is My Injury Case Worth in New York?](https://sweet-platypus-bc9aa4.netlify.app/authority-blog-3.html): How damages are calculated and why a first offer is almost never right.
+
+## Key New York deadlines
+
+- Most personal injury claims: 3 years (CPLR 214(5)).
+- Medical malpractice: 2 years 6 months (CPLR 214-a).
+- Wrongful death: 2 years from the date of death (EPTL 5-4.1).
+- Any claim against New York City, the MTA or a municipality: Notice of Claim within 90 days (General Municipal Law 50-e), suit within 1 year 90 days.
+- No-fault (PIP) benefits: application to your own insurer within 30 days (11 NYCRR 65-1.1).
+
+## Notes
+
+This site is general information, not legal advice, and reading it creates no
+attorney-client relationship. Past results do not guarantee similar outcomes.

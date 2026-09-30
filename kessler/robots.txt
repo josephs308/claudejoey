@@ -1,0 +1,35 @@
+# Kessler & Associates
+# Search engines and AI answer engines are welcome. Nothing here is gated.
+
+User-agent: *
+Allow: /
+
+# AI search / answer engines (these drive ChatGPT, Perplexity, Copilot citations)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Applebot
+Allow: /
+
+# Model-training crawlers. Allowed by default; flip these to Disallow if the firm
+# would rather its content not be used for training. It does not affect being cited
+# in AI search results, which the bots above handle.
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://sweet-platypus-bc9aa4.netlify.app/sitemap.xml
