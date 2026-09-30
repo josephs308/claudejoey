@@ -1,4 +1,8 @@
-# Vincere Legal Marketing: cold emails for the 9 channels
+# Vincere Legal Marketing: cold emails for every channel
+
+Matches the live site: Consulting, AI & Intake, Branding, LSA, SEO, AEO, PPC,
+Meta Ads, Traditional and Websites, with ChatGPT Ads coming soon.
+Tagline: "Every channel, one partner, one plan."
 
 One email per channel, plus a multi-channel opener and a follow-up sequence.
 Each one is built on a play with a track record in agency cold outreach:
@@ -6,8 +10,9 @@ Each one is built on a play with a track record in agency cold outreach:
 - **Show a result you found about them.** Something they can check in 10 seconds.
 - **Keep it short.** Under 90 words, plain text, no links or images in email 1.
 - **Ask a question they can answer in one word.** Ask for interest, not a meeting.
-- **Offer something free and specific.** For Vincere that's the free written plan
-  and the approval-first website preview, both already on the site.
+- **Offer something free and specific.** For Vincere that's the free market
+  breakdown (projected volume, cost per new client and your fee, before they
+  commit) and the approval-first website preview.
 
 Variables: `{{first_name}}`, `{{firm}}`, `{{city}}`, `{{practice}}` (e.g. "car accident"),
 `{{competitor}}`, `{{sender}}`. Anything in [brackets] is a finding you have to look up
@@ -18,7 +23,7 @@ their own firm is your proof.
 
 ---
 
-## 0. Multi-channel opener: "the free plan"
+## 0. Multi-channel opener: "the free market breakdown"
 
 **Subject:** {{city}} {{practice}} cost per case
 
@@ -27,11 +32,11 @@ Hi {{first_name}},
 I priced out {{practice}} leads in {{city}} this week. Clicks are running about
 [$X], and [3] firms are fighting for the Local Services slots.
 
-We put that into a one-page plan for firms like {{firm}}: which channels to run,
-in what order, and what each signed case should cost. If a channel won't pay off
-in your market, the plan says so.
+We put that into a free market breakdown for firms like {{firm}}: which channels
+to run, how many cases to expect, what each one should cost, and our fee. If a
+channel won't pay off in your market, the breakdown says so.
 
-It's free, and you don't have to hire us. Want me to send yours?
+You see all of it before you commit to anything. Want me to send yours?
 
 {{sender}}
 Vincere Legal Marketing
@@ -60,7 +65,7 @@ Want the screenshots and the 5 prompts where you're missing?
 
 ---
 
-## 2. Consulting / intake: the speed-to-lead test
+## 2. AI & Intake: the speed-to-lead test
 
 **Subject:** filled out your form Tuesday
 
@@ -72,8 +77,8 @@ The first reply came [the next afternoon / never].
 People who call after a crash or an arrest usually contact 2 or 3 firms, and the
 first one to call back usually signs the case.
 
-We set up intake and automatic text and email follow-up so every lead gets a
-reply in minutes, including nights and weekends. Want me to show you what that
+We set up AI intake that answers every call and form 24/7, plus automatic text
+and email follow-up, so no lead waits until morning. Want me to show you what that
 would have looked like for my test?
 
 {{sender}}
@@ -228,6 +233,26 @@ track yours?
 
 ---
 
+## 10. ChatGPT Ads: early access *(send only once Vincere is really taking signups)*
+
+**Subject:** ads inside ChatGPT, {{city}}
+
+Hi {{first_name}},
+
+ChatGPT has started showing paid placements. That means people asking it "what
+should I do after a car accident?" can see a firm's name right in the answer.
+
+Legal is going to be one of the most competitive categories. We're setting up
+a small number of firms per city before the rush.
+
+Want me to hold a spot for {{firm}} in {{city}}?
+
+{{sender}}
+
+> The site lists this as "Soon." Don't promise launch dates or results you can't back up.
+
+---
+
 ## Follow-up sequence (for every angle)
 
 **Follow-up 1 (3 days later, same thread):**
@@ -235,12 +260,12 @@ track yours?
 
 **Follow-up 2 (4 days later, same thread): add value, don't just nudge:**
 > One more thing I noticed: [a second finding from a different channel, e.g.
-> "your Google profile has 4 unanswered reviews from this month"]. The free plan
-> covers both. Want it?
+> "your Google profile has 4 unanswered reviews from this month"]. The free market
+> breakdown covers both. Want it?
 
 **Follow-up 3 (7 days later, the break-up):**
 > I'll stop reaching out after this one. If client acquisition isn't a priority for
-> {{firm}} right now, no worries. If it is, reply "plan" and I'll send yours over.
+> {{firm}} right now, no worries. If it is, reply "yes" and I'll send your market breakdown.
 
 ---
 
@@ -305,7 +330,7 @@ Joey, Vincere Legal Marketing
 > else, and most firms were overspending on [Y]. Want the breakdown and where
 > {{firm}} likely sits?" You have to actually run the survey and send people the results.
 
-## 3. The free plan: nothing to lose
+## 3. The free market breakdown: nothing to lose
 
 **Subject:** {{firm}}'s marketing plan, before you pay anything
 
@@ -314,10 +339,10 @@ Hi {{first_name}},
 Most agencies want a retainer before they tell you anything. We do it the other
 way around.
 
-We study {{firm}} and your {{city}} market, then send you a written plan: which
-of the 9 channels to use (Google, AI search, social, billboards and more), in
-what order, with what budget, and what each case should cost. If a channel
-won't pay off for you, the plan says so.
+We study {{firm}} and your {{city}} market, then send you a breakdown: which
+channels to use (Google, AI search, social, billboards and more), how many cases
+to expect, what each should cost, and our fee. If a channel won't pay off for
+you, the breakdown says so.
 
 It's free, whether or not you hire us. Want yours?
 
@@ -333,8 +358,8 @@ Joey
 
 ## How to use them
 
-- **Sequence:** send #4 or #1 first, then #3 as the follow-up, so the free plan
-  is what they say yes to.
+- **Sequence:** send #4 or #1 first, then #3 as the follow-up, so the free market
+  breakdown is what they say yes to.
 - **Testing:** run #2 from its own inboxes as a separate test.
 - **Later:** once Vincere has a happy attorney client, ask for a one-line quote
   for a P.S. and permission to say "[Name] at [Firm] suggested I reach out."
