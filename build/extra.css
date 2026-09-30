@@ -544,8 +544,9 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .hero-v2 .hero-row .btn-orange:hover{box-shadow:0 0 26px rgba(255,255,255,.3),0 18px 48px rgba(122,63,110,.65)!important}
 @keyframes btnSpin{to{--ba:360deg}}
 @media(prefers-reduced-motion:reduce){.hero-v2 .hero-row .btn-orange{animation:none}}
-/* homepage hero: flipped celebration photo, zoomed out and anchored right */
-.hero-bg picture{position:absolute;top:80px;bottom:0;right:0;left:auto;width:62%;display:block;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%)}
-.hero-bg picture img{width:100%;height:100%;object-fit:cover;object-position:60% 0%}
-@media(max-width:980px){.hero-bg picture{width:100%;-webkit-mask-image:none;mask-image:none}.hero-bg picture img{object-position:75% 10%}}
+/* homepage hero: flipped celebration photo, fully zoomed out and anchored right */
+.hero-bg picture{position:absolute;top:80px;bottom:0;right:0;left:auto;width:54%;display:block;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 32%);mask-image:linear-gradient(90deg,transparent 0%,#000 32%)}
+.hero-bg picture img{width:100%;height:100%;object-fit:contain;object-position:100% 50%;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 82%,transparent 100%)}
+@media(max-width:980px){.hero-bg picture{width:100%;-webkit-mask-image:none;mask-image:none}.hero-bg picture img{object-fit:cover;object-position:75% 10%;-webkit-mask-image:none;mask-image:none}}
