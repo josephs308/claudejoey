@@ -681,4 +681,4 @@ html.js-anim .in .vs-us i{transform:scale(1)}
 @media(max-width:760px){#compare{padding-bottom:40px!important}#about{padding-top:36px!important}}
 /* homepage: 'More signed cases' on a slightly lighter charcoal so the
    change from the comparison section is visible */
-#about{background:#161416!important;border-top:0!important}
+#about{background:linear-gradient(180deg,#0B0A0B 0,#161416 110px,#161416 100%)!important;border-top:0!important}
