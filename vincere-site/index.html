@@ -1857,6 +1857,16 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .vs-us{border-top:1px solid rgba(255,255,255,.08)}
 .vs-row.vs-top{display:none}
 }
+/* homepage: dark sections alternate black / black with a hint of purple,
+   with the glow zig-zagging sides; tinted sections fade to black at both
+   edges so neighbours blend without a seam */
+#math{background:radial-gradient(55% 46% at 12% 50%,rgba(73,33,65,.38),rgba(73,33,65,0) 100%),linear-gradient(180deg,#0B0A0B 0,#130D12 180px,#130D12 calc(100% - 180px),#0B0A0B 100%)!important}
+#compare{background:radial-gradient(900px 520px at 88% 45%,rgba(73,33,65,.42),rgba(73,33,65,0) 62%),#0B0A0B!important}
+#about{background:radial-gradient(55% 40% at 10% 55%,rgba(73,33,65,.36),rgba(73,33,65,0) 100%),linear-gradient(180deg,#0B0A0B 0,#130D12 180px,#130D12 calc(100% - 180px),#0B0A0B 100%)!important;border-top:0!important}
+@media(max-width:760px){
+#math,#about{background:radial-gradient(90% 30% at 0% 50%,rgba(73,33,65,.38),rgba(73,33,65,0) 100%),linear-gradient(180deg,#0B0A0B 0,#130D12 120px,#130D12 calc(100% - 120px),#0B0A0B 100%)!important}
+#compare{background:radial-gradient(90% 30% at 100% 45%,rgba(73,33,65,.4),rgba(73,33,65,0) 100%),#0B0A0B!important}
+}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
