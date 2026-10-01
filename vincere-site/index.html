@@ -2379,7 +2379,7 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
     function run(){clearInterval(timer);timer=null;if(!still&&seen&&!hover&&n>1)timer=setInterval(function(){show(cur+1)},4000)}
     dots.forEach(function(d,i){d.addEventListener('click',function(){show(i);run()})});
     box.addEventListener('mouseenter',function(){hover=true;run()});box.addEventListener('mouseleave',function(){hover=false;run()});
-    if('IntersectionObserver' in window){new IntersectionObserver(function(es){seen=es[0].isIntersecting;if(seen){var nx=imgs[1];if(nx)nx.loading='eager'}run()},{threshold:.35}).observe(box)}else{seen=true;run()}
+    seen=true;var warm=function(){imgs.forEach(function(el){el.loading='eager'})};if(document.readyState==='complete')warm();else addEventListener('load',warm);run();
   });
 })();
 </script>
