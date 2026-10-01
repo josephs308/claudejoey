@@ -1275,6 +1275,19 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 /* homepage hero: keep the subline off the busy part of the photo */
 @media(min-width:981px){.hero-v2 h1 em span{display:block}}
 @media(min-width:981px){.hero-scroll{bottom:auto;top:min(calc(100vh - 78px),calc(100% - 78px))}}
+/* phones: calmer homepage, fewer competing elements */
+@media(max-width:760px){
+.hero-v2 .hero-index{display:none}
+.hero-scroll{display:none}
+.hero-v2 .hero-row .btn-row{gap:12px}
+.railbar{display:none!important}
+.gp-f{display:none}
+.gp-list{display:block!important;margin:16px 0 18px!important;padding:0!important}
+.gp-list li{background:none!important;border:0!important;box-shadow:none!important;padding:5px 0!important;min-height:0!important;display:flex!important;align-items:flex-start;gap:10px;font-size:15px}
+.gp-list li i{flex:0 0 18px;width:18px!important;height:18px!important;margin-top:2px}
+.ps-tags{display:none!important}
+.hero-v2 .hero-stage{padding-bottom:48px!important}
+}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
