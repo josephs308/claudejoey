@@ -14,7 +14,7 @@ CONTENT = os.path.join(BUILD, 'content')
 
 DOMAIN = 'https://vincerelegalmarketing.com'
 BRAND = 'Vincere Legal Marketing'
-PHONE_DISPLAY = '(619) 991-7205'  # placeholder until Vincere's real number is set
+PHONE_DISPLAY = '(619) 991-7205'  # the owner's cell; change all three PHONE_ values together
 PHONE_TEL = '+16199917205'
 PHONE_E164 = '+1-619-991-7205'
 EMAIL = 'joe@vincerelegalmarketing.com'
