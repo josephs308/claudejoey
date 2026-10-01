@@ -20,7 +20,7 @@ def render(e, practices, phone_tel, phone_display, email, booking_url=''):
                f'<div class="bk-opts{wide}">{o}</div><button type="button" class="bk-back">&lsaquo; Back</button></div>\n')
     return f'''<form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax" novalidate>
         <input type="hidden" name="form-name" value="vincere-booking">
-        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone">
+        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone"><input type="hidden" name="calendar_status">
         <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
         <div class="bk-prog" aria-hidden="true"><span></span></div>
         <div class="bk-screen" data-s="cal">

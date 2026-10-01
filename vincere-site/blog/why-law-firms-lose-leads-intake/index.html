@@ -98,7 +98,7 @@
       </div>
       <form class="form book rv" name="vincere-booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="fax" novalidate>
         <input type="hidden" name="form-name" value="vincere-booking">
-        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone">
+        <input type="hidden" name="call_time"><input type="hidden" name="call_iso"><input type="hidden" name="timezone"><input type="hidden" name="calendar_status">
         <p class="hp"><label>Fax <input name="fax" tabindex="-1" autocomplete="off"></label></p>
         <div class="bk-prog" aria-hidden="true"><span></span></div>
         <div class="bk-screen" data-s="cal">
@@ -216,8 +216,17 @@
     function etOffset(ms){if(!etf)return -5*3600e3;var p={};etf.formatToParts(new Date(ms)).forEach(function(x){p[x.type]=+x.value});return Date.UTC(p.year,p.month-1,p.day,p.hour%24,p.minute)-ms;}
     function etTime(d,h,mi){var g=Date.UTC(d.getFullYear(),d.getMonth(),d.getDate(),h,mi);var t=g-etOffset(g);return new Date(g-etOffset(t));}
     function slotsFor(d){var r=HOURS[d.getDay()]||[],out=[],now=Date.now()+2*3600e3;
-      for(var k=0;k<r.length;k+=2){for(var m=r[k][0]*60+r[k][1];m<=r[k+1][0]*60+r[k+1][1];m+=30){var t=etTime(d,Math.floor(m/60),m%60);if(+t>now)out.push(t);}}
+      for(var k=0;k<r.length;k+=2){for(var m=r[k][0]*60+r[k][1];m<=r[k+1][0]*60+r[k+1][1];m+=30){var t=etTime(d,Math.floor(m/60),m%60);if(+t>now&&isFree(t))out.push(t);}}
       return out;}
+    /* live availability from Joe's Google Calendar (busy blocks only) */
+    var busy=null,busyState='idle',API='/.netlify/functions/calendar';
+    function isFree(t){if(!busy)return true;var a=+t,b=a+30*60e3;for(var i=0;i<busy.length;i++){if(busy[i][0]<b&&busy[i][1]>a)return false}return true;}
+    function loadBusy(done){busyState='loading';
+      fetch(API+'?from='+encodeURIComponent(first.toISOString())+'&to='+encodeURIComponent(new Date(+last+864e5).toISOString()))
+        .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+        .then(function(j){busy=j&&j.busy||[]})
+        .catch(function(){busy=null})
+        .then(function(){busyState='done';draw();if(sel)times();if(done)done();});}
     function ok(d){return d>=first&&d<=last&&slotsFor(d).length>0;}
     var view=new Date(first.getFullYear(),first.getMonth(),1),sel=null;
     (function(){var c=0,d=new Date(first);while(d.getMonth()===first.getMonth()){if(ok(d))c++;d.setDate(d.getDate()+1);}if(c<5)view=new Date(first.getFullYear(),first.getMonth()+1,1);})();
@@ -240,7 +249,9 @@
     }
     function times(){
       th.textContent=fmt(sel,{weekday:'long',month:'long',day:'numeric'});slots.innerHTML='';
-      slotsFor(sel).forEach(function(t){
+      if(busyState==='loading'){var w=document.createElement('p');w.className='bk-empty';w.textContent='Checking availability\u2026';slots.appendChild(w);return;}
+      var list=slotsFor(sel);if(!list.length){var e0=document.createElement('p');e0.className='bk-empty';e0.textContent='No open times left this day. Please pick another day.';slots.appendChild(e0);}
+      list.forEach(function(t){
         var b=document.createElement('button');b.type='button';b.className='bk-slot';
         b.textContent=t.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
         b.addEventListener('click',function(){choose(t)});slots.appendChild(b);});
@@ -254,15 +265,35 @@
     }
     function valid(s){var bad=[].slice.call(s.querySelectorAll('input[required]:not([type=radio])')).filter(function(i){return !i.checkValidity()});
       if(bad.length){bad[0].reportValidity();return false}return true;}
+    var sending=false;
     function submit(){
-      err.hidden=true;
+      if(sending)return;sending=true;err.hidden=true;
+      var fd=new FormData(f),ans={};
+      ['monthly_budget','current_spend','attorneys','avg_case_value','practice_area'].forEach(function(k){if(fd.get(k))ans[k]=fd.get(k)});
+      var data={start:fd.get('call_iso'),name:fd.get('name'),firm:fd.get('firm'),email:fd.get('email'),phone:fd.get('phone'),timezone:fd.get('timezone'),answers:ans,fax:fd.get('fax')};
+      fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+        .then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{status:r.status,j:j}})},function(){return{status:0,j:{}}})
+        .then(function(res){
+          if(res.status===409){sending=false;taken();return;}
+          var booked=res.status===200&&res.j&&res.j.ok;
+          f.querySelector('[name="calendar_status"]').value=booked?'Added to Google Calendar, invite sent':'Not added to calendar ('+(res.j&&res.j.error||'no response')+'), confirm manually';
+          sendForm(booked);});
+    }
+    function sendForm(booked){
       var body=new URLSearchParams(new FormData(f)).toString();
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
-        .then(function(r){if(!r.ok)throw new Error(r.status);
+        .then(function(r){if(!r.ok&&!booked)throw new Error(r.status);
           f.querySelector('.bk-done-when').textContent=label+'.';
-          f.querySelector('.bk-done-email').textContent=f.querySelector('[name="email"]').value;
-          show(screens.length-1);})
-        .catch(function(){screens.forEach(function(s){s.hidden=true;if('inert' in s)s.inert=true});err.hidden=false;});
+          var em=f.querySelector('[name="email"]').value,mail=f.querySelector('.bk-done-mail');
+          mail.textContent='';mail.appendChild(document.createTextNode(booked?'We just sent a calendar invite to ':'We will email '));
+          var b=document.createElement('b');b.className='bk-done-email';b.textContent=em;mail.appendChild(b);
+          mail.appendChild(document.createTextNode(booked?'.':' to confirm your time.'));
+          sending=false;show(screens.length-1);})
+        .catch(function(){sending=false;screens.forEach(function(s){s.hidden=true;if('inert' in s)s.inert=true});err.hidden=false;});
+    }
+    function taken(){
+      show(0);sel=null;slots.innerHTML='';
+      loadBusy(function(){th.textContent='That time was just booked';slots.innerHTML='';var m=document.createElement('p');m.className='bk-empty';m.textContent='Someone grabbed that slot a moment ago. Please pick another time.';slots.appendChild(m);});
     }
     f.querySelector('.bk-retry').addEventListener('click',function(){err.hidden=true;screens[cur].hidden=false;if('inert' in screens[cur])screens[cur].inert=false;submit();});
     f.querySelector('.bk-err-back').addEventListener('click',function(){show(cur)});
@@ -275,6 +306,9 @@
     prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
     next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
     draw();show(0,true);
+    var warm=function(){setTimeout(function(){if(busyState==='idle')loadBusy()},400)};
+    if(document.readyState==='complete')warm();else addEventListener('load',warm);
+    f.addEventListener('pointerdown',function(){if(busyState==='idle')loadBusy()},{once:true});
   });
 })();
 </script>
