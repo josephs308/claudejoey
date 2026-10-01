@@ -1335,6 +1335,15 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .vs-us{border-top:1px solid rgba(255,255,255,.08)}
 .vs-row.vs-top{display:none}
 }
+/* homepage: more compact comparison table on desktop */
+@media(min-width:761px){
+.vs-row{grid-template-columns:minmax(0,.55fr) minmax(0,1fr) minmax(0,1.1fr)}
+.vs-row>div{padding:13px 22px;font-size:14.5px;line-height:1.45}
+.vs-top>div{padding-top:12px;padding-bottom:12px;font-size:11px}
+.vs-row i{flex-basis:20px;width:20px;height:20px}
+.vs-row i svg{width:12px;height:12px}
+.vs-head{margin-bottom:32px}
+}
 /* homepage: plan section sits closer to the comparison */
 #math{padding-bottom:64px!important}
 #compare{padding-top:48px!important}
