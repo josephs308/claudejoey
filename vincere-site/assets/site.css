@@ -1295,7 +1295,7 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .chan-tab[aria-selected="true"] .ct-ic{color:#fff!important}
 }
 /* desktop: tighter gap between the hero and the services band */
-@media(min-width:981px){.hero-v2 .hero-stage{padding-bottom:80px!important}#services{padding-top:36px!important}}
+@media(min-width:981px){.hero-v2 .hero-stage{padding-bottom:64px!important}#services{padding-top:20px!important}}
 /* homepage: Vincere vs. the typical agency */
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .vs-sec{padding-top:96px;padding-bottom:96px;background:#0B0A0B!important;color:#fff}

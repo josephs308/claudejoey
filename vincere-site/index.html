@@ -1150,7 +1150,7 @@ html.js-anim .in .kid,html.js-anim .kid.in{opacity:1;transform:none}
 .plan-steps li.is-active .ps-n{background:var(--purple);color:#fff;transform:scale(1.08)}
 #services.dk{--gy:0%}
 #services.dk{--dk-bg:radial-gradient(1000px 520px at 85% calc(42% + var(--gy)),rgba(73,33,65,.5) 0%,rgba(73,33,65,0) 62%),#0B0A0B}
-.hero-v2 .hero-lead{will-change:transform,opacity}
+.hero-v2 .hero-lead,.hero-v2 .hero-row{will-change:transform,opacity}
 @media(prefers-reduced-motion:reduce){html.js-anim .rv,html.js-anim .kid{opacity:1!important;transform:none!important;transition:none!important}
   .plan-steps li.is-active{transform:none}}
 .plan-promise li{padding-left:0!important}
@@ -1817,7 +1817,7 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .chan-tab[aria-selected="true"] .ct-ic{color:#fff!important}
 }
 /* desktop: tighter gap between the hero and the services band */
-@media(min-width:981px){.hero-v2 .hero-stage{padding-bottom:80px!important}#services{padding-top:36px!important}}
+@media(min-width:981px){.hero-v2 .hero-stage{padding-bottom:64px!important}#services{padding-top:20px!important}}
 /* homepage: Vincere vs. the typical agency */
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .vs-sec{padding-top:96px;padding-bottom:96px;background:#0B0A0B!important;color:#fff}
@@ -2335,10 +2335,10 @@ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{p
   var steps=[].slice.call(document.querySelectorAll('.plan-steps li'));
   if(steps.length&&innerWidth>980){steps[0].classList.add('is-active');var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){steps.forEach(function(s){s.classList.toggle('is-active',s===e.target)})}})},{rootMargin:'-30% 0px -55% 0px'});steps.forEach(function(s){so.observe(s)});}
   /* parallax: services glow + hero ease-out */
-  var svc=document.getElementById('services'),lead=document.querySelector('.hero-v2 .hero-lead'),t=false;
+  var svc=document.getElementById('services'),lead=[].slice.call(document.querySelectorAll('.hero-v2 .hero-lead, .hero-v2 .hero-row')),t=false;
   if(window.VF)VF.add(function(){var vh=innerHeight,p=null;if(svc){var r=svc.getBoundingClientRect();p=Math.max(0,Math.min(1,(vh-r.top)/(vh+r.height)))}return{p:p,y:Math.min(scrollY,600)}},
     function(d){if(svc&&d.p!==null)svc.style.setProperty('--gy',((d.p-.5)*40).toFixed(1)+'%');
-      if(lead){lead.style.transform='translateY('+(d.y*.18).toFixed(1)+'px)';lead.style.opacity=(1-d.y/900).toFixed(3);}});
+      lead.forEach(function(el){el.style.transform='translateY('+(d.y*.18).toFixed(1)+'px)';el.style.opacity=(1-d.y/900).toFixed(3);});});
 })();
 </script>
 <script id="bk-js">
