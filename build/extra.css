@@ -680,3 +680,7 @@ html.js-anim .in .vs-us i{transform:scale(1)}
 .ph-dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
 @media(max-width:760px){.ph-dots{right:16px;bottom:auto;top:14px}}
 @media(prefers-reduced-motion:reduce){.ph-rot .ph-slide,.ph-rot .ph-slide-cap{transition:none!important;transform:none!important}}
+/* homepage: comparison sits closer to 'More signed cases' */
+#compare{padding-bottom:48px!important}
+#about{padding-top:44px!important}
+@media(max-width:760px){#compare{padding-bottom:40px!important}#about{padding-top:36px!important}}
