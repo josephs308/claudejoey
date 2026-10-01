@@ -1287,6 +1287,12 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 .gp-list li i{flex:0 0 18px;width:18px!important;height:18px!important;margin-top:2px}
 .ps-tags{display:none!important}
 .hero-v2 .hero-stage{padding-bottom:48px!important}
+.chan-tabs{display:flex!important;flex-wrap:wrap!important;overflow:visible!important;gap:8px!important;margin:0 0 20px!important;padding:0!important;border-bottom:0!important}
+.chan-tab{flex:0 0 auto!important;margin:0!important;padding:8px 13px!important;font-size:13.5px!important;border:1px solid rgba(255,255,255,.2)!important;border-radius:999px!important;gap:6px!important}
+.chan-tab::after,.chan-tab::before,.chan-ink{display:none!important}
+.chan-tab .ct-ic{width:15px!important;height:15px!important}
+.chan-tab[aria-selected="true"]{background:var(--purple)!important;border-color:var(--purple)!important;color:#fff!important}
+.chan-tab[aria-selected="true"] .ct-ic{color:#fff!important}
 }
 
 /* booking calendar */
