@@ -120,5 +120,6 @@ The blog lives at `/blog/`. Every post automatically gets:
    - `[text](/link/)` makes a link.
 4. Run `python3 build/build.py`, then `python3 build/audit.py`. The audit flags a title or description that's too long or too short.
 5. Re-upload the `vincere-site` folder to Netlify.
+6. In Google Search Console, use URL Inspection on the new post's URL and click **Request indexing**. Bing doesn't need this step: after every live deploy, the site sends new and changed pages to Bing automatically through IndexNow (the key file is `f61cd3633055d1824f36fc5543a2c795.txt` in the site root). Bing also feeds ChatGPT search and Copilot.
 
 To hide a post while it's still being written, add `draft: true` to its header. Or send the text to Claude and it will format, check and publish it for you.
