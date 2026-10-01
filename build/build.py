@@ -14,7 +14,7 @@ CONTENT = os.path.join(BUILD, 'content')
 
 DOMAIN = 'https://vincerelegalmarketing.com'
 BRAND = 'Vincere Legal Marketing'
-PHONE_DISPLAY = '(619) 991-7205'  # placeholder until Vincere's real number is set
+PHONE_DISPLAY = '(619) 991-7205'  # the owner's cell; change all three PHONE_ values together
 PHONE_TEL = '+16199917205'
 PHONE_E164 = '+1-619-991-7205'
 EMAIL = 'joe@vincerelegalmarketing.com'
@@ -303,6 +303,9 @@ def jsonld(nodes):
 # ---------------------------------------------------------------- page shell
 def head(url, title, desc, schema, robots='index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'):
     canon = f'{DOMAIN}{url}'
+    # A noindex page asks to be dropped from the index; a canonical on it asks
+    # the opposite. Emit it only on indexable pages.
+    canon_tag = '' if 'noindex' in robots else f'\n<link rel="canonical" href="{canon}">'
     return f'''<!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -310,8 +313,7 @@ def head(url, title, desc, schema, robots='index,follow,max-image-preview:large,
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
-<meta name="robots" content="{robots}">
-<link rel="canonical" href="{canon}">
+<meta name="robots" content="{robots}">{canon_tag}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{BRAND}">
 <meta property="og:locale" content="en_US">
@@ -732,8 +734,23 @@ HEADERS = """/*
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-/assets/*
-  Cache-Control: public, max-age=0, must-revalidate
+# site.css is requested as site.css?v=<content hash>, so a changed file is a
+# new URL and the old one can be cached for good.
+/assets/site.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images keep their filenames when replaced, so cache for a week, not forever.
+/assets/hero/*
+  Cache-Control: public, max-age=604800
+
+/assets/logo.png
+  Cache-Control: public, max-age=604800
+
+/assets/og-image.png
+  Cache-Control: public, max-age=604800
+
+/assets/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
 
 /portal/*
   X-Robots-Tag: noindex
@@ -748,6 +765,13 @@ HEADERS = """/*
   Content-Type: text/plain; charset=utf-8
 """
 
+# Search and AI crawlers are all welcome. The AI agents are named so the intent
+# is explicit and survives anyone later adding a blanket rule under '*'.
+AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
+           'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'Bingbot']
+ROBOTS = ('User-agent: *\nAllow: /\n\n' + ''.join(f'User-agent: {b}\n' for b in AI_BOTS) + 'Allow: /\n\n'
+          + f'Sitemap: {DOMAIN}/sitemap.xml\n')
+
 def build_misc():
     open(os.path.join(SITE, '_headers'), 'w').write(HEADERS)
     build_llms()
@@ -759,9 +783,9 @@ def build_misc():
     open(os.path.join(SITE, 'favicon.svg'), 'w').write(FAVICON)
     urls = [('/', '1.0')] + SITEMAP
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
-        f'  <url><loc>{DOMAIN}{u}</loc><lastmod>{TODAY}</lastmod><priority>{p}</priority></url>\n' for u, p in urls) + '</urlset>\n'
+        f'  <url><loc>{DOMAIN}{u}</loc><lastmod>{LASTMOD.get(u, TODAY)}</lastmod><priority>{p}</priority></url>\n' for u, p in urls) + '</urlset>\n'
     open(os.path.join(SITE, 'sitemap.xml'), 'w').write(xml)
-    open(os.path.join(SITE, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n')
+    open(os.path.join(SITE, 'robots.txt'), 'w').write(ROBOTS)
     red = ['# Old flat URLs -> new service and about pages (301)']
     for s, lab, _, _, old in SERVICES:
         if old:
@@ -850,7 +874,7 @@ def patch_home():
     s = re.sub(r'<title>.*?</title>', f'<title>{e(HOME_TITLE)}</title>', s, count=1)
     s = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{e(HOME_DESC)}">', s, count=1)
     s = re.sub(r'\n<meta (?:property="(?:og|twitter):[^"]*"|name="(?:twitter:[^"]*|robots)")[^>]*>', '', s)
-    s = re.sub(r'\n<link rel="(?:canonical|apple-touch-icon)"[^>]*>', '', s)
+    s = re.sub(r'\n<link rel="(?:canonical|apple-touch-icon|alternate)"[^>]*>', '', s)
     s = re.sub(r'<link rel="icon"[^>]*>', f'<link rel="icon" href="{favicon_uri()}" type="image/svg+xml">', s, count=1)
     social = f"""
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -932,6 +956,7 @@ def build_thanks():
 def build_portal():
     os.makedirs(os.path.join(SITE, 'portal'), exist_ok=True)
     ps = open(os.path.join(BUILD, 'portal.html')).read()
+    ps = re.sub(r'\n?<link rel="canonical"[^>]*>', '', ps)  # noindex page: no canonical
     ps = re.sub(r'<link rel="icon"[^>]*>', f'<link rel="icon" type="image/svg+xml" href="{favicon_uri()}">', ps, count=1)
     ps = re.sub(r'(<span class="pmark">)<svg.*?</svg>', lambda m: m.group(1) + vmark_svg('p', cls='').replace('<svg ', '<svg width="64" height="64" ', 1), ps, count=1, flags=re.S)
     open(os.path.join(SITE, 'portal', 'index.html'), 'w').write(ps)
@@ -982,6 +1007,51 @@ def version_css():
                 n = re.sub(r'href="/assets/site\.css(\?v=[0-9a-f]+)?"', f'href="/assets/site.css?v={v}"', t)
                 if n != t: open(fp, 'w').write(n)
 
+# ---------------------------------------------------------------- lastmod
+# A lastmod that moves on every build teaches Google to ignore it. Each page's
+# date changes only when the text inside its <main> changes: build/lastmod.json
+# stores a hash of that text and the date it last differed.
+LASTMOD = {}
+LASTMOD_FILE = os.path.join(BUILD, 'lastmod.json')
+
+def page_file(url):
+    return os.path.join(SITE, 'index.html') if url == '/' else os.path.join(SITE, url.strip('/'), 'index.html')
+
+def first_seen(url):
+    # No stored hash yet: fall back to when the page's content file last changed in git.
+    import subprocess
+    parts = url.strip('/').split('/')
+    name = {'': None, 'services': 'services-hub', 'practice-areas': 'practice-hub', 'about': 'about', 'blog': None}.get(url.strip('/'), parts[-1])
+    src = os.path.join(CONTENT, 'blog', name + '.md') if parts[0] == 'blog' and name else os.path.join(CONTENT, f'{name}.json') if name else None
+    if src and src.endswith('.md') and os.path.exists(src):
+        # A post's own date/updated fields are what its BlogPosting schema says.
+        dates = re.findall(r'^(?:date|updated):\s*(\d{4}-\d{2}-\d{2})', open(src).read(), re.M)
+        if dates: return max(dates)
+    if src and os.path.exists(src):
+        try:
+            d = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', src], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+            if d: return d
+        except OSError: pass
+    return TODAY
+
+def stamp_lastmod():
+    import hashlib
+    old = json.load(open(LASTMOD_FILE)) if os.path.exists(LASTMOD_FILE) else {}
+    new = {}
+    for u in ['/'] + [u for u, _ in SITEMAP]:
+        fp = page_file(u); t = open(fp).read()
+        m = re.search(r'<main[^>]*>(.*)</main>', t, re.S)
+        text = ' '.join(html.unescape(re.sub(r'<script.*?</script>|<style.*?</style>|<[^>]+>', ' ', m.group(1) if m else t, flags=re.S)).split())
+        h = hashlib.sha256(text.encode()).hexdigest()[:16]
+        prev = old.get(u)
+        if prev: date = prev['date'] if prev['hash'] == h else TODAY
+        else: date = first_seen(u)
+        new[u] = {'hash': h, 'date': date}; LASTMOD[u] = date
+        # The page-level node carries the same date as the sitemap.
+        n = t.replace(f'"dateModified":"{TODAY}"', f'"dateModified":"{date}"')
+        if n != t: open(fp, 'w').write(n)
+    open(LASTMOD_FILE, 'w').write(json.dumps(new, indent=1, sort_keys=True) + '\n')
+
 def main():
     build_css()
     for s, *_ in SERVICES:
@@ -1001,10 +1071,11 @@ def main():
     build_thanks()
     build_404()
     remove_old()
-    build_misc()
     apply_system_fonts()
     size_svgs()
     version_css()
+    stamp_lastmod()
+    build_misc()
     print('built', len(SITEMAP), 'pages')
 
 if __name__ == '__main__':

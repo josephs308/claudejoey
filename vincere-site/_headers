@@ -4,8 +4,23 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-/assets/*
-  Cache-Control: public, max-age=0, must-revalidate
+# site.css is requested as site.css?v=<content hash>, so a changed file is a
+# new URL and the old one can be cached for good.
+/assets/site.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images keep their filenames when replaced, so cache for a week, not forever.
+/assets/hero/*
+  Cache-Control: public, max-age=604800
+
+/assets/logo.png
+  Cache-Control: public, max-age=604800
+
+/assets/og-image.png
+  Cache-Control: public, max-age=604800
+
+/assets/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
 
 /portal/*
   X-Robots-Tag: noindex

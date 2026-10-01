@@ -23,7 +23,9 @@ for url,s in sorted(pages.items()):
     elif len(t)>60 and not noindex: issues.append((url,f'title {len(t)} chars'))
     if not d: issues.append((url,'no description'))
     elif not noindex and not(120<=len(d)<=160): issues.append((url,f'desc {len(d)} chars'))
-    if not c: issues.append((url,'no canonical'))
+    if noindex:
+        if c: issues.append((url,'canonical on a noindex page'))
+    elif not c: issues.append((url,'no canonical'))
     elif c.group(1)!=DOMAIN+url: issues.append((url,'canonical mismatch '+c.group(1)))
     if not noindex:
         titles.setdefault(t,[]).append(url);descs.setdefault(d,[]).append(url)
