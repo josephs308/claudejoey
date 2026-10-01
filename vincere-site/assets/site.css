@@ -1345,6 +1345,10 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 #math,#about{background:radial-gradient(90% 30% at 0% 50%,rgba(73,33,65,.5),rgba(73,33,65,0) 100%),linear-gradient(180deg,#0B0A0B 0,#1A1118 50px,#1A1118 calc(100% - 50px),#0B0A0B 100%)!important}
 #compare{background:radial-gradient(90% 30% at 100% 45%,rgba(73,33,65,.4),rgba(73,33,65,0) 100%),#0B0A0B!important}
 }
+/* homepage: plan section sits closer to the comparison */
+#math{padding-bottom:64px!important}
+#compare{padding-top:48px!important}
+@media(max-width:760px){#math{padding-bottom:48px!important}#compare{padding-top:40px!important}}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
