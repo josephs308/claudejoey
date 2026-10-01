@@ -1347,18 +1347,16 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 /* homepage: plan section sits closer to the comparison */
 #math{padding-bottom:64px!important}
 @media(max-width:760px){#math{padding-bottom:48px!important}}
-/* comparison: rows play in order; the typical-agency answer gets struck
-   through, a shine crosses the Vincere answer and its check pops in */
+/* comparison: rows play in order; a shine crosses the Vincere answer
+   and its check pops in */
 html.js-anim .vs-row.kid{transition-delay:calc(var(--i,0) * 170ms + 150ms)}
-html.js-anim .vs-them .vs-t{background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.55)) 0 58%/0% 1px no-repeat;transition:background-size .5s ease-out,color .5s;transition-delay:calc(var(--i,0) * 170ms + 550ms)}
-html.js-anim .in .vs-them .vs-t{background-size:100% 1px;color:rgba(255,255,255,.45)}
 html.js-anim .vs-us{position:relative;overflow:hidden}
 html.js-anim .vs-us::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:60%;pointer-events:none;background:linear-gradient(100deg,rgba(201,160,192,0),rgba(201,160,192,.22),rgba(201,160,192,0));transform:translateX(0);opacity:0}
 html.js-anim .in .vs-us::after{animation:vsShine 1s ease-out both;animation-delay:calc(var(--i,0) * 170ms + 650ms)}
 @keyframes vsShine{0%{transform:translateX(0);opacity:1}100%{transform:translateX(280%);opacity:0}}
 html.js-anim .vs-us i{transform:scale(0);transition:transform .45s cubic-bezier(.34,1.56,.64,1);transition-delay:calc(var(--i,0) * 170ms + 800ms)}
 html.js-anim .in .vs-us i{transform:scale(1)}
-@media(prefers-reduced-motion:reduce){html.js-anim .vs-them .vs-t,html.js-anim .vs-us i{transition:none!important;transform:none!important}html.js-anim .in .vs-us::after{animation:none!important}}
+@media(prefers-reduced-motion:reduce){html.js-anim .vs-us i{transition:none!important;transform:none!important}html.js-anim .in .vs-us::after{animation:none!important}}
 /* homepage: rotating photo with matching captions */
 .ph-rot .ph-slide{opacity:0;transform:scale(1.03);transition:opacity .8s ease,transform 4.5s ease-out}
 .ph-rot .ph-slide.on{opacity:1;transform:scale(1)}
