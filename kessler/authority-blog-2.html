@@ -432,6 +432,25 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 #practice .pa-icon{color:#fff}
 #practice .section-sub{color:#9fb0c6}
 #results .rc-type{color:#4a4a4a}
+
+/* ---- motion -------------------------------------------------------------
+   The hidden state is scoped to .has-reveal, which only JS adds. With JS off,
+   broken, or reduced-motion set, every element below renders normally and
+   nothing can end up invisible. Transform and opacity only, so this runs on
+   the compositor and does not cost scroll frames. */
+.has-reveal .reveal{opacity:0;transform:translateY(14px)}
+.has-reveal .reveal.is-in{opacity:1;transform:none;
+  transition:opacity .45s cubic-bezier(.22,.61,.36,1),transform .45s cubic-bezier(.22,.61,.36,1)}
+.hero-left>*{animation:heroIn .7s cubic-bezier(.22,.61,.36,1) both}
+.hero-left>*:nth-child(1){animation-delay:.05s}
+.hero-left>*:nth-child(2){animation-delay:.15s}
+.hero-left>*:nth-child(3){animation-delay:.25s}
+.hero-left>*:nth-child(4){animation-delay:.35s}
+@keyframes heroIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .has-reveal .reveal,.has-reveal .reveal.is-in{opacity:1;transform:none;transition:none}
+  .hero-left>*{animation:none}
+}
 </style>
 
 </head>
@@ -629,5 +648,96 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <span>New York, NY &middot; (212) 555-0380</span>
   </div>
 </footer>
+<script>
+'use strict';
+/* Scroll reveals. Nothing is hidden until this runs, so a JS failure, an old
+   browser or reduced-motion all leave the page fully readable. */
+(function () {
+  var root = document.documentElement;
+  if ((window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)
+      || !('IntersectionObserver' in window)) return;
+  /* Phones are where the slow CPUs are, and a scroll that drops frames is worse
+     than no animation. Reveals are desktop-only; phones get the page at rest. */
+  if (window.innerWidth < 900) return;
+
+  /* Containers, not every card. Animating 77 elements individually cost real
+     frames on a throttled CPU; revealing each grid as one unit is both cheaper
+     and calmer to look at. */
+  var GROUPS = ['.section-label','.section-h2','.section-sub','.att-grid','.results-grid',
+    '.pa-grid','.reviews-grid','.city-grid','.blog-grid','.pa-facts','.pa-process','.pa-faq',
+    '.faq-list','.pa-stats','.details','.promise','.pa-why-box','.footer-top','.video-grid',
+    '.rg-h','.rg-sub','.answer-inner','.pa-cta-h','.pa-cta-sub','.pa-h2','.pa-tagline',
+    '.pa-body','.art-faq','.art-cta','.aside-card','.sidebar-related','.index-list',
+    '.borough-grid','.article-content>h2','.article-tag','.article-h1','.article-meta',
+    '.contact-grid','.invite'];
+
+  var pending = [];
+  GROUPS.forEach(function (sel) {
+    var found = document.querySelectorAll(sel);
+    for (var i = 0; i < found.length; i++) {
+      var el = found[i];
+      if (el.closest('.hero-left') || el.dataset.reveal) continue;
+      el.dataset.reveal = '1';
+      el.classList.add('reveal');
+      pending.push(el);
+    }
+  });
+  if (!pending.length) return;
+  root.classList.add('has-reveal');
+
+  function show(el, stagger) {
+    if (el.classList.contains('is-in')) return;
+    el.style.transitionDelay = (stagger ? Math.min(stagger, 4) * 70 : 0) + 'ms';
+    el.classList.add('is-in');
+  }
+
+  /* Sweep everything already at or above the fold. An observer only fires for
+     elements intersecting on a sampled frame, so a fast scroll or an anchor
+     jump can skip one entirely - this catches those. Positions are measured
+     once and cached: reading getBoundingClientRect per element per scroll
+     frame forces layout and costs real frames on a slow device. */
+  function measure() {
+    var y = window.pageYOffset;
+    pending.forEach(function (el) { el._y = el.getBoundingClientRect().top + y; });
+  }
+  function sweep() {
+    if (!pending.length) return;
+    var limit = window.pageYOffset + window.innerHeight * 0.92, left = [];
+    for (var i = 0; i < pending.length; i++) {
+      var el = pending[i];
+      if (el._y < limit) { show(el, 0); io.unobserve(el); }
+      else left.push(el);
+    }
+    pending = left;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var p = e.target.parentElement;
+      show(e.target, p ? [].indexOf.call(p.children, e.target) : 0);
+      io.unobserve(e.target);
+    });
+    sweep();
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+  pending.slice().forEach(function (el) { io.observe(el); });
+
+  var ticking = false;
+  addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; sweep(); });
+  }, { passive: true });
+
+  measure();
+  addEventListener('resize', function () { measure(); sweep(); }, { passive: true });
+  requestAnimationFrame(sweep);
+  setTimeout(function () {
+    pending.forEach(function (el) { el.classList.add('is-in'); });
+    pending = [];
+  }, 2500);
+})();
+</script>
 </body>
 </html>
