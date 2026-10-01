@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="description" content="New York City personal injury trial firm led by former insurance defense attorneys. $300M+ recovered. Free case review, no fee unless we win.">
 <link rel="canonical" href="https://sweet-platypus-bc9aa4.netlify.app/authority-site.html">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -161,6 +163,16 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+/* Typeface, carried over from the Vincere site. Both are variable woff2 served
+   from /assets/fonts rather than Google's CDN: one less origin to connect to. */
+@font-face{font-family:"Unbounded";src:url("assets/fonts/unbounded-var.woff2") format("woff2");
+  font-weight:200 900;font-style:normal;font-display:swap}
+/* metrics matched to Arial so the swap does not shift the layout */
+@font-face{font-family:"Unbounded Fallback";src:local("Arial"),local("Helvetica"),local("Liberation Sans");
+  size-adjust:145.5%;ascent-override:76%;descent-override:19%;line-gap-override:0%}
+@font-face{font-family:"Schibsted Grotesk";src:url("assets/fonts/schibsted-grotesk-var.woff2") format("woff2");
+  font-weight:400 700;font-style:normal;font-display:swap}
+
 :root{
   --black:#080c14;
   --dark:#0e1520;
@@ -176,16 +188,18 @@
   --line:#e2e8f0;
   --paper:#f5f7fb;
   --red:#c0392b;
+  --display:"Unbounded","Unbounded Fallback",Arial,sans-serif;
+  --sans:"Schibsted Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --navy:#0a1628;
   --deep:#0c1a2e;
 }
 html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:var(--ink);font-size:16px;line-height:1.6;word-spacing:0.03em}
+body{font-family:var(--sans);background:#fff;color:var(--ink);font-size:16px;line-height:1.6;word-spacing:0.03em}
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,12,20,0.98);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;border-bottom:1px solid rgba(201,168,76,0.2)}
 .nav-brand{display:flex;align-items:baseline;gap:10px}
-.nav-brand-name{font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase}
+.nav-brand-name{font-family:var(--display);font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase}
 .nav-brand-sep{color:var(--gold);font-size:14px}
 .nav-brand-sub{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
 .nav-links{display:flex;gap:28px;list-style:none}
@@ -204,9 +218,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .hero-left{padding:40px 60px 40px 80px;display:flex;flex-direction:column;justify-content:flex-start;position:relative;z-index:2}
 .hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:12px}
 .hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
-.hero-h1{font-size:clamp(32px,3.8vw,58px);font-weight:900;color:#fff;line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:20px}
+.hero-h1{font-family:var(--display);font-size:clamp(32px,3.8vw,58px);font-weight:900;color:#fff;line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:20px}
 .hero-h1 em{color:var(--gold);font-style:normal}
-.hero-h1 .sub-line{font-size:0.38em;letter-spacing:0.15em;font-weight:500;color:var(--light);display:block;margin-top:8px;text-transform:uppercase}
+.hero-h1 .sub-line{font-size:0.30em;letter-spacing:0.09em;font-weight:500;line-height:1.45;color:var(--light);display:block;margin-top:18px;text-transform:uppercase}
 .hero-sub{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:24px;max-width:460px;border-left:2px solid var(--gold);padding-left:16px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:60px}
 .btn-gold{background:var(--gold);color:var(--black);padding:16px 36px;font-size:13px;font-weight:800;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;transition:background 0.2s}
@@ -232,7 +246,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 }
 .hero-stats-bar{position:absolute;bottom:32px;left:32px;right:32px;z-index:3;display:flex;gap:2px;background:var(--border)}
 .hstat{flex:1;background:var(--card);padding:16px 20px}
-.hstat-n{font-size:22px;font-weight:900;color:var(--gold);line-height:1}
+.hstat-n{font-family:var(--display);font-size:22px;font-weight:900;color:var(--gold);line-height:1}
 .hstat-l{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-top:4px}
 @media(max-width:1000px){.hero{grid-template-columns:1fr;min-height:auto}.hero-right{min-height:320px;display:block}.hero-left{padding:80px 24px 56px}}
 
@@ -244,7 +258,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .section-dark{background:var(--dark);color:#fff}
 .section-black{background:var(--black);color:#fff}
 .section-label{font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.section-h2{font-size:clamp(30px,3.8vw,52px);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-0.025em;text-transform:uppercase;margin-bottom:20px}
+.section-h2{font-family:var(--display);font-size:clamp(30px,3.8vw,52px);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-0.025em;text-transform:uppercase;margin-bottom:20px}
 .section-dark .section-h2,.section-black .section-h2{color:#fff}
 .section-sub{font-size:16px;color:var(--gray);line-height:1.85;max-width:600px}
 .section-dark .section-sub,.section-black .section-sub{color:rgba(255,255,255,0.5)}
@@ -272,7 +286,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .rc.feat{background:rgba(201,168,76,0.08);border:2px solid var(--gold)}
 .rc-badge{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .rc-type{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--light);margin-bottom:10px}
-.rc-amount{font-size:44px;font-weight:900;color:#fff;line-height:1;margin-bottom:10px}
+.rc-amount{font-family:var(--display);font-size:44px;font-weight:900;color:#fff;line-height:1;margin-bottom:10px}
 .rc-amount span{font-size:24px;color:var(--gold)}
 .rc-desc{font-size:13px;color:var(--gray);line-height:1.65}
 @media(max-width:900px){.results-grid{grid-template-columns:1fr}}
@@ -301,7 +315,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 /* REVIEW GENERATION */
 .review-gen{background:var(--gold);padding:48px 80px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.rg-h{font-size:28px;font-weight:900;color:var(--black);text-transform:uppercase;line-height:1}
+.rg-h{font-family:var(--display);font-size:28px;font-weight:900;color:var(--black);text-transform:uppercase;line-height:1}
 .rg-sub{font-size:14px;color:rgba(0,0,0,0.6);margin-top:8px;max-width:480px}
 .rg-btn{background:var(--black);color:var(--gold);padding:14px 28px;font-size:13px;font-weight:800;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap}
 .rg-btn:hover{background:var(--dark)}
@@ -350,7 +364,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 /* FOOTER */
 footer{background:var(--black);padding:64px 80px 32px;border-top:1px solid rgba(201,168,76,0.15)}
 .footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-brand{font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px}
+.footer-brand{font-family:var(--display);font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px}
 .footer-brand span{color:var(--gold)}
 .footer-tagline{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7}
 .footer-h{font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px}
@@ -374,7 +388,7 @@ footer{background:var(--black);padding:64px 80px 32px;border-top:1px solid rgba(
 
 .ticker{background:var(--gold);padding:13px 0;overflow:hidden;position:relative;contain:paint}
 .ticker-inner{display:flex;gap:0;white-space:nowrap;animation:ticker 28s linear infinite;will-change:transform}
-.ticker-item{font-family:'Arial Narrow',Impact,sans-serif;font-size:12px;font-weight:800;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);padding:0 36px;display:flex;align-items:center;gap:36px}
+.ticker-item{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);padding:0 36px;display:flex;align-items:center;gap:36px}
 .ticker-item::after{content:'\2756';color:rgba(0,0,0,0.3)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){
@@ -468,7 +482,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
         <input type="text" id="hf-desc" placeholder="Brief description of your situation" style="width:100%;background:#f8f8f8;border:none;border-bottom:2px solid #ddd;outline:none;padding:9px 11px;font-size:13px;color:#111;font-family:inherit">
       </div>
       <button type="button" id="hf-btn" onclick="submitHeroForm()" style="width:100%;background:var(--gold);color:var(--black);border:none;padding:12px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit">Get Free Consultation &rarr;</button>
-      <div id="hf-success" role="alert" aria-live="polite" style="display:none;margin-top:10px;padding:10px 14px;background:#f0fdf4;border:1px solid #86efac;font-size:13px;color:#166534">&#10003; Received &mdash; an attorney will call you within the hour.</div>
+      <div id="hf-success" role="alert" aria-live="polite" style="display:none;margin-top:10px;padding:10px 14px;background:#f0fdf4;border:1px solid #86efac;font-size:13px;color:#166534"> Received &mdash; an attorney will call you within the hour.</div>
       <p style="font-size:11px;color:#6b6b6b;text-align:center;margin-top:8px">Confidential &middot; No obligation &middot; Response within 60 min</p>
     </div>
 
@@ -620,12 +634,12 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
   <h2 class="section-h2" id="pa-h">Practice Areas</h2>
   <p class="section-sub">We handle the full spectrum of personal injury litigation in New York. Every case is prepared for trial from day one — because that&rsquo;s the only way to maximize value.</p>
   <div class="pa-grid">
-    <div class="pa-card"><div class="pa-icon">🚗</div><div class="pa-title">Car, Truck &amp; Rideshare Accidents</div><p class="pa-desc">New York is a no-fault state — but serious injuries break through the threshold. We know exactly when your case qualifies for a full tort claim and how to maximize it.</p><a href="authority-car-accident.html" class="pa-link">Learn More &rarr;</a></div>
-    <div class="pa-card"><div class="pa-icon">🏗️</div><div class="pa-title">Construction &amp; Labor Law</div><p class="pa-desc">New York Labor Law 240 and 241 create some of the strongest worker protections in the country. We know every angle of scaffold law and how to use it.</p><a href="authority-construction.html" class="pa-link">Learn More &rarr;</a></div>
-    <div class="pa-card"><div class="pa-icon">🏥</div><div class="pa-title">Medical Malpractice</div><p class="pa-desc">Sarah Chen has won more malpractice verdicts in Manhattan than most firms have tried. We have the medical expertise to take these cases all the way.</p><a href="authority-malpractice.html" class="pa-link">Learn More &rarr;</a></div>
-    <div class="pa-card"><div class="pa-icon">🕯️</div><div class="pa-title">Wrongful Death</div><p class="pa-desc">New York gives surviving family members 2 years to file. We handle these cases with the seriousness they deserve — pursuing every liable party simultaneously.</p><a href="authority-wrongful-death.html" class="pa-link">Learn More &rarr;</a></div>
-    <div class="pa-card"><div class="pa-icon">⚕️</div><div class="pa-title">Catastrophic Injuries</div><p class="pa-desc">TBI, spinal cord damage, amputations, severe burns. We bring in the best life care planners and economists in the country to capture every dimension of lifetime loss.</p><a href="authority-catastrophic.html" class="pa-link">Learn More &rarr;</a></div>
-    <div class="pa-card"><div class="pa-icon">⚠️</div><div class="pa-title">Premises Liability</div><p class="pa-desc">New York City&rsquo;s aging infrastructure creates constant premises liability claims. We move fast to preserve evidence and establish actual or constructive notice.</p><a href="authority-premises.html" class="pa-link">Learn More &rarr;</a></div>
+    <div class="pa-card"><div class="pa-title">Car, Truck &amp; Rideshare Accidents</div><p class="pa-desc">New York is a no-fault state — but serious injuries break through the threshold. We know exactly when your case qualifies for a full tort claim and how to maximize it.</p><a href="authority-car-accident.html" class="pa-link">Learn More &rarr;</a></div>
+    <div class="pa-card"><div class="pa-title">Construction &amp; Labor Law</div><p class="pa-desc">New York Labor Law 240 and 241 create some of the strongest worker protections in the country. We know every angle of scaffold law and how to use it.</p><a href="authority-construction.html" class="pa-link">Learn More &rarr;</a></div>
+    <div class="pa-card"><div class="pa-title">Medical Malpractice</div><p class="pa-desc">Sarah Chen has won more malpractice verdicts in Manhattan than most firms have tried. We have the medical expertise to take these cases all the way.</p><a href="authority-malpractice.html" class="pa-link">Learn More &rarr;</a></div>
+    <div class="pa-card"><div class="pa-title">Wrongful Death</div><p class="pa-desc">New York gives surviving family members 2 years to file. We handle these cases with the seriousness they deserve — pursuing every liable party simultaneously.</p><a href="authority-wrongful-death.html" class="pa-link">Learn More &rarr;</a></div>
+    <div class="pa-card"><div class="pa-title">Catastrophic Injuries</div><p class="pa-desc">TBI, spinal cord damage, amputations, severe burns. We bring in the best life care planners and economists in the country to capture every dimension of lifetime loss.</p><a href="authority-catastrophic.html" class="pa-link">Learn More &rarr;</a></div>
+    <div class="pa-card"><div class="pa-title">Premises Liability</div><p class="pa-desc">New York City&rsquo;s aging infrastructure creates constant premises liability claims. We move fast to preserve evidence and establish actual or constructive notice.</p><a href="authority-premises.html" class="pa-link">Learn More &rarr;</a></div>
   </div>
 </section>
 
@@ -703,10 +717,10 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
   <p class="section-sub">An attorney — not a paralegal — reviews every inquiry personally and calls within 60 minutes.</p>
   <div class="contact-grid">
     <div>
-      <div class="ci-dark"><div class="ci-icon">&#9742;</div><div><div class="ci-label">Direct Line</div><div class="ci-val"><a href="tel:+12125550380">(212) 555-0380</a></div></div></div>
-      <div class="ci-dark"><div class="ci-icon">&#9993;</div><div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:intake@kesslerlaw.com">intake@kesslerlaw.com</a></div></div></div>
-      <div class="ci-dark"><div class="ci-icon">&#128205;</div><div><div class="ci-label">Office</div><div class="ci-val">One World Trade Center<br>Suite 8500, New York, NY 10007</div></div></div>
-      <div class="ci-dark"><div class="ci-icon">&#128337;</div><div><div class="ci-label">Response Time</div><div class="ci-val">60 minutes or less<br>24/7 for emergencies</div></div></div>
+      <div class="ci-dark"><div><div class="ci-label">Direct Line</div><div class="ci-val"><a href="tel:+12125550380">(212) 555-0380</a></div></div></div>
+      <div class="ci-dark"><div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:intake@kesslerlaw.com">intake@kesslerlaw.com</a></div></div></div>
+      <div class="ci-dark"><div><div class="ci-label">Office</div><div class="ci-val">One World Trade Center<br>Suite 8500, New York, NY 10007</div></div></div>
+      <div class="ci-dark"><div><div class="ci-label">Response Time</div><div class="ci-val">60 minutes or less<br>24/7 for emergencies</div></div></div>
       <div style="margin-top:32px;padding:20px 24px;background:rgba(201,168,76,0.08);border-left:3px solid var(--gold)">
         <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.8">When you hire us, you get a direct line to your attorney — not a paralegal, not a call center. You will have Daniel&rsquo;s, Sarah&rsquo;s, or Marcus&rsquo;s personal cell phone number.</p>
       </div>
@@ -720,7 +734,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
       <div class="form-field"><label class="form-label" for="f-desc">What Happened?</label><textarea class="form-inp" id="f-desc" rows="4" placeholder="Type of accident, when it happened, injuries..." style="resize:none;padding-top:12px"></textarea></div>
       <button class="form-btn" type="button" id="f-btn" onclick="submitForm()">Send Free Case Request &rarr;</button>
       <p class="form-note">Confidential &middot; No obligation &middot; Attorney responds within 60 minutes</p>
-      <div class="form-success" id="f-success" role="alert" aria-live="polite">&#10003; Received &mdash; an attorney will call you within the hour.</div>
+      <div class="form-success" id="f-success" role="alert" aria-live="polite"> Received &mdash; an attorney will call you within the hour.</div>
     </div>
   </div>
 
@@ -1033,7 +1047,7 @@ function submitHeroForm(){
   var n=document.getElementById('hf-name').value.trim(),p=document.getElementById('hf-phone').value.trim();
   if(!n||!p){alert('Please enter your name and phone number.');return;}
   var btn=document.getElementById('hf-btn');btn.textContent='Submitting…';btn.disabled=true;
-  setTimeout(function(){btn.textContent='✓ Request Received';document.getElementById('hf-success').style.display='block';},800);
+  setTimeout(function(){btn.textContent=' Request Received';document.getElementById('hf-success').style.display='block';},800);
 }
 
 // Review carousel drag scroll
@@ -1052,7 +1066,7 @@ function submitForm(){
   var n=document.getElementById('f-name').value.trim(),p=document.getElementById('f-phone').value.trim();
   if(!n||!p){alert('Please enter your name and phone number.');return;}
   var btn=document.getElementById('f-btn');btn.textContent='Submitting…';btn.disabled=true;
-  setTimeout(function(){btn.textContent='✓ Request Received';btn.style.background='rgba(201,168,76,0.3)';document.getElementById('f-success').style.display='block';},800);
+  setTimeout(function(){btn.textContent=' Request Received';btn.style.background='rgba(201,168,76,0.3)';document.getElementById('f-success').style.display='block';},800);
 }
 </script>
 

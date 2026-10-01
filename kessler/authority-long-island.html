@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="description" content="Injured on Long Island? We handle Nassau and Suffolk injury cases, from LIE and parkway crashes to premises and construction claims. Free case review.">
 <link rel="canonical" href="https://sweet-platypus-bc9aa4.netlify.app/authority-long-island.html">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -127,6 +129,16 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+/* Typeface, carried over from the Vincere site. Both are variable woff2 served
+   from /assets/fonts rather than Google's CDN: one less origin to connect to. */
+@font-face{font-family:"Unbounded";src:url("assets/fonts/unbounded-var.woff2") format("woff2");
+  font-weight:200 900;font-style:normal;font-display:swap}
+/* metrics matched to Arial so the swap does not shift the layout */
+@font-face{font-family:"Unbounded Fallback";src:local("Arial"),local("Helvetica"),local("Liberation Sans");
+  size-adjust:145.5%;ascent-override:76%;descent-override:19%;line-gap-override:0%}
+@font-face{font-family:"Schibsted Grotesk";src:url("assets/fonts/schibsted-grotesk-var.woff2") format("woff2");
+  font-weight:400 700;font-style:normal;font-display:swap}
+
 :root{
   --black:#080c14;
   --dark:#0e1520;
@@ -142,16 +154,18 @@
   --line:#e2e8f0;
   --paper:#f5f7fb;
   --red:#c0392b;
+  --display:"Unbounded","Unbounded Fallback",Arial,sans-serif;
+  --sans:"Schibsted Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --navy:#0a1628;
   --deep:#0c1a2e;
 }
 html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:var(--ink);font-size:16px;line-height:1.6;word-spacing:0.03em}
+body{font-family:var(--sans);background:#fff;color:var(--ink);font-size:16px;line-height:1.6;word-spacing:0.03em}
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,12,20,0.98);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;border-bottom:1px solid rgba(201,168,76,0.2)}
 .nav-brand{display:flex;align-items:baseline;gap:10px}
-.nav-brand-name{font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase}
+.nav-brand-name{font-family:var(--display);font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase}
 .nav-brand-sep{color:var(--gold);font-size:14px}
 .nav-brand-sub{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
 .nav-links{display:flex;gap:28px;list-style:none}
@@ -170,9 +184,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .hero-left{padding:40px 60px 40px 80px;display:flex;flex-direction:column;justify-content:flex-start;position:relative;z-index:2}
 .hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:12px}
 .hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
-.hero-h1{font-size:clamp(32px,3.8vw,58px);font-weight:900;color:#fff;line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:20px}
+.hero-h1{font-family:var(--display);font-size:clamp(32px,3.8vw,58px);font-weight:900;color:#fff;line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:20px}
 .hero-h1 em{color:var(--gold);font-style:normal}
-.hero-h1 .sub-line{font-size:0.38em;letter-spacing:0.15em;font-weight:500;color:var(--light);display:block;margin-top:8px;text-transform:uppercase}
+.hero-h1 .sub-line{font-size:0.30em;letter-spacing:0.09em;font-weight:500;line-height:1.45;color:var(--light);display:block;margin-top:18px;text-transform:uppercase}
 .hero-sub{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:24px;max-width:460px;border-left:2px solid var(--gold);padding-left:16px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:60px}
 .btn-gold{background:var(--gold);color:var(--black);padding:16px 36px;font-size:13px;font-weight:800;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;transition:background 0.2s}
@@ -189,7 +203,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .hero-right-overlay2{position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(180deg,transparent,var(--black));z-index:2}
 .hero-stats-bar{position:absolute;bottom:32px;left:32px;right:32px;z-index:3;display:flex;gap:2px;background:var(--border)}
 .hstat{flex:1;background:var(--card);padding:16px 20px}
-.hstat-n{font-size:22px;font-weight:900;color:var(--gold);line-height:1}
+.hstat-n{font-family:var(--display);font-size:22px;font-weight:900;color:var(--gold);line-height:1}
 .hstat-l{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-top:4px}
 @media(max-width:1000px){.hero{grid-template-columns:1fr;min-height:auto}.hero-right{min-height:320px;display:block}.hero-left{padding:80px 24px 56px}}
 
@@ -201,7 +215,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .section-dark{background:var(--dark);color:#fff}
 .section-black{background:var(--black);color:#fff}
 .section-label{font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.section-h2{font-size:clamp(30px,3.8vw,52px);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-0.025em;text-transform:uppercase;margin-bottom:20px}
+.section-h2{font-family:var(--display);font-size:clamp(30px,3.8vw,52px);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-0.025em;text-transform:uppercase;margin-bottom:20px}
 .section-dark .section-h2,.section-black .section-h2{color:#fff}
 .section-sub{font-size:16px;color:var(--gray);line-height:1.85;max-width:600px}
 .section-dark .section-sub,.section-black .section-sub{color:rgba(255,255,255,0.5)}
@@ -229,7 +243,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .rc.feat{background:rgba(201,168,76,0.08);border:2px solid var(--gold)}
 .rc-badge{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .rc-type{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--light);margin-bottom:10px}
-.rc-amount{font-size:44px;font-weight:900;color:#fff;line-height:1;margin-bottom:10px}
+.rc-amount{font-family:var(--display);font-size:44px;font-weight:900;color:#fff;line-height:1;margin-bottom:10px}
 .rc-amount span{font-size:24px;color:var(--gold)}
 .rc-desc{font-size:13px;color:var(--gray);line-height:1.65}
 @media(max-width:900px){.results-grid{grid-template-columns:1fr}}
@@ -258,7 +272,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 /* REVIEW GENERATION */
 .review-gen{background:var(--gold);padding:48px 80px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.rg-h{font-size:28px;font-weight:900;color:var(--black);text-transform:uppercase;line-height:1}
+.rg-h{font-family:var(--display);font-size:28px;font-weight:900;color:var(--black);text-transform:uppercase;line-height:1}
 .rg-sub{font-size:14px;color:rgba(0,0,0,0.6);margin-top:8px;max-width:480px}
 .rg-btn{background:var(--black);color:var(--gold);padding:14px 28px;font-size:13px;font-weight:800;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap}
 .rg-btn:hover{background:var(--dark)}
@@ -307,7 +321,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 /* FOOTER */
 footer{background:var(--black);padding:64px 80px 32px;border-top:1px solid rgba(201,168,76,0.15)}
 .footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-brand{font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px}
+.footer-brand{font-family:var(--display);font-size:20px;font-weight:900;color:#fff;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px}
 .footer-brand span{color:var(--gold)}
 .footer-tagline{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7}
 .footer-h{font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px}
@@ -331,7 +345,7 @@ footer{background:var(--black);padding:64px 80px 32px;border-top:1px solid rgba(
 
 .ticker{background:var(--gold);padding:13px 0;overflow:hidden;position:relative;contain:paint}
 .ticker-inner{display:flex;gap:0;white-space:nowrap;animation:ticker 28s linear infinite;will-change:transform}
-.ticker-item{font-family:'Arial Narrow',Impact,sans-serif;font-size:12px;font-weight:800;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);padding:0 36px;display:flex;align-items:center;gap:36px}
+.ticker-item{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);padding:0 36px;display:flex;align-items:center;gap:36px}
 .ticker-item::after{content:'\2756';color:rgba(0,0,0,0.3)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){
@@ -362,54 +376,54 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 </style>
 <style>
 .pa-hero{background:linear-gradient(135deg,var(--deep) 0%,var(--black) 100%);padding:120px 80px 80px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.pa-breadcrumb{font-family:'Arial Narrow',Arial,sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-bottom:20px}
+.pa-breadcrumb{font-family:var(--display);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-bottom:20px}
 .pa-breadcrumb a{color:var(--gold);text-decoration:none}
 .pa-icon{font-size:48px;margin-bottom:16px;display:block}
-.pa-h1{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:clamp(40px,5vw,72px);letter-spacing:0.02em;color:var(--white);line-height:0.95;margin-bottom:20px;text-transform:uppercase}
+.pa-h1{font-family:var(--display);font-size:clamp(40px,5vw,72px);letter-spacing:0.02em;color:var(--white);line-height:0.95;margin-bottom:20px;text-transform:uppercase}
 .pa-h1 span{color:var(--gold)}
 .pa-tagline{font-size:18px;color:var(--light);line-height:1.6;max-width:600px;margin-bottom:32px}
 .pa-cta-row{display:flex;gap:14px;flex-wrap:wrap}
-.pa-btn{font-family:'Arial Narrow',Impact,Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:14px 32px;text-decoration:none;transition:background 0.2s;display:inline-block}
+.pa-btn{font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:14px 32px;text-decoration:none;transition:background 0.2s;display:inline-block}
 .pa-btn-primary{background:var(--gold);color:var(--black)}
 .pa-btn-primary:hover{background:var(--gold2)}
 .pa-btn-secondary{background:transparent;color:var(--white);border:1px solid var(--border)}
 .pa-btn-secondary:hover{border-color:var(--gray)}
 .pa-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
-.pa-stat-n{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:36px;color:var(--gold);line-height:1;margin-bottom:4px}
-.pa-stat-l{font-family:'Arial Narrow',Arial,sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray)}
+.pa-stat-n{font-family:var(--display);font-size:36px;color:var(--gold);line-height:1;margin-bottom:4px}
+.pa-stat-l{font-family:var(--display);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray)}
 .pa-section{padding:80px}
 .pa-section-alt{background:var(--deep);padding:80px}
 .pa-section-dark{background:var(--black);padding:80px}
-.pa-h2{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:clamp(28px,3vw,44px);letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:32px}
+.pa-h2{font-family:var(--display);font-size:clamp(28px,3vw,44px);letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:32px}
 .pa-h2 span{color:var(--gold)}
 .pa-intro-grid{display:grid;grid-template-columns:3fr 2fr;gap:64px;align-items:start}
 .pa-body{font-size:16px;color:var(--light);line-height:1.85}
 .pa-body+.pa-body{margin-top:16px}
 .pa-why-box{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:28px}
-.pa-why-label{font-family:'Arial Narrow',Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.pa-why-label{font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .pa-why-text{font-size:15px;color:var(--light);line-height:1.8}
 .pa-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:40px}
 .pa-fact{background:var(--card);padding:28px 24px;transition:background 0.2s}
 .pa-fact:hover{background:var(--surface)}
-.pa-fact-title{font-family:'Arial Narrow',Impact,Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.pa-fact-title{font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .pa-fact-text{font-size:14px;color:var(--gray);line-height:1.7}
 .pa-process{display:flex;flex-direction:column;gap:2px;background:var(--border);margin-top:40px}
 .pa-step{background:var(--card);padding:28px 32px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;transition:background 0.2s}
 .pa-step:hover{background:var(--surface)}
-.pa-step-num{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:40px;color:var(--gold);line-height:1;opacity:0.6}
-.pa-step-title{font-family:'Arial Narrow',Impact,Arial,sans-serif;font-size:16px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
+.pa-step-num{font-family:var(--display);font-size:40px;color:var(--gold);line-height:1;opacity:0.6}
+.pa-step-title{font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
 .pa-step-text{font-size:14px;color:var(--gray);line-height:1.7}
 .pa-faq{display:flex;flex-direction:column;margin-top:40px;border-top:1px solid var(--border)}
 .pa-faq-item{border-bottom:1px solid var(--border)}
 .pa-faq-btn{width:100%;background:none;border:none;cursor:pointer;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left}
-.pa-faq-q{font-family:'Arial Narrow',Impact,Arial,sans-serif;font-size:17px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--white)}
+.pa-faq-q{font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--white)}
 .pa-faq-icon{font-size:20px;color:var(--gold);transition:transform 0.3s;flex-shrink:0}
 .pa-faq-item.open .pa-faq-icon{transform:rotate(45deg)}
 .pa-faq-ans{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
 .pa-faq-item.open .pa-faq-ans{max-height:640px}
 .pa-faq-ans-inner{padding-bottom:20px;font-size:15px;color:var(--light);line-height:1.85}
 .pa-cta-band{background:linear-gradient(135deg,#0d2a5a 0%,#0a1628 100%);border-top:3px solid var(--gold);padding:72px 80px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
-.pa-cta-h{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:clamp(36px,4vw,60px);line-height:0.95;color:var(--white);text-transform:uppercase}
+.pa-cta-h{font-family:var(--display);font-size:clamp(36px,4vw,60px);line-height:0.95;color:var(--white);text-transform:uppercase}
 .pa-cta-sub{font-size:15px;color:var(--light);margin-top:14px;max-width:480px;line-height:1.65}
 .pa-cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0}
 @media(max-width:1100px){.pa-hero{padding:100px 32px 56px}.pa-section,.pa-section-alt,.pa-section-dark{padding:56px 32px}.pa-intro-grid{grid-template-columns:1fr}.pa-facts{grid-template-columns:repeat(2,1fr)}.pa-cta-band{grid-template-columns:1fr;padding:56px 32px}.pa-stats{flex-wrap:wrap;gap:24px}}
@@ -474,11 +488,10 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
 <main id="main">
 <section class="pa-hero">
   <p class="pa-breadcrumb"><a href="authority-site.html">Home</a> &nbsp;&rsaquo;&nbsp; <a href="authority-site.html#areas-served">Areas Served</a> &nbsp;&rsaquo;&nbsp; Long Island</p>
-  <span class="pa-icon" aria-hidden="true">&#128739;</span>
   <h1 class="pa-h1">Long Island <span>Personal Injury Lawyers</span></h1>
   <p class="pa-tagline">Nassau and Suffolk are their own jurisdictions, with their own deadlines. The NYC rules do not simply carry over.</p>
   <div class="pa-cta-row">
-    <a href="tel:+12125550380" class="pa-btn pa-btn-primary">&#9742; Call (212) 555-0380</a>
+    <a href="tel:+12125550380" class="pa-btn pa-btn-primary">Call (212) 555-0380</a>
     <a href="authority-site.html#contact" class="pa-btn pa-btn-secondary">Free Case Review &rarr;</a>
   </div>
   <div class="pa-stats"><div><div class="pa-stat-n">$300M+</div><div class="pa-stat-l">Total Recovered</div></div><div><div class="pa-stat-n">8,000+</div><div class="pa-stat-l">Cases Won</div></div><div><div class="pa-stat-n">$0</div><div class="pa-stat-l">Fee Unless We Win</div></div></div>
@@ -521,7 +534,7 @@ body{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <p class="pa-cta-sub">The consultation is free. The advice is honest. If we take your case, you pay nothing unless we win. Call now or submit a case review online.</p>
   </div>
   <div class="pa-cta-btns">
-    <a href="tel:+12125550380" class="pa-btn pa-btn-primary" style="text-align:center">&#9742; Call (212) 555-0380</a>
+    <a href="tel:+12125550380" class="pa-btn pa-btn-primary" style="text-align:center">Call (212) 555-0380</a>
     <a href="authority-site.html#contact" class="pa-btn pa-btn-secondary" style="text-align:center;border-color:rgba(255,255,255,0.3)">Free Case Review Online</a>
   </div>
 </section>
