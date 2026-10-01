@@ -674,12 +674,7 @@ html.js-anim .in .vs-us i{transform:scale(1)}
 .ph-rot .ph-slide.on{opacity:1;transform:scale(1)}
 .ph-rot .ph-slide-cap{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
 .ph-rot .ph-slide-cap.on{opacity:1;transform:none;transition-delay:.25s}
-.ph-dots{position:absolute;right:24px;bottom:26px;z-index:3;display:flex;gap:8px}
-.ph-dots button{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:rgba(255,255,255,.45);cursor:pointer;transition:width .3s,background .3s}
-.ph-dots button[aria-current]{width:22px;background:#fff}
-.ph-dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
-@media(max-width:760px){.ph-dots{right:16px;bottom:auto;top:14px}}
-@media(prefers-reduced-motion:reduce){.ph-rot .ph-slide,.ph-rot .ph-slide-cap{transition:none!important;transform:none!important}}
+@media(max-width:760px){@media(prefers-reduced-motion:reduce){.ph-rot .ph-slide,.ph-rot .ph-slide-cap{transition:none!important;transform:none!important}}
 /* homepage: comparison sits closer to 'More signed cases' */
 #compare{padding-bottom:48px!important}
 #about{padding-top:44px!important}
