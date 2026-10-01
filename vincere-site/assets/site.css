@@ -1346,8 +1346,7 @@ section#services{padding-bottom:44px!important}section#math{padding-top:48px!imp
 }
 /* homepage: plan section sits closer to the comparison */
 #math{padding-bottom:64px!important}
-#compare{padding-top:48px!important}
-@media(max-width:760px){#math{padding-bottom:48px!important}#compare{padding-top:40px!important}}
+@media(max-width:760px){#math{padding-bottom:48px!important}}
 /* comparison: rows play in order; the typical-agency answer gets struck
    through, a shine crosses the Vincere answer and its check pops in */
 html.js-anim .vs-row.kid{transition-delay:calc(var(--i,0) * 170ms + 150ms)}
