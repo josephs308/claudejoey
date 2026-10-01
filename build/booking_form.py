@@ -35,9 +35,9 @@ def render(e, practices, phone_tel, phone_display, email, booking_url=''):
             <div class="bk-times"><p class="bk-times-h">Available times</p><div class="bk-slots"><p class="bk-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Pick a day to see open times.</p></div><p class="bk-tz"></p></div>
           </div>
         </div>
-        <div class="bk-screen" data-s="info" hidden>
+{qs}        <div class="bk-screen" data-s="info" hidden>
           <div class="bk-pick"><div><small>Your call</small><b class="bk-when"></b></div><button type="button" class="bk-change">Change</button></div>
-          <h4 class="bk-q">Tell us who you are.</h4>
+          <h4 class="bk-q">Last step: where should we send the invite?</h4>
           <div class="f2">
             <div class="f"><label for="b-name">Full name</label><input id="b-name" name="name" required autocomplete="name"></div>
             <div class="f"><label for="b-firm">Firm name</label><input id="b-firm" name="firm" required autocomplete="organization"></div>
@@ -46,10 +46,10 @@ def render(e, practices, phone_tel, phone_display, email, booking_url=''):
             <div class="f"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email"></div>
             <div class="f"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" required autocomplete="tel"></div>
           </div>
-          <button type="button" class="btn btn-orange btn-arr bk-next-step">Continue</button>
+          <button type="button" class="btn btn-orange btn-arr bk-next-step">Book my call</button>
           <button type="button" class="bk-back">&lsaquo; Back</button>
         </div>
-{qs}        <div class="bk-screen bk-done" data-s="done" hidden>
+        <div class="bk-screen bk-done" data-s="done" hidden>
           <div class="bk-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Your meeting is booked.</h3>
           <p class="bk-done-when"></p>

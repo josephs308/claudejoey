@@ -5,7 +5,7 @@
     var mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
     var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
     var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
-    var cur=0,label='';
+    var cur=0,label='',info=f.querySelector('[data-s="info"]');
     function show(i,quiet){
       cur=i;if(err)err.hidden=true;screens.forEach(function(s,j){s.hidden=j!==i;s.setAttribute('aria-hidden',String(j!==i));if('inert' in s)s.inert=j!==i});f.classList.toggle('bk-at0',i===0);
       var a=screens[i];a.classList.remove('bk-anim');void a.offsetWidth;a.classList.add('bk-anim');
@@ -107,11 +107,11 @@
     f.querySelector('.bk-retry').addEventListener('click',function(){err.hidden=true;screens[cur].hidden=false;if('inert' in screens[cur])screens[cur].inert=false;submit();});
     f.querySelector('.bk-err-back').addEventListener('click',function(){show(cur)});
     f.querySelector('.bk-change').addEventListener('click',function(){show(0)});
-    f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(screens[1]))show(2)});
+    f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(info))submit()});
     f.querySelectorAll('.bk-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(0,cur-1))})});
     f.querySelectorAll('.bk-opt input').forEach(function(r){r.addEventListener('change',function(){
-      var last=cur===screens.length-2;setTimeout(function(){last?submit():show(cur+1)},220);});});
-    f.addEventListener('submit',function(ev){ev.preventDefault();if(cur===1&&valid(screens[1]))show(2);});
+      setTimeout(function(){show(cur+1)},220);});});
+    f.addEventListener('submit',function(ev){ev.preventDefault();if(screens[cur]===info&&valid(info))submit();});
     prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
     next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
     draw();show(0,true);
