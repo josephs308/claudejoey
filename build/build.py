@@ -24,10 +24,10 @@ GOOGLE_PROFILE = 'https://share.google/tIJK5Y7fwjyokjtqa'
 FOUNDERS = [
     {'slug': 'joseph-simon', 'name': 'Joseph Simon', 'title': 'Co-founder', 'photo': '/assets/joseph-simon.jpg',
      'linkedin': '',  # left off by choice; adds the profile link and sameAs when set
-     'bio': ('Joseph Simon co-founded Vincere Legal Marketing to give law firms one partner for every channel, '
-             'measured in signed cases instead of clicks. He focuses on SEO, AI search visibility (getting firms '
-             'recommended by ChatGPT and Google AI Overviews), Local Services Ads and paid ads for law firms. '
-             'He is based in San Diego and works with firms across the US.'),
+     'bio': ('Joseph Simon co-founded Vincere Legal Marketing after years in digital marketing and paid advertising. '
+             'He builds and manages Google Ads, Meta Ads and Local Services Ads campaigns, along with the SEO and AI search '
+             'work (getting firms recommended by ChatGPT and Google AI Overviews) that keeps cases coming without paying for every click. '
+             'He judges every channel by cost per signed case, not clicks or impressions. He is based in San Diego.'),
      'knows': ['Law firm marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC']},
     {'slug': 'ian-thorleifson', 'name': 'Ian Thorleifson', 'title': 'Co-founder', 'photo': '/assets/ian-thorleifson.jpg',
      'linkedin': 'https://www.linkedin.com/in/ian-m-thorleifson/',
