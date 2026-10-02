@@ -136,17 +136,17 @@ def build_blog(B):
         url = f'/blog/{p["slug"]}/'
         crumbs = [('Home', '/'), ('Blog', '/blog/'), (p['title'], url)]
         title = p.get('seo_title') or f'{p["title"]} | Vincere'
-        schema = [B.org_node(), B.website_node(),
+        schema = [B.org_node(), B.person_node(), B.website_node(),
                   B.webpage_node(url, 'WebPage', title, p['description'], {'mainEntity': {'@id': f'{DOMAIN}{url}#article'}}),
                   B.crumbs_node(url, crumbs),
                   {'@type': 'BlogPosting', '@id': f'{DOMAIN}{url}#article', 'headline': p['title'],
                    'description': p['description'], 'datePublished': p['date'], 'dateModified': p['updated'],
-                   'author': ARTICLE, 'publisher': ARTICLE, 'mainEntityOfPage': {'@id': f'{DOMAIN}{url}#webpage'},
+                   'author': {'@id': B.PERSON_ID}, 'publisher': ARTICLE, 'mainEntityOfPage': {'@id': f'{DOMAIN}{url}#webpage'},
                    'image': (img_url(p['cover'], 1200, 630) if p['cover'] else f'{DOMAIN}/assets/og-image.png'), 'inLanguage': 'en-US',
                    'articleSection': p.get('category', 'Law firm marketing'), 'wordCount': len(re.sub(r'<[^>]+>', ' ', p['html']).split())}]
         if p.get('faqs'):
             schema.append(B.faq_node(url, p['faqs']))
-        meta_line = f'<span>{e(p.get("category", "Law firm marketing"))}</span><span>{nice_date(p["date"])}</span><span>{p["minutes"]} min read</span>'
+        meta_line = f'<span>{e(p.get("category", "Law firm marketing"))}</span><span>By <a href="/about/#founder">{e(B.FOUNDER["name"])}</a></span><span>{nice_date(p["date"])}</span><span>{p["minutes"]} min read</span>'
         if p['updated'] != p['date']:
             meta_line += f'<span>Updated {nice_date(p["updated"])}</span>'
         lead = (f'<div class="answer post-answer"><span class="answer-tag">Quick answer</span><div><h2 class="qa-h">{e(p["summary_question"])}</h2><p>{e(p["summary"])}</p></div></div>') if p.get('summary') and p.get('summary_question') else ''
@@ -163,7 +163,7 @@ def build_blog(B):
 </header>
 {f'<div class="wrap post-cover-wrap"><figure class="post-cover">{img_tag(p["cover"], p["cover_alt"], 1600, 640, sizes="(max-width: 1400px) 100vw, 1280px", eager=True)}</figure></div>' if p["cover"] else ""}
 <article class="sec post">
-  <div class="wrap">{B.article_layout(p["html"], lead)}</div>
+  <div class="wrap">{B.article_layout(p["html"] + B.founder_card(compact=True), lead)}</div>
 </article>
 {B.faq_html(p["faqs"], "Questions about this topic") if p.get("faqs") else ""}
 {f'<section class="sec sec-tight"><div class="wrap"><div class="sec-head"><h2>Services mentioned in this post.</h2></div><div class="rel">{related_svc}</div></div></section>' if related_svc else ""}

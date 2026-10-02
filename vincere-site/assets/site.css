@@ -1403,6 +1403,23 @@ html.js-anim .in .vs-us i{transform:scale(1)}
 @media(max-width:620px){.pil-grid{grid-template-columns:1fr}.pil-sec{padding-top:56px;padding-bottom:60px}}
 @media(prefers-reduced-motion:reduce){.pil,.pil-go span{transition:none}.pil:hover{transform:none}}
 
+/* Founder card (About) and author box (blog posts) */
+.fd{display:flex;gap:28px;align-items:flex-start;max-width:860px;margin:0 auto;padding:32px;border:1px solid #E6E2E5;border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(10,10,10,.05)}
+.fd img{width:120px;height:120px;border-radius:50%;object-fit:cover;flex:none;border:3px solid #fff;box-shadow:0 0 0 2px #8E4F80}
+.fd-k{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple)}
+.fd .fd-n{margin:0;font-size:26px;line-height:1.2}
+.fd-t{margin:4px 0 0;color:var(--muted);font-size:15px}
+.fd-b{margin:14px 0 0;font-size:16px;line-height:1.65}
+.fd-li{display:inline-block;margin-top:14px;font-weight:700;color:var(--purple);text-decoration:none}
+.fd-li:hover{text-decoration:underline}
+.fd-sm{margin:44px 0 0;padding:22px;gap:18px;align-items:center;max-width:none}
+.fd-sm img{width:72px;height:72px}
+.fd-sm .fd-n{font-size:16px;font-weight:600}
+.fd-sm .fd-n a{color:inherit}
+.fd-sm .fd-li{margin-top:6px;font-size:14px}
+.post-meta a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:640px){.fd{flex-direction:column;gap:18px;padding:24px}.fd-sm{flex-direction:row;padding:18px}}
+
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
 .book h3{font-family:sans-serif!important;font-weight:700!important;font-size:24px!important;letter-spacing:-.015em!important;margin:0 0 6px}

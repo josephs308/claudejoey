@@ -21,6 +21,14 @@ EMAIL = 'joe@vincerelegalmarketing.com'
 PORTAL = '/portal/'
 LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
 GOOGLE_PROFILE = 'https://share.google/tIJK5Y7fwjyokjtqa'
+FOUNDER = {
+    'name': 'Joseph Simon', 'title': 'Founder', 'photo': '/assets/joseph-simon.jpg',
+    'linkedin': 'https://www.linkedin.com/in/joseph-simon-24b71717b/',
+    'bio': ('Joseph Simon founded Vincere Legal Marketing to give law firms one partner for every channel, '
+            'measured in signed cases instead of clicks. He focuses on SEO, AI search visibility (getting firms '
+            'recommended by ChatGPT and Google AI Overviews), Local Services Ads and paid ads for law firms. '
+            'He is based in San Diego and works with firms across the US.'),
+}
 TODAY = datetime.date.today().isoformat()
 # Paste a Google Calendar appointment-schedule or Calendly embed URL here to
 # replace the built-in booking calendar with the live embed.
@@ -277,6 +285,26 @@ def org_node():
         'knowsAbout': ['Law firm marketing', 'Legal marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC', 'Legal intake', 'Law firm website design'],
         'sameAs': [LINKEDIN, GOOGLE_PROFILE],
     }
+
+PERSON_ID = f'{DOMAIN}/about/#joseph-simon'
+
+def person_node():
+    n = {'@type': 'Person', '@id': PERSON_ID, 'name': FOUNDER['name'], 'jobTitle': FOUNDER['title'],
+         'worksFor': {'@id': ORG_ID}, 'url': f'{DOMAIN}/about/#founder', 'image': f"{DOMAIN}{FOUNDER['photo']}",
+         'description': FOUNDER['bio'],
+         'knowsAbout': ['Law firm marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC']}
+    if FOUNDER['linkedin']: n['sameAs'] = [FOUNDER['linkedin']]
+    return n
+
+def founder_card(compact=False):
+    f = FOUNDER
+    li = (f'<a class="fd-li" href="{e(f["linkedin"])}" rel="me noopener" target="_blank">Connect on LinkedIn &rarr;</a>' if f['linkedin'] else '')
+    if compact:
+        return (f'<aside class="fd fd-sm" aria-label="About the author"><img src="{f["photo"]}" alt="{e(f["name"])}" width="72" height="72" loading="lazy" decoding="async">'
+                f'<div><p class="fd-k">Written by</p><p class="fd-n"><a href="/about/#founder">{e(f["name"])}</a>, {e(f["title"])}, Vincere Legal Marketing</p>{li}</div></aside>')
+    return (f'<div class="fd" id="founder"><img src="{f["photo"]}" alt="{e(f["name"])}, {e(f["title"])} of Vincere Legal Marketing" width="120" height="120" loading="lazy" decoding="async">'
+            f'<div><p class="fd-k">Meet the founder</p><h2 class="fd-n">{e(f["name"])}</h2><p class="fd-t">{e(f["title"])}, Vincere Legal Marketing</p>'
+            f'<p class="fd-b">{e(f["bio"])}</p>{li}</div></div>')
 
 def website_node():
     return {'@type': 'WebSite', '@id': SITE_ID, 'url': f'{DOMAIN}/', 'name': BRAND, 'alternateName': 'Vincere',
@@ -671,7 +699,8 @@ def build_hub(kind):
 
 def build_about():
     d = load('about'); url = '/about/'; crumbs = [('Home', '/'), ('About', url)]
-    schema = [org_node(), website_node(),
+    org = org_node(); org['founder'] = {'@id': PERSON_ID}
+    schema = [org, person_node(), website_node(),
               webpage_node(url, 'AboutPage', d['title'], d['meta_description'], {'mainEntity': {'@id': ORG_ID}}),
               crumbs_node(url, crumbs), faq_node(url, d['faqs'])]
     pr = ''.join(f'<div class="card"><h3>{e(p["title"])}</h3><p>{e(p["text"])}</p></div>' for p in d['principles'])
@@ -686,6 +715,9 @@ def build_about():
       <li><span class="dot"></span><span>One live dashboard for all of it</span></li><li><span class="dot"></span><span>Measured in signed cases</span></li></ul>
       <a class="btn btn-orange btn-arr" href="#contact" style="margin-top:22px;width:100%;justify-content:center">Get my free plan</a></aside>
   </div></div>
+</section>
+<section class="sec sec-tight">
+  <div class="wrap">{founder_card()}</div>
 </section>
 <section class="sec sec-dark">
   <div class="wrap"><div class="sec-head"><h2>What we hold ourselves to.</h2></div><div class="cards">{pr}</div></div>
