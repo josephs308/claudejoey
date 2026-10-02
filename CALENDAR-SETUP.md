@@ -64,6 +64,7 @@ The hours are US Eastern, in 30-minute slots. Each visitor sees them in their ow
 | Day | Hours (ET) |
 |---|---|
 | Monday | 9:00 AM – 1:00 PM |
+| Tuesday | 10:00 – 11:30 AM |
 | Wednesday | 9:00 AM – 1:00 PM |
 | Thursday | 3:00 PM – 7:00 PM |
 | Friday | 9:00 AM – 1:00 PM and 3:00 PM – 7:00 PM |

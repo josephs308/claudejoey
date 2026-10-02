@@ -5,7 +5,7 @@
     var mon=f.querySelector('.bk-month'),prev=f.querySelector('.bk-prev'),next=f.querySelector('.bk-next');
     var slots=f.querySelector('.bk-slots'),th=f.querySelector('.bk-times-h'),tz=f.querySelector('.bk-tz');
     var screens=[].slice.call(f.querySelectorAll('.bk-screen')),bar=f.querySelector('.bk-prog span'),err=f.querySelector('.bk-err');
-    var cur=0,label='';
+    var cur=0,label='',info=f.querySelector('[data-s="info"]');
     function show(i,quiet){
       cur=i;if(err)err.hidden=true;screens.forEach(function(s,j){s.hidden=j!==i;s.setAttribute('aria-hidden',String(j!==i));if('inert' in s)s.inert=j!==i});f.classList.toggle('bk-at0',i===0);
       var a=screens[i];a.classList.remove('bk-anim');void a.offsetWidth;a.classList.add('bk-anim');
@@ -20,7 +20,7 @@
     var first=new Date(today);first.setDate(first.getDate()+1);
     var last=new Date(today);last.setDate(last.getDate()+45);
     /* Joe's hours, US Eastern time: 30-minute calls starting on these times */
-    var HOURS={1:[[9,0],[13,0]],3:[[9,0],[13,0]],4:[[15,0],[19,0]],5:[[9,0],[13,0],[15,0],[19,0]]};
+    var HOURS={1:[[9,0],[13,0]],2:[[10,0],[11,30]],3:[[9,0],[13,0]],4:[[15,0],[19,0]],5:[[9,0],[13,0],[15,0],[19,0]]};
     var etf=null;try{etf=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric'})}catch(e){}
     function etOffset(ms){if(!etf)return -5*3600e3;var p={};etf.formatToParts(new Date(ms)).forEach(function(x){p[x.type]=+x.value});return Date.UTC(p.year,p.month-1,p.day,p.hour%24,p.minute)-ms;}
     function etTime(d,h,mi){var g=Date.UTC(d.getFullYear(),d.getMonth(),d.getDate(),h,mi);var t=g-etOffset(g);return new Date(g-etOffset(t));}
@@ -107,11 +107,11 @@
     f.querySelector('.bk-retry').addEventListener('click',function(){err.hidden=true;screens[cur].hidden=false;if('inert' in screens[cur])screens[cur].inert=false;submit();});
     f.querySelector('.bk-err-back').addEventListener('click',function(){show(cur)});
     f.querySelector('.bk-change').addEventListener('click',function(){show(0)});
-    f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(screens[1]))show(2)});
+    f.querySelector('.bk-next-step').addEventListener('click',function(){if(valid(info))submit()});
     f.querySelectorAll('.bk-back').forEach(function(b){b.addEventListener('click',function(){show(Math.max(0,cur-1))})});
     f.querySelectorAll('.bk-opt input').forEach(function(r){r.addEventListener('change',function(){
-      var last=cur===screens.length-2;setTimeout(function(){last?submit():show(cur+1)},220);});});
-    f.addEventListener('submit',function(ev){ev.preventDefault();if(cur===1&&valid(screens[1]))show(2);});
+      setTimeout(function(){show(cur+1)},220);});});
+    f.addEventListener('submit',function(ev){ev.preventDefault();if(screens[cur]===info&&valid(info))submit();});
     prev.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);draw();});
     next.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);draw();});
     draw();show(0,true);
