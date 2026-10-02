@@ -23,7 +23,7 @@ LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
 GOOGLE_PROFILE = 'https://share.google/tIJK5Y7fwjyokjtqa'
 FOUNDER = {
     'name': 'Joseph Simon', 'title': 'Founder', 'photo': '/assets/joseph-simon.jpg',
-    'linkedin': 'https://www.linkedin.com/in/joseph-simon-24b71717b/',
+    'linkedin': '',  # personal LinkedIn URL (left off by choice); adds the profile link and sameAs when set
     'bio': ('Joseph Simon founded Vincere Legal Marketing to give law firms one partner for every channel, '
             'measured in signed cases instead of clicks. He focuses on SEO, AI search visibility (getting firms '
             'recommended by ChatGPT and Google AI Overviews), Local Services Ads and paid ads for law firms. '
