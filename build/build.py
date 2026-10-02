@@ -21,14 +21,19 @@ EMAIL = 'joe@vincerelegalmarketing.com'
 PORTAL = '/portal/'
 LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
 GOOGLE_PROFILE = 'https://share.google/tIJK5Y7fwjyokjtqa'
-FOUNDER = {
-    'name': 'Joseph Simon', 'title': 'Founder', 'photo': '/assets/joseph-simon.jpg',
-    'linkedin': '',  # personal LinkedIn URL (left off by choice); adds the profile link and sameAs when set
-    'bio': ('Joseph Simon founded Vincere Legal Marketing to give law firms one partner for every channel, '
-            'measured in signed cases instead of clicks. He focuses on SEO, AI search visibility (getting firms '
-            'recommended by ChatGPT and Google AI Overviews), Local Services Ads and paid ads for law firms. '
-            'He is based in San Diego and works with firms across the US.'),
-}
+FOUNDERS = [
+    {'slug': 'joseph-simon', 'name': 'Joseph Simon', 'title': 'Co-founder', 'photo': '/assets/joseph-simon.jpg',
+     'linkedin': '',  # left off by choice; adds the profile link and sameAs when set
+     'bio': ('Joseph Simon co-founded Vincere Legal Marketing to give law firms one partner for every channel, '
+             'measured in signed cases instead of clicks. He focuses on SEO, AI search visibility (getting firms '
+             'recommended by ChatGPT and Google AI Overviews), Local Services Ads and paid ads for law firms. '
+             'He is based in San Diego and works with firms across the US.')},
+    {'slug': 'ian-thorleifson', 'name': 'Ian Thorleifson', 'title': 'Co-founder', 'photo': '/assets/ian-thorleifson.jpg',
+     'linkedin': 'https://www.linkedin.com/in/ian-m-thorleifson/',
+     'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing and works directly with the law firms we partner with, '
+             'from the first strategy call through launch and ongoing results.')},
+]
+FOUNDER = FOUNDERS[0]  # byline on blog posts
 TODAY = datetime.date.today().isoformat()
 # Paste a Google Calendar appointment-schedule or Calendly embed URL here to
 # replace the built-in booking calendar with the live embed.
@@ -286,25 +291,27 @@ def org_node():
         'sameAs': [LINKEDIN, GOOGLE_PROFILE],
     }
 
-PERSON_ID = f'{DOMAIN}/about/#joseph-simon'
+PERSON_ID = f"{DOMAIN}/about/#{FOUNDER['slug']}"
 
-def person_node():
-    n = {'@type': 'Person', '@id': PERSON_ID, 'name': FOUNDER['name'], 'jobTitle': FOUNDER['title'],
-         'worksFor': {'@id': ORG_ID}, 'url': f'{DOMAIN}/about/#founder', 'image': f"{DOMAIN}{FOUNDER['photo']}",
-         'description': FOUNDER['bio'],
-         'knowsAbout': ['Law firm marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC']}
-    if FOUNDER['linkedin']: n['sameAs'] = [FOUNDER['linkedin']]
+def person_node(f=FOUNDER):
+    n = {'@type': 'Person', '@id': f"{DOMAIN}/about/#{f['slug']}", 'name': f['name'], 'jobTitle': f['title'],
+         'worksFor': {'@id': ORG_ID}, 'url': f"{DOMAIN}/about/#{f['slug']}", 'image': f"{DOMAIN}{f['photo']}",
+         'description': f['bio'], 'knowsAbout': ['Law firm marketing', 'Legal marketing']}
+    if f['linkedin']: n['sameAs'] = [f['linkedin']]
     return n
 
-def founder_card(compact=False):
-    f = FOUNDER
-    li = (f'<a class="fd-li" href="{e(f["linkedin"])}" rel="me noopener" target="_blank">Connect on LinkedIn &rarr;</a>' if f['linkedin'] else '')
+def founder_card(f=FOUNDER, compact=False):
+    li = (f'<a class="fd-li" href="{e(f["linkedin"])}" rel="noopener" target="_blank">Connect on LinkedIn &rarr;</a>' if f['linkedin'] else '')
     if compact:
         return (f'<aside class="fd fd-sm" aria-label="About the author"><img src="{f["photo"]}" alt="{e(f["name"])}" width="72" height="72" loading="lazy" decoding="async">'
-                f'<div><p class="fd-k">Written by</p><p class="fd-n"><a href="/about/#founder">{e(f["name"])}</a>, {e(f["title"])}, Vincere Legal Marketing</p>{li}</div></aside>')
-    return (f'<div class="fd" id="founder"><img src="{f["photo"]}" alt="{e(f["name"])}, {e(f["title"])} of Vincere Legal Marketing" width="120" height="120" loading="lazy" decoding="async">'
-            f'<div><p class="fd-k">Meet the founder</p><h2 class="fd-n">{e(f["name"])}</h2><p class="fd-t">{e(f["title"])}, Vincere Legal Marketing</p>'
+                f'<div><p class="fd-k">Written by</p><p class="fd-n"><a href="/about/#{f["slug"]}">{e(f["name"])}</a>, {e(f["title"])}, Vincere Legal Marketing</p>{li}</div></aside>')
+    return (f'<div class="fd" id="{f["slug"]}"><img src="{f["photo"]}" alt="{e(f["name"])}, {e(f["title"])} of Vincere Legal Marketing" width="120" height="120" loading="lazy" decoding="async">'
+            f'<div><h3 class="fd-n">{e(f["name"])}</h3><p class="fd-t">{e(f["title"])}, Vincere Legal Marketing</p>'
             f'<p class="fd-b">{e(f["bio"])}</p>{li}</div></div>')
+
+def founders_section():
+    return (f'<div class="fds" id="founder"><div class="sec-head"><h2>Meet the founders.</h2></div>'
+            + ''.join(founder_card(f) for f in FOUNDERS) + '</div>')
 
 def website_node():
     return {'@type': 'WebSite', '@id': SITE_ID, 'url': f'{DOMAIN}/', 'name': BRAND, 'alternateName': 'Vincere',
@@ -699,8 +706,8 @@ def build_hub(kind):
 
 def build_about():
     d = load('about'); url = '/about/'; crumbs = [('Home', '/'), ('About', url)]
-    org = org_node(); org['founder'] = {'@id': PERSON_ID}
-    schema = [org, person_node(), website_node(),
+    org = org_node(); org['founder'] = [{'@id': f"{DOMAIN}/about/#{f['slug']}"} for f in FOUNDERS]
+    schema = [org, *[person_node(f) for f in FOUNDERS], website_node(),
               webpage_node(url, 'AboutPage', d['title'], d['meta_description'], {'mainEntity': {'@id': ORG_ID}}),
               crumbs_node(url, crumbs), faq_node(url, d['faqs'])]
     pr = ''.join(f'<div class="card"><h3>{e(p["title"])}</h3><p>{e(p["text"])}</p></div>' for p in d['principles'])
@@ -717,7 +724,7 @@ def build_about():
   </div></div>
 </section>
 <section class="sec sec-tight">
-  <div class="wrap">{founder_card()}</div>
+  <div class="wrap">{founders_section()}</div>
 </section>
 <section class="sec sec-dark">
   <div class="wrap"><div class="sec-head"><h2>What we hold ourselves to.</h2></div><div class="cards">{pr}</div></div>

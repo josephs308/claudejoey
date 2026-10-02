@@ -1419,6 +1419,9 @@ html.js-anim .in .vs-us i{transform:scale(1)}
 .fd-sm .fd-li{margin-top:6px;font-size:14px}
 .post-meta a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:640px){.fd{flex-direction:column;gap:18px;padding:24px}.fd-sm{flex-direction:row;padding:18px}}
+.fds{max-width:860px;margin:0 auto;display:grid;gap:20px}
+.fds .sec-head{margin-bottom:4px}
+.fd{scroll-margin-top:100px}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
