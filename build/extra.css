@@ -687,3 +687,18 @@ html.js-anim .in .vs-us i{transform:scale(1)}
 .hero-bg picture img{filter:grayscale(.1) brightness(1.06) contrast(1.05)!important}
 .hero-bg::after{background:linear-gradient(95deg,#0B0A0B 0%,#0B0A0B 30%,rgba(11,10,11,.8) 50%,rgba(11,10,11,.2) 71%,rgba(11,10,11,0) 94%),radial-gradient(55% 80% at 82% 25%,rgba(142,79,128,.33),rgba(142,79,128,0) 70%)!important}
 }
+/* website design service page: the four pillars */
+.pil-sec{padding-top:72px;padding-bottom:72px}
+.pil-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:8px}
+.pil{position:relative;display:flex;flex-direction:column;padding:28px 24px 26px;border:1px solid var(--line);border-radius:18px;background:#fff;transition:border-color .25s,box-shadow .25s,transform .25s}
+.pil:hover{border-color:var(--purple);box-shadow:0 18px 40px rgba(73,33,65,.10);transform:translateY(-3px)}
+.pil-n{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--purple);color:#fff;font-weight:700;font-size:14px;letter-spacing:.04em;margin-bottom:18px}
+.pil h3{font-size:19px;line-height:1.25;margin:0 0 10px}
+.pil p{font-size:15px;line-height:1.6;color:#4A4A4A;margin:0 0 16px}
+.pil ul{list-style:none;margin:0 0 18px;padding:14px 0 0;border-top:1px solid var(--line);display:grid;gap:8px}
+.pil li{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.pil li svg{flex:0 0 16px;width:16px;height:16px;margin-top:2px;color:var(--purple)}
+.pil-go{margin-top:auto;font-weight:700;font-size:14px;color:var(--purple);text-decoration:none}
+.pil-go:hover{text-decoration:underline}
+@media(max-width:1100px){.pil-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.pil-grid{grid-template-columns:1fr}.pil-sec{padding-top:52px;padding-bottom:52px}}

@@ -507,8 +507,24 @@ def build_service(slug):
     metrics = ''.join(f'<div class="mx-i"><span class="mx-ic">{mx_svg(metric_icon(m["title"]))}</span><div><h3>{e(m["title"])}</h3><p>{e(m["text"])}</p></div></div>' for m in d['metrics'])
     related = ''.join(f'<a class="rel-c" href="{svc_url(r)}"><div class="rel-tag">{e(SVC[r][1])}</div><h3>{e(SVC[r][1])}</h3><p>{e(SVC[r][2])}.</p><span class="rel-arr">See the service &rarr;</span></a>' for r in d['related'] if r in SVC and r != slug)
     ph = SVC_PHOTOS.get(slug)
+    pil = d.get('pillars')
+    pillars = ''
+    if pil:
+        chk = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        cards = ''.join(
+            f'<article class="pil kid" style="--i:{i}"><span class="pil-n">{i+1:02d}</span><h3>{e(it["title"])}</h3><p>{e(it["text"])}</p>'
+            f'<ul>{"".join(f"<li>{chk}<span>{e(x)}</span></li>" for x in it["points"])}</ul>'
+            + (f'<a class="pil-go" href="{svc_url(it["link"])}">More on {e(it.get("link_label") or SVC[it["link"]][1])} <span aria-hidden="true">&rarr;</span></a>' if it.get("link") in SVC else '')
+            + '</article>' for i, it in enumerate(pil['items']))
+        pillars = f'''<section class="sec pil-sec" id="pillars">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>{e(pil["h2"])}</h2><p class="sub">{e(pil["sub"])}</p></div>
+    <div class="pil-grid rv">{cards}</div>
+  </div>
+</section>'''
     body = f'''{hero(crumbs, d["eyebrow"], d["h1"], d["lede"], top=False).replace('<header class="phero">', '<header class="phero dark-hero">', 1)}
 {answer(d["answer"])}
+{pillars}
 <section class="sec">
   <div class="wrap"><div class="lf">
     <div class="prose">{prose_sections(d["sections"])}</div>
