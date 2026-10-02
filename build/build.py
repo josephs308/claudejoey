@@ -24,15 +24,13 @@ GOOGLE_PROFILE = 'https://share.google/tIJK5Y7fwjyokjtqa'
 FOUNDERS = [
     {'slug': 'joseph-simon', 'name': 'Joseph Simon', 'title': 'Co-founder', 'focus': 'Paid Media & Growth',
      'photo': '/assets/joseph-simon.jpg', 'linkedin': '',  # left off by choice
-     'bio': ('Joseph Simon co-founded Vincere Legal Marketing to own the front end of growth: getting the right cases to call. '
-             'He spent years on the agency side of legal marketing, working with 40+ law firms on SEO, lead generation and paid advertising. '
+     'bio': ('Joseph Simon co-founded Vincere Legal Marketing after years on the agency side of legal marketing, working with 40+ law firms on SEO, lead generation and paid advertising. '
              'At Vincere he leads paid media and search across Google Ads, Meta Ads, Local Services Ads, SEO and AI search, '
              'and judges every channel by cost per signed case. He is based in San Diego.'),
      'knows': ['Paid advertising', 'Google Ads for law firms', 'Meta Ads', 'Google Local Services Ads', 'SEO for lawyers', 'Answer engine optimization']},
     {'slug': 'ian-thorleifson', 'name': 'Ian Thorleifson', 'title': 'Co-founder', 'focus': 'Intake & Systems',
      'photo': '/assets/ian-thorleifson.jpg', 'linkedin': '',  # left off by choice
-     'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing to own the back end of growth: everything that happens after a lead comes in. '
-             'He spent years in legal technology at Lawmatics, the law firm CRM and intake platform, and the legal AI company Eve, '
+     'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing after years in legal technology at Lawmatics, the law firm CRM and intake platform, and the legal AI company Eve, '
              'helping firms modernize intake and operations. At Vincere he builds intake automation, CRM pipelines and conversion systems '
              'end to end, so every call, form and chat is answered, followed up and tracked to a signed case.'),
      'knows': ['Legal intake', 'Intake automation', 'Law firm CRM', 'Conversion rate optimization', 'AI for law firms', 'Legal technology']},
