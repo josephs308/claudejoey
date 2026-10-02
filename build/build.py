@@ -30,7 +30,7 @@ FOUNDERS = [
              'He judges every channel by cost per signed case, not clicks or impressions. He is based in San Diego.'),
      'knows': ['Law firm marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC']},
     {'slug': 'ian-thorleifson', 'name': 'Ian Thorleifson', 'title': 'Co-founder', 'photo': '/assets/ian-thorleifson.jpg',
-     'linkedin': 'https://www.linkedin.com/in/ian-m-thorleifson/',
+     'linkedin': '',
      'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing after years in legal technology, including Lawmatics, '
              'the law firm CRM and intake platform, and the legal AI company Eve. He has helped firms modernize intake, '
              'CRM and operations with AI, and was named AE of the Year and a President’s Club member. At Vincere he '
