@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>McMillan &amp; Black, PLLC | Texas Trial Lawyers (Concept Design)</title>
+<meta name="description" content="Concept homepage redesign for McMillan & Black, PLLC, prepared by Vincere Legal Marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1a17; --body:#3d3a35; --muted:#77716a;
+  --oxblood:#6b1f24; --oxblood-2:#842a30;
+  --stone:#f4f1ec; --line:#ddd6cb; --white:#fff; --night:#14181d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;color:var(--body);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;color:var(--ink);line-height:1.15;margin:0}
+.rule{width:56px;height:2px;background:var(--oxblood);margin:0 0 22px}
+.label{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--oxblood);font-weight:600}
+
+.concept{background:var(--night);color:#b9b3aa;font-size:12.5px;text-align:center;padding:7px 16px}
+.concept a{color:#fff}
+
+/* utility bar */
+.util{border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;gap:16px}
+.util a{text-decoration:none;color:var(--ink);font-weight:600}
+
+/* masthead */
+.mast{position:relative;z-index:10;background:var(--white)}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;height:96px;gap:24px}
+.wordmark{text-decoration:none;color:var(--ink);font-family:"Cormorant Garamond",serif;line-height:1}
+.wordmark .n{font-size:31px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.wordmark .n span{color:var(--oxblood)}
+.wordmark .s{display:block;font-family:"Source Sans 3",sans-serif;font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+.menu{display:flex;gap:30px;font-size:15px}
+.menu a{text-decoration:none;color:var(--ink);padding:6px 0;border-bottom:1px solid transparent}
+.menu a:hover{border-color:var(--oxblood)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);padding:9px 14px;font:inherit;font-size:14px;color:var(--ink)}
+
+/* hero */
+.hero{position:relative;min-height:560px;display:flex;align-items:flex-end;color:#fff;
+  background:#2a2a2a url("https://images.unsplash.com/photo-1590604237485-7bc1f066f462?auto=format&fit=crop&w=2200&q=80") center 40%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,11,.05) 0%,rgba(15,13,11,.35) 45%,rgba(15,13,11,.82) 100%)}
+.hero .wrap{position:relative;padding-bottom:64px;width:100%}
+.hero h1{color:#fff;font-size:clamp(40px,5.4vw,68px);font-weight:500;max-width:820px;letter-spacing:-.005em}
+.hero p{font-size:19px;max-width:620px;color:#e7e2da;margin:18px 0 0}
+.credit{position:absolute;right:12px;bottom:8px;font-size:11px;color:rgba(255,255,255,.55);z-index:1}
+.credit a{color:inherit}
+
+/* intro */
+.intro{padding:96px 0}
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:72px}
+.intro h2{font-size:clamp(32px,3.6vw,44px)}
+.intro p{margin:0 0 18px}
+.intro .sig{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:var(--ink);margin-top:26px}
+
+/* practice areas */
+.practice{background:var(--stone);padding:96px 0}
+.practice .top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px}
+.practice h2{font-size:clamp(32px,3.6vw,44px)}
+.plist{display:grid;grid-template-columns:1fr 1fr;column-gap:64px;border-top:1px solid var(--line)}
+.pitem{display:block;text-decoration:none;padding:26px 0;border-bottom:1px solid var(--line)}
+.pitem h3{font-size:26px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pitem h3::after{content:"\2192";font-family:"Source Sans 3",sans-serif;font-size:18px;color:var(--oxblood);transition:transform .2s}
+.pitem:hover h3::after{transform:translateX(4px)}
+.pitem p{margin:6px 0 0;color:var(--muted);font-size:16px}
+
+/* feature */
+.feature{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.feature .img{background:url("https://images.unsplash.com/photo-1655300256335-beef51a914fe?auto=format&fit=crop&w=1400&q=80") center/cover}
+.feature .txt{background:var(--oxblood);color:#f3e9e6;padding:72px 64px;display:flex;flex-direction:column;justify-content:center}
+.feature .label{color:#e6c9c4}
+.feature h2{color:#fff;font-size:clamp(30px,3.2vw,42px);margin:14px 0 18px}
+.feature p{margin:0 0 16px;max-width:520px}
+.feature a.link{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5);align-self:flex-start;padding-bottom:3px;margin-top:8px}
+
+/* attorneys */
+.attys{padding:96px 0}
+.attys h2{font-size:clamp(32px,3.6vw,44px);margin-bottom:44px}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.atty{display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:start}
+.portrait{aspect-ratio:4/5;background:linear-gradient(170deg,#e9e4dc,#d4ccbf);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;position:relative}
+.portrait svg{width:62%;opacity:.55}
+.portrait .ph{position:absolute;top:10px;left:12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.atty h3{font-size:30px}
+.atty .pos{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--oxblood);font-weight:600;margin:4px 0 12px}
+.atty p{margin:0}
+.atty-note{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted)}
+
+/* quote */
+.quote{background:var(--stone);padding:88px 0;text-align:center}
+.quote blockquote{margin:0 auto;max-width:820px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(24px,2.8vw,34px);line-height:1.4;color:var(--ink)}
+.quote .ph{margin-top:18px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* contact */
+.contact{padding:96px 0}
+.contact .wrap{display:grid;grid-template-columns:5fr 6fr;gap:72px}
+.contact h2{font-size:clamp(32px,3.6vw,44px);margin-bottom:16px}
+.office{padding:22px 0;border-top:1px solid var(--line)}
+.office h3{font-size:23px;margin-bottom:6px}
+.office p{margin:0;color:var(--muted)}
+.office a{color:var(--ink);font-weight:600;text-decoration:none}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{margin-bottom:18px}
+.f label{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.f input,.f select,.f textarea{width:100%;border:0;border-bottom:1px solid #bdb5a8;background:transparent;padding:10px 0;font:inherit;color:var(--ink);border-radius:0}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--oxblood)}
+.f textarea{min-height:110px;resize:vertical}
+.submit{background:var(--oxblood);color:#fff;border:0;padding:15px 34px;font:inherit;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:14px;cursor:pointer}
+.submit:hover{background:var(--oxblood-2)}
+.disc{font-size:13px;color:var(--muted);margin-top:14px}
+
+footer{background:var(--night);color:#9a958d;font-size:14.5px;padding:56px 0 40px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer .wordmark{color:#fff}
+footer .wordmark .s{color:#8d877f}
+footer h4{color:#fff;font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{color:#cfc9c0;text-decoration:none}
+.legal{border-top:1px solid #2a2f36;margin-top:40px;padding-top:22px;font-size:12.5px;line-height:1.6}
+
+@media (max-width:980px){
+  .agrid{grid-template-columns:1fr}
+  .menu{display:none}
+  .menu-btn{display:block}
+  .nav-open .menu{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 24px 14px;box-shadow:0 12px 24px rgba(0,0,0,.08)}
+  .nav-open .menu a{padding:12px 0;border-bottom:1px solid var(--line);font-size:17px}
+  .intro .wrap,.contact .wrap{grid-template-columns:1fr;gap:36px}
+  .feature{grid-template-columns:1fr}
+  .feature .img{min-height:300px}
+  .feature .txt{padding:56px 24px}
+}
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .util .hide-sm{display:none}
+  .mast .wrap{height:80px}
+  .wordmark .n{font-size:20px;white-space:nowrap;letter-spacing:.04em}
+  .wordmark .s{font-size:10px;letter-spacing:.24em}
+  .hero{min-height:480px}
+  .hero .wrap{padding-bottom:44px}
+  .intro,.practice,.attys,.contact{padding:64px 0}
+  .plist,.agrid{grid-template-columns:1fr}
+  .agrid{gap:40px}
+  .atty{grid-template-columns:120px 1fr;gap:18px}
+  .atty h3{font-size:25px}
+  form .row{grid-template-columns:1fr;gap:0}
+  .fgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="concept">Concept design for McMillan &amp; Black, PLLC, prepared by <a href="https://vincerelegalmarketing.com" target="_blank" rel="noopener">Vincere Legal Marketing</a>. Not the firm's official website.</div>
+
+<div class="util">
+  <div class="wrap">
+    <span class="hide-sm">Richardson &nbsp;&middot;&nbsp; Austin</span>
+    <span>Free same-day consultation &nbsp;<a href="tel:+19725917713">(972) 591-7713</a></span>
+  </div>
+</div>
+
+<header class="mast">
+  <div class="wrap">
+    <a class="wordmark" href="#top"><span class="n">McMillan <span>&amp;</span> Black</span><span class="s">Texas Trial Lawyers &middot; PLLC</span></a>
+    <nav class="menu" aria-label="Main" onclick="document.body.classList.remove('nav-open');var b=document.querySelector('.menu-btn');b.textContent='Menu';b.setAttribute('aria-expanded',false)">
+      <a href="#firm">The Firm</a>
+      <a href="#practice">Practice Areas</a>
+      <a href="#attorneys">Attorneys</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" onclick="var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o);this.textContent=o?'Close':'Menu'">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" role="img" aria-label="The Texas State Capitol in Austin">
+  <div class="wrap">
+    <h1>Trial lawyers for property, business and consumer disputes across Texas.</h1>
+    <p>Real estate, construction, probate and business litigation, from our offices in Richardson and Austin.</p>
+  </div>
+  <div class="credit">Photo: <a href="https://unsplash.com/@cdaleh" target="_blank" rel="noopener">Dale Honeycutt</a> / Unsplash</div>
+</section>
+
+<section class="intro" id="firm">
+  <div class="wrap">
+    <div>
+      <div class="rule"></div>
+      <h2>Experience on both sides of the courtroom.</h2>
+    </div>
+    <div>
+      <p>McMillan &amp; Black is a Texas law firm of trial lawyers who have represented plaintiffs and defendants, in civil and criminal matters, in state and federal court, at trial and on appeal. That range of experience means we understand how the other side builds its case, and how to take it apart.</p>
+      <p>Our clients are homeowners, property owners, builders, business owners and families settling an estate. What they have in common is a dispute over something that matters: a home, a business, a contract or an inheritance. We take those matters from the first demand letter through trial when that is what it takes.</p>
+      <p>Every new matter starts with a free, same-day consultation, so you know where you stand before you commit to anything.</p>
+      <div class="sig">Garrett McMillan &amp; David Austin Black, Partners</div>
+    </div>
+  </div>
+</section>
+
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="label">Practice Areas</div><h2 style="margin-top:10px">How we can help</h2></div>
+    </div>
+    <div class="plist">
+      <a class="pitem" href="#contact"><h3>Real Estate Law</h3><p>Title and boundary disputes, failed closings, landlord and tenant conflicts, and real estate transactions.</p></a>
+      <a class="pitem" href="#contact"><h3>Construction Law</h3><p>Construction defects, contractor disputes and mechanic's lien claims for owners, builders and subcontractors.</p></a>
+      <a class="pitem" href="#contact"><h3>Consumer Protection</h3><p>Claims under the Texas Deceptive Trade Practices Act, including cases against residential solar companies.</p></a>
+      <a class="pitem" href="#contact"><h3>Business Law</h3><p>Partnership and contract disputes, and the agreements that keep a business protected.</p></a>
+      <a class="pitem" href="#contact"><h3>Probate &amp; Estates</h3><p>Estate administration and contested probate, including disputes between heirs.</p></a>
+      <a class="pitem" href="#contact"><h3>HOA &amp; Property Owners Associations</h3><p>Disputes between homeowners and their associations over assessments, restrictions and enforcement.</p></a>
+      <a class="pitem" href="#contact"><h3>Litigation &amp; Appeals</h3><p>Civil trial and appellate work in Texas state and federal courts.</p></a>
+      <a class="pitem" href="#contact"><h3>Free Speech Litigation</h3><p>Defamation claims and defenses, and motions under the Texas Citizens Participation Act.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="feature" aria-label="Solar panel fraud">
+  <div class="img" role="img" aria-label="A house with solar panels on the roof"></div>
+  <div class="txt">
+    <div class="label">Solar Panel Fraud</div>
+    <h2>Sold solar panels that never delivered what you were promised?</h2>
+    <p>Many Texas homeowners were told their panels would pay for themselves, eliminate their electric bill or qualify for tax credits that never materialized. Now they're left with a loan and a system that doesn't perform.</p>
+    <p>We represent homeowners against residential solar companies under the Texas Deceptive Trade Practices Act. If you were misled, you may be entitled to recover what you've paid and more.</p>
+    <a class="link" href="#contact">Find out if you have a claim</a>
+  </div>
+</section>
+
+<section class="attys" id="attorneys">
+  <div class="wrap">
+    <div class="label">Our Attorneys</div>
+    <h2 style="margin-top:10px">The partners</h2>
+    <div class="agrid">
+      <article class="atty">
+        <div class="portrait"><span class="ph">Portrait</span><svg viewBox="0 0 100 110" aria-hidden="true"><circle cx="50" cy="34" r="22" fill="#fff"/><path d="M6 110c4-30 22-44 44-44s40 14 44 44z" fill="#fff"/></svg></div>
+        <div>
+        <h3>Garrett McMillan</h3>
+        <div class="pos">Partner</div>
+        <p>Garrett leads the firm's consumer protection and free speech litigation. He regularly litigates under the Texas Deceptive Trade Practices Act and represents homeowners in claims against residential solar panel companies across the state.</p>
+        </div>
+      </article>
+      <article class="atty">
+        <div class="portrait"><span class="ph">Portrait</span><svg viewBox="0 0 100 110" aria-hidden="true"><circle cx="50" cy="34" r="22" fill="#fff"/><path d="M6 110c4-30 22-44 44-44s40 14 44 44z" fill="#fff"/></svg></div>
+        <div>
+        <h3>David Austin Black</h3>
+        <div class="pos">Partner</div>
+        <p>David's practice covers real estate litigation and transactions, construction defect and mechanic's lien disputes, HOA and property owners association matters, and probate litigation and estate administration.</p>
+        </div>
+      </article>
+    </div>
+    <p class="atty-note">The partners are joined by associates and of-counsel attorneys in Richardson and Austin.</p>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote>&ldquo;A client's review or testimonial appears here, taken from the firm's verified Google reviews.&rdquo;</blockquote>
+    <div class="ph">Placeholder for a real client review</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <div class="rule"></div>
+      <h2>Talk to a lawyer today.</h2>
+      <p>Call or send a message for a free, same-day consultation of about 7&ndash;10 minutes. We'll tell you honestly whether we can help.</p>
+      <div class="office">
+        <h3>Richardson</h3>
+        <p>1900 Jay Ell Dr.<br>Richardson, TX 75081</p>
+        <p style="margin-top:8px"><a href="tel:+19725917713">(972) 591-7713</a></p>
+      </div>
+      <div class="office">
+        <h3>Austin</h3>
+        <p>305 E. Huntland Dr., Suite 500<br>Austin, TX 78752</p>
+        <p style="margin-top:8px"><a href="mailto:info@mcmillanblack.com">info@mcmillanblack.com</a></p>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.submit').textContent='Demo only: form not connected';">
+      <div class="row">
+        <div class="f"><label for="fn">Name</label><input id="fn" autocomplete="name" required></div>
+        <div class="f"><label for="ph">Phone</label><input id="ph" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="f"><label for="em">Email</label><input id="em" type="email" autocomplete="email"></div>
+      <div class="f"><label for="ar">Type of matter</label>
+        <select id="ar"><option>Real estate</option><option>Construction</option><option>Solar panel / consumer</option><option>Business</option><option>Probate or estate</option><option>HOA</option><option>Other</option></select>
+      </div>
+      <div class="f"><label for="ms">Briefly describe your situation</label><textarea id="ms"></textarea></div>
+      <button class="submit" type="submit">Request a Consultation</button>
+      <p class="disc">Sending this form does not create an attorney-client relationship. Please do not include confidential information.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="wordmark" href="#top"><span class="n" style="font-size:24px">McMillan &amp; Black</span><span class="s">Texas Trial Lawyers &middot; PLLC</span></a>
+      </div>
+      <div><h4>Offices</h4><ul><li>Richardson, TX</li><li>Austin, TX</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+19725917713">(972) 591-7713</a></li><li><a href="mailto:info@mcmillanblack.com">info@mcmillanblack.com</a></li></ul></div>
+    </div>
+    <div class="legal">
+      Attorney advertising. This website provides general information and is not legal advice. Contacting the firm does not create an attorney-client relationship. Prior results do not guarantee a similar outcome.<br>
+      Concept design by Vincere Legal Marketing. Firm details are drawn from public sources and should be confirmed by the firm. Photos via Unsplash.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
