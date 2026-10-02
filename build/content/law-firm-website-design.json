@@ -150,7 +150,8 @@
           "Sub-2-second load times",
           "Core Web Vitals in the green",
           "Lower bounce rates"
-        ]
+        ],
+        "icon": "bolt"
       },
       {
         "title": "Conversion Systems",
@@ -161,7 +162,8 @@
           "Mobile-first form design"
         ],
         "link": "ai-intake-automation-for-law-firms",
-        "link_label": "AI & Intake"
+        "link_label": "AI & Intake",
+        "icon": "target"
       },
       {
         "title": "Legal SEO",
@@ -171,7 +173,8 @@
           "Local search optimization",
           "Technical SEO foundation"
         ],
-        "link": "law-firm-seo"
+        "link": "law-firm-seo",
+        "icon": "SEO"
       },
       {
         "title": "Answer Engine Optimization",
@@ -181,7 +184,8 @@
           "AI-citation ready structure",
           "Schema markup implementation"
         ],
-        "link": "law-firm-aeo"
+        "link": "law-firm-aeo",
+        "icon": "AEO"
       }
     ]
   }

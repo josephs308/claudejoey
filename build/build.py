@@ -508,11 +508,16 @@ def build_service(slug):
     related = ''.join(f'<a class="rel-c" href="{svc_url(r)}"><div class="rel-tag">{e(SVC[r][1])}</div><h3>{e(SVC[r][1])}</h3><p>{e(SVC[r][2])}.</p><span class="rel-arr">See the service &rarr;</span></a>' for r in d['related'] if r in SVC and r != slug)
     ph = SVC_PHOTOS.get(slug)
     pil = d.get('pillars')
+    def pil_icon(k):
+        extra = {'bolt': '<path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/>',
+                 'target': '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/>'}
+        inner = extra.get(k) or ICONS.get(k, '')
+        return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{inner}</svg>'
     pillars = ''
     if pil:
         chk = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
         cards = ''.join(
-            f'<article class="pil kid" style="--i:{i}"><span class="pil-n">{i+1:02d}</span><h3>{e(it["title"])}</h3><p>{e(it["text"])}</p>'
+            f'<article class="pil kid" style="--i:{i}"><span class="pil-num" aria-hidden="true">{i+1:02d}</span><span class="pil-ic">{pil_icon(it.get("icon", ""))}</span><h3>{e(it["title"])}</h3><p>{e(it["text"])}</p>'
             f'<ul>{"".join(f"<li>{chk}<span>{e(x)}</span></li>" for x in it["points"])}</ul>'
             + (f'<a class="pil-go" href="{svc_url(it["link"])}">More on {e(it.get("link_label") or SVC[it["link"]][1])} <span aria-hidden="true">&rarr;</span></a>' if it.get("link") in SVC else '')
             + '</article>' for i, it in enumerate(pil['items']))
