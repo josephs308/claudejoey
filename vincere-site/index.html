@@ -1944,6 +1944,12 @@ html.js-anim .in .vs-us i{transform:scale(1)}
 .fds{max-width:860px;margin:0 auto;display:grid;gap:20px}
 .fds .sec-head{margin-bottom:4px}
 .fd{scroll-margin-top:100px}
+/* Founders side by side on tablet/desktop; photo above text inside each card */
+@media(min-width:761px){
+.fds{max-width:1080px;grid-template-columns:1fr 1fr;align-items:stretch}
+.fds .sec-head{grid-column:1/-1}
+.fds .fd{flex-direction:column;align-items:flex-start;gap:20px;max-width:none;margin:0}
+}
 
 /* booking calendar */
 .book{padding:36px 34px!important;border-radius:18px!important;box-shadow:0 24px 60px rgba(73,33,65,.12)}
