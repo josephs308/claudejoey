@@ -22,20 +22,20 @@ PORTAL = '/portal/'
 LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
 GOOGLE_PROFILE = 'https://share.google/tIJK5Y7fwjyokjtqa'
 FOUNDERS = [
-    {'slug': 'joseph-simon', 'name': 'Joseph Simon', 'title': 'Co-founder', 'photo': '/assets/joseph-simon.jpg',
-     'linkedin': '',  # left off by choice; adds the profile link and sameAs when set
-     'bio': ('Joseph Simon co-founded Vincere Legal Marketing after years in digital marketing and paid advertising. '
-             'He builds and manages Google Ads, Meta Ads and Local Services Ads campaigns, along with the SEO and AI search '
-             'work (getting firms recommended by ChatGPT and Google AI Overviews) that keeps cases coming without paying for every click. '
-             'He judges every channel by cost per signed case, not clicks or impressions. He is based in San Diego.'),
-     'knows': ['Law firm marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC']},
-    {'slug': 'ian-thorleifson', 'name': 'Ian Thorleifson', 'title': 'Co-founder', 'photo': '/assets/ian-thorleifson.jpg',
-     'linkedin': '',
-     'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing after years in legal technology, including Lawmatics, '
-             'the law firm CRM and intake platform, and the legal AI company Eve. He has helped firms modernize intake, '
-             'CRM and operations with AI, and was named AE of the Year and a President’s Club member. At Vincere he '
-             'leads client partnerships and the intake and conversion side, so the leads we generate become signed cases.'),
-     'knows': ['Legal technology', 'Law firm CRM', 'Legal intake', 'AI for law firms', 'Conversion rate optimization']},
+    {'slug': 'joseph-simon', 'name': 'Joseph Simon', 'title': 'Co-founder', 'focus': 'Paid Media & Growth',
+     'photo': '/assets/joseph-simon.jpg', 'linkedin': '',  # left off by choice
+     'bio': ('Joseph Simon co-founded Vincere Legal Marketing to own the front end of growth: getting the right cases to call. '
+             'He spent years on the agency side of legal marketing, working with 40+ law firms on SEO, lead generation and paid advertising. '
+             'At Vincere he leads paid media and search across Google Ads, Meta Ads, Local Services Ads, SEO and AI search, '
+             'and judges every channel by cost per signed case. He is based in San Diego.'),
+     'knows': ['Paid advertising', 'Google Ads for law firms', 'Meta Ads', 'Google Local Services Ads', 'SEO for lawyers', 'Answer engine optimization']},
+    {'slug': 'ian-thorleifson', 'name': 'Ian Thorleifson', 'title': 'Co-founder', 'focus': 'Intake & Systems',
+     'photo': '/assets/ian-thorleifson.jpg', 'linkedin': '',  # left off by choice
+     'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing to own the back end of growth: everything that happens after a lead comes in. '
+             'He spent years in legal technology at Lawmatics, the law firm CRM and intake platform, and the legal AI company Eve, '
+             'helping firms modernize intake and operations. At Vincere he builds intake automation, CRM pipelines and conversion systems '
+             'end to end, so every call, form and chat is answered, followed up and tracked to a signed case.'),
+     'knows': ['Legal intake', 'Intake automation', 'Law firm CRM', 'Conversion rate optimization', 'AI for law firms', 'Legal technology']},
 ]
 FOUNDER = FOUNDERS[0]  # byline on blog posts
 TODAY = datetime.date.today().isoformat()
@@ -310,7 +310,7 @@ def founder_card(f=FOUNDER, compact=False):
         return (f'<aside class="fd fd-sm" aria-label="About the author"><img src="{f["photo"]}" alt="{e(f["name"])}" width="72" height="72" loading="lazy" decoding="async">'
                 f'<div><p class="fd-k">Written by</p><p class="fd-n"><a href="/about/#{f["slug"]}">{e(f["name"])}</a>, {e(f["title"])}, Vincere Legal Marketing</p>{li}</div></aside>')
     return (f'<div class="fd" id="{f["slug"]}"><img src="{f["photo"]}" alt="{e(f["name"])}, {e(f["title"])} of Vincere Legal Marketing" width="120" height="120" loading="lazy" decoding="async">'
-            f'<div><h3 class="fd-n">{e(f["name"])}</h3><p class="fd-t">{e(f["title"])}, Vincere Legal Marketing</p>'
+            f'<div><h3 class="fd-n">{e(f["name"])}</h3><p class="fd-t">{e(f["title"])}, {e(f["focus"])}</p>'
             f'<p class="fd-b">{e(f["bio"])}</p>{li}</div></div>')
 
 def founders_section():
