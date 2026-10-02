@@ -295,7 +295,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;color:va
 
 /* feature */
 .feature{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
-.feature .img{position:relative;min-height:300px;background:#cfd8df}
+.feature .img{position:relative;min-height:300px;background:#cfd8df;overflow:hidden}
 .feature .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .feature .txt{background:var(--oxblood);color:#f6eeeb;padding:72px 64px;display:flex;flex-direction:column;justify-content:center}
 .feature .label{color:#ecd3cf}
@@ -328,10 +328,39 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;color:va
 .faq details p{margin:0 0 20px;max-width:680px}
 .faq .note{font-size:14px;color:var(--muted);margin-top:22px}
 
-/* quote */
-.quote{padding:88px 0;text-align:center}
-.quote blockquote{margin:0 auto;max-width:820px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:clamp(24px,2.8vw,34px);line-height:1.4;color:var(--ink)}
-.quote .ph{margin-top:18px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+/* reviews */
+.reviews{padding:100px 0;background:var(--white);overflow:hidden}
+.rhead{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.rhead h2{margin-top:10px}
+.stars{display:inline-flex;gap:2px;color:#c9922e}
+.stars svg{width:18px;height:18px;fill:currentColor}
+.stars.small svg{width:14px;height:14px}
+.g{width:22px;height:22px;flex:none}
+.gbadge{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:14px 20px;background:var(--stone);transition:border-color .3s,transform .3s}
+.gbadge:hover{border-color:var(--oxblood);transform:translateY(-2px)}
+.gbadge .g{width:30px;height:30px}
+.gbadge>span{display:grid;gap:4px}
+.gr{display:flex;align-items:center;gap:10px}
+.gbadge b{font-family:"Cormorant Garamond",Georgia,serif;font-size:32px;line-height:1}
+.gbadge small{grid-column:1/-1;font-size:13px;color:var(--muted)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{margin:0;position:relative;background:var(--stone);padding:34px 30px 28px;display:flex;flex-direction:column;border-top:3px solid var(--oxblood);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.rev::before{content:"\201C";position:absolute;right:22px;top:-6px;font-family:"Cormorant Garamond",Georgia,serif;font-size:120px;line-height:1;color:var(--oxblood);opacity:.12}
+.rev:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(28,26,23,.1)}
+.rev-top{display:flex;justify-content:space-between;align-items:center}
+.rev blockquote{margin:18px 0 24px;font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;line-height:1.45;color:var(--ink);flex:1}
+.rev figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.av{width:42px;height:42px;border-radius:50%;background:var(--oxblood);color:#fff;display:grid;place-items:center;font-weight:600;flex:none}
+.rev figcaption b{display:block;color:var(--ink)}
+.rev figcaption small{color:var(--muted);font-size:13px}
+.rnote{margin:22px 0 0;font-size:13px;color:var(--muted)}
+@media (max-width:980px){.revs{grid-template-columns:1fr 1fr}}
+@media (max-width:680px){
+  .reviews{padding:64px 0}
+  .revs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -24px;padding:0 24px 8px;scrollbar-width:none}
+  .revs::-webkit-scrollbar{display:none}
+  .rev{flex:0 0 86%;scroll-snap-align:center}
+}
 
 /* contact */
 .contact{background:var(--stone);padding:92px 0}
@@ -670,10 +699,51 @@ footer address{font-style:normal}
   </div>
 </section>
 
-<section class="quote" aria-label="Client review">
+<section class="reviews" id="reviews" aria-labelledby="reviews-h">
   <div class="wrap">
-    <blockquote data-reveal>&ldquo;A client's review appears here, taken from the firm's verified Google reviews.&rdquo;</blockquote>
-    <div class="ph">Placeholder for a real client review</div>
+    <div class="rhead">
+      <div data-reveal>
+        <div class="label">Client Reviews</div>
+        <h2 class="h2" id="reviews-h">What our clients say</h2>
+      </div>
+      <a class="gbadge" data-reveal style="--d:120ms" href="https://www.google.com/maps/search/?api=1&amp;query=McMillan+%26+Black+PLLC+305+E+Huntland+Dr+Austin+TX" target="_blank" rel="noopener">
+        <svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 01-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 010-4.7V6.6h-4a12 12 0 000 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 001.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg>
+        <span><span class="gr"><b>4.8</b><span class="stars small" role="img" aria-label="4.8 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span></span><small>17 Google reviews &middot; Read them all &rarr;</small></span>
+      </a>
+    </div>
+    <div class="revs">
+      <figure class="rev" data-reveal style="--d:0ms">
+        <div class="rev-top"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span><svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 01-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 010-4.7V6.6h-4a12 12 0 000 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 001.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg></div>
+        <blockquote>I have nothing but good things to say about Garrett McMillan and his abilities as an attorney. Garrett is a bulldog and secured a big victory for me. Timely communication and unmatched resolve. If I ever need to seek legal counsel again, Garrett will be my first call.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">C</span><span><b>Clay</b><small>Google review</small></span></figcaption>
+      </figure>
+      <figure class="rev" data-reveal style="--d:110ms">
+        <div class="rev-top"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span><svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 01-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 010-4.7V6.6h-4a12 12 0 000 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 001.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg></div>
+        <blockquote>Garrett McMillan did a phenomenal job representing myself, my company and business partner in a non-solicitation case that was closed quickly and relatively affordable. We are a small start-up company and he put a lot of time and effort into our case. 10/10 recommend.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">S</span><span><b>Spencer W.</b><small>Google review</small></span></figcaption>
+      </figure>
+      <figure class="rev" data-reveal style="--d:220ms">
+        <div class="rev-top"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span><svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 01-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 010-4.7V6.6h-4a12 12 0 000 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 001.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg></div>
+        <blockquote>Garrett McMillan and his team, Kira, and Chloe, are absolutely exceptional. They have done such an awesome job handling my case. I highly recommend this firm, if you are looking for the best of the best!</blockquote>
+        <figcaption><span class="av" aria-hidden="true">K</span><span><b>Kerrie D.</b><small>Google review</small></span></figcaption>
+      </figure>
+      <figure class="rev" data-reveal style="--d:0ms">
+        <div class="rev-top"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span><svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 01-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 010-4.7V6.6h-4a12 12 0 000 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 001.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg></div>
+        <blockquote>Top-tier professionalism. While they couldn't take my case, the team at McMillan &amp; Black still took the time to answer any questions I had and guide me in the right direction. If you're looking for an honest, helpful firm that actually cares about people, this is it.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">M</span><span><b>MCII</b><small>Google review</small></span></figcaption>
+      </figure>
+      <figure class="rev" data-reveal style="--d:110ms">
+        <div class="rev-top"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span><svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 01-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 010-4.7V6.6h-4a12 12 0 000 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 001.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg></div>
+        <blockquote>Mr McMillan is exceptional at processing all the information and making sure I was protected during the whole legal process with one of my businesses. I would highly recommend using McMillan &amp; Black PLLC if you have a business related legal need. Appreciate the team!</blockquote>
+        <figcaption><span class="av" aria-hidden="true">B</span><span><b>Brandon A.</b><small>Google review</small></span></figcaption>
+      </figure>
+      <figure class="rev" data-reveal style="--d:220ms">
+        <div class="rev-top"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span><svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 01-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 010-4.7V6.6h-4a12 12 0 000 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 001.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg></div>
+        <blockquote>Garrett gave us great advice and strategy on what to do in our situation. Will definitely continue to have him represent our company in any legal matters.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">S</span><span><b>Sal E.</b><small>Google review</small></span></figcaption>
+      </figure>
+    </div>
+    <p class="rnote">Reviews quoted exactly from the firm's Google Business Profile (rating as of October 2026). Prior results do not guarantee a similar outcome.</p>
   </div>
 </section>
 
