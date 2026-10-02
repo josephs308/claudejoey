@@ -385,6 +385,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;color:va
 .office h3{font-size:23px;margin-bottom:6px}
 .office p{margin:0;color:var(--muted)}
 .office a{color:var(--ink);font-weight:600;text-decoration:none}
+#contact-form{scroll-margin-top:24px}
 .contact .lead-form{box-shadow:none;border:1px solid var(--line);border-top:4px solid var(--oxblood)}
 
 footer{background:var(--night);color:#a8a29a;font-size:14.5px;padding:56px 0 40px}
@@ -653,7 +654,7 @@ footer address{font-style:normal}
         <span class="tile-body"><h3>Consumer Protection</h3><span class="tile-desc">Texas Deceptive Trade Practices Act claims when a seller or contractor misled you.</span></span>
         <span class="tile-arr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
       </a>
-      <a class="tile tile-cta" href="#consult" data-reveal style="--d:560ms">
+      <a class="tile tile-cta" href="#contact-form" data-reveal style="--d:560ms">
         <span class="tile-body"><span class="cta-k">Not sure where your matter fits?</span><h3>Talk to an attorney today. It's free.</h3><span class="cta-l">Start a consultation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span></span>
       </a>
     </div>
@@ -803,7 +804,7 @@ footer address{font-style:normal}
         <p style="margin-top:8px"><a href="mailto:info@mcmillanblack.com">info@mcmillanblack.com</a></p></address>
       </div>
     </div>
-    <form class="lead-form" aria-labelledby="contact-form-h" novalidate>
+    <form class="lead-form" id="contact-form" aria-labelledby="contact-form-h" novalidate>
       <h3 id="contact-form-h" style="font-size:27px;margin-bottom:14px">Send us a message</h3>
       <div class="f"><label for="c-name">Full name</label><input id="c-name" name="name" autocomplete="name" required></div>
       <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
@@ -860,6 +861,11 @@ footer address{font-style:normal}
     window.addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){tick=false;
       targets.forEach(function(t){if(!t.classList.contains('in')&&t.getBoundingClientRect().top<innerHeight){t.classList.add('in');io.unobserve(t);}});});},{passive:true});
   }else{targets.forEach(function(t){t.classList.add('in');});}
+
+  // Links to the bottom form: put the cursor in the first field
+  document.querySelectorAll('a[href="#contact-form"]').forEach(function(a){
+    a.addEventListener('click',function(){setTimeout(function(){document.getElementById('c-name').focus({preventScroll:true});},500);});
+  });
 
   // Mobile menu
   var mb=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
