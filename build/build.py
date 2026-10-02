@@ -27,11 +27,15 @@ FOUNDERS = [
      'bio': ('Joseph Simon co-founded Vincere Legal Marketing to give law firms one partner for every channel, '
              'measured in signed cases instead of clicks. He focuses on SEO, AI search visibility (getting firms '
              'recommended by ChatGPT and Google AI Overviews), Local Services Ads and paid ads for law firms. '
-             'He is based in San Diego and works with firms across the US.')},
+             'He is based in San Diego and works with firms across the US.'),
+     'knows': ['Law firm marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC']},
     {'slug': 'ian-thorleifson', 'name': 'Ian Thorleifson', 'title': 'Co-founder', 'photo': '/assets/ian-thorleifson.jpg',
      'linkedin': 'https://www.linkedin.com/in/ian-m-thorleifson/',
-     'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing and works directly with the law firms we partner with, '
-             'from the first strategy call through launch and ongoing results.')},
+     'bio': ('Ian Thorleifson co-founded Vincere Legal Marketing after years in legal technology, including Lawmatics, '
+             'the law firm CRM and intake platform, and the legal AI company Eve. He has helped firms modernize intake, '
+             'CRM and operations with AI, and was named AE of the Year and a President’s Club member. At Vincere he '
+             'leads client partnerships and the intake and conversion side, so the leads we generate become signed cases.'),
+     'knows': ['Legal technology', 'Law firm CRM', 'Legal intake', 'AI for law firms', 'Conversion rate optimization']},
 ]
 FOUNDER = FOUNDERS[0]  # byline on blog posts
 TODAY = datetime.date.today().isoformat()
@@ -296,7 +300,7 @@ PERSON_ID = f"{DOMAIN}/about/#{FOUNDER['slug']}"
 def person_node(f=FOUNDER):
     n = {'@type': 'Person', '@id': f"{DOMAIN}/about/#{f['slug']}", 'name': f['name'], 'jobTitle': f['title'],
          'worksFor': {'@id': ORG_ID}, 'url': f"{DOMAIN}/about/#{f['slug']}", 'image': f"{DOMAIN}{f['photo']}",
-         'description': f['bio'], 'knowsAbout': ['Law firm marketing', 'Legal marketing']}
+         'description': f['bio'], 'knowsAbout': f['knows']}
     if f['linkedin']: n['sameAs'] = [f['linkedin']]
     return n
 
