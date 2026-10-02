@@ -20,6 +20,7 @@ PHONE_E164 = '+1-619-991-7205'
 EMAIL = 'joe@vincerelegalmarketing.com'
 PORTAL = '/portal/'
 LINKEDIN = 'https://www.linkedin.com/company/vincere-legal-marketing'
+GOOGLE_PROFILE = 'https://share.google/tIJK5Y7fwjyokjtqa'
 TODAY = datetime.date.today().isoformat()
 # Paste a Google Calendar appointment-schedule or Calendly embed URL here to
 # replace the built-in booking calendar with the live embed.
@@ -274,7 +275,7 @@ def org_node():
         'contactPoint': {'@type': 'ContactPoint', 'telephone': PHONE_E164, 'email': EMAIL, 'contactType': 'sales', 'areaServed': 'US', 'availableLanguage': ['English']},
         'areaServed': {'@type': 'Country', 'name': 'United States'},
         'knowsAbout': ['Law firm marketing', 'Legal marketing', 'SEO for lawyers', 'Answer engine optimization', 'Google Local Services Ads', 'Law firm PPC', 'Legal intake', 'Law firm website design'],
-        'sameAs': [LINKEDIN],
+        'sameAs': [LINKEDIN, GOOGLE_PROFILE],
     }
 
 def website_node():
