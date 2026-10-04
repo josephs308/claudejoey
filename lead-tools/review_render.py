@@ -525,6 +525,9 @@ def rep_notes(d, deck):
              f"{d['practice'].title()} in {d['city']} · {d['site']} · review dated {d['date']}",
              f"Score {d['score']['total']}/100 ({d['score']['grade']}), {d['score']['checked']} of 6 areas checked.", "",
              "## Internal intel (never say this to the firm)", ""]
+    if d.get("ad_click"):
+        lines.append(f"- **Running {d['ad_click']}:** the link you pasted came from one of their ads. "
+                     "Ask what they spend a month and whether they can see which ad clicks became signed cases.")
     for label, key in (("Agency or site vendor", "agency"), ("Site platform", "platform"), ("Chat", "chat"),
                        ("Booking", "booking"), ("CRM", "crm"), ("Call tracking", "call_tracking"), ("Ad tags", "ads_tags")):
         lines.append(f"- {label}: {', '.join(w.get(key) or []) or 'none found'}")

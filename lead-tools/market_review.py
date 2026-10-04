@@ -176,11 +176,30 @@ def find_signals(text, table):
     return [name for name, rx in table.items() if re.search(rx, text, re.IGNORECASE)]
 
 
+AD_CLICK_PARAMS = {"gclid", "gbraid", "wbraid", "gad_source", "gad_campaignid", "msclkid", "fbclid"}
+
+
+def ad_click_source(url):
+    """A pasted link that came from an ad click says which ad network the firm pays."""
+    q = set(urllib.parse.parse_qs(urllib.parse.urlsplit(url).query))
+    if q & {"gclid", "gbraid", "wbraid", "gad_source", "gad_campaignid"}:
+        return "Google Ads"
+    if "msclkid" in q:
+        return "Microsoft Ads"
+    if "fbclid" in q:
+        return None  # also added to shared links, so it doesn't prove a Meta ad
+    return None
+
+
 def normalize_site(url):
+    """Add https:// if missing and drop ad-click and utm_ tracking parameters."""
     url = url.strip()
     if not re.match(r"https?://", url):
         url = "https://" + url
-    return url
+    parts = urllib.parse.urlsplit(url)
+    query = [(k, v) for k, v in urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
+             if k not in AD_CLICK_PARAMS and not k.startswith("utm_")]
+    return urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(query), fragment=""))
 
 
 def site_domain(url):
@@ -792,7 +811,8 @@ def main():
         site = normalize_site(args.site)
         data = {"firm": args.firm, "site": site, "practice": args.practice, "city": args.city,
                 "gbp": args.gbp, "attorney": args.attorney, "rep": args.rep,
-                "date": dt.date.today().isoformat(), "manual": {}}
+                "date": dt.date.today().isoformat(), "manual": {},
+                "ad_click": ad_click_source(args.site)}
         folder = os.path.join(args.out, slugify(args.firm))
         skip = {s.strip() for s in args.skip.split(",") if s.strip()}
         gkey = os.environ.get("GOOGLE_API_KEY")
