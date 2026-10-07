@@ -45,7 +45,7 @@
     var w=document.createElement('div');
     if(n.form){
       w.className='chat-form';
-      w.innerHTML='<div class="hf"><label for="ch-n">Name</label><input id="ch-n" autocomplete="name"></div><div class="hf"><label for="ch-p">Phone</label><input id="ch-p" type="tel" autocomplete="tel"></div><button class="btn" type="button">Request a call back</button>';
+      w.innerHTML='<div class="f"><label for="ch-n">Name</label><input id="ch-n" autocomplete="name"></div><div class="f"><label for="ch-p">Phone</label><input id="ch-p" type="tel" autocomplete="tel"></div><button class="submit" type="button">Request a call back</button>';
       w.querySelector('button').onclick=function(){
         var nm=w.querySelector('#ch-n').value.trim(), ph=w.querySelector('#ch-p').value.trim();
         if(!nm||!ph){(nm?w.querySelector('#ch-p'):w.querySelector('#ch-n')).focus();return;}
