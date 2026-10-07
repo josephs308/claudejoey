@@ -16,11 +16,11 @@
 <meta property="og:image" content="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?auto=format&fit=crop&w=1200&h=630&q=75">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta name="theme-color" content="#14181d">
+<meta name="theme-color" content="#080c14">
+<link rel="preload" href="assets/fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/tyler-thompson.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preload" href="assets/fonts/source-serif.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/source-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?auto=format&fit=crop&w=480&h=600&q=65" imagesrcset="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?auto=format&fit=crop&w=480&h=600&q=65 480w, https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?auto=format&fit=crop&w=960&h=1200&q=65 960w" imagesizes="(max-width:680px) 270px, (max-width:980px) 320px, 390px" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">
 {
@@ -100,85 +100,82 @@
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 
-<header class="top">
 <div class="concept">Concept design for Thompson Law STL, prepared by <a href="https://vincerelegalmarketing.com" target="_blank" rel="noopener">Vincere Legal Marketing</a>. Not the firm's official website.</div>
 
-<div class="util">
+<header class="nav">
   <div class="wrap">
-    <span class="hide-sm">Serving St. Louis, Missouri &amp; Southern Illinois</span>
-    <span>Free consultation &nbsp;<a href="tel:+13146508520">314-650-8520</a></span>
-  </div>
-</div>
-
-<div class="mast">
-  <div class="wrap">
-    <a class="logo" href="index.html"><img src="assets/img/logo-navy.png" width="520" height="300" alt="Thompson Law STL"></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo-white.png" width="520" height="300" alt="Thompson Law STL"></a>
     <nav class="menu" id="menu" aria-label="Main">
       <a href="index.html#about">About</a>
       <a href="index.html#practice" aria-current="page">Practice Areas</a>
-      <a href="index.html#faq">FAQ</a>
       <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+    <a class="nav-phone" href="tel:+13146508520">314-650-8520</a>
     <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false">Menu</button>
   </div>
-</div>
 </header>
 
 <main id="main">
 
-<section class="hero" aria-labelledby="hero-h">
-  <div class="wrap hero-grid">
+<section class="hero hero-pg" aria-labelledby="hero-h">
+  <div class="wrap hero-inner">
     <div class="hero-copy">
       <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="index.html#practice">Practice Areas</a></li><li aria-current="page">Car Accidents</li></ol></nav>
-      <div class="hero-kicker">Car Accidents &middot; St. Louis &amp; Southern Illinois</div>
-      <h1 id="hero-h">St. Louis Car Accident Lawyer</h1>
-      <p class="lead">Thompson Law STL represents people hurt in crashes across St. Louis and Southern Illinois. We handle the insurance company, the evidence and the paperwork so you can focus on getting better.</p>
-      <div class="starter" id="consult">
-        <p class="starter-q">Free case review<span aria-hidden="true">&middot;</span>What happened?</p>
-        <div class="pills">
-          <a class="pill is-current" href="#contact-form" data-start="Car or truck crash">Car or truck crash</a>
-          <a class="pill" href="#contact-form" data-start="Motorcycle crash">Motorcycle crash</a>
-          <a class="pill" href="#contact-form" data-start="Fall or dog bite">Fall or dog bite</a>
-          <a class="pill" href="#contact-form" data-start="Hurt at work">Hurt at work</a>
-          <a class="pill" href="#contact-form" data-start="Medical mistake">Medical mistake</a>
-          <a class="pill" href="#contact-form" data-start="Lost a loved one">Lost a loved one</a>
-          <a class="pill" href="#contact-form" data-start="Something else">Something else</a>
+      <div class="eyebrow">Car Accidents &mdash; St. Louis &amp; Southern Illinois</div>
+      <h1 id="hero-h">St. Louis <em>Car Accident</em> Lawyer</h1>
+      <p class="hero-sub">Thompson Law STL represents people hurt in crashes across St. Louis and Southern Illinois. We handle the insurance company, the evidence and the paperwork so you can focus on getting better.</p>
+      <form class="lead-form hero-form" id="consult" aria-labelledby="consult-h" novalidate>
+        <p class="ft" id="consult-h">Get your free case review</p>
+        <div class="row2">
+          <div class="hf"><label for="h-name">Full name</label><input id="h-name" name="name" autocomplete="name" required></div>
+          <div class="hf"><label for="h-phone">Phone</label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
         </div>
-      </div>
-      <a class="hero-phone" href="tel:+13146508520"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg></span><span><b>Or call 314-650-8520</b><small>Mon to Fri, 9am to 5pm &middot; No fee unless we win</small></span></a>
+        <div class="hf"><label for="h-matter">What happened?</label>
+          <select id="h-matter" name="matter">
+            <option value="">Choose one</option>
+            <option selected>Car accident</option>
+            <option>Truck accident</option>
+            <option>Motorcycle accident</option>
+            <option>Slip and fall</option>
+            <option>Workplace injury</option>
+            <option>Medical malpractice</option>
+            <option>Dog bite</option>
+            <option>Wrongful death</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Get my free case review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        <p class="ok" role="status">Demo only: this form is not connected yet. On the live site it goes straight to the firm.</p>
+        <p class="note">Free &amp; confidential &middot; No fee unless we win &middot; Or call <a href="tel:+13146508520">314-650-8520</a></p>
+      </form>
     </div>
-    <div class="hero-media">
-      <svg class="arch-line" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true"><path d="M3 125C5 42 28 3 50 3S95 42 97 125" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
-      <figure class="arch"><img src="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?auto=format&fit=crop&w=480&h=600&q=65" srcset="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?auto=format&fit=crop&w=480&h=600&q=65 480w, https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?auto=format&fit=crop&w=960&h=1200&q=65 960w" sizes="(max-width:680px) 270px, (max-width:980px) 320px, 390px" alt="A damaged silver car with a crushed hood" width="480" height="600" fetchpriority="high" decoding="async"></figure>
-      <div class="arch-chip has-av"><img src="assets/img/tyler-thompson.jpg" width="42" height="42" alt="" decoding="async"><span><b>Tyler Thompson</b><small>Founder &amp; Trial Attorney</small></span></div>
-      <p class="hero-credit">Photo: <a href="https://unsplash.com/@snapsbyclark" target="_blank" rel="noopener">Clark Van Der Beken</a> / Unsplash</p>
+    <div class="hero-photo">
+      <picture><source type="image/webp" srcset="assets/img/tyler-thompson.webp"><img src="assets/img/tyler-thompson.jpg" width="400" height="465" alt="Tyler Thompson, founder of Thompson Law STL" fetchpriority="high" decoding="async"></picture>
+      <div class="hero-name"><b>Tyler Thompson</b><span>Founder &amp; Trial Attorney</span></div>
     </div>
   </div>
 </section>
 
-<section class="rstrip" aria-label="What clients say">
-    <div class="marquee">
-      <ul class="track">
-          <li class="mini"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Can&#x27;t speak highly enough of Tyler!</q><small>Bel D. &middot; Google review</small></span></li>
-          <li class="mini"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Tyler Thompson renewed our faith in the legal system.</q><small>Erin D. &middot; Google review</small></span></li>
-          <li class="mini"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>He had strong character and integrity.</q><small>Jason M. &middot; Google review</small></span></li>
-          <li class="mini"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Always making himself available to respond when I have a question.</q><small>Brad M. &middot; Google review</small></span></li>
-          <li class="mini"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Able to get my settlement higher than what the other party wanted to pay.</q><small>Bel D. &middot; Google review</small></span></li>
-          <li class="mini"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Determined, informative and confident in my case from start to finish.</q><small>Colleen K. &middot; Google review</small></span></li>
-          <li class="mini"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>A True Diamond in the Rough. You pulled our family together.</q><small>Kyle S. &middot; Google review</small></span></li>
-          <li class="mini" aria-hidden="true"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Can&#x27;t speak highly enough of Tyler!</q><small>Bel D. &middot; Google review</small></span></li>
-          <li class="mini" aria-hidden="true"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Tyler Thompson renewed our faith in the legal system.</q><small>Erin D. &middot; Google review</small></span></li>
-          <li class="mini" aria-hidden="true"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>He had strong character and integrity.</q><small>Jason M. &middot; Google review</small></span></li>
-          <li class="mini" aria-hidden="true"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Always making himself available to respond when I have a question.</q><small>Brad M. &middot; Google review</small></span></li>
-          <li class="mini" aria-hidden="true"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Able to get my settlement higher than what the other party wanted to pay.</q><small>Bel D. &middot; Google review</small></span></li>
-          <li class="mini" aria-hidden="true"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>Determined, informative and confident in my case from start to finish.</q><small>Colleen K. &middot; Google review</small></span></li>
-          <li class="mini" aria-hidden="true"><span class="mq" aria-hidden="true"><svg viewBox="0 0 24 24"><path transform="rotate(180 12 12)" d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor"/></svg></span><span class="mt"><q>A True Diamond in the Rough. You pulled our family together.</q><small>Kyle S. &middot; Google review</small></span></li>
-      </ul>
-    </div>
-</section>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <div class="ticker-item">Free Consultation</div>
+    <div class="ticker-item">No Fee Unless We Win</div>
+    <div class="ticker-item">$7M+ Recovered</div>
+    <div class="ticker-item">16+ Years Experience</div>
+    <div class="ticker-item">Former Insurance Defense Attorney</div>
+    <div class="ticker-item">Licensed in Missouri &amp; Illinois</div>
+    <div class="ticker-item">Free Consultation</div>
+    <div class="ticker-item">No Fee Unless We Win</div>
+    <div class="ticker-item">$7M+ Recovered</div>
+    <div class="ticker-item">16+ Years Experience</div>
+    <div class="ticker-item">Former Insurance Defense Attorney</div>
+    <div class="ticker-item">Licensed in Missouri &amp; Illinois</div>
+  </div>
+</div>
 
-<section class="pbody" aria-label="Car Accidents">
+<section class="sec pbody" aria-label="Car Accidents">
   <div class="wrap">
     <article class="article">
 <p><strong>If you were injured in a car accident in Missouri, you generally have the right to recover compensation for your medical bills, lost wages, vehicle damage, and pain and suffering from the at-fault driver.</strong> The challenge is that the other driver's insurance company will do everything it can to pay you as little as possible — and Thompson Law STL exists to stop exactly that.</p>
@@ -208,15 +205,14 @@
     </article>
     <aside class="aside" aria-label="Free consultation">
       <div class="aside-card" data-reveal>
-        <div class="aside-who"><picture><source type="image/webp" srcset="assets/img/tyler-thompson.webp"><img src="assets/img/tyler-thompson.jpg" width="400" height="465" alt="" loading="lazy" decoding="async"></picture><span><b>Tyler Thompson</b><small>Founder &amp; Trial Attorney</small></span></div>
-        <span class="fc-k">Free case review</span>
-        <span class="fc-v">No fee unless we win</span>
-        <p>Talk to Tyler directly. He'll tell you honestly where your case stands.</p>
+        <div class="aside-who"><img src="assets/img/tyler-thompson.jpg" width="56" height="56" alt="" loading="lazy" decoding="async"><span><b>Tyler Thompson</b><small>Founder &amp; Trial Attorney</small></span></div>
+        <span class="big">Free case review</span>
+        <p>No fee unless we win. Talk to Tyler directly. He'll tell you honestly where your case stands.</p>
         <a class="btn" href="tel:+13146508520"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>Call 314-650-8520</a>
-        <a class="more" href="#contact-form">Or send a message</a>
+        <a class="more" href="#contact-form">Or send a message &rarr;</a>
       </div>
       <nav class="aside-links" aria-label="Other practice areas">
-        <h2>Other practice areas</h2>
+        <h2 class="label">Other practice areas</h2>
         <ul>
           <li><a href="truck-accidents.html">Truck Accidents</a></li>
           <li><a href="motorcycle-accidents.html">Motorcycle Accidents</a></li>
@@ -231,11 +227,11 @@
   </div>
 </section>
 
-<section class="faq" id="faq" aria-labelledby="faq-h">
-  <div class="wrap">
-    <div>
-      <div class="rule"></div>
-      <h2 class="h2" id="faq-h" data-reveal>Car Accidents: common questions</h2>
+<section class="sec faq sec-stone" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <div data-reveal>
+      <div class="label">Questions &amp; Answers</div>
+      <h2 class="h2" id="faq-h">Car Accidents: <em>common questions</em></h2>
       <p class="note">General information about Missouri and Illinois law, not legal advice for your situation. Deadlines and rules vary, so call for a free consultation about your case.</p>
     </div>
     <div>
@@ -259,14 +255,14 @@
   </div>
 </section>
 
-<section class="related" aria-labelledby="related-h">
+<section class="sec" aria-labelledby="related-h">
   <div class="wrap">
-    <div class="phead">
+    <div class="sec-head">
       <div data-reveal>
         <div class="label">Related Practice Areas</div>
-        <h2 class="h2" id="related-h">We also handle</h2>
+        <h2 class="h2" id="related-h">We also <em>handle</em></h2>
       </div>
-      <p data-reveal style="--d:120ms">Every case is handled by Tyler personally, with no fee unless we win.</p>
+      <p class="sub" data-reveal style="--d:120ms">Every case is handled by Tyler personally, with no fee unless we win.</p>
     </div>
     <div class="tiles rel">
       <a class="tile" href="truck-accidents.html" data-reveal style="--d:0ms">
@@ -288,36 +284,31 @@
   </div>
 </section>
 
-<section class="contact" id="contact" aria-labelledby="contact-h">
+<section class="sec dark" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <div>
-      <div class="rule"></div>
-      <h2 class="h2" id="contact-h" data-reveal>Hurt in a crash? Let&#x27;s talk today.</h2>
-      <p>Call or send a message for a free consultation. Tyler will tell you honestly whether he can help, and you pay nothing unless he wins.</p>
-      <div class="office" data-reveal>
-        <h3>Chesterfield Office</h3>
-        <address><p>167 Lamp and Lantern Village, Suite 226<br>Chesterfield, MO 63017</p>
-        <p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Thompson+Law+STL+167+Lamp+and+Lantern+Village+Chesterfield+MO" target="_blank" rel="noopener">Get directions</a></p></address>
-      </div>
-      <div class="office" data-reveal>
-        <h3>Phone &amp; Email</h3>
-        <p><a href="tel:+13146508520">314-650-8520</a><br><a href="mailto:tyler@thompsonlawstl.com">tyler@thompsonlawstl.com</a></p>
-      </div>
-      <div class="office" data-reveal>
-        <h3>Hours</h3>
-        <p>Monday to Friday, 9am to 5pm</p>
-      </div>
+    <div data-reveal>
+      <div class="label">Free Consultation</div>
+      <h2 class="h2" id="contact-h">Hurt in a crash? Let&#x27;s talk today.</h2>
+      <p class="sub">Call or send a message for a free consultation. Tyler will tell you honestly whether he can help, and you pay nothing unless he wins.</p>
     </div>
-    <form class="lead-form" id="contact-form" aria-labelledby="contact-form-h" novalidate>
-      <h3 id="contact-form-h">Send us a message</h3>
-      <div class="f"><label for="c-name">Full name</label><input id="c-name" name="name" autocomplete="name" required></div>
-      <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
-      <div class="f"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email"></div>
-      <div class="f"><label for="c-msg">Briefly, what happened?</label><textarea id="c-msg" name="message"></textarea></div>
-      <button class="submit" type="submit">Request a Free Consultation</button>
-      <p class="ok" role="status">Demo only: this form is not connected yet. On the live site it goes straight to the firm by email and text.</p>
-      <p class="disc">Submitting this form does not create an attorney-client relationship. Please do not include confidential information.</p>
-    </form>
+    <div class="contact-grid">
+      <div>
+        <div class="ci" data-reveal><span class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg></span><div><div class="ci-l">Phone</div><div class="ci-v"><a href="tel:+13146508520">314-650-8520</a></div></div></div>
+        <div class="ci" data-reveal><span class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><div class="ci-l">Email</div><div class="ci-v"><a href="mailto:tyler@thompsonlawstl.com">tyler@thompsonlawstl.com</a></div></div></div>
+        <div class="ci" data-reveal><span class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg></span><div><div class="ci-l">Chesterfield Office</div><div class="ci-v"><address>167 Lamp and Lantern Village, Suite 226<br>Chesterfield, MO 63017<br><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=Thompson+Law+STL+167+Lamp+and+Lantern+Village+Chesterfield+MO" target="_blank" rel="noopener">Get directions &rarr;</a></address></div></div></div>
+        <div class="ci" data-reveal><span class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><div class="ci-l">Hours</div><div class="ci-v">Monday to Friday, 9am to 5pm</div></div></div>
+      </div>
+      <form class="lead-form contact-form" id="contact-form" aria-labelledby="contact-form-h" novalidate>
+        <h3 class="ft" id="contact-form-h">Send us a message</h3>
+        <div class="cf"><label for="c-name">Full name</label><input id="c-name" name="name" autocomplete="name" required></div>
+        <div class="cf"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        <div class="cf"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email"></div>
+        <div class="cf"><label for="c-msg">Briefly, what happened?</label><textarea id="c-msg" name="message"></textarea></div>
+        <button class="btn" type="submit">Request a free consultation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        <p class="ok" role="status">Demo only: this form is not connected yet. On the live site it goes straight to the firm by email and text.</p>
+        <p class="note">Submitting this form does not create an attorney-client relationship. Please do not include confidential information.</p>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -328,6 +319,7 @@
     <div class="fgrid">
       <div>
         <a class="logo" href="index.html"><img src="assets/img/logo-white.png" width="520" height="300" alt="Thompson Law STL" loading="lazy"></a>
+        <p class="tag">Personal injury and wrongful death representation across St. Louis, Missouri and Southern Illinois. No fee unless we win.</p>
       </div>
       <div><h2>Chesterfield</h2><address>167 Lamp and Lantern Village, Suite 226<br>Chesterfield, MO 63017</address></div>
       <div><h2>Practice Areas</h2>

@@ -2,8 +2,10 @@
 
 A concept redesign of [thompsonlawstl.com](https://thompsonlawstl.com/) for Thompson Law STL,
 a St. Louis personal injury firm led by Tyler Thompson. Prepared by Vincere Legal Marketing.
-Source Serif 4 headlines, Source Sans body, one navy accent, square corners, the firm's own logo
-and Tyler's headshot, plus credited Unsplash photography.
+Dark navy and gold with heavy Unbounded caps headlines (the "Kessler" look), mixed with the
+calmer McMillan & Black pieces: cream textured sections, photo practice tiles, serif review quotes
+and a quiet FAQ. Schibsted Grotesk body, Source Serif 4 quotes, the firm's own logo and Tyler's
+headshot, plus credited Unsplash photography.
 
 Every page carries a "concept design" banner and a `noindex` tag so it can't be mistaken
 for, or outrank, the firm's live site.
@@ -12,9 +14,9 @@ for, or outrank, the firm's live site.
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home: hero with case review form, client quote strip, About Tyler, practice tiles, insurer callout, FAQ, testimonials, contact |
+| `index.html` | Home: hero with Tyler's portrait and case review form, gold ticker, Google reviews, About Tyler with stats, practice tiles, insurer callout, FAQ, contact |
 | `car-accidents.html` and 7 more | One page per practice area: car, truck, motorcycle, slip and fall, workplace, medical malpractice, dog bites, wrongful death |
-| `assets/css/site.css` | The whole design system. Change `--accent` to recolor the site |
+| `assets/css/site.css` | The whole design system. Change `--gold` and `--black` to recolor the site |
 | `assets/js/site.js` | Scroll reveals, mobile menu, demo form notice, guided intake chat |
 | `assets/fonts/` | Self-hosted fonts (no Google Fonts request) |
 | `assets/img/` | Firm logo (navy for light backgrounds, white for dark), favicon, Tyler's headshot |
