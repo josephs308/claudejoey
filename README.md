@@ -44,8 +44,9 @@ No build step. It deploys to Netlify, GitHub Pages or any static host as is (pub
 2. **Connect the forms.** They show a "demo only" notice. On Netlify, Netlify Forms is the simplest option.
 3. **Get a larger headshot.** The one on the site is 400 x 465 px, which looks soft on high-resolution
    screens. A version at least 1000 px wide would be crisper. A vector (SVG) logo would also help.
-4. **Confirm the testimonials.** They are taken from the firm's current website; confirm the exact
-   wording, or replace them with reviews from the Google Business Profile.
+4. **Reviews** are quoted word for word from the firm's Google Business Profile, shown as first name
+   and last initial. Reviews that Google cuts off end at the last visible sentence. Star ratings are
+   not shown because we don't have them. Confirm the firm is happy featuring these reviewers.
 5. **Confirm the suite number.** Public listings disagree (Suite 226 vs. Suite 236). The site uses 226.
 6. **Legal review.** Practice pages state general Missouri and Illinois rules (filing deadlines,
    dog-bite strict liability, medical malpractice affidavits). The firm should confirm them.
