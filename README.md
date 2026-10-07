@@ -1,9 +1,9 @@
 # Thompson Law STL: concept site
 
 A concept redesign of [thompsonlawstl.com](https://thompsonlawstl.com/) for Thompson Law STL,
-a St. Louis personal injury firm led by Tyler Thompson. Prepared by Vincere Legal Marketing,
-using the same design system as the McMillan & Black demo: Cormorant Garamond headlines,
-Source Sans body, one accent color (navy here), square corners and real photography.
+a St. Louis personal injury firm led by Tyler Thompson. Prepared by Vincere Legal Marketing.
+Source Serif 4 headlines, Source Sans body, one navy accent, square corners, the firm's own logo
+and Tyler's headshot, plus credited Unsplash photography.
 
 Every page carries a "concept design" banner and a `noindex` tag so it can't be mistaken
 for, or outrank, the firm's live site.
@@ -12,11 +12,12 @@ for, or outrank, the firm's live site.
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home: hero with case review form, client quote strip, firm intro, practice tiles, insurer callout, attorney bio, FAQ, testimonials, contact |
+| `index.html` | Home: hero with case review form, client quote strip, About Tyler, practice tiles, insurer callout, FAQ, testimonials, contact |
 | `car-accidents.html` and 7 more | One page per practice area: car, truck, motorcycle, slip and fall, workplace, medical malpractice, dog bites, wrongful death |
 | `assets/css/site.css` | The whole design system. Change `--accent` to recolor the site |
 | `assets/js/site.js` | Scroll reveals, mobile menu, demo form notice, guided intake chat |
 | `assets/fonts/` | Self-hosted fonts (no Google Fonts request) |
+| `assets/img/` | Firm logo (navy for light backgrounds, white for dark), favicon, Tyler's headshot |
 
 ## The four pillars
 
@@ -41,7 +42,8 @@ No build step. It deploys to Netlify, GitHub Pages or any static host as is (pub
 
 1. **Remove the concept markers:** the `noindex` meta tag and the concept banner on every page.
 2. **Connect the forms.** They show a "demo only" notice. On Netlify, Netlify Forms is the simplest option.
-3. **Add Tyler's portrait** in place of the placeholder in the Attorney section.
+3. **Get a larger headshot.** The one on the site is 400 x 465 px, which looks soft on high-resolution
+   screens. A version at least 1000 px wide would be crisper. A vector (SVG) logo would also help.
 4. **Confirm the testimonials.** They are taken from the firm's current website; confirm the exact
    wording, or replace them with reviews from the Google Business Profile.
 5. **Confirm the suite number.** Public listings disagree (Suite 226 vs. Suite 236). The site uses 226.

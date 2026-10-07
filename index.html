@@ -14,10 +14,11 @@
 <meta property="og:description" content="Thompson Law STL is a St. Louis personal injury firm led by Tyler Thompson, a former insurance-defense attorney. Car, truck and workplace injuries and wrongful death. Free consultation, no fee unless we win.">
 <meta property="og:url" content="https://thompsonlawstl.com/">
 <meta property="og:image" content="https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=1200&h=630&q=75">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231f3a5f'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='27' fill='%23fff' text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#14181d">
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preload" href="assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/source-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=1400&q=70"
   imagesrcset="https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=800&q=70 800w, https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=1400&q=70 1400w, https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=2200&q=70 2200w" imagesizes="100vw" fetchpriority="high">
@@ -80,7 +81,9 @@
       ],
       "founder": {
         "@id": "https://thompsonlawstl.com/#tyler-thompson"
-      }
+      },
+      "logo": "https://thompsonlawstl.com/assets/img/logo-navy.png",
+      "image": "https://thompsonlawstl.com/assets/img/tyler-thompson.jpg"
     },
     {
       "@type": "Person",
@@ -90,6 +93,7 @@
       "worksFor": {
         "@id": "https://thompsonlawstl.com/#firm"
       },
+      "image": "https://thompsonlawstl.com/assets/img/tyler-thompson.jpg",
       "knowsAbout": [
         "Personal injury litigation",
         "Insurance defense",
@@ -169,12 +173,12 @@
 
 <div class="mast">
   <div class="wrap">
-    <a class="wordmark" href="#main"><span class="n">Thompson <span>Law</span></span><span class="s">St. Louis &middot; Personal Injury</span></a>
+    <a class="logo" href="#main"><img src="assets/img/logo-navy.png" width="520" height="300" alt="Thompson Law STL"></a>
     <nav class="menu" id="menu" aria-label="Main">
-      <a href="#firm">The Firm</a>
+      <a href="#about">About</a>
       <a href="#practice">Practice Areas</a>
-      <a href="#attorney">Attorney</a>
       <a href="#faq">FAQ</a>
+      <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false">Menu</button>
@@ -194,7 +198,7 @@
       <div class="label">St. Louis &middot; Chesterfield &middot; Southern Illinois</div>
       <h1 id="hero-h">St. Louis injury lawyer for crashes, workplace injuries and wrongful death.</h1>
       <p class="lead">Tyler Thompson spent twelve years on the insurance side of injury cases. Now he represents injured people and their families across Missouri and Southern Illinois, and you pay nothing unless he wins.</p>
-      <a class="hero-call" href="tel:+13146508520">Call 314-650-8520</a>
+      <a class="btn btn-ghost hero-call" href="tel:+13146508520"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>Call 314-650-8520</a>
     </div>
 
     <form class="lead-form" id="consult" aria-labelledby="consult-h" novalidate>
@@ -242,26 +246,26 @@
     </div>
 </section>
 
-<section class="intro" id="firm" aria-labelledby="firm-h">
-  <div class="wrap intro-grid">
-    <div class="intro-media" data-reveal>
-      <div class="frame" aria-hidden="true"></div>
-      <img src="https://images.unsplash.com/photo-1564846824194-346b7871b855?auto=format&fit=crop&w=640&h=800&q=65" srcset="https://images.unsplash.com/photo-1564846824194-346b7871b855?auto=format&fit=crop&w=640&h=800&q=65 640w, https://images.unsplash.com/photo-1564846824194-346b7871b855?auto=format&fit=crop&w=1100&h=1375&q=65 1100w" sizes="(max-width:980px) 90vw, 40vw" alt="A person filling out a paper form" width="640" height="800" loading="lazy" decoding="async">
-      <div class="float-card">
-        <span class="fc-k">Free consultation</span>
-        <span class="fc-v">No fee unless we win</span>
-        <a href="tel:+13146508520">314-650-8520</a>
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <figure class="about-photo" data-reveal>
+      <picture><source type="image/webp" srcset="assets/img/tyler-thompson.webp"><img src="assets/img/tyler-thompson.jpg" width="400" height="465" alt="Tyler Thompson, founder of Thompson Law STL" loading="lazy" decoding="async"></picture>
+      <figcaption><b>Tyler Thompson</b><span>Founder &amp; Trial Attorney</span></figcaption>
+    </figure>
+    <div class="about-copy">
+      <div class="label" data-reveal>About the Firm</div>
+      <h2 class="h2" id="about-h" data-reveal>Twelve years on the insurance side. Now he's on yours.</h2>
+      <p class="about-lead" data-reveal style="--d:100ms">Tyler Thompson spent eight years on the defense side at a large St. Louis firm and four more in-house at a national insurance company. He knows how adjusters value a claim, where they look to cut it, and what it takes to make them pay.</p>
+      <p data-reveal style="--d:160ms">In 2022 he opened Thompson Law STL to put that experience to work for injured people and their families. You work with Tyler directly, from the first call through settlement or trial, and you pay nothing unless he wins.</p>
+      <dl class="stats" data-reveal style="--d:220ms">
+        <div><dt>16+ yrs</dt><dd>Handling personal injury cases</dd></div>
+        <div><dt>$7M+</dt><dd>Recovered for clients since 2022</dd></div>
+        <div><dt>MO &amp; IL</dt><dd>Licensed in both states</dd></div>
+      </dl>
+      <div class="about-cta" data-reveal style="--d:280ms">
+        <a class="btn" href="#consult">Get a free case review</a>
+        <a class="btn-link" href="tel:+13146508520">Or call 314-650-8520</a>
       </div>
-    </div>
-    <div class="intro-copy">
-      <div class="label" data-reveal>The Firm</div>
-      <h2 class="h2" id="firm-h" data-reveal>An injury lawyer who learned the business from the insurance side.</h2>
-      <figure class="pull" data-reveal style="--d:120ms">
-        <blockquote>We know how insurance companies value a claim. We used to work for them.</blockquote>
-        <figcaption><span>Insurance defense</span><span>In-house insurer</span><span>Missouri &amp; Illinois</span><span>Settlement &amp; trial</span></figcaption>
-      </figure>
-      <p data-reveal style="--d:200ms">Tyler Thompson spent eight years on the defense side at a large St. Louis firm and four more in-house at a national insurance company. In 2022 he opened Thompson Law STL to put that experience to work for injured people instead. Every client works with Tyler directly, from the first call through settlement or trial.</p>
-      <div class="sig" data-reveal style="--d:260ms">Tyler Thompson<span>Founder &amp; Trial Attorney</span></div>
     </div>
   </div>
 </section>
@@ -336,33 +340,10 @@
     <h2 id="insurers-h">The adjuster may call before you've left the hospital.</h2>
     <p>Insurance companies move fast after a crash. An adjuster may ask for a recorded statement or offer a quick check before you know how badly you're hurt. Anything you say can be used to lower your claim, and cashing an early check can end it.</p>
     <p>Tyler spent twelve years on the other side of those calls. Talk to him first. It's free, and it may be the most valuable call you make.</p>
-    <a class="link" href="#consult">Get a free case review</a>
+    <a class="btn" href="#consult">Get a free case review</a>
   </div>
 </section>
 
-<section class="attys" id="attorney" aria-labelledby="attys-h">
-  <div class="wrap">
-    <div class="label">Your Attorney</div>
-    <h2 class="h2" id="attys-h" style="margin-top:10px" data-reveal>Tyler Thompson</h2>
-    <article class="atty-one" data-reveal>
-      <div class="portrait" role="img" aria-label="Portrait placeholder for Tyler Thompson"><span class="ph">Portrait</span><svg viewBox="0 0 100 110" aria-hidden="true"><circle cx="50" cy="34" r="22" fill="#fff"/><path d="M6 110c4-30 22-44 44-44s40 14 44 44z" fill="#fff"/></svg></div>
-      <div>
-        <h3>Founder &amp; Trial Attorney</h3>
-        <div class="pos">Licensed in Missouri &amp; Illinois</div>
-        <p>Tyler clerked at large law firms during law school, then spent eight years on the defense side at a large St. Louis firm and four years in-house at a national insurance company. His background spans insurance defense, personal injury, product liability and property damage litigation.</p>
-        <p>He founded Thompson Law STL in April 2022 to represent injured people and their families. Over more than 16 years he has handled hundreds of cases through settlement or trial, and clients work with him directly rather than being handed to a case manager.</p>
-      </div>
-      <div class="creds">
-        <h4>At a glance</h4>
-        <dl>
-          <div><dt>16+ years</dt><dd>Personal injury and litigation experience</dd></div>
-          <div><dt>$7M+</dt><dd>Recovered for clients since 2022</dd></div>
-          <div><dt>12 years</dt><dd>On the insurance and defense side</dd></div>
-        </dl>
-      </div>
-    </article>
-  </div>
-</section>
 
 <section class="faq" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
@@ -451,7 +432,7 @@
       </div>
     </div>
     <form class="lead-form" id="contact-form" aria-labelledby="contact-form-h" novalidate>
-      <h3 id="contact-form-h" style="font-size:27px;margin-bottom:14px">Send us a message</h3>
+      <h3 id="contact-form-h">Send us a message</h3>
       <div class="f"><label for="c-name">Full name</label><input id="c-name" name="name" autocomplete="name" required></div>
       <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
       <div class="f"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email"></div>
@@ -469,7 +450,7 @@
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="wordmark" href="index.html"><span class="n" style="font-size:24px">Thompson <span>Law</span></span><span class="s">St. Louis &middot; Personal Injury</span></a>
+        <a class="logo" href="index.html"><img src="assets/img/logo-white.png" width="520" height="300" alt="Thompson Law STL" loading="lazy"></a>
       </div>
       <div><h2>Chesterfield</h2><address>167 Lamp and Lantern Village, Suite 226<br>Chesterfield, MO 63017</address></div>
       <div><h2>Practice Areas</h2>
