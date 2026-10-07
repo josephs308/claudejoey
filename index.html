@@ -189,31 +189,36 @@
     <div class="hero-copy">
       <div class="eyebrow">Personal Injury &mdash; St. Louis</div>
       <h1 id="hero-h">St. Louis <em>Injury</em> Lawyer</h1>
-      <p class="proof">$7M+ Recovered &middot; 16+ Years &middot; No Fee Unless We Win</p>
+      <p class="lede">Tyler Thompson spent twelve years on the insurance side of injury cases. Now he represents injured people and their families across Missouri and Southern Illinois.</p>
+      <dl class="hstats">
+        <div><dt>$7M+</dt><dd>Recovered since 2022</dd></div>
+        <div><dt>16+</dt><dd>Years in injury law</dd></div>
+        <div><dt>$0</dt><dd>Fee unless we win</dd></div>
+      </dl>
       <form class="lead-form hero-form" id="consult" aria-labelledby="consult-h" novalidate>
-        <p class="ft" id="consult-h">Get your free case review</p>
-        <div class="row2">
-          <div class="hf"><label for="h-name">Full name</label><input id="h-name" name="name" autocomplete="name" required></div>
-          <div class="hf"><label for="h-phone">Phone</label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        <div class="hf-head"><p class="ft" id="consult-h">Free case review</p><span>Confidential &middot; No obligation</span></div>
+        <div class="hgrid">
+          <div class="hf"><label class="sr" for="h-name">Full name</label><input id="h-name" name="name" autocomplete="name" placeholder="Full name" required></div>
+          <div class="hf"><label class="sr" for="h-phone">Phone</label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Phone" required></div>
+          <div class="hf"><label class="sr" for="h-matter">What happened?</label>
+            <select id="h-matter" name="matter">
+              <option value="" selected>What happened?</option>
+              <option>Car accident</option>
+              <option>Truck accident</option>
+              <option>Motorcycle accident</option>
+              <option>Slip and fall</option>
+              <option>Workplace injury</option>
+              <option>Medical malpractice</option>
+              <option>Dog bite</option>
+              <option>Wrongful death</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <button class="hbtn" type="submit">Get my free review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
         </div>
-        <div class="hf"><label for="h-matter">What happened?</label>
-          <select id="h-matter" name="matter">
-            <option value="" selected>Choose one</option>
-            <option>Car accident</option>
-            <option>Truck accident</option>
-            <option>Motorcycle accident</option>
-            <option>Slip and fall</option>
-            <option>Workplace injury</option>
-            <option>Medical malpractice</option>
-            <option>Dog bite</option>
-            <option>Wrongful death</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <button class="hbtn" type="submit">Get my free case review <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
         <p class="ok" role="status">Demo only: this form is not connected yet. On the live site it goes straight to the firm.</p>
-        <p class="note">Free &amp; confidential &middot; No fee unless we win &middot; Or call <a href="tel:+13146508520">314-650-8520</a></p>
       </form>
+      <p class="hnote">Prefer to talk? Call <a href="tel:+13146508520">314-650-8520</a>, Monday to Friday, 9am to 5pm.</p>
     </div>
   </div>
 </section>
@@ -241,22 +246,30 @@
 
 <section class="about" id="about" aria-labelledby="about-h">
   <div class="wrap about-grid">
-    <div class="about-head">
-      <div class="label" data-reveal>About the Firm</div>
-      <h2 id="about-h" data-reveal>Twelve years on the insurance side. Now he's on yours.</h2>
+    <div class="about-media" data-reveal>
+      <div class="frame" aria-hidden="true"></div>
+      <picture><source type="image/webp" srcset="assets/img/tyler-thompson.webp"><img src="assets/img/tyler-thompson.jpg" width="400" height="465" alt="Tyler Thompson, founder of Thompson Law STL" loading="lazy" decoding="async"></picture>
+      <div class="float-card">
+        <span class="fc-k">Free consultation</span>
+        <span class="fc-v">No fee unless we win</span>
+        <a href="tel:+13146508520"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>314-650-8520</a>
+      </div>
     </div>
     <div class="about-copy">
-      <p class="about-lead" data-reveal style="--d:100ms">Tyler Thompson spent eight years on the defense side at a large St. Louis firm and four more in-house at a national insurance company. He knows how adjusters value a claim, where they look to cut it, and what it takes to make them pay.</p>
-      <p data-reveal style="--d:160ms">In 2022 he opened Thompson Law STL to put that experience to work for injured people and their families. You work with Tyler directly, from the first call through settlement or trial, and you pay nothing unless he wins.</p>
-      <dl class="stats" data-reveal style="--d:220ms">
-        <div><dt>16+ yrs</dt><dd>Handling personal injury cases</dd></div>
-        <div><dt>$7M+</dt><dd>Recovered for clients since 2022</dd></div>
-        <div><dt>MO &amp; IL</dt><dd>Licensed in both states</dd></div>
-      </dl>
-      <div class="about-cta" data-reveal style="--d:280ms">
-        <a class="btn" href="#contact-form" data-chat-open>Get a free case review</a>
-        <a class="btn-link" href="tel:+13146508520">Or call 314-650-8520</a>
+      <div class="label" data-reveal>About the Firm</div>
+      <h2 class="h2" id="about-h" data-reveal>Twelve years on the insurance side. Now he's on yours.</h2>
+      <div class="pull" data-reveal style="--d:120ms">
+        <p>He knows how adjusters value a claim, where they look to cut it, and what it takes to make them pay.</p>
+        <ul class="creds">
+          <li>8 years on the defense side</li>
+          <li>4 years in-house at an insurer</li>
+          <li>Licensed in Missouri &amp; Illinois</li>
+          <li>Opened his own firm in 2022</li>
+        </ul>
       </div>
+      <p data-reveal style="--d:200ms">Tyler Thompson spent eight years on the defense side at a large St. Louis firm and four more in-house at a national insurance company. In 2022 he opened Thompson Law STL to put that experience to work for injured people and their families.</p>
+      <p data-reveal style="--d:240ms">You work with Tyler directly, from the first call through settlement or trial, and you pay nothing unless he wins.</p>
+      <div class="sig" data-reveal style="--d:280ms">Tyler Thompson<span>Founder &amp; Trial Attorney</span></div>
     </div>
   </div>
 </section>
