@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# AI answer engines are welcome to cite our content (Pillar 03: AEO)
+User-agent: GPTBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://thompsonlawstl.com/sitemap.xml
