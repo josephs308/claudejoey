@@ -11,7 +11,7 @@
   }else{targets.forEach(function(t){t.classList.add('in');});}
 
   // Links to the bottom form: put the cursor in the first field
-  document.querySelectorAll('a[href="#contact-form"]').forEach(function(a){
+  document.querySelectorAll('a[href="#contact-form"]:not([data-start]):not([data-chat-open])').forEach(function(a){
     a.addEventListener('click',function(){setTimeout(function(){var n=document.getElementById('c-name');if(n)n.focus({preventScroll:true});},500);});
   });
 
@@ -60,6 +60,20 @@
   }
   function open(o){box.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);if(o&&!started){started=true;step('start');}}
   btn.addEventListener('click',function(){open(!box.classList.contains('open'));});
+
+  // Hero "What happened?" options start the chat with that answer already chosen
+  function startWith(choice){
+    body.innerHTML='';started=true;open(true);
+    bub(TREE.start.q);
+    var next='when';TREE.start.o.forEach(function(o){if(o[0]===choice)next=o[1];});
+    setTimeout(function(){bub(choice,true);setTimeout(function(){step(next);},350);},300);
+  }
+  document.querySelectorAll('[data-start]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();startWith(a.getAttribute('data-start'));});
+  });
+  document.querySelectorAll('[data-chat-open]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();open(true);});
+  });
   box.querySelector('.chat-x').addEventListener('click',function(){open(false);btn.focus();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&box.classList.contains('open')){open(false);btn.focus();}});
 })();

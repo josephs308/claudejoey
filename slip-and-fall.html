@@ -20,8 +20,7 @@
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preload" href="assets/fonts/source-serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/source-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=1400&q=70"
-  imagesrcset="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=800&q=70 800w, https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=1400&q=70 1400w, https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=2200&q=70 2200w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=480&h=600&q=65" imagesrcset="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=480&h=600&q=65 480w, https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=960&h=1200&q=65 960w" imagesizes="(max-width:680px) 270px, (max-width:980px) 320px, 390px" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">
 {
@@ -129,43 +128,33 @@
 <main id="main">
 
 <section class="hero" aria-labelledby="hero-h">
-  <img class="hero-img" alt="" width="2200" height="1400" fetchpriority="high" decoding="async"
-    src="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=1400&q=70"
-    srcset="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=800&q=70 800w, https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=1400&q=70 1400w, https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=2200&q=70 2200w"
-    sizes="100vw">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
       <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="index.html#practice">Practice Areas</a></li><li aria-current="page">Slip &amp; Fall</li></ol></nav>
-      <div class="label">Slip &amp; Fall &middot; St. Louis &amp; Southern Illinois</div>
+      <div class="hero-kicker">Slip &amp; Fall &middot; St. Louis &amp; Southern Illinois</div>
       <h1 id="hero-h">St. Louis Slip and Fall Lawyer</h1>
       <p class="lead">Property owners and businesses have a duty to keep their premises reasonably safe. When a hazard they ignored causes a fall, we work to prove what happened and who is responsible.</p>
-      <a class="btn btn-ghost hero-call" href="tel:+13146508520"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>Call 314-650-8520</a>
-    </div>
-
-    <form class="lead-form" id="consult" aria-labelledby="consult-h" novalidate>
-      <h2 id="consult-h">Free case review</h2>
-      <p class="sub">Tell us what happened. Tyler will call you back. No fee unless we win.</p>
-      <div class="f"><label for="h-name">Full name</label><input id="h-name" name="name" autocomplete="name" required></div>
-      <div class="f"><label for="h-phone">Phone</label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
-      <div class="f"><label for="h-type">What happened?</label>
-        <select id="h-type" name="matter">
-          <option>Car accident</option>
-          <option>Truck accident</option>
-          <option>Motorcycle accident</option>
-          <option selected>Slip and fall</option>
-          <option>Workplace injury</option>
-          <option>Medical malpractice</option>
-          <option>Dog bite</option>
-          <option>Wrongful death</option>
-          <option>Something else</option>
-        </select>
+      <div class="starter" id="consult">
+        <p class="starter-q">Free case review<span aria-hidden="true">&middot;</span>What happened?</p>
+        <div class="pills">
+          <a class="pill" href="#contact-form" data-start="Car or truck crash">Car or truck crash</a>
+          <a class="pill" href="#contact-form" data-start="Motorcycle crash">Motorcycle crash</a>
+          <a class="pill is-current" href="#contact-form" data-start="Fall or dog bite">Fall or dog bite</a>
+          <a class="pill" href="#contact-form" data-start="Hurt at work">Hurt at work</a>
+          <a class="pill" href="#contact-form" data-start="Medical mistake">Medical mistake</a>
+          <a class="pill" href="#contact-form" data-start="Lost a loved one">Lost a loved one</a>
+          <a class="pill" href="#contact-form" data-start="Something else">Something else</a>
+        </div>
       </div>
-      <button class="submit" type="submit">Request My Free Case Review</button>
-      <p class="ok" role="status">Demo only: this form is not connected yet. On the live site it goes straight to the firm by email and text.</p>
-      <p class="disc">Submitting this form does not create an attorney-client relationship. Please do not include confidential information.</p>
-    </form>
+      <a class="hero-phone" href="tel:+13146508520"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg></span><span><b>Or call 314-650-8520</b><small>Mon to Fri, 9am to 5pm &middot; No fee unless we win</small></span></a>
+    </div>
+    <div class="hero-media">
+      <svg class="arch-line" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true"><path d="M3 125C5 42 28 3 50 3S95 42 97 125" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <figure class="arch"><img src="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=480&h=600&q=65" srcset="https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=480&h=600&q=65 480w, https://images.unsplash.com/photo-1579474670841-89ed79898c81?auto=format&fit=crop&w=960&h=1200&q=65 960w" sizes="(max-width:680px) 270px, (max-width:980px) 320px, 390px" alt="A yellow caution sign" width="480" height="600" fetchpriority="high" decoding="async"></figure>
+      <div class="arch-chip has-av"><img src="assets/img/tyler-thompson.jpg" width="42" height="42" alt="" decoding="async"><span><b>Tyler Thompson</b><small>Founder &amp; Trial Attorney</small></span></div>
+      <p class="hero-credit">Photo: <a href="https://unsplash.com/@justusmenke" target="_blank" rel="noopener">Justus Menke</a> / Unsplash</p>
+    </div>
   </div>
-  <div class="credit">Photo: <a href="https://unsplash.com/@justusmenke" target="_blank" rel="noopener">Justus Menke</a> / Unsplash</div>
 </section>
 
 <section class="rstrip" aria-label="What clients say">
@@ -376,7 +365,7 @@
 
 <div class="mobile-bar">
   <a class="c" href="tel:+13146508520">Call Now</a>
-  <a class="f2" href="#consult">Free Case Review</a>
+  <a class="f2" href="#contact-form" data-chat-open>Free Case Review</a>
 </div>
 </aside>
 

@@ -20,8 +20,7 @@
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preload" href="assets/fonts/source-serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/source-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=1400&q=70"
-  imagesrcset="https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=800&q=70 800w, https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=1400&q=70 1400w, https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=2200&q=70 2200w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/tyler-thompson.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">
 {
@@ -189,42 +188,31 @@
 <main id="main">
 
 <section class="hero" aria-labelledby="hero-h">
-  <img class="hero-img" alt="" width="2200" height="1400" fetchpriority="high" decoding="async"
-    src="https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=1400&q=70"
-    srcset="https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=800&q=70 800w, https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=1400&q=70 1400w, https://images.unsplash.com/photo-1694587973234-bd07869617aa?auto=format&fit=crop&w=2200&q=70 2200w"
-    sizes="100vw">
   <div class="wrap hero-grid">
-    <div>
-      <div class="label">St. Louis &middot; Chesterfield &middot; Southern Illinois</div>
-      <h1 id="hero-h">St. Louis injury lawyer for crashes, workplace injuries and wrongful death.</h1>
+    <div class="hero-copy">
+      <div class="hero-kicker">Thompson Law STL &middot; Chesterfield, MO</div>
+      <h1 id="hero-h">St. Louis injury lawyer <span class="h1-sub">for crashes, workplace injuries and wrongful death.</span></h1>
       <p class="lead">Tyler Thompson spent twelve years on the insurance side of injury cases. Now he represents injured people and their families across Missouri and Southern Illinois, and you pay nothing unless he wins.</p>
-      <a class="btn btn-ghost hero-call" href="tel:+13146508520"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>Call 314-650-8520</a>
-    </div>
-
-    <form class="lead-form" id="consult" aria-labelledby="consult-h" novalidate>
-      <h2 id="consult-h">Free case review</h2>
-      <p class="sub">Tell us what happened. Tyler will call you back. No fee unless we win.</p>
-      <div class="f"><label for="h-name">Full name</label><input id="h-name" name="name" autocomplete="name" required></div>
-      <div class="f"><label for="h-phone">Phone</label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
-      <div class="f"><label for="h-type">What happened?</label>
-        <select id="h-type" name="matter">
-          <option>Car accident</option>
-          <option>Truck accident</option>
-          <option>Motorcycle accident</option>
-          <option>Slip and fall</option>
-          <option>Workplace injury</option>
-          <option>Medical malpractice</option>
-          <option>Dog bite</option>
-          <option>Wrongful death</option>
-          <option>Something else</option>
-        </select>
+      <div class="starter" id="consult">
+        <p class="starter-q">Free case review<span aria-hidden="true">&middot;</span>What happened?</p>
+        <div class="pills">
+          <a class="pill" href="#contact-form" data-start="Car or truck crash">Car or truck crash</a>
+          <a class="pill" href="#contact-form" data-start="Motorcycle crash">Motorcycle crash</a>
+          <a class="pill" href="#contact-form" data-start="Fall or dog bite">Fall or dog bite</a>
+          <a class="pill" href="#contact-form" data-start="Hurt at work">Hurt at work</a>
+          <a class="pill" href="#contact-form" data-start="Medical mistake">Medical mistake</a>
+          <a class="pill" href="#contact-form" data-start="Lost a loved one">Lost a loved one</a>
+          <a class="pill" href="#contact-form" data-start="Something else">Something else</a>
+        </div>
       </div>
-      <button class="submit" type="submit">Request My Free Case Review</button>
-      <p class="ok" role="status">Demo only: this form is not connected yet. On the live site it goes straight to the firm by email and text.</p>
-      <p class="disc">Submitting this form does not create an attorney-client relationship. Please do not include confidential information.</p>
-    </form>
+      <a class="hero-phone" href="tel:+13146508520"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1z" fill="currentColor"/></svg></span><span><b>Or call 314-650-8520</b><small>Mon to Fri, 9am to 5pm &middot; No fee unless we win</small></span></a>
+    </div>
+    <div class="hero-media">
+      <svg class="arch-line" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true"><path d="M3 125C5 42 28 3 50 3S95 42 97 125" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <figure class="arch"><picture><source type="image/webp" srcset="assets/img/tyler-thompson.webp"><img src="assets/img/tyler-thompson.jpg" width="400" height="465" alt="Tyler Thompson, founder of Thompson Law STL" fetchpriority="high" decoding="async"></picture></figure>
+      <div class="arch-chip"><span><b>Tyler Thompson</b><small>Founder &amp; Trial Attorney</small></span></div>
+    </div>
   </div>
-  <div class="credit">Photo: <a href="https://unsplash.com/@nnonno" target="_blank" rel="noopener">Yifu Wu</a> / Unsplash</div>
 </section>
 
 <section class="rstrip" aria-label="What clients say">
@@ -250,13 +238,11 @@
 
 <section class="about" id="about" aria-labelledby="about-h">
   <div class="wrap about-grid">
-    <figure class="about-photo" data-reveal>
-      <picture><source type="image/webp" srcset="assets/img/tyler-thompson.webp"><img src="assets/img/tyler-thompson.jpg" width="400" height="465" alt="Tyler Thompson, founder of Thompson Law STL" loading="lazy" decoding="async"></picture>
-      <figcaption><b>Tyler Thompson</b><span>Founder &amp; Trial Attorney</span></figcaption>
-    </figure>
-    <div class="about-copy">
+    <div class="about-head">
       <div class="label" data-reveal>About the Firm</div>
-      <h2 class="h2" id="about-h" data-reveal>Twelve years on the insurance side. Now he's on yours.</h2>
+      <h2 id="about-h" data-reveal>Twelve years on the insurance side. Now he's on yours.</h2>
+    </div>
+    <div class="about-copy">
       <p class="about-lead" data-reveal style="--d:100ms">Tyler Thompson spent eight years on the defense side at a large St. Louis firm and four more in-house at a national insurance company. He knows how adjusters value a claim, where they look to cut it, and what it takes to make them pay.</p>
       <p data-reveal style="--d:160ms">In 2022 he opened Thompson Law STL to put that experience to work for injured people and their families. You work with Tyler directly, from the first call through settlement or trial, and you pay nothing unless he wins.</p>
       <dl class="stats" data-reveal style="--d:220ms">
@@ -265,7 +251,7 @@
         <div><dt>MO &amp; IL</dt><dd>Licensed in both states</dd></div>
       </dl>
       <div class="about-cta" data-reveal style="--d:280ms">
-        <a class="btn" href="#consult">Get a free case review</a>
+        <a class="btn" href="#contact-form" data-chat-open>Get a free case review</a>
         <a class="btn-link" href="tel:+13146508520">Or call 314-650-8520</a>
       </div>
     </div>
@@ -342,7 +328,7 @@
     <h2 id="insurers-h">The adjuster may call before you've left the hospital.</h2>
     <p>Insurance companies move fast after a crash. An adjuster may ask for a recorded statement or offer a quick check before you know how badly you're hurt. Anything you say can be used to lower your claim, and cashing an early check can end it.</p>
     <p>Tyler spent twelve years on the other side of those calls. Talk to him first. It's free, and it may be the most valuable call you make.</p>
-    <a class="btn" href="#consult">Get a free case review</a>
+    <a class="btn" href="#contact-form" data-chat-open>Get a free case review</a>
   </div>
 </section>
 
@@ -503,7 +489,7 @@
 
 <div class="mobile-bar">
   <a class="c" href="tel:+13146508520">Call Now</a>
-  <a class="f2" href="#consult">Free Case Review</a>
+  <a class="f2" href="#contact-form" data-chat-open>Free Case Review</a>
 </div>
 </aside>
 
