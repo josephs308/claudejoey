@@ -1,112 +1,50 @@
-# Thompson Law STL — Website
+# Thompson Law STL: concept site
 
-A modern, custom-coded static website for **Thompson Law STL**, a St. Louis
-personal injury law firm led by attorney Tyler Thompson.
+A concept redesign of [thompsonlawstl.com](https://thompsonlawstl.com/) for Thompson Law STL,
+a St. Louis personal injury firm led by Tyler Thompson. Prepared by Vincere Legal Marketing,
+using the same design system as the McMillan & Black demo: Cormorant Garamond headlines,
+Source Sans body, one accent color (navy here), square corners and real photography.
 
-Rebuilt from the ground up — no WordPress, no page builder, no database — to
-hit the **Vincere four pillars** of a high-performing law firm site.
+Every page carries a "concept design" banner and a `noindex` tag so it can't be mistaken
+for, or outrank, the firm's live site.
 
----
+## Pages
 
-## The four pillars (and how this build delivers them)
+| File | What it is |
+| --- | --- |
+| `index.html` | Home: hero with case review form, client quote strip, firm intro, practice tiles, insurer callout, attorney bio, FAQ, testimonials, contact |
+| `car-accidents.html` and 7 more | One page per practice area: car, truck, motorcycle, slip and fall, workplace, medical malpractice, dog bites, wrongful death |
+| `assets/css/site.css` | The whole design system. Change `--accent` to recolor the site |
+| `assets/js/site.js` | Scroll reveals, mobile menu, demo form notice, guided intake chat |
+| `assets/fonts/` | Self-hosted fonts (no Google Fonts request) |
 
-### 1. Blazing Speed & Security
-- Pure, hand-written **HTML + CSS**, with one small (~6 KB) vanilla-JS file.
-- **Zero web-font requests** — the type stack uses system fonts (Helvetica/Georgia),
-  so there's nothing to download and no layout shift.
-- No framework, no jQuery, no plugins. SVG icons are inlined (no icon font, no
-  image sprites).
-- **Static = secure**: no CMS, no database, no admin login — nothing to hack.
-- Built to pass Core Web Vitals and WCAG 2.1 AA (semantic landmarks, skip link,
-  visible focus states, labelled controls, `prefers-reduced-motion` support,
-  accessible accordions and nav).
+## The four pillars
 
-### 2. Legal SEO
-- A dedicated, individually optimized page for **every practice area** (not one
-  generic "Services" page): car, truck, motorcycle, slip & fall, workplace,
-  medical malpractice, dog bites, wrongful death.
-- Per-page `<title>`, meta description, canonical URL, Open Graph / Twitter tags.
-- Semantic heading hierarchy, descriptive link text, clean file-based URLs.
-- `sitemap.xml` and `robots.txt` included.
+- **Speed and security:** hand-written HTML and CSS, one 5 KB script, self-hosted fonts, responsive
+  images. No CMS, database or plugins.
+- **Legal SEO:** a dedicated page per practice area with its own title, description and canonical
+  URL, internal links between related areas, breadcrumbs, `sitemap.xml`.
+- **Answer engine optimization:** answer-first copy, FAQ sections whose `FAQPage` structured data
+  matches the visible questions word for word, plus `LegalService`, `Person` and `BreadcrumbList` data.
+- **Conversion:** case review form in every hero, a guided intake chat, click-to-call throughout,
+  and a call / free review bar pinned to the bottom on phones.
 
-### 3. Answer Engine Optimization (AEO)
-- **Answer-first content**: each practice page opens with a direct, bolded answer
-  to the core question, the way featured snippets and AI Overviews extract.
-- **FAQPage JSON-LD** on the home page and every practice page (the visible FAQ
-  accordion mirrors the structured data exactly).
-- **LegalService / Attorney JSON-LD** describing the firm, the attorney, address,
-  hours, and service area, plus **BreadcrumbList** on inner pages.
-- `robots.txt` explicitly welcomes GPTBot, PerplexityBot, Google-Extended and
-  ClaudeBot so the firm can be cited as the answer.
-
-### 4. Conversion Systems
-- A **guided-flow intake assistant** (bottom-right chat bubble) that engages
-  instantly, qualifies the matter through a few taps, and routes the visitor to
-  call or request a consultation — pure client-side, works 24/7, needs no backend.
-- Click-to-call phone CTAs in the top bar, header, hero, every page, and footer.
-- A hero lead-capture form and a full contact form, both with graceful `mailto:`
-  fallback so leads are never lost before a real endpoint is wired up.
-- "No fee unless we win" / "free consultation" reinforced throughout.
-
----
-
-## Project structure
-
-```
-.
-├── index.html                 # Home
-├── about.html                 # Attorney bio (Tyler Thompson)
-├── practice-areas.html        # Practice areas overview
-├── contact.html               # Contact + lead form
-├── car-accidents.html         # Practice area pages ─┐
-├── truck-accidents.html                              │
-├── motorcycle-accidents.html                         │
-├── slip-and-fall.html                                ├─ 8 practice areas
-├── workplace-injuries.html                           │
-├── medical-malpractice.html                          │
-├── dog-bites.html                                    │
-├── wrongful-death.html        # ──────────────────────┘
-├── robots.txt
-├── sitemap.xml
-└── assets/
-    ├── css/styles.css         # Full design system (one file)
-    ├── js/main.js             # Nav, FAQ, scroll reveal, intake assistant
-    └── img/
-        ├── favicon.svg        # Scales-of-justice mark
-        └── og-image.svg       # Social share image
-```
-
-## Running locally
-
-It's a static site — just open `index.html` in a browser, or serve the folder:
+## Preview
 
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-## Deploying
+No build step. It deploys to Netlify, GitHub Pages or any static host as is (publish directory: `.`).
 
-Upload the folder to any static host — Netlify, Cloudflare Pages, GitHub Pages,
-Vercel, S3/CloudFront, or any plain web server. There is no build step.
+## Before it goes live
 
-## Before going live — customize these
-
-1. **Form endpoint.** The hero and contact forms currently fall back to a
-   prefilled `mailto:` to `tyler@thompsonlawstl.com`. To capture leads directly,
-   set each `<form>`'s `action` to a real endpoint (e.g. Formspree, Basin, or a
-   serverless function) — the JS automatically defers to a real `http(s)` action.
-2. **Attorney photo.** `about.html` and the home page use a lettered "TT" avatar
-   placeholder. Drop in a professional headshot where marked.
-3. **Testimonials.** Reviews use client initials and are representative; replace
-   with verified reviews (and link your Google Business Profile) before launch.
-4. **Legal review.** Practice-area pages state general Missouri/Illinois rules
-   (statutes of limitation, dog-bite strict liability, etc.) with hedging
-   language. Have the firm confirm every legal statement for the current year.
-5. **Domain & analytics.** Canonicals, sitemap and OG tags assume
-   `https://thompsonlawstl.com/`. Add your analytics snippet if desired.
-
----
-
-_Firm: Thompson Law STL · 167 Lamp and Lantern Village, Suite 226, Chesterfield,
-MO 63017 · 314-650-8520 · tyler@thompsonlawstl.com_
+1. **Remove the concept markers:** the `noindex` meta tag and the concept banner on every page.
+2. **Connect the forms.** They show a "demo only" notice. On Netlify, Netlify Forms is the simplest option.
+3. **Add Tyler's portrait** in place of the placeholder in the Attorney section.
+4. **Confirm the testimonials.** They are taken from the firm's current website; confirm the exact
+   wording, or replace them with reviews from the Google Business Profile.
+5. **Confirm the suite number.** Public listings disagree (Suite 226 vs. Suite 236). The site uses 226.
+6. **Legal review.** Practice pages state general Missouri and Illinois rules (filing deadlines,
+   dog-bite strict liability, medical malpractice affidavits). The firm should confirm them.
+7. **Photos** are hotlinked from Unsplash and credited. Swap in the firm's own photography if it has any.
